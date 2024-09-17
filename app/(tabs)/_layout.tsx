@@ -1,34 +1,67 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { Tabs, Redirect } from "expo-router";
+import React from "react";
+import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+  
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: "#8D0CCA",
         headerShown: false,
-      }}>
+        tabBarLabelStyle: {
+          fontSize: 10,
+          fontWeight: 600,
+        },
+        
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: "Home",
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            <TabBarIcon
+              name={focused ? "home-sharp" : "home-outline"}
+              color={color}
+            />
           ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="all-tests"
         options={{
-          title: 'Explore',
+          title: "All Tests",
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon
+              name={focused ? "list" : "list-outline"}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="progress"
+        options={{
+          title: "Progress",
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon
+              name={focused ? "hourglass" : "hourglass-outline"}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: "Settings",
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon
+              name={focused ? "settings" : "settings-outline"}
+              color={color}
+            />
           ),
         }}
       />
