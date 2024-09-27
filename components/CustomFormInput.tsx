@@ -6,28 +6,34 @@ interface IFormInput{
     title?: string;
     value: string;
     placeholder?: string;
-    handleChangeText: () => void;
+    handleChangeText: (text: string) => void;
     otherStyles?: string;
+    multiline?: boolean;
+    numberOfLines?: number;
+    heightStyle: string;
     }
     
 
-const CustomFormInput = ({ title, value, placeholder,
-    handleChangeText, otherStyles ='', ...props
+const CustomFormInput = ({ title, value, placeholder, heightStyle,
+    handleChangeText, otherStyles ='', numberOfLines, multiline, ...props
 }: IFormInput) => {
   return (
     <View style={tw`space-y-2 ${otherStyles}`}>
-      {title && <Text style={tw`text-base`}>{title}</Text>}
-      <View style={tw`w-full h-15 px-4 bg-black rounded-2x focus:border-secondary items-center`}>
+      {title && <Text style={tw`text-base p-2`}>{title}</Text>}
+      <View style={[tw`w-full px-4 border border-[#EAE8EE] rounded-2x focus:border-secondary`, { height: parseInt(heightStyle) }]}>
         <TextInput 
-        style={tw`flex-1 text-white text-base`}
+        style={tw`text-base`}
         value={value}
         placeholder={placeholder}
         placeholderTextColor="#7b7b8b"
-        onChange={handleChangeText}
+        onChangeText={handleChangeText}
+        multiline={multiline}
+        numberOfLines={numberOfLines}
         />
       </View>
     </View>
   )
 }
 
-export default CustomFormInput
+export default CustomFormInput;
+

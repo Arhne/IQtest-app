@@ -1,102 +1,343 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform } from 'react-native';
+import {
+  Image,
+  Dimensions,
+  Text,
+  FlatList,
+  Switch,
+  ScrollView,
+  View,
+  Pressable,
+  Modal,
+} from "react-native";
+import { ThemedView } from "@/components/ThemedView";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { ThemedText } from "@/components/ThemedText";
+import tw from "@/twrnc-config";
+import CustomCard from "@/components/CustomCard";
+import { icons, images } from "@/constants";
+import { Redirect, router } from "expo-router";
+import { useCallback, useRef, useState } from "react";
+import SimpleLineIcons from "@expo/vector-icons/SimpleLineIcons";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import CountryFlag from "react-native-country-flag";
+import { Asset } from "expo-asset";
+import { useEffect } from "react";
+import i18n from '@/i18n/i18n'; 
+import { useTranslation } from 'react-i18next';
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-export default function TabTwoScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={<Ionicons size={310} name="code-slash" style={styles.headerImage} />}>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
-      </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
-        <Image source={require('@/assets/images/educating.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Custom fonts">
-        <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user's current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText> library
-          to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </ParallaxScrollView>
-  );
+interface Isettings {
+  id: string;
+  settingicon: JSX.Element;
+  setting: string;
 }
 
-const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+const settings: Isettings[] = [
+  {
+    id: "sound",
+    settingicon: <icons.SpeakerHigh />,
+    setting: "Sound",
   },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
+  {
+    id: "notification",
+    settingicon: <icons.BellIcon />,
+    setting: "Push notification",
   },
-});
+  {
+    id: "suggestions",
+    settingicon: <icons.Suggestion />,
+    setting: "Make suggestions",
+  },
+  {
+    id: "privacypolicy",
+    settingicon: <icons.LockKey />,
+    setting: "Privacy & Policy",
+  },
+  {
+    id: "terms",
+    settingicon: <icons.PencilLine />,
+    setting: "Terms & Conditions",
+  },
+  {
+    id: "support",
+    settingicon: <icons.QuestionIcon />,
+    setting: "Support",
+  },
+  {
+    id: "About",
+    settingicon: <icons.InfoIcon />,
+    setting: "about",
+  },
+];
+
+// Preload function
+const preloadFlagImages = () => {
+  const flagUrls = [
+    "https://flagcdn.com/w320/fr.png",
+    "https://flagcdn.com/w320/es.png",
+    "https://flagcdn.com/w320/de.png",
+    "https://flagcdn.com/w320/us.png",
+    "https://flagcdn.com/w320/cn.png",
+    "https://flagcdn.com/w320/ru.png",
+    "https://flagcdn.com/w320/gb.png",
+  ];
+  flagUrls.forEach((url) => {
+    Image.prefetch(url);
+  });
+};
+
+export default function Settings() {
+  const [soundSwitch, setSoundSwitch] = useState(false);
+  const [notificationSwitch, setNotificationSwitch] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [selected, setSelected] = useState<{
+    label: string;
+    countryCode: string;
+  } | null>(null);
+  const [top, setTop] = useState(0);
+  // const btnRef = useRef(null);
+  const { t } = useTranslation();
+
+  const toggleSoundSwitch = () => {
+    setSoundSwitch((prevState) => !prevState);
+  };
+  const toggleNotificationSwitch = () => {
+    setNotificationSwitch((prevState) => !prevState);
+  };
+  const handleClickChange = (item: Isettings) => {
+    if (item.id === "suggestions") {
+      router.push("/suggestions");
+    } else if (item.id === "privacypolicy") {
+      router.push("/policy");
+    } else if (item.id === "terms") {
+      router.push("/terms");
+    } else if (item.id === "support") {
+      router.push("/support");
+    }
+  };
+
+  const toggleExpanded = useCallback(() => {
+    setIsExpanded(!isExpanded);
+  }, [isExpanded]);
+
+  const onSelect = useCallback(
+    (item: { label: string; value: string; countryCode: string }) => {
+      setSelected({ label: item.label, countryCode: item.countryCode });
+      // i18n.changeLanguage(item.value);
+      setIsExpanded(false);
+    },
+    []
+  );
+
+  useEffect(() => {
+    // Preload flags when the component mounts
+    preloadFlagImages();
+  }, []);
+
+  return (
+    <ThemedView style={tw`w-full flex-1 px-5`}>
+      <SafeAreaView style={tw`w-full gap-5 flex-1`}>
+        <Pressable
+          onPress={() => router.back()}
+          style={tw`pt-5 flex-row justify-start`}
+        >
+          <icons.BackIcon />
+        </Pressable>
+
+        <View style={tw`flex-1`}>
+
+          <ThemedText style={tw`mb-5 text-4xl font-medium w-70`}>
+            Settings
+          </ThemedText>
+
+         
+            <ThemedText style={tw`font-medium mb-2 px-1`}>Language</ThemedText>
+
+              <Pressable
+                style={({ pressed }) => [
+                  tw`w-full justify-between bg-primary border border-[#EAE8EE] mb-5 relative rounded-xl flex-row p-4`,
+                  pressed && tw`opacity-70`,
+                ]}
+                onPress={toggleExpanded}
+                onLayout={(event) => {
+                  const layout = event.nativeEvent.layout;
+                  const topOffset = layout.y;
+                  const heightOfComponent = layout.height;
+                  const extraPadding = 110;
+                  setTop(topOffset + heightOfComponent + extraPadding);
+                 }}
+                >
+                <View style={tw`flex-row items-center`}>
+                  {selected ? (
+                    <>
+                      <CountryFlag
+                        isoCode={selected.countryCode}
+                        size={20}
+                        style={tw`mr-2`}
+                      />
+                      <Text>{selected.label}</Text>
+                    </>
+                  ) : (
+                    <Text>Select Language</Text>
+                  )}
+                </View>
+                <MaterialIcons
+                  name={
+                    isExpanded ? "keyboard-arrow-down" : "keyboard-arrow-right"
+                  }
+                  size={24}
+                  color="black"
+                />
+              </Pressable>
+              
+
+              {isExpanded && (
+              <Modal
+                transparent={true}
+                animationType="fade"
+                onRequestClose={toggleExpanded}
+                >
+                  <Pressable
+                    style={tw`absolute inset-0 bg-transparent`}
+                    onPress={toggleExpanded}
+                    >
+                     <View
+                     style={[
+                     tw`absolute bg-primary rounded-[8px] w-[200px] p-5`,
+                      {
+                      top: top,
+                      right: 30,
+                      zIndex: 1000,
+                      shadowColor: "#000",
+                      shadowOffset: { width: 4, height: 4 },
+                      shadowOpacity: 0.3,
+                      shadowRadius: 10,
+                      elevation: 6,
+                      },
+                     ]} >
+                      <FlatList
+                        data={[
+                          {
+                            label: "Francais",
+                            value: "fr",
+                            countryCode: "FR",
+                          },
+                          {
+                            label: "Espanyol",
+                            value: "es",
+                            countryCode: "ES",
+                          },
+                          {
+                            label: "German",
+                            value: "de",
+                            countryCode: "DE",
+                          },
+                          {
+                            label: "English US",
+                            value: "en",
+                            countryCode: "US",
+                          },
+                          {
+                            label: "Chinese",
+                            value: "cn",
+                            countryCode: "CN",
+                          },
+                          {
+                            label: "Russian",
+                            value: "ru",
+                            countryCode: "RU",
+                          },
+                          {
+                            label: "English UK",
+                            value: "gb",
+                            countryCode: "GB",
+                          },
+                        ]}
+                        keyExtractor={(item) => item.value}
+                        showsHorizontalScrollIndicator={false}
+                        ItemSeparatorComponent={() => <View style={tw`h-1`} />}
+                        renderItem={({ item }) => (
+                          <Pressable
+                            style={({ pressed }) => [
+                              tw`h-[40px] items-center flex-row gap-2`,
+                              pressed && tw`opacity-70`,
+                            ]}
+                            onPress={() => onSelect(item)}
+                          >
+                            <View
+                              style={tw`rounded-lg overflow-hidden h-[30px] w-[45px]`}
+                            >
+                              <CountryFlag
+                                isoCode={item.countryCode}
+                                size={30}
+                              />
+                            </View>
+                            <Text>{item.label}</Text>
+                          </Pressable>
+                        )}
+                      />
+
+
+                    </View>
+                  
+                  </Pressable>
+                </Modal>
+              )}
+          
+
+          <FlatList
+            data={settings}
+            keyExtractor={(item) => item.id}
+            showsVerticalScrollIndicator={false}
+            renderItem={({ item }) => (
+              <View style={tw`mb-3`}>
+                <CustomCard
+              
+                  icon={
+                    item.id === "sound" && soundSwitch ? (
+                      <icons.SpeakerHigh />
+                    ) : item.id === "sound" ? (
+                      <SimpleLineIcons
+                        name="volume-off"
+                        size={24}
+                        color="black"
+                      />
+                    ) : (
+                      item.settingicon
+                    )
+                  }
+                  title={item.setting}
+                  otherStyles="bg-gray-DEFAULT"
+                  opacityStyle={item.id === "sound" 
+                    ? "opacity-100"
+                    : item.id === "notification"
+                    ? "opacity-100" : ""
+                  }
+                  handleClick={() => handleClickChange(item)}
+                  textoricon={
+                    item.id === "sound" ? (
+                      <Switch
+                        value={soundSwitch}
+                        onValueChange={toggleSoundSwitch}
+                        trackColor={{ false: "#E5E7EB", true: "#8D0CCA" }}
+                      />
+                    ) : item.id === "notification" ? (
+                      <Switch
+                        value={notificationSwitch}
+                        onValueChange={toggleNotificationSwitch}
+                        trackColor={{ false: "#E5E7EB", true: "#8D0CCA" }}
+                        focusable={false}
+                      />
+                    ) : undefined
+                  }
+                />
+              </View>
+            )}
+          />
+
+
+
+        </View>
+      </SafeAreaView>
+    </ThemedView>
+  );
+}

@@ -1,70 +1,315 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import {
+  Image,
+  Dimensions,
+  FlatList,
+  Text,
+  ScrollView,
+  View,
+} from "react-native";
+import { ThemedView } from "@/components/ThemedView";
+import { SafeAreaView } from "react-native-safe-area-context";
+import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { ThemedText } from "@/components/ThemedText";
+import tw from "@/twrnc-config";
+import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
+import CustomCard from "@/components/CustomCard";
+import { icons, images } from "@/constants";
+import { categoryList } from "@/data/categories";
+import { useState } from "react";
+import { router } from "expo-router";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/brain.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
-  );
+interface Category{
+  id: number;
+  title: string; 
 }
 
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+const recents = [
+  {
+    id: "General IQ",
+    interactionicon: <icons.TestIcon />,
+    heading: "start test",
+    subtitle: "25",
+    progress: "50%",
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  {
+    id: "result",
+    interactionicon: <icons.ResultIcon />,
+    heading: "Result",
+    subtitle: "25",
+    progress: "50%",
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  {
+    id: "knowledge",
+    interactionicon: <icons.KnowledgeIcon />,
+    heading: "Knowledge hub",
+    subtitle: "25",
+    progress: "50%",
   },
-});
+]
+const subcategories = [
+  {
+    id: "General IQ",
+    interactionicon: <icons.TestIcon />,
+    heading: "General IQ",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 2
+  },
+  {
+    id: "Spatial IQ",
+    interactionicon: <icons.ResultIcon />,
+    heading: "Spatial IQ",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 2
+  },
+  {
+    id: "Analytical IQ",
+    interactionicon: <icons.KnowledgeIcon />,
+    heading: "Analytical IQ",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 2
+  },
+  {
+    id: "Memory IQ",
+    interactionicon: <icons.AppIcon />,
+    heading: "Memory IQ",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 2,
+  },
+  {
+    id: "Qualitative IQ",
+    interactionicon: <icons.AppIcon />,
+    heading: "Qualitative IQ",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 2,
+  },
+  {
+    id: "Quantitative IQ",
+    interactionicon: <icons.AppIcon />,
+    heading: "Quantitative IQ",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 2,
+  },
+  {
+    id: "Depression",
+    interactionicon: <icons.AppIcon />,
+    heading: "Depression",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 4,
+  },
+  {
+    id: "Bipolar Disorder",
+    interactionicon: <icons.AppIcon />,
+    heading: "Bipolar Disorder",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 4,
+  },
+  {
+    id: "ADHD Test",
+    interactionicon: <icons.AppIcon />,
+    heading: "ADHD Test",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 4,
+  },
+  {
+    id: "Schizophrenia",
+    interactionicon: <icons.AppIcon />,
+    heading: "Schizophrenia",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 4,
+  },
+  {
+    id: "Anxiety Test",
+    interactionicon: <icons.AppIcon />,
+    heading: "Anxiety Test",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 4,
+  },
+  {
+    id: "Bulimia Test",
+    interactionicon: <icons.AppIcon />,
+    heading: "Bulimia Test",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 4,
+  },
+  {
+    id: "PTSD Test",
+    interactionicon: <icons.AppIcon />,
+    heading: "PTSD Test",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 4,
+  },
+  {
+    id: "Internal Disorder Test",
+    interactionicon: <icons.AppIcon />,
+    heading: "Internal Disorder Test",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 4,
+  },
+  {
+    id: "Enneagram",
+    interactionicon: <icons.AppIcon />,
+    heading: "Enneagram",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 3,
+  },
+  {
+    id: "16 Personalities",
+    interactionicon: <icons.AppIcon />,
+    heading: "16 Personalities",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 3,
+  },
+  {
+    id: "Introvert and Extrovert",
+    interactionicon: <icons.AppIcon />,
+    heading: "Introvert and Extrovert",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 3,
+  },
+  {
+    id: "Persona Bubble",
+    interactionicon: <icons.AppIcon />,
+    heading: "Persona Bubble",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 3,
+  },
+  {
+    id: "Emotions vs Logic",
+    interactionicon: <icons.AppIcon />,
+    heading: "Emotions vs Logic",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 3,
+  },
+  {
+    id: "EQ Test",
+    interactionicon: <icons.AppIcon />,
+    heading: "EQ Test",
+    subtitle: "25",
+    progress: "50%",
+    categoryId: 3,
+  },
+];
+export default function AllTest() {
+
+  const [selectedCategory, setSelectedCategory] = useState("1");
+  return (
+    
+      
+        <ThemedView style={tw`w-full px-5 pt-3 justify-center`}>
+          <ScrollView showsVerticalScrollIndicator={false}>
+        <SafeAreaView style={tw`h-full flex-1`}>
+        
+          <View style={tw`gap-5 flex-1`}>
+            <ThemedText style={tw`text-4xl font-medium w-70`}>
+              All test categories
+            </ThemedText>
+
+            <View style={tw`gap-5`}>
+              <ThemedText>Recents</ThemedText>
+
+              <FlatList
+                data={recents}
+                keyExtractor={(item) => item.id}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({ item }) => (
+                  <View
+                    style={[tw`mr-5 bg-gray-DEFAULT rounded-xl flex-1`, {                     
+                      padding: 12,
+                      width: 164,
+                      // alignItems: "center",
+                      // justifyContent: "center",
+                    }]}
+                  >
+                    <View  style={tw`max-w-[93px] w-full h-[88px]`}>
+                     
+                      {item.interactionicon}
+                    </View>
+                    <View style={tw``}>
+                      <Text
+                        style={tw`text-[16px]/[19.36px] font-semibold capitalize`}
+                      >
+                        {item.heading}
+                      </Text>
+                      <View  style={tw`flex-row items-center justify-between mt-3`}>
+                        <Text style={tw`leading-[16.94px] text-[#727272]`}>
+                          completed
+                        </Text>
+                        <Text
+                          style={tw`leading-[16.94px] text-secondary-DEFAULT`}
+                        >
+                          {item.progress}
+                        </Text>
+                      </View>
+                      <View style={tw`mt-3`}>
+                        <Text>progress line</Text>
+                      </View>
+                    </View>
+                  </View>
+                )}
+              />
+              <FlatList
+                data={categoryList}
+                keyExtractor={(item) => item.id.toString()}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({ item }: {item: Category}) => (
+                  <View style={tw`mr-6`}>
+                  <CustomGradientButton
+                    title={item.title}
+                    handlePress={()=>setSelectedCategory(item.id.toString())}
+                    paddingStyle="px-3 border border-solid border-[#E3E1E9]"
+                    color={selectedCategory === item.id.toString() ? ["#8D0CCA", "#D568EF"] : ["transparent", "transparent"]}
+                    textStyle={selectedCategory === item.id.toString() ? "text-primary" : "text-gray-400"}
+                  />
+                  </View>
+                )}
+              />
+              <View style={tw`gap-5`}>
+                <ThemedText>Subcategories</ThemedText>
+                <FlatList
+                  data={subcategories}
+                  keyExtractor={(item) => item.id}
+                  scrollEnabled={false}
+                  renderItem={({ item }) => (
+                    <View style={tw`mb-5`}>
+                    <CustomCard
+                      icon={item.interactionicon}
+                      title={item.id}
+                      otherStyles="bg-gray-DEFAULT"
+                      pricedesc={`${item.subtitle}/50 completed`}
+                      textoricon={item.interactionicon}
+                    />
+                    </View>
+                  )}
+                />
+              </View>
+            </View>
+          </View>
+          
+          </SafeAreaView>
+          </ScrollView>
+        </ThemedView>
+      
+   
+  );
+}

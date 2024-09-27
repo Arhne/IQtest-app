@@ -13,6 +13,7 @@ import { CustomButton } from "@/components/CustomButton";
 import { StatusBar } from "expo-status-bar";
 import { onboarding } from "./onboarding";
 import tw from "@/twrnc-config";
+import ThreeInOneProgressBar from "@/components/ProgressBar";
 
 const OnboardingPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,7 +26,7 @@ const OnboardingPage = () => {
         setCurrentIndex(nextIndex);
         pageref.scrollToIndex({ animated: true, index: nextIndex });
       } else {
-        router.push('/payment');
+        router.replace('/premium');
       }
     } catch (e) {
       console.log(e);
@@ -35,16 +36,29 @@ const OnboardingPage = () => {
   const skipToPayment = () => {
     try {
       if (currentIndex < onboarding.length) {
-        router.push('/payment');
+        router.push('/premium');
       }
     } catch (e) {
       console.log(e);
     }
   };
 
+  const progressValues = [
+    [100, 0, 0],    // Step 1: 100% in first bar
+    [100, 100, 0],  // Step 2: 100% in first and second bars
+    [100, 100, 100],// Step 3: 100% in all bars
+  ];
+
   return (
     <SafeAreaView style={tw`h-full bg-white`}>
       <View style={tw`w-full h-full p-5`}>
+
+      <ThreeInOneProgressBar 
+      progress1={progressValues[currentIndex][0]}
+      progress2={progressValues[currentIndex][1]}
+      progress3={progressValues[currentIndex][2]} 
+      />
+
         <FlatList
           data={onboarding}
           keyExtractor={(item) => item.id}

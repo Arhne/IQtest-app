@@ -1,70 +1,146 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import {
+  Image,
+  Dimensions,
+  StyleSheet,
+  Text,
+  ScrollView,
+  View,
+  ImageBackground,
+  Pressable,
+} from "react-native";
+import { ThemedView } from "@/components/ThemedView";
+import { SafeAreaView } from "react-native-safe-area-context";
+import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { ThemedText } from "@/components/ThemedText";
+import tw from "@/twrnc-config";
+import { router } from "expo-router";
+import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
+import CustomCard from "@/components/CustomCard";
+import { icons, images } from "@/constants";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
+const interactions = [
+  {
+    id: "test",
+    interactionicon: <icons.TestIcon />,
+    heading: "start test",
+    subtitle: "Take a test",
+    interactionpage: "/previousResult",
+  },
+  {
+    id: "result",
+    interactionicon: <icons.ResultIcon />,
+    heading: "Result",
+    subtitle: "Go into details",
+    interactionpage: "/previousResult",
+  },
+  {
+    id: "knowledge",
+    interactionicon: <icons.KnowledgeIcon />,
+    heading: "Knowledge hub",
+    subtitle: "Generator",
+    interactionpage: "/previousResult",
+  },
+  {
+    id: "apps",
+    interactionicon: <icons.AppIcon />,
+    heading: "more apps",
+    subtitle: "Other test apps",
+    interactionpage: "/previousResult",
+  },
+];
 export default function HomeScreen() {
+  const col = 2;
+  const screenPadding = 20;
+  const gap = 12;
+  const screenWidth = Dimensions.get("screen").width - screenPadding * 2;
+  const itemWidth = (screenWidth - (col - 1) * gap) / col;
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/brain.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
+    
+      <ThemedView style={tw`w-full px-5 pt-3 justify-center`}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+        <SafeAreaView style={tw`h-full flex-1`}>
+          <View style={tw`gap-5 flex-1`}>
+            <ThemedText style={tw`text-4xl font-light w-70`}>
+              What are you hoping to{" "}
+              <Text style={tw`font-semibold`}>learn today?</Text> 📚
+            </ThemedText>
+
+            <View>
+              <ThemedText>Continue last session</ThemedText>
+              <View style={tw`w-full mt-2 h-[180px]`}>
+                <ImageBackground
+                  source={images.background}
+                  style={tw`flex-1 w-full h-full justify-center`}
+                  resizeMode="stretch"
+                >
+                  <View style={tw`flex-row px-5 items-center justify-between`}>
+                    <Image
+                      source={images.brain}
+                      style={tw`w-[134px] h-[133px]`}
+                      resizeMode="contain"
+                    />
+                    <Image
+                      source={images.rating}
+                      style={tw`w-[72px] h-[72px]`}
+                      resizeMode="contain"
+                    />
+                  </View>
+                </ImageBackground>
+              </View>
+
+              <View
+                style={[
+                  tw`bg-gray-DEFAULT flex-row items-center py-2 px-4 justify-between`,
+                  { borderBottomLeftRadius: 12, borderBottomRightRadius: 12 },
+                ]}
+              >
+                <View style={tw`flex-col gap-3`}>
+                  <Text style={tw`font-medium`}>IQ Test</Text>
+                  <Text>Tried on 15/06/2023</Text>
+                </View>
+                <CustomGradientButton title="Start" paddingStyle="px-7" textStyle="text-primary"/>
+              </View>
+            </View>
+            <CustomCard
+              icon={<icons.StackIcon />}
+              title="Subscription Plans"
+              titleStyle="text-[15px]"
+              otherStyles="bg-gray-DEFAULT"
+              textoricon="Go Pro"
+              textStyle="bg-[#F4FBC9] text-[#76A400] p-1"
+            />
+
+            <View>
+              <ThemedText>Interactions</ThemedText>
+              <View style={tw`gap-3 flex-row flex-wrap`}>
+                {interactions.map((interaction) => {
+                  return (
+                    <Pressable
+                      key={interaction.id}
+                      style={({ pressed }) => [
+                        tw`p-3 bg-gray-DEFAULT rounded-xl`, pressed && tw`opacity-30`,
+                        { width: itemWidth },
+                      ]}
+                      onPress={() => router.push(interaction.interactionpage as any)}
+                    >
+                      <View style={tw`mb-10`}>
+                        {interaction.interactionicon}
+                      </View>
+
+                      <Text style={tw`mb-2 text-base capitalize font-semibold`}>
+                        {interaction.heading}
+                      </Text>
+                      <Text>{interaction.subtitle}</Text>
+                    </Pressable>
+                  );
+                })}
+              </View>
+            </View>
+          </View>
+        </SafeAreaView>
+        </ScrollView>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+ 
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
