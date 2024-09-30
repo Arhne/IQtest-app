@@ -25,7 +25,7 @@ interface Category{
 
 const recents = [
   {
-    id: "General IQ",
+    id: "general IQ",
     interactionicon: <icons.TestIcon />,
     heading: "start test",
     subtitle: "25",
@@ -48,7 +48,7 @@ const recents = [
 ]
 const subcategories = [
   {
-    id: "General IQ",
+    id: "generalIQ",
     interactionicon: <icons.TestIcon />,
     heading: "General IQ",
     subtitle: "25",
@@ -56,7 +56,7 @@ const subcategories = [
     categoryId: 2
   },
   {
-    id: "Spatial IQ",
+    id: "spatialIQ",
     interactionicon: <icons.ResultIcon />,
     heading: "Spatial IQ",
     subtitle: "25",
@@ -64,7 +64,7 @@ const subcategories = [
     categoryId: 2
   },
   {
-    id: "Analytical IQ",
+    id: "analyticalIQ",
     interactionicon: <icons.KnowledgeIcon />,
     heading: "Analytical IQ",
     subtitle: "25",
@@ -72,7 +72,7 @@ const subcategories = [
     categoryId: 2
   },
   {
-    id: "Memory IQ",
+    id: "memoryIQ",
     interactionicon: <icons.AppIcon />,
     heading: "Memory IQ",
     subtitle: "25",
@@ -80,7 +80,7 @@ const subcategories = [
     categoryId: 2,
   },
   {
-    id: "Qualitative IQ",
+    id: "qualitativeIQ",
     interactionicon: <icons.AppIcon />,
     heading: "Qualitative IQ",
     subtitle: "25",
@@ -88,7 +88,7 @@ const subcategories = [
     categoryId: 2,
   },
   {
-    id: "Quantitative IQ",
+    id: "quantitativeIQ",
     interactionicon: <icons.AppIcon />,
     heading: "Quantitative IQ",
     subtitle: "25",
@@ -96,7 +96,7 @@ const subcategories = [
     categoryId: 2,
   },
   {
-    id: "Depression",
+    id: "depression",
     interactionicon: <icons.AppIcon />,
     heading: "Depression",
     subtitle: "25",
@@ -104,7 +104,7 @@ const subcategories = [
     categoryId: 4,
   },
   {
-    id: "Bipolar Disorder",
+    id: "bipolar disorder",
     interactionicon: <icons.AppIcon />,
     heading: "Bipolar Disorder",
     subtitle: "25",
@@ -112,7 +112,7 @@ const subcategories = [
     categoryId: 4,
   },
   {
-    id: "ADHD Test",
+    id: "adhd",
     interactionicon: <icons.AppIcon />,
     heading: "ADHD Test",
     subtitle: "25",
@@ -120,7 +120,7 @@ const subcategories = [
     categoryId: 4,
   },
   {
-    id: "Schizophrenia",
+    id: "schizophrenia",
     interactionicon: <icons.AppIcon />,
     heading: "Schizophrenia",
     subtitle: "25",
@@ -128,7 +128,7 @@ const subcategories = [
     categoryId: 4,
   },
   {
-    id: "Anxiety Test",
+    id: "anxiety",
     interactionicon: <icons.AppIcon />,
     heading: "Anxiety Test",
     subtitle: "25",
@@ -136,15 +136,7 @@ const subcategories = [
     categoryId: 4,
   },
   {
-    id: "Bulimia Test",
-    interactionicon: <icons.AppIcon />,
-    heading: "Bulimia Test",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 4,
-  },
-  {
-    id: "PTSD Test",
+    id: "ptsd",
     interactionicon: <icons.AppIcon />,
     heading: "PTSD Test",
     subtitle: "25",
@@ -152,7 +144,7 @@ const subcategories = [
     categoryId: 4,
   },
   {
-    id: "Internal Disorder Test",
+    id: "internet disorder",
     interactionicon: <icons.AppIcon />,
     heading: "Internal Disorder Test",
     subtitle: "25",
@@ -160,7 +152,7 @@ const subcategories = [
     categoryId: 4,
   },
   {
-    id: "Enneagram",
+    id: "enneagram",
     interactionicon: <icons.AppIcon />,
     heading: "Enneagram",
     subtitle: "25",
@@ -168,7 +160,7 @@ const subcategories = [
     categoryId: 3,
   },
   {
-    id: "16 Personalities",
+    id: "16personalities",
     interactionicon: <icons.AppIcon />,
     heading: "16 Personalities",
     subtitle: "25",
@@ -176,7 +168,7 @@ const subcategories = [
     categoryId: 3,
   },
   {
-    id: "Introvert and Extrovert",
+    id: "introvert and extrovert",
     interactionicon: <icons.AppIcon />,
     heading: "Introvert and Extrovert",
     subtitle: "25",
@@ -184,7 +176,7 @@ const subcategories = [
     categoryId: 3,
   },
   {
-    id: "Persona Bubble",
+    id: "persona bubble",
     interactionicon: <icons.AppIcon />,
     heading: "Persona Bubble",
     subtitle: "25",
@@ -192,7 +184,7 @@ const subcategories = [
     categoryId: 3,
   },
   {
-    id: "Emotions vs Logic",
+    id: "emotions vs logic",
     interactionicon: <icons.AppIcon />,
     heading: "Emotions vs Logic",
     subtitle: "25",
@@ -200,7 +192,7 @@ const subcategories = [
     categoryId: 3,
   },
   {
-    id: "EQ Test",
+    id: "eq",
     interactionicon: <icons.AppIcon />,
     heading: "EQ Test",
     subtitle: "25",
