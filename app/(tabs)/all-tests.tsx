@@ -56,17 +56,17 @@ const subcategories = [
     categoryId: 2
   },
   {
-    id: "spatialIQ",
+    id: "emotionalIQ",
     interactionicon: <icons.ResultIcon />,
-    heading: "Spatial IQ",
+    heading: "Emotional IQ",
     subtitle: "25",
     progress: "50%",
     categoryId: 2
   },
   {
-    id: "analyticalIQ",
+    id: "logicalIQ",
     interactionicon: <icons.KnowledgeIcon />,
-    heading: "Analytical IQ",
+    heading: "Logical IQ",
     subtitle: "25",
     progress: "50%",
     categoryId: 2
@@ -79,14 +79,14 @@ const subcategories = [
     progress: "50%",
     categoryId: 2,
   },
-  {
-    id: "qualitativeIQ",
-    interactionicon: <icons.AppIcon />,
-    heading: "Qualitative IQ",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 2,
-  },
+  // {
+  //   id: "qualitativeIQ",
+  //   interactionicon: <icons.AppIcon />,
+  //   heading: "Qualitative IQ",
+  //   subtitle: "25",
+  //   progress: "50%",
+  //   categoryId: 2,
+  // },
   {
     id: "quantitativeIQ",
     interactionicon: <icons.AppIcon />,

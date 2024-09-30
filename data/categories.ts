@@ -8319,29 +8319,2378 @@ export const Assessment = [
     },
     {
         questionNo: 1,
-        question: "",
-        answer: "No correct answer",
-        subcategoryId: '',
+        question: "My emotions generally have",
+        answer: "little or no impact on the way I behave.",
+        subcategoryId: 'emotionalIQ',
         options: [
             {
-                option: "Never",
+                option: "a strong impact on the way I behave.",
                 pionts: "0",
             },
             {
-                option: "Rarely",
+                option: "little or no impact on the way I behave.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 2,
+        question: "I am generally guided by",
+        answer: "my goals and values.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "my goals and values.",
+                pionts: "1",
+            },
+            {
+                option: "others goals and values.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 3,
+        question: "When I am under pressure, I generally have ",
+        answer: "behaviours that remain unchanged.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "changed behaviours from normal.",
+                pionts: "0",
+            },
+            {
+                option: "behaviours that remain unchanged.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 4,
+        question: "I generally learn most",
+        answer: "by actively doing activities.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "by actively doing activities.",
+                pionts: "1",
+            },
+            {
+                option: " from reflecting on past experiences.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 5,
+        question: "I generally",
+        answer: "have a good sense of humour about myself.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "have a good sense of humour about myself.",
+                pionts: "1",
+            },
+            {
+                option: "take myself seriously.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 6,
+        question: "I present myself",
+        answer: "with self-assurance and having /presence/.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "with self-assurance and having /presence/.",
+                pionts: "1",
+            },
+            {
+                option: "with some confidence and cautiousness.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 7,
+        question: "Where there are uncertainties and pressures, I am always",
+        answer: "decisive and make sound decisions",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "decisive and make sound decisions.",
+                pionts: "1",
+            },
+            {
+                option: "cautious about making the right decision.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 8,
+        question: "I always voice views that",
+        answer: "are unpopular and go out on a limb for what is right.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "are unpopular and go out on a limb for what is right.",
+                pionts: "1",
+            },
+            {
+                option: "most others agree with and support.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 9,
+        question: "I always like to ",
+        answer: "take on new challenges.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "take on new challenges.",
+                pionts: "1",
+            },
+            {
+                option: " maintain the status quo.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 10,
+        question: "I generally",
+        answer: "inspire confidence in others.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "inspire confidence in others.",
+                pionts: "1",
+            },
+            {
+                option: "rely on others confidence.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 11,
+        question: "I generally",
+        answer: "keep my disruptive emotions and impulses under control.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "allow my emotions and moods to impact on my behaviours.",
+                pionts: "0",
+            },
+            {
+                option: "keep my disruptive emotions and impulses under control.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 12,
+        question: "When I am under pressure",
+        answer: "I think clearly and stay focused",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "I get easily distracted in other things.",
+                pionts: "0",
+            },
+            {
+                option: "I think clearly and stay focused",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 13,
+        question: "I always",
+        answer: "do as I say I will do.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "do as I say I will do.",
+                pionts: "1",
+            },
+            {
+                option: "do only what I have to do.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 14,
+        question: "Trust by others",
+        answer: "is built through reliability and authenticity.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "is automatically given to me.",
+                pionts: "0",
+            },
+            {
+                option: "is built through reliability and authenticity.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 15,
+        question: "I am always",
+        answer: "able to see events for what they are.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "flexible in how I see events.",
+                pionts: "0",
+            },
+            {
+                option: "able to see events for what they are.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 16,
+        question: "During changing situations, I always",
+        answer: "smoothly handle multiple demands and shifting priorities.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "work hard to try and keep up with the demands.",
+                pionts: "0",
+            },
+            {
+                option: "smoothly handle multiple demands and shifting priorities.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 17,
+        question: "I always",
+        answer: "set myself challenging goals.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "set myself challenging goals.",
+                pionts: "1",
+            },
+            {
+                option: "complete the goals that are set for me.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 18,
+        question: "When obstacles and setbacks occur in pursuing my goals, I always",
+        answer: "persist in seeking the goals despite what has happened.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "readjust the goals and/or expectations.",
+                pionts: "0",
+            },
+            {
+                option: "persist in seeking the goals despite what has happened.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 19,
+        question: "Generally, I ",
+        answer: "pursue goals beyond what is required or expected of me.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "pursue goals beyond what is required or expected of me.",
+                pionts: "1",
+            },
+            {
+                option: "pursue goals only as far as is required of me.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 20,
+        question: "When I Identify opportunities, I am always",
+        answer: "proactive in pursuing the opportunity.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "uncertain about whether to pursue the opportunity.",
+                pionts: "0",
+            },
+            {
+                option: "proactive in pursuing the opportunity.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 21,
+        question: "Group differences are always",
+        answer: "understood and valued.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "causing difficulties and unrest.",
+                pionts: "0",
+            },
+            {
+                option: "understood and valued.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 22,
+        question: "When I see bias and intolerance I always",
+        answer: "challenge the initiating people.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "challenge the initiating people.",
+                pionts: "1",
+            },
+            {
+                option: "turn a blind eye and ignore it.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 23,
+        question: "I always help out based on",
+        answer: "understanding others needs and feelings.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "the tasks others need help with.",
+                pionts: "0",
+            },
+            {
+                option: "understanding others needs and feelings.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 24,
+        question: "I always",
+        answer: "listen well and am attentive to emotional cues.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "listen to the important words being said.",
+                pionts: "0",
+            },
+            {
+                option: "listen well and am attentive to emotional cues.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 25,
+        question: "Others perspectives are always",
+        answer: "understood and sensitivity shown.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "understood and sensitivity shown.",
+                pionts: "1",
+            },
+            {
+                option: "clouding the issues and getting us off track.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 26,
+        question: "I always find social networks in the organisation",
+        answer: "help create better decision networks.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "get in the way of delivering performance.",
+                pionts: "0",
+            },
+            {
+                option: "help create better decision networks.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 27,
+        question: "I always use",
+        answer: " formal decision networks to get what I need.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "informal key power relationships to get what I need.",
+                pionts: "0",
+            },
+            {
+                option: " formal decision networks to get what I need.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },    
+    {
+        questionNo: 28,
+        question: "I always",
+        answer: "understand customers needs and match products/services.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "give customers what they ask for.",
+                pionts: "0",
+            },
+            {
+                option: "understand customers needs and match products/services.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 29,
+        question: "I always",
+        answer: "act as a trusted advisor to the customer. ",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "act as a trusted advisor to the customer. ",
+                pionts: "1",
+            },
+            {
+                option: "tell the customer what they want to hear.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 30,
+        question: "Increasing customers satisfaction and loyalty",
+        answer: "is always part of the way I work",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "is always part of the way I work ",
+                pionts: "1",
+            },
+            {
+                option: "is not important in achieving the sale.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    }, 
+    {
+        questionNo: 31,
+        question: "The vision and mission are always",
+        answer: "used to inspire groups and individuals.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: " given to staff so they know where we are going.",
+                pionts: "0",
+            },
+            {
+                option: "used to inspire groups and individuals.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 32,
+        question: "I always",
+        answer: "let people know of the behaviours expected.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "let people know of the behaviours expected. ",
+                pionts: "1",
+            },
+            {
+                option: "model the behaviour expected of others.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 33,
+        question: "I always give assignments to people who",
+        answer: "will grow and develop as a result of the challenge.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "can get the job done and do it well.",
+                pionts: "0",
+            },
+            {
+                option: "will grow and develop as a result of the challenge.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 34,
+        question: "Winning people over is something",
+        answer: "I am very good at.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "that I find difficult to do.",
+                pionts: "0",
+            },
+            {
+                option: "I am very good at.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 35,
+        question: "I always communicate in a way",
+        answer: "that seeks mutual understanding and full information sharing.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "that everyone understands what I am saying.",
+                pionts: "0",
+            },
+            {
+                option: "that seeks mutual understanding and full information sharing.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 36,
+        question: "I always",
+        answer: "recognize the need for changes and remove barriers.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "go along with the changes being driven by others.",
+                pionts: "0",
+            },
+            {
+                option: "recognize the need for changes and remove barriers.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 37,
+        question: "I always handle difficult people",
+        answer: "with diplomacy and tact.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "in a straightforward and direct manner.",
+                pionts: "0",
+            },
+            {
+                option: "with diplomacy and tact.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 38,
+        question: "I always seek out relationships that",
+        answer: "are mutually beneficial.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "are mutually beneficial.",
+                pionts: "1",
+            },
+            {
+                option: "will help me achieve my end goal.",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 39,
+        question: " I  generally  have a",
+        answer: " balanced focus on tasks and relationships.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: "stronger focus on tasks rather than relationships",
+                pionts: "0",
+            },
+            {
+                option: " balanced focus on tasks and relationships.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 40,
+        question: "When I work with teams, I always",
+        answer: "draw all members into enthusiastic participation.",
+        subcategoryId: 'emotionalIQ',
+        options: [
+            {
+                option: " make it clear what I expect members to do.",
+                pionts: "0",
+            },
+            {
+                option: "draw all members into enthusiastic participation.",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 1,
+        question: "If a > b and b > c, can we claim that a > c",
+        answer: "Yes",
+        subcategoryId: 'logicalIQ',
+        options: [
+            {
+                option: "Yes",
+                pionts: "1",
+            },
+            {
+                option: "No",
+                pionts: "0",
+            },
+            {
+                option: "Sometimes",
+                pionts: "0",
+            },
+            {
+                option: "Invalid question",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 2,
+        question: "If a > b and c > b, can we strictly claim that a > c",
+        answer: "No",
+        subcategoryId: 'logicalIQ',
+        options: [
+            {
+                option: "Yes",
+                pionts: "0",
+            },
+            {
+                option: "No",
                 pionts: "1",
             },
             {
                 option: "Sometimes",
-                pionts: "2",
+                pionts: "0",
             },
             {
-                option: "Often",
-                pionts: "3",
+                option: "Invalid question",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 3,
+        question: "If a implies b, and b implies c, can we claim that a also implies c",
+        answer: "Sometimes",
+        subcategoryId: 'logicalIQ',
+        options: [
+            {
+                option: "Yes",
+                pionts: "0",
             },
             {
-                option: "Very often",
-                pionts: "4",
+                option: "No",
+                pionts: "0",
+            },
+            {
+                option: "Sometimes",
+                pionts: "1",
+            },
+            {
+                option: "Invalid question",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 4,
+        question: "How many distinct triangles are formed after drawing two diagonals inside a square?",
+        answer: "8",
+        subcategoryId: 'logicalIQ',
+        options: [
+            {
+                option: "4",
+                pionts: "0",
+            },
+            {
+                option: "8",
+                pionts: "1",
+            },
+            {
+                option: "6",
+                pionts: "0",
+            },
+            {
+                option: "12",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 5,
+        question: "If all Andrews are American and all Americans like burgers, does all Andrews also like burgers?",
+        answer: "Yes",
+        subcategoryId: 'logicalIQ',
+        options: [
+            {
+                option: "Yes",
+                pionts: "1",
+            },
+            {
+                option: "No",
+                pionts: "0",
+            },
+            {
+                option: "Sometimes",
+                pionts: "0",
+            },
+            {
+                option: "Invalid question",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 6,
+        question: "Can there be a such thing as a set of all sets?",
+        answer: "No",
+        subcategoryId: 'logicalIQ',
+        options: [
+            {
+                option: "Yes",
+                pionts: "0",
+            },
+            {
+                option: "No",
+                pionts: "1",
+            },
+            {
+                option: "Sometimes",
+                pionts: "0",
+            },
+            {
+                option: "Invalid question",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 7,
+        question: "I am the daughter of your grandmother's grandchild. Who am I to you?",
+        answer: "Cousin's first child",
+        subcategoryId: 'logicalIQ',
+        options: [
+            {
+                option: "Cousin",
+                pionts: "0",
+            },
+            {
+                option: "Cousin's first child",
+                pionts: "1",
+            },
+            {
+                option: "No affiliation",
+                pionts: "0",
+            },
+            {
+                option: "Invalid logic",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 8,
+        question: "Can there be a set that has a size bigger than the amount of counting numbers?",
+        answer: "Yes",
+        subcategoryId: 'logicalIQ',
+        options: [
+            {
+                option: "Yes",
+                pionts: "1",
+            },
+            {
+                option: "No",
+                pionts: "0",
+            },
+            {
+                option: "Maybe",
+                pionts: "0",
+            },
+            {
+                option: "Invalid logic",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 9,
+        question: "If an even number is multiplied by another even number, what is the result?",
+        answer: "Even",
+        subcategoryId: 'logicalIQ',
+        options: [
+            {
+                option: "Even",
+                pionts: "1",
+            },
+            {
+                option: "Odd",
+                pionts: "0",
+            },
+            {
+                option: "Invalid question",
+                pionts: "0",
+            },
+            {
+                option: "None of the above",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 10,
+        question: "Is there a number when added with itself infinitely many times, it is still equal to itself?",
+        answer: "Yes",
+        subcategoryId: 'logicalIQ',
+        options: [
+            {
+                option: "Yes",
+                pionts: "1",
+            },
+            {
+                option: "No",
+                pionts: "0",
+            },
+            {
+                option: "Maybe",
+                pionts: "0",
+            },
+            {
+                option: "Invalid logic",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 1,
+        question: "2, 4",
+        answer: "2, 4",
+        subcategoryId: 'memoryIQ',
+        options: [
+            {
+                option: "2, 4",
+                pionts: "1",
+            },
+            {
+                option: "2, 7",
+                pionts: "0",
+            },
+            {
+                option: "4, 2",
+                pionts: "0",
+            },
+            {
+                option: "1, 4",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 2,
+        question: "2, 8, A",
+        answer: "2, 8, A",
+        subcategoryId: 'memoryIQ',
+        options: [
+            {
+                option: "2, 6, B",
+                pionts: "0",
+            },
+            {
+                option: "2, 8, A",
+                pionts: "1",
+            },
+            {
+                option: "1, 8, A",
+                pionts: "0",
+            },
+            {
+                option: "2, 9, A",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 3,
+        question: "6, B, 4, C",
+        answer: "6, B, 4, C",
+        subcategoryId: 'memoryIQ',
+        options: [
+            {
+                option: "6, C, 4, B",
+                pionts: "0",
+            },
+            {
+                option: "6, B, 4, 1",
+                pionts: "0",
+            },
+            {
+                option: "6, B, 4, A",
+                pionts: "0",
+            },
+            {
+                option: "6, B, 4, C",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 4,
+        question: "A, 7, C, 9, X, D",
+        answer: "A, 7, C, 9, X, D",
+        subcategoryId: 'memoryIQ',
+        options: [
+            {
+                option: "Yes",
+                pionts: "A, 8, C, 9, X, D",
+            },
+            {
+                option: "A, 7, C, 9, X, D",
+                pionts: "1",
+            },
+            {
+                option: "A, 7, C, 9, X, 3",
+                pionts: "0",
+            },
+            {
+                option: "A, 5, X, D, 3, R",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 5,
+        question: "1, 3, 4, C, R, A",
+        answer: "1, 3, 4, C, R, A",
+        subcategoryId: 'memoryIQ',
+        options: [
+            {
+                option: "1, 5, 4, C, R, A",
+                pionts: "0",
+            },
+            {
+                option: "1, 3, 4, C, R, B",
+                pionts: "0",
+            },
+            {
+                option: "1, 3, 4, C, R, A",
+                pionts: "1",
+            },
+            {
+                option: "1, 4, R, T, Y, 2",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 6,
+        question: "7, B, M, T, 5, 3, W, 2",
+        answer: "7, B, M, T, 5, 3, W, 2",
+        subcategoryId: 'memoryIQ',
+        options: [
+            {
+                option: "7, B, M, T, 5, 3, W, 1",
+                pionts: "1",
+            },
+            {
+                option: "7, B, M, 3, Q, 2, 3, D",
+                pionts: "0",
+            },
+            {
+                option: "7, B, M, T, 5, 3, W, 2",
+                pionts: "0",
+            },
+            {
+                option: "2, R, M, 3, B, 2, A, 4",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 7,
+        question: "9, W, A, C, 3, 6, 6, 7, 9, B",
+        answer: "9, W, A, C, 3, 6, 6, 7, 9, B",
+        subcategoryId: 'memoryIQ',
+        options: [
+            {
+                option: "9, W, A, C, 3, A, 4, 5, A, 6",
+                pionts: "0",
+            },
+            {
+                option: "9, W, A, C, 3, 6, 6, 7, 9, B",
+                pionts: "1",
+            },
+            {
+                option: "8, W, A, 4, B, 5, 3, 4, A, T",
+                pionts: "0",
+            },
+            {
+                option: "9, W, A, C, 3, 6, 6, 7, 8, B",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 8,
+        question: "6, R, T, Y, 5, 6, 7, Y, W, R, 4, 5",
+        answer: "6, R, T, Y, 5, 6, 7, Y, W, R, 4, 5",
+        subcategoryId: 'memoryIQ',
+        options: [
+            {
+                option: "6, R, T, Y, 5, 4, 7, Y, W, R, 4, 5",
+                pionts: "0",
+            },
+            {
+                option: "6, R, T, Y, 5, 6, 7, X, 4, T, 4, 5",
+                pionts: "0",
+            },
+            {
+                option: "6, R, T, Y, 5, 7 6, W, Y, R, 4, 5",
+                pionts: "0",
+            },
+            {
+                option: "6, R, T, Y, 5, 6, 7, Y, W, R, 4, 5",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 9,
+        question: "8, Y, 7, 5, R, E, 4, 5, 6, F, 5, 3, E, 3, T",
+        answer: "8, Y, 7, 5, R, E, 4, 5, 6, F, 5, 3, E, 3, T",
+        subcategoryId: 'memoryIQ',
+        options: [
+            {
+                option: "8, Y, 7, 5, R, E, 5, 4, 7, F, 5, 3, E, 3, T",
+                pionts: "0",
+            },
+            {
+                option: "8, Y, 7, 5, R, E, 4, 8, 7, F, 5, 3, E, 3, T",
+                pionts: "0",
+            },
+            {
+                option: "8, Y, 7, 5, R, E, 4, 8, 5, A, 5, 3, E, 3, T",
+                pionts: "0",
+            },
+            {
+                option: "8, Y, 7, 5, R, E, 4, 5, 6, F, 5, 3, E, 3, T",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 10,
+        question: "A, 5, 6, V, G, H, 5, 6, G, 7, 8, A, W, 4",
+        answer: "A, 5, 6, V, G, H, 5, 6, G, 7, 8, A, W, 4",
+        subcategoryId: 'memoryIQ',
+        options: [
+            {
+                option: "A, 5, 6, V, G, H, 5, 6, H, 7, 8, A, W, 4",
+                pionts: "0",
+            },
+            {
+                option: "A, 5, 6, V, G, H, 5, 6, W, 7, 8, A, W, 4",
+                pionts: "0",
+            },
+            {
+                option: "A, 5, 6, V, G, H, 5, 6, R, 7, 8, A, W, 4",
+                pionts: "0",
+            },
+            {
+                option: "A, 5, 6, V, G, H, 5, 6, G, 7, 8, A, W, 4",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 1,
+        question: "Find the 4, 9, 16, 25, 36, ?",
+        answer: "49",
+        subcategoryId: 'quantitativeIQ',
+        options: [
+            {
+                option: "64",
+                pionts: "0",
+            },
+            {
+                option: "49",
+                pionts: "1",
+            },
+            {
+                option: "46",
+                pionts: "0",
+            },
+            {
+                option: "50",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 2,
+        question: "Find the 1, 7, 13, 19, ?",
+        answer: "25",
+        subcategoryId: 'quantitativeIQ',
+        options: [
+            {
+                option: "25",
+                pionts: "1",
+            },
+            {
+                option: "28",
+                pionts: "0",
+            },
+            {
+                option: "35",
+                pionts: "0",
+            },
+            {
+                option: "40",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 3,
+        question: "Find the 0, 3, 8, 15, 24, ?",
+        answer: "35",
+        subcategoryId: 'quantitativeIQ',
+        options: [
+            {
+                option: "30",
+                pionts: "0",
+            },
+            {
+                option: "35",
+                pionts: "1",
+            },
+            {
+                option: "46",
+                pionts: "0",
+            },
+            {
+                option: "34",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 4,
+        question: "Find the 3, 9, 27, ?",
+        answer: "81",
+        subcategoryId: 'quantitativeIQ',
+        options: [
+            {
+                option: "67",
+                pionts: "0",
+            },
+            {
+                option: "37",
+                pionts: "0",
+            },
+            {
+                option: "43",
+                pionts: "0",
+            },
+            {
+                option: "81",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 5,
+        question: "Find the 1, 3, 6, 10, 15, ?",
+        answer: "21",
+        subcategoryId: 'quantitativeIQ',
+        options: [
+            {
+                option: "21",
+                pionts: "1",
+            },
+            {
+                option: "31",
+                pionts: "0",
+            },
+            {
+                option: "25",
+                pionts: "0",
+            },
+            {
+                option: "30",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 6,
+        question: "Find the ?, ?+?, ?+?+?, 28",
+        answer: "7",
+        subcategoryId: 'quantitativeIQ',
+        options: [
+            {
+                option: "4",
+                pionts: "0",
+            },
+            {
+                option: "9",
+                pionts: "0",
+            },
+            {
+                option: "7",
+                pionts: "1",
+            },
+            {
+                option: "10",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 7,
+        question: "Find the 1, 2, 2, 4, 8, 12, ?",
+        answer: "96",
+        subcategoryId: 'quantitativeIQ',
+        options: [
+            {
+                option: "20",
+                pionts: "0",
+            },
+            {
+                option: "96",
+                pionts: "1",
+            },
+            {
+                option: "100",
+                pionts: "0",
+            },
+            {
+                option: "35",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 8,
+        question: "Find the ! + ! = !  and ? = ! ?",
+        answer: "0",
+        subcategoryId: 'quantitativeIQ',
+        options: [
+            {
+                option: "1",
+                pionts: "0",
+            },
+            {
+                option: "0",
+                pionts: "1",
+            },
+            {
+                option: "4",
+                pionts: "0",
+            },
+            {
+                option: "-1",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 9,
+        question: "Find the ?  + 3? = ! and ! + ! = 24 ?",
+        answer: "3",
+        subcategoryId: 'quantitativeIQ',
+        options: [
+            {
+                option: "6",
+                pionts: "0",
+            },
+            {
+                option: "7",
+                pionts: "0",
+            },
+            {
+                option: "4",
+                pionts: "0",
+            },
+            {
+                option: "3",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 10,
+        question: "Find the 1, 10, 11, 110, ?",
+        answer: "121",
+        subcategoryId: 'quantitativeIQ',
+        options: [
+            {
+                option: "11100",
+                pionts: "0",
+            },
+            {
+                option: "121",
+                pionts: "1",
+            },
+            {
+                option: "12100",
+                pionts: "0",
+            },
+            {
+                option: "1100",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 1,
+        question: "/assests/images/generalIQ/1/q1.png",
+        answer: "/assests/images/generalIQ/1/answers/c1.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/1/answers/c1.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/1/answers/iqtest_05_02.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/1/answers/iqtest_05_04.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/1/answers/iqtest_05_05.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 2,
+        question: "/assests/images/generalIQ/2/q2.png",
+        answer: "/assests/images/generalIQ/2/answers/iqtest_09_05.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/2/answers/c2.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/2/answers/iqtest_09_03.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/2/answers/iqtest_09_05.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/2/answers/iqtest_09_06.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 3,
+        question: "/assests/images/generalIQ/3/q3.png",
+        answer: "/assests/images/generalIQ/3/answers/iqtest_10_02.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/3/answers/c3.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/3/answers/iqtest_10_02.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/3/answers/iqtest_10_05.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/3/answers/iqtest_10_06.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 4,
+        question: "/assests/images/generalIQ/4/q4.png",
+        answer: "/assests/images/generalIQ/4/answers/iqtest_04_06.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/4/answers/c4.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/4/answers/iqtest_04_01.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/4/answers/iqtest_04_04.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/4/answers/iqtest_04_06.png",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 5,
+        question: "/assests/images/generalIQ/5/q5.png",
+        answer: "/assests/images/generalIQ/5/answers/iqtest_02_03.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/5/answers/c5.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/5/answers/iqtest_02_03.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/5/answers/iqtest_02_04.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/5/answers/iqtest_02_06.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 6,
+        question: "/assests/images/generalIQ/6/q6.png",
+        answer: "/assests/images/generalIQ/6/answers/c6.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/6/answers/c6.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/6/answers/iqtest_15_01.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/6/answers/iqtest_15_03.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/6/answers/iqtest_15_05.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 7,
+        question: "/assests/images/generalIQ/7/q7.png",
+        answer: "/assests/images/generalIQ/7/answers/c7.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/7/answers/c7.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/7/answers/iqtest_17_04.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/7/answers/iqtest_17_05.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/7/answers/iqtest_17_06.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 8,
+        question: "/assests/images/generalIQ/8/q8.png",
+        answer: "/assests/images/generalIQ/8/answers/c8.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/8/answers/c8.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/8/answers/iqtest_20_03.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/8/answers/iqtest_20_04.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/8/answers/iqtest_20_05.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 9,
+        question: "/assests/images/generalIQ/9/q9.png",
+        answer: "/assests/images/generalIQ/9/answers/iqtest_12_06.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/9/answers/c9.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/9/answers/iqtest_12_04.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/9/answers/iqtest_12_05.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/9/answers/iqtest_12_06.png",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 10,
+        question: "/assests/images/generalIQ/10/q10.png",
+        answer: "/assests/images/generalIQ/10/answers/iqtest_18_06.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/10/answers/c10.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/10/answers/iqtest_18_03.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/10/answers/iqtest_18_05.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/10/answers/iqtest_18_06.png",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 11,
+        question: "/assests/images/generalIQ/11/q11.png",
+        answer: "/assests/images/generalIQ/11/answers/iqtest_23_05.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/11/answers/c11.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/11/answers/iqtest_23_04.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/11/answers/iqtest_23_05.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/11/answers/iqtest_23_06.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 12,
+        question: "/assests/images/generalIQ/12/q12.png",
+        answer: "/assests/images/generalIQ/12/answers/iqtest_27_02.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/12/answers/c12.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/12/answers/iqtest_27_01.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/12/answers/iqtest_27_02.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/12/answers/iqtest_27_03.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 13,
+        question: "/assests/images/generalIQ/13/q13.png",
+        answer: "/assests/images/generalIQ/13/answers/c13.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/13/answers/c13.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/13/answers/iqtest_22_03.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/13/answers/iqtest_22_05.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/13/answers/iqtest_22_06.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 14,
+        question: "/assests/images/generalIQ/14/q14.png",
+        answer: "/assests/images/generalIQ/14/answers/iqtest_28_01.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/14/answers/c14.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/14/answers/iqtest_28_01.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/14/answers/iqtest_28_05.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/14/answers/iqtest_28_06.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 15,
+        question: "/assests/images/generalIQ/15/q15.png",
+        answer: "/assests/images/generalIQ/15/answers/c15.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/15/answers/c15.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/15/answers/iqtest_26_02.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/15/answers/iqtest_26_05.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/15/answers/iqtest_26_06.png",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 16,
+        question: "/assests/images/generalIQ/16/q16.png",
+        answer: "/assests/images/generalIQ/16/answers/iqtest_31_02.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/16/answers/c16.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/16/answers/iqtest_31_01.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/16/answers/iqtest_31_02.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/16/answers/iqtest_31_06.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 17,
+        question: "/assests/images/generalIQ/17/q17.png",
+        answer: "/assests/images/generalIQ/17/answers/iqtest_32_03.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/17/answers/c17.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/17/answers/iqtest_32_01.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/17/answers/iqtest_32_02.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/17/answers/iqtest_32_03.png",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 18,
+        question: "/assests/images/generalIQ/18/q18.png",
+        answer: "/assests/images/generalIQ/18/answers/c18.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/18/answers/c18.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/18/answers/iqtest_35_01.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/18/answers/iqtest_35_02.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/18/answers/iqtest_35_03.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 19,
+        question: "/assests/images/generalIQ/19/q19.png",
+        answer: "/assests/images/generalIQ/19/answers/iqtest_36_01.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/19/answers/c19.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/19/answers/iqtest_36_01.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/19/answers/iqtest_36_02.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/19/answers/iqtest_36_03.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 20,
+        question: "/assests/images/generalIQ/20/q20.png",
+        answer: "/assests/images/generalIQ/20/answers/iqtest_39_04.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/20/answers/c20.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/20/answers/iqtest_39_01.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/20/answers/iqtest_39_04.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/20/answers/iqtest_39_05.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 21,
+        question: "/assests/images/generalIQ/21/q21.png",
+        answer: "/assests/images/generalIQ/21/answers/c21.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/21/answers/c21.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/21/answers/iqtest_40_01.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/21/answers/iqtest_40_03.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/21/answers/iqtest_40_07.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 22,
+        question: "/assests/images/generalIQ/22/q22.png",
+        answer: "/assests/images/generalIQ/22/answers/iqtest_42_01.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/22/answers/c22.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/22/answers/iqtest_42_01.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/22/answers/iqtest_42_02.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/22/answers/iqtest_42_03.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 23,
+        question: "/assests/images/generalIQ/23/q23.png",
+        answer: "/assests/images/generalIQ/23/answers/iqtest_45_02.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/23/answers/c23.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/23/answers/iqtest_45_01.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/23/answers/iqtest_45_02.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/23/answers/iqtest_45_03.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 24,
+        question: "/assests/images/generalIQ/24/q24.png",
+        answer: "/assests/images/generalIQ/24/answers/iqtest_43_03.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/24/answers/c24.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/24/answers/iqtest_43_01.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/24/answers/iqtest_43_02.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/24/answers/iqtest_43_03.png",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 25,
+        question: "/assests/images/generalIQ/25/q25.png",
+        answer: "/assests/images/generalIQ/25/answers/c25.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/25/answers/c25.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/25/answers/iqtest_49_02.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/25/answers/iqtest_49_03.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/25/answers/iqtest_49_04.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 26,
+        question: "/assests/images/generalIQ/26/q26.png",
+        answer: "/assests/images/generalIQ/26/answers/c26.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/26/answers/c26.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/26/answers/iqtest_50_02.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/26/answers/iqtest_50_05.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/26/answers/iqtest_50_06.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 27,
+        question: "/assests/images/generalIQ/27/q27.png",
+        answer: "/assests/images/generalIQ/27/answers/iqtest_51_01.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/27/answers/c27.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/27/answers/iqtest_51_01.png",
+                pionts: "1",
+            },
+            {
+                option: "/assests/images/generalIQ/27/answers/iqtest_51_02.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/27/answers/iqtest_51_03.png",
+                pionts: "0",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 28,
+        question: "/assests/images/generalIQ/28/q28.png",
+        answer: "/assests/images/generalIQ/28/answers/iqtest_52_04.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/28/answers/c28.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/28/answers/iqtest_52_01.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/28/answers/iqtest_52_02.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/28/answers/iqtest_52_04.png",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 29,
+        question: "/assests/images/generalIQ/29/q29.png",
+        answer: "/assests/images/generalIQ/29/answers/iqtest_56_06.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/29/answers/c29.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/29/answers/iqtest_56_02.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/29/answers/iqtest_56_05.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/29/answers/iqtest_56_06.png",
+                pionts: "1",
+            },
+        ],
+        categoryId: 2,
+        categoryTitle: "IQ Test",
+        type: "self assessment",
+    },
+    {
+        questionNo: 30,
+        question: "/assests/images/generalIQ/30/q30.png",
+        answer: "/assests/images/generalIQ/30/answers/c30.png",
+        subcategoryId: 'generalIQ',
+        options: [
+            {
+                option: "/assests/images/generalIQ/30/answers/c30.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/30/answers/iqtest_57_01.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/30/answers/iqtest_57_04.png",
+                pionts: "0",
+            },
+            {
+                option: "/assests/images/generalIQ/30/answers/iqtest_57_05.png",
+                pionts: "1",
             },
         ],
         categoryId: 2,
