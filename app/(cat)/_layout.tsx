@@ -11,8 +11,10 @@ export default function PagesLayout() {
       <Stack>
         <Stack.Screen name="result" options={{ headerShown: false }} />
         <Stack.Screen name="test" options={{ headerShown: false }} />
-        <Stack.Screen name="preliminary" options={{ headerShown: false }} />
+        <Stack.Screen name="paymentSuccess" options={{ headerShown: false }} />
         <Stack.Screen name="previousResult" options={{ headerShown: false }} />
+        <Stack.Screen name="subscription" options={{ headerShown: false }} />
+        <Stack.Screen name="testInstructions" options={{ headerShown: false }} />
       </Stack>
 
   );

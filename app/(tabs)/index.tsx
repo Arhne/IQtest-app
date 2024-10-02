@@ -1,7 +1,6 @@
 import {
   Image,
   Dimensions,
-  StyleSheet,
   Text,
   ScrollView,
   View,
@@ -10,7 +9,6 @@ import {
 } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import tw from "@/twrnc-config";
 import { router } from "expo-router";
@@ -24,7 +22,7 @@ const interactions = [
     interactionicon: <icons.TestIcon />,
     heading: "start test",
     subtitle: "Take a test",
-    interactionpage: "/previousResult",
+    interactionpage: "/all-tests",
   },
   {
     id: "result",
@@ -38,14 +36,14 @@ const interactions = [
     interactionicon: <icons.KnowledgeIcon />,
     heading: "Knowledge hub",
     subtitle: "Generator",
-    interactionpage: "/previousResult",
+    interactionpage: "/previousResults",
   },
   {
     id: "apps",
     interactionicon: <icons.AppIcon />,
     heading: "more apps",
     subtitle: "Other test apps",
-    interactionpage: "/previousResult",
+    interactionpage: "/previousResults",
   },
 ];
 export default function HomeScreen() {
@@ -105,9 +103,10 @@ export default function HomeScreen() {
             <CustomCard
               icon={<icons.StackIcon />}
               title="Subscription Plans"
-              titleStyle="text-[15px]"
+              titleStyle="text-[15px] capitalize"
               otherStyles="bg-gray-DEFAULT"
               textoricon="Go Pro"
+              handleClick={()=>router.push("/(cat)/subscription")}
               textStyle="bg-[#F4FBC9] text-[#76A400] p-1"
             />
 

@@ -44,9 +44,9 @@ const OnboardingPage = () => {
   };
 
   const progressValues = [
-    [100, 0, 0],    // Step 1: 100% in first bar
-    [100, 100, 0],  // Step 2: 100% in first and second bars
-    [100, 100, 100],// Step 3: 100% in all bars
+    [100, 0, 0],   
+    [100, 100, 0],  
+    [100, 100, 100],
   ];
 
   return (

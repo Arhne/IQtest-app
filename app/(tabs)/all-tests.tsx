@@ -14,7 +14,7 @@ import tw from "@/twrnc-config";
 import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
 import CustomCard from "@/components/CustomCard";
 import { icons, images } from "@/constants";
-import { categoryList } from "@/data/categories";
+import { Assessment, categoryList } from "@/data/categories";
 import { useState } from "react";
 import { router } from "expo-router";
 
@@ -49,7 +49,7 @@ const recents = [
 const subcategories = [
   {
     id: "generalIQ",
-    interactionicon: <icons.TestIcon />,
+    interactionicon: <icons.Alzheimer />,
     heading: "General IQ",
     subtitle: "25",
     progress: "50%",
@@ -57,7 +57,7 @@ const subcategories = [
   },
   {
     id: "emotionalIQ",
-    interactionicon: <icons.ResultIcon />,
+    interactionicon: <icons.Emotions />,
     heading: "Emotional IQ",
     subtitle: "25",
     progress: "50%",
@@ -65,7 +65,7 @@ const subcategories = [
   },
   {
     id: "logicalIQ",
-    interactionicon: <icons.KnowledgeIcon />,
+    interactionicon: <icons.Logical />,
     heading: "Logical IQ",
     subtitle: "25",
     progress: "50%",
@@ -73,23 +73,15 @@ const subcategories = [
   },
   {
     id: "memoryIQ",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Alzheimer />,
     heading: "Memory IQ",
     subtitle: "25",
     progress: "50%",
     categoryId: 2,
   },
-  // {
-  //   id: "qualitativeIQ",
-  //   interactionicon: <icons.AppIcon />,
-  //   heading: "Qualitative IQ",
-  //   subtitle: "25",
-  //   progress: "50%",
-  //   categoryId: 2,
-  // },
   {
     id: "quantitativeIQ",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Quantitative />,
     heading: "Quantitative IQ",
     subtitle: "25",
     progress: "50%",
@@ -97,7 +89,7 @@ const subcategories = [
   },
   {
     id: "depression",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Depression />,
     heading: "Depression",
     subtitle: "25",
     progress: "50%",
@@ -105,7 +97,7 @@ const subcategories = [
   },
   {
     id: "bipolar disorder",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Bipolar />,
     heading: "Bipolar Disorder",
     subtitle: "25",
     progress: "50%",
@@ -113,7 +105,7 @@ const subcategories = [
   },
   {
     id: "adhd",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.ADHD />,
     heading: "ADHD Test",
     subtitle: "25",
     progress: "50%",
@@ -121,7 +113,7 @@ const subcategories = [
   },
   {
     id: "schizophrenia",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Shizophrenia />,
     heading: "Schizophrenia",
     subtitle: "25",
     progress: "50%",
@@ -129,7 +121,7 @@ const subcategories = [
   },
   {
     id: "anxiety",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Anxiety />,
     heading: "Anxiety Test",
     subtitle: "25",
     progress: "50%",
@@ -137,7 +129,7 @@ const subcategories = [
   },
   {
     id: "ptsd",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Ptsd />,
     heading: "PTSD Test",
     subtitle: "25",
     progress: "50%",
@@ -145,7 +137,7 @@ const subcategories = [
   },
   {
     id: "internet disorder",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Internet />,
     heading: "Internal Disorder Test",
     subtitle: "25",
     progress: "50%",
@@ -153,7 +145,7 @@ const subcategories = [
   },
   {
     id: "enneagram",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Enneagram />,
     heading: "Enneagram",
     subtitle: "25",
     progress: "50%",
@@ -161,7 +153,7 @@ const subcategories = [
   },
   {
     id: "16personalities",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Personality />,
     heading: "16 Personalities",
     subtitle: "25",
     progress: "50%",
@@ -169,7 +161,7 @@ const subcategories = [
   },
   {
     id: "introvert and extrovert",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Introvert />,
     heading: "Introvert and Extrovert",
     subtitle: "25",
     progress: "50%",
@@ -177,7 +169,7 @@ const subcategories = [
   },
   {
     id: "persona bubble",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Persona />,
     heading: "Persona Bubble",
     subtitle: "25",
     progress: "50%",
@@ -185,7 +177,7 @@ const subcategories = [
   },
   {
     id: "emotions vs logic",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Emotions />,
     heading: "Emotions vs Logic",
     subtitle: "25",
     progress: "50%",
@@ -193,7 +185,7 @@ const subcategories = [
   },
   {
     id: "eq",
-    interactionicon: <icons.AppIcon />,
+    interactionicon: <icons.Emotions />,
     heading: "EQ Test",
     subtitle: "25",
     progress: "50%",
@@ -286,8 +278,9 @@ export default function AllTest() {
                     <View style={tw`mb-5`}>
                     <CustomCard
                       icon={item.interactionicon}
-                      title={item.id}
+                      title={item.heading}
                       otherStyles="bg-gray-DEFAULT"
+                      handleClick={()=>router.push("/(cat)/testInstructions")}
                       pricedesc={`${item.subtitle}/50 completed`}
                       textoricon={item.interactionicon}
                     />

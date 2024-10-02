@@ -68,8 +68,7 @@ const TestInstructions = () => {
   const [selectedCategory, setSelectedCategory] = useState<ISubCategory>(
     subcategories[3]
   );
-  const [selectedOption, setSelectedOption] = useState(false);
-  
+
   const handleCategorySelect = (category: ISubCategory) => {
     setSelectedCategory(category);
   };
@@ -79,7 +78,7 @@ const TestInstructions = () => {
       <SafeAreaView style={tw`flex-1`}>
         <LinearGradient
           style={tw`h-full px-3`}
-          colors={["#8D0CCA", "#D568EF"]}
+          colors={["#D568EF", "#FFF", "#FFF"]}
         >
           <View style={tw``}>
             <Pressable
@@ -90,43 +89,32 @@ const TestInstructions = () => {
             </Pressable>
 
             <View
-              style={tw`bg-primary w-full h-[86%] p-5 gap-6 top-28 rounded-xl relative`}
+              style={tw`bg-primary w-full h-[80%] p-5 gap-6 top-32 rounded-xl relative`}
             >
-              {selectedCategory.categoryId === 3 ? (
+              {selectedCategory.categoryId === 2 ? (
+                <View style={tw`absolute top-[-38]`}>
+                  <selectedCategory.interactionicon width={220} height={210} />
+                </View>
+              ) : (
                 <View style={tw`absolute flex-1 left-[25%] top-[-38]`}>
                   <selectedCategory.interactionicon width={220} height={210} />
                 </View>
-              ) : ""}
+              )}
 
-              <View style={tw`mt-10 flex-col h-full flex-1 justify-between`}>
-              <Text style={tw`text-2xl text-center`}>Progress Bar Line</Text>
-                <Text style={tw`font-semibold text-2xl text-center`}>General IQ</Text>
+              <View style={tw`mt-10 flex-col h-full justify-between`}>
+                <Text style={tw`font-semibold text-2xl`}>General IQ</Text>
                 <View style={tw`gap-4`}>
-                  <Text style={tw`text-base text-center`}>Question 1</Text>
-                  <Text style={tw`text-base text-center`}>Which number is the odd one out?</Text>
-                  <View style={tw`bg-[#FEF5CB80] rounded-xl p-5`}>
-                  <Text style={tw`text-2xl font-semibold text-center`}>263  56  43  786  245  222  98</Text>
-                  </View>
-                  <View>
-                    {[331, 263, 56, 786, 245, 222, 98].map((item, index)=>(
-                      <View key={index} style={tw`gap-3 flex-row justify-between items-center p-5 border-2 border-[#D0D5DD]`}>
-                        <View>
-                        <Text>{item}</Text>
-                        <MaterialIcons
-                      name={
-                        selectedOption
-                          ? "radio-button-checked"
-                          : "radio-button-unchecked"
-                      }
-                      size={24}
-                      color={selectedOption ? "#8D0CCA" : "#E3E1E9"}
-                    />
-                        </View>
-                      </View>
-                    ))}
-                  </View>
+                  <Text style={tw`text-base`}>Objective</Text>
+                  <Text style={tw`leading-5`}>
+                    Spatial reasoning tests is used to assess your capacity to
+                    manipulate 2D and 3D objects, spot patterns between shapes,
+                    and to visualise movements and change in those shapes. This
+                    could include identifying which answer option is a rotation
+                    of a given 2D image.
+                  </Text>
                 </View>
                 {}
+                <CustomWarning warning="There is no time limit in this test. Please complete the questions as accurately as you can. At the end, you will be able to view detailed results of your progress." />
                 <CustomButton
                   title="Begin test"
                   containerStyles="bg-secondary-DEFAULT w-full mt-1"

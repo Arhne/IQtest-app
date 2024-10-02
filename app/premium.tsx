@@ -1,5 +1,5 @@
 import { View, ScrollView } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import tw from "@/twrnc-config";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
@@ -11,8 +11,10 @@ import { CustomButton } from "@/components/CustomButton";
 import { Link, router } from "expo-router";
 import Animated, { SlideInRight, SlideOutLeft } from "react-native-reanimated";
 import { icons } from "@/constants";
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 const PremiumScreen = () => {
+  const [selectedPlan, setSelectedPlan] = useState(false)
   return (
     <SafeAreaView>
      <ScrollView  showsVerticalScrollIndicator={false}>
@@ -42,14 +44,14 @@ const PremiumScreen = () => {
             </View>
             <View style={tw`border-b w-full border-[#E3E1E9] gap-5`}>
               <CustomCard
-                icon={<icons.WarningIcon />}
+                icon={<MaterialIcons name={selectedPlan ? "radio-button-checked" : "radio-button-unchecked"} size={24} color={selectedPlan ? "#8D0CCA" : "black"} />}
                 title="9.99/month"
                 titleStyle="text-xl"
                 pricedesc="Get 7 days of free trial"
                 otherStyles="bg-accent-100"
               />
               <CustomCard
-                icon={<icons.WarningIcon />}
+              icon={<MaterialIcons name={selectedPlan ? "radio-button-checked" : "radio-button-unchecked"} size={24} color={selectedPlan ? "#8D0CCA" : "black"} />}
                 title="89.99/year"
                 titleStyle="text-xl"
                 pricedesc="Billed annually"

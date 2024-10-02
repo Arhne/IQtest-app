@@ -39,13 +39,6 @@ export const CustomButton = ({
     >
       <Text style={tw`leading-[16px] font-medium text-base ${textStyles}`}>
         {title}
-        {/* {isLoading ? (
-        <span className={styles.loader}>
-          <ImSpinner9 className={styles.loader} size={25} />
-        </span>
-      ) : (
-        text
-      )} */}
       </Text>
     </Pressable>
   );

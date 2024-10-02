@@ -33,7 +33,7 @@ const CustomCard = ({
         <View style={tw`flex-row items-center gap-5`}>
         <View>{icon}</View>
         <View style={tw`flex flex-col gap-3`}>
-          <Text style={tw`leading-[21.78px] font-intbold capitalize ${titleStyle}`}>
+          <Text style={tw`leading-[21.78px] font-intbold ${titleStyle}`}>
             {title}
           </Text>
           {pricedesc && (
