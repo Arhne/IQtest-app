@@ -22,8 +22,8 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import CountryFlag from "react-native-country-flag";
 import { Asset } from "expo-asset";
 import { useEffect } from "react";
-import i18n from '@/i18n/i18n'; 
-import { useTranslation } from 'react-i18next';
+import i18n from "@/i18n/i18n";
+import { useTranslation } from "react-i18next";
 
 interface Isettings {
   id: string;
@@ -140,70 +140,64 @@ export default function Settings() {
           onPress={() => router.back()}
           style={tw`pt-5 flex-row justify-start`}
         >
-          <icons.BackIcon />
+          <MaterialIcons name="arrow-back-ios" size={24} color="black" />
         </Pressable>
-
         <View style={tw`flex-1`}>
-
           <ThemedText style={tw`mb-5 text-4xl font-medium w-70`}>
             Settings
           </ThemedText>
 
-         
-            <ThemedText style={tw`font-medium mb-2 px-1`}>Language</ThemedText>
+          <ThemedText style={tw`font-medium mb-2 px-1`}>Language</ThemedText>
 
+          <Pressable
+            style={({ pressed }) => [
+              tw`w-full justify-between bg-primary border border-[#EAE8EE] mb-5 relative rounded-xl flex-row p-4`,
+              pressed && tw`opacity-70`,
+            ]}
+            onPress={toggleExpanded}
+            onLayout={(event) => {
+              const layout = event.nativeEvent.layout;
+              const topOffset = layout.y;
+              const heightOfComponent = layout.height;
+              const extraPadding = 110;
+              setTop(topOffset + heightOfComponent + extraPadding);
+            }}
+          >
+            <View style={tw`flex-row items-center`}>
+              {selected ? (
+                <>
+                  <CountryFlag
+                    isoCode={selected.countryCode}
+                    size={20}
+                    style={tw`mr-2`}
+                  />
+                  <Text>{selected.label}</Text>
+                </>
+              ) : (
+                <Text>Select Language</Text>
+              )}
+            </View>
+            <MaterialIcons
+              name={isExpanded ? "keyboard-arrow-down" : "keyboard-arrow-right"}
+              size={24}
+              color="black"
+            />
+          </Pressable>
+
+          {isExpanded && (
+            <Modal
+              transparent={true}
+              animationType="fade"
+              onRequestClose={toggleExpanded}
+            >
               <Pressable
-                style={({ pressed }) => [
-                  tw`w-full justify-between bg-primary border border-[#EAE8EE] mb-5 relative rounded-xl flex-row p-4`,
-                  pressed && tw`opacity-70`,
-                ]}
+                style={tw`absolute inset-0 bg-transparent`}
                 onPress={toggleExpanded}
-                onLayout={(event) => {
-                  const layout = event.nativeEvent.layout;
-                  const topOffset = layout.y;
-                  const heightOfComponent = layout.height;
-                  const extraPadding = 110;
-                  setTop(topOffset + heightOfComponent + extraPadding);
-                 }}
-                >
-                <View style={tw`flex-row items-center`}>
-                  {selected ? (
-                    <>
-                      <CountryFlag
-                        isoCode={selected.countryCode}
-                        size={20}
-                        style={tw`mr-2`}
-                      />
-                      <Text>{selected.label}</Text>
-                    </>
-                  ) : (
-                    <Text>Select Language</Text>
-                  )}
-                </View>
-                <MaterialIcons
-                  name={
-                    isExpanded ? "keyboard-arrow-down" : "keyboard-arrow-right"
-                  }
-                  size={24}
-                  color="black"
-                />
-              </Pressable>
-              
-
-              {isExpanded && (
-              <Modal
-                transparent={true}
-                animationType="fade"
-                onRequestClose={toggleExpanded}
-                >
-                  <Pressable
-                    style={tw`absolute inset-0 bg-transparent`}
-                    onPress={toggleExpanded}
-                    >
-                     <View
-                     style={[
-                     tw`absolute bg-primary rounded-[8px] w-[200px] p-5`,
-                      {
+              >
+                <View
+                  style={[
+                    tw`absolute bg-primary rounded-[8px] w-[200px] p-5`,
+                    {
                       top: top,
                       right: 30,
                       zIndex: 1000,
@@ -212,77 +206,71 @@ export default function Settings() {
                       shadowOpacity: 0.3,
                       shadowRadius: 10,
                       elevation: 6,
+                    },
+                  ]}
+                >
+                  <FlatList
+                    data={[
+                      {
+                        label: "Francais",
+                        value: "fr",
+                        countryCode: "FR",
                       },
-                     ]} >
-                      <FlatList
-                        data={[
-                          {
-                            label: "Francais",
-                            value: "fr",
-                            countryCode: "FR",
-                          },
-                          {
-                            label: "Espanyol",
-                            value: "es",
-                            countryCode: "ES",
-                          },
-                          {
-                            label: "German",
-                            value: "de",
-                            countryCode: "DE",
-                          },
-                          {
-                            label: "English US",
-                            value: "en",
-                            countryCode: "US",
-                          },
-                          {
-                            label: "Chinese",
-                            value: "cn",
-                            countryCode: "CN",
-                          },
-                          {
-                            label: "Russian",
-                            value: "ru",
-                            countryCode: "RU",
-                          },
-                          {
-                            label: "English UK",
-                            value: "gb",
-                            countryCode: "GB",
-                          },
+                      {
+                        label: "Espanyol",
+                        value: "es",
+                        countryCode: "ES",
+                      },
+                      {
+                        label: "German",
+                        value: "de",
+                        countryCode: "DE",
+                      },
+                      {
+                        label: "English US",
+                        value: "en",
+                        countryCode: "US",
+                      },
+                      {
+                        label: "Chinese",
+                        value: "cn",
+                        countryCode: "CN",
+                      },
+                      {
+                        label: "Russian",
+                        value: "ru",
+                        countryCode: "RU",
+                      },
+                      {
+                        label: "English UK",
+                        value: "gb",
+                        countryCode: "GB",
+                      },
+                    ]}
+                    keyExtractor={(item) => item.value}
+                    showsHorizontalScrollIndicator={false}
+                    ItemSeparatorComponent={() => <View style={tw`h-1`} />}
+                    renderItem={({ item }) => (
+                      <Pressable
+                        style={({ pressed }) => [
+                          tw`h-[40px] items-center flex-row gap-2`,
+                          pressed && tw`opacity-70`,
                         ]}
-                        keyExtractor={(item) => item.value}
-                        showsHorizontalScrollIndicator={false}
-                        ItemSeparatorComponent={() => <View style={tw`h-1`} />}
-                        renderItem={({ item }) => (
-                          <Pressable
-                            style={({ pressed }) => [
-                              tw`h-[40px] items-center flex-row gap-2`,
-                              pressed && tw`opacity-70`,
-                            ]}
-                            onPress={() => onSelect(item)}
-                          >
-                            <View
-                              style={tw`rounded-lg overflow-hidden h-[30px] w-[45px]`}
-                            >
-                              <CountryFlag
-                                isoCode={item.countryCode}
-                                size={30}
-                              />
-                            </View>
-                            <Text>{item.label}</Text>
-                          </Pressable>
-                        )}
-                      />
-
-
-                    </View>
-                  
-                  </Pressable>
-                </Modal>
-              )}
-          
+                        onPress={() => onSelect(item)}
+                      >
+                        <View
+                          style={tw`rounded-lg overflow-hidden h-[30px] w-[45px]`}
+                        >
+                          <CountryFlag isoCode={item.countryCode} size={30} />
+                        </View>
+                        <Text>{item.label}</Text>
+                      </Pressable>
+                    )}
+                  />
+                </View>
+              </Pressable>
+            </Modal>
+          )}
 
           <FlatList
             data={settings}
@@ -291,7 +279,6 @@ export default function Settings() {
             renderItem={({ item }) => (
               <View style={tw`mb-3`}>
                 <CustomCard
-              
                   icon={
                     item.id === "sound" && soundSwitch ? (
                       <icons.SpeakerHigh />
@@ -307,10 +294,12 @@ export default function Settings() {
                   }
                   title={item.setting}
                   otherStyles="bg-gray-DEFAULT"
-                  opacityStyle={item.id === "sound" 
-                    ? "opacity-100"
-                    : item.id === "notification"
-                    ? "opacity-100" : ""
+                  opacityStyle={
+                    item.id === "sound"
+                      ? "opacity-100"
+                      : item.id === "notification"
+                      ? "opacity-100"
+                      : ""
                   }
                   handleClick={() => handleClickChange(item)}
                   textoricon={
@@ -333,9 +322,6 @@ export default function Settings() {
               </View>
             )}
           />
-
-
-
         </View>
       </SafeAreaView>
     </ThemedView>

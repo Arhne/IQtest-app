@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { ThemedText } from "@/components/ThemedText";
 import tw from "@/twrnc-config";
 import { useState } from "react";
@@ -64,7 +64,7 @@ export default function PreviousResult() {
             onPress={() => router.back()}
             style={tw`justify-start mr-30`}
           >
-            <icons.BackIcon />
+            <MaterialIcons name="arrow-back-ios" size={24} color="black" />
           </Pressable>
           <Text style={tw`text-xl font-semibold`}>Previous Result</Text>
         </View>

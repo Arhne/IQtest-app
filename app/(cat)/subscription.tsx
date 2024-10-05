@@ -1,7 +1,6 @@
 import { Pressable, Image, Text, ScrollView, View } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import tw from "@/twrnc-config";
 import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
@@ -15,23 +14,23 @@ import { UnorderedList } from "@/components/CustomWarning";
 
 const paymentPlan = [
   {
-    price: "$2.33/week",
+    price: "$7.99/week",
     plan: "WEEKLY",
-    duration: "2 days free trial",
-    description: "then $2.33 per week. Cancel anytime.",
+    duration: "3 days free trial",
+    description: "then $7.99 per week. Cancel anytime.",
   },
-  {
-    price: "$10.33/month",
-    plan: "MONTHLY",
-    duration: "7 days free trial",
-    description: "then $10.33 per month. Cancel anytime.",
-  },
-  {
-    price: "$120.33/month",
-    plan: "ANNUALLY",
-    duration: "14 days free trial",
-    description: "then $120.33 per year. Cancel anytime.",
-  },
+  // {
+  //   price: "$10.33/month",
+  //   plan: "MONTHLY",
+  //   duration: "7 days free trial",
+  //   description: "then $10.33 per month. Cancel anytime.",
+  // },
+  // {
+  //   price: "$120.33/month",
+  //   plan: "ANNUALLY",
+  //   duration: "14 days free trial",
+  //   description: "then $120.33 per year. Cancel anytime.",
+  // },
 ];
 
 export default function SingleResult() {
@@ -57,9 +56,9 @@ export default function SingleResult() {
       <SafeAreaView style={tw`w-full gap-5 flex-1`}>
         <View style={tw`flex-1 px-5`}>
           <View style={tw`flex-row mb-5`}>
-            <Pressable onPress={() => router.back()} style={tw`justify-start`}>
-              <icons.BackIcon />
-            </Pressable>
+            <Pressable onPress={() => router.push("/(tabs)/")} style={tw`justify-start`}>
+            <MaterialIcons name="arrow-back-ios" size={24} color="black" />
+          </Pressable>
           </View>
 
           <ScrollView showsVerticalScrollIndicator={false}>
@@ -83,7 +82,7 @@ export default function SingleResult() {
 
               <View style={tw`p-6 gap-5`}>
                 <Text style={tw`text-center text-base`}>
-                  Starting at $2.99/week
+                  Starting at $7.99/week
                 </Text>
                 <CustomButton
                   title="Next"
@@ -107,7 +106,7 @@ export default function SingleResult() {
           >
             <View
               style={[
-                tw`bg-primary w-full h-[85%] p-5 flex-col gap-5 z-20 top-1/4`,
+                tw`bg-primary w-full h-[75%] p-5 flex-col gap-5 z-20 top-2/4`,
                 { borderTopLeftRadius: 20, borderTopRightRadius: 20 },
               ]}
             >
@@ -120,9 +119,10 @@ export default function SingleResult() {
               {/* <ScrollView>
                 <View style={tw`gap-5`}> */}
               {paymentPlan.map((item) => (
-                <View
+                <Pressable
                   key={item.plan}
-                  style={tw`p-5 border-secondary-DEFAULT rounded-xl border-2`}
+                  style={tw`p-5 ${selectedSubscription ? "border-secondary-DEFAULT" : "border-[#E3E1E9]"} rounded-xl border-2`}
+                  onPress={()=> setSelectedSubscription((prev)=>!prev)}
                 >
                   <View style={tw`flex-row items-center justify-between`}>
                     <Text style={tw`font-medium text-[#848288] mb-2`}>
@@ -149,7 +149,7 @@ export default function SingleResult() {
                     </View>
                     <Text>{item.description}</Text>
                   </View>
-                </View>
+                </Pressable>
               ))}
               {/* </View>
               </ScrollView> */}
@@ -176,7 +176,7 @@ export default function SingleResult() {
               <View style={tw`flex-row items-center justify-between`}>
                 <View style={tw`flex-row items-center justify-between`}>
                   <Ionicons name="logo-google" size={24} color="black" />
-                  <Text style={tw`font-normal text-lg ml-3`}>Pay</Text>
+                  <Text style={tw`font-normal text-lg ml-3`}>Play</Text>
                 </View>
                 <Pressable
                   onPress={() =>
@@ -199,7 +199,7 @@ export default function SingleResult() {
 
               <View style={tw`flex-row items-center justify-between`}>
                 <Text style={tw`font-semibold text-base`}>Starting today</Text>
-                <Text style={tw`font-semibold text-base`}>$2.33/week</Text>
+                <Text style={tw`font-semibold text-base`}>$7.99/week</Text>
               </View>
 
               <View style={tw`my-4`}>
@@ -214,7 +214,7 @@ export default function SingleResult() {
 
               <View style={tw`mb-8`}>
                 <Text style={tw`mb-3 font-semibold`}>
-                  You’ll be charged $2.33 automatically every week until you
+                  You’ll be charged $7.99 automatically every week until you
                   cancel.{" "}
                   <Text style={tw`font-normal underline`}>
                     Learn how to cancel
@@ -233,7 +233,7 @@ export default function SingleResult() {
               </ScrollView> */}
               <CustomButton
                 title="Subscribe"
-                handlePress={() => router.push("/paymentSuccess")}
+                handlePress={() => router.replace("/paymentSuccess")}
                 containerStyles="bg-[#3C8665] w-full mt-1"
                 textStyles="text-primary"
               />

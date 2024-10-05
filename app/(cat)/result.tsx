@@ -1,7 +1,7 @@
 import { Pressable, Image, Text, ScrollView, View } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { ThemedText } from "@/components/ThemedText";
 import tw from "@/twrnc-config";
 import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
@@ -63,7 +63,7 @@ export default function SingleResult() {
       <SafeAreaView style={tw`w-full gap-5 flex-1`}>
         <View style={tw`flex-row mb-5`}>
           <Pressable onPress={() => router.back()} style={tw`justify-start`}>
-            <icons.BackIcon />
+            <MaterialIcons name="arrow-back-ios" size={24} color="black" />
           </Pressable>
         </View>
 

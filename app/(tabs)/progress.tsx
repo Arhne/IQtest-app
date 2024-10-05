@@ -8,11 +8,9 @@ import {
 } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import tw from "@/twrnc-config";
-import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
-import CustomCard from "@/components/CustomCard";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { icons, images } from "@/constants";
 import CustomWarning from "@/components/CustomWarning";
 import { router } from "expo-router";
@@ -63,8 +61,9 @@ export default function ProgressScreen() {
             onPress={() => router.back()}
             style={tw`justify-start mr-30`}
           >
-            <icons.BackIcon />
+            <MaterialIcons name="arrow-back-ios" size={24} color="black" />
           </Pressable>
+
           <Text style={tw`text-xl font-semibold`}>Test Progress</Text>
         </View>
 
@@ -79,7 +78,7 @@ export default function ProgressScreen() {
               Test Progress
             </ThemedText>
             <ScrollView showsHorizontalScrollIndicator={false}>
-            <View style={tw`gap-3 flex-row flex-wrap`}>
+              <View style={tw`gap-3 flex-row flex-wrap`}>
                 {interactions.map((interaction) => {
                   return (
                     <View
@@ -96,9 +95,11 @@ export default function ProgressScreen() {
                       <Text style={tw`mb-2 text-base capitalize font-semibold`}>
                         {interaction.heading}
                       </Text>
-                      <View style={tw`flex-row items-center justify-between mt-3`}>
-                      <Text style={tw`text-[#727272]`}>Completed</Text>
-                      <Text
+                      <View
+                        style={tw`flex-row items-center justify-between mt-3`}
+                      >
+                        <Text style={tw`text-[#727272]`}>Completed</Text>
+                        <Text
                           style={tw`leading-[16.94px] text-secondary-DEFAULT`}
                         >
                           {interaction.subtitle} progress goes here
@@ -111,7 +112,7 @@ export default function ProgressScreen() {
                   );
                 })}
               </View>
-              </ScrollView>
+            </ScrollView>
           </View>
         </View>
       </SafeAreaView>

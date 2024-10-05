@@ -36,7 +36,7 @@ const OnboardingPage = () => {
   const skipToPayment = () => {
     try {
       if (currentIndex < onboarding.length) {
-        router.push('/premium');
+        router.replace('/premium');
       }
     } catch (e) {
       console.log(e);

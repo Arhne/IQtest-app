@@ -13,7 +13,7 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 
 
-const PaymentSuccesful = () => {
+export default function PaymentSuccesful(){
 
 
 
@@ -21,11 +21,11 @@ const PaymentSuccesful = () => {
     <ThemedView style={tw`flex-1`}>
       <SafeAreaView style={tw`w-full flex-1`}>
         <View style={tw`flex-1 px-5`}>
-          <View style={tw`flex-row mb-5`}>
+          {/* <View style={tw`flex-row mb-5`}>
             <Pressable onPress={() => router.back()} style={tw`justify-start`}>
               <icons.BackIcon />
             </Pressable>
-          </View>
+          </View> */}
 
           {/* <ScrollView showsVerticalScrollIndicator={false}> */}
             <View style={tw`gap-7 flex-1 justify-center`}>
@@ -65,5 +65,9 @@ const PaymentSuccesful = () => {
         </View>
         </SafeAreaView>
         </ThemedView>
-  )}
-  export default PaymentSuccesful
+  )
+}
+
+  export const unstable_settings = {
+    gestureEnabled: false,
+  };

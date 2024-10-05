@@ -10,7 +10,6 @@ import {
 import React from "react";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ThemedText } from "@/components/ThemedText";
 import tw from "@/twrnc-config";
 import { router } from "expo-router";
 import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
