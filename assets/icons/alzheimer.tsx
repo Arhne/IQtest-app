@@ -2,7 +2,7 @@ import * as React from "react"
 import Svg, { SvgProps, Path } from "react-native-svg"
 import tw from "@/twrnc-config"
 
-const Alzheimer = ({width = 43, height= 41, ...props}) => (
+const Alzheimer = ({width = 43, height= 41, ...props} : SvgProps) => (
   <Svg
     
     width={width}
