@@ -11,6 +11,9 @@ import { router } from "expo-router";
 import { useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { UnorderedList } from "@/components/CustomWarning";
+import { Assessment } from "@/data/categories";
+import { Categories } from "@/data/enum";
+import { sortDataByCategory } from "@/utils/helper-functions";
 
 const paymentPlan = [
   {
@@ -42,6 +45,10 @@ export default function SingleResult() {
     setShowSubscriptionBills((prev) => !prev);
   };
 
+  const Data = sortDataByCategory(Assessment, Categories.MENTAL_TEST);4
+
+console.log(Data);
+
   const handlePayment = () => {
     setShowPaymentMethod((prev) => !prev);
   };
@@ -57,7 +64,7 @@ export default function SingleResult() {
         <View style={tw`flex-1 px-5`}>
           <View style={tw`flex-row mb-5`}>
             <Pressable onPress={() => router.push("/(tabs)/")} style={tw`justify-start`}>
-            <MaterialIcons name="arrow-back-ios" size={24} color="black" />
+            <MaterialIcons name="arrow-back-ios" size={24} color="white" />
           </Pressable>
           </View>
 
