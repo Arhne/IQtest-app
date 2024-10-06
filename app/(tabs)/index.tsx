@@ -15,6 +15,7 @@ import { router } from "expo-router";
 import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
 import CustomCard from "@/components/CustomCard";
 import { icons, images } from "@/constants";
+import CircularProgress from "@/components/CircularProgress";
 
 const interactions = [
   {
@@ -78,10 +79,10 @@ export default function HomeScreen() {
                       style={tw`w-[134px] h-[133px]`}
                       resizeMode="contain"
                     />
-                    <Image
-                      source={images.rating}
-                      style={tw`w-[72px] h-[72px]`}
-                      resizeMode="contain"
+                    
+                    <CircularProgress 
+                    percentage ={50}
+                    text="Progress"
                     />
                   </View>
                 </ImageBackground>
