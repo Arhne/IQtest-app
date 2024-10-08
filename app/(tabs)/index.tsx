@@ -16,6 +16,9 @@ import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
 import CustomCard from "@/components/CustomCard";
 import { icons, images } from "@/constants";
 import CircularProgress from "@/components/CircularProgress";
+import { useEffect, useState } from "react";
+import { calcPercentage, loadProgress } from "@/utils/helper-functions";
+import { SubCategories } from "@/data/enum";
 
 const interactions = [
   {
@@ -47,17 +50,45 @@ const interactions = [
     interactionpage: "/previousResults",
   },
 ];
+
+interface IDetails {
+  latestTest: string;
+  dateAnswered: string;
+  progressPercent: number;
+}
 export default function HomeScreen() {
   const col = 2;
   const screenPadding = 20;
   const gap = 12;
   const screenWidth = Dimensions.get("screen").width - screenPadding * 2;
   const itemWidth = (screenWidth - (col - 1) * gap) / col;
+  const [latestSubDetails, setLatestSubDetails] = useState<IDetails | null>();
+
+  const fetchDetails = async () => {
+    const { progress, recent, lastQuestion } = await loadProgress();
+    if (progress && recent && lastQuestion) {
+      setLatestSubDetails({
+        latestTest: lastQuestion,
+        dateAnswered: recent[lastQuestion as SubCategories].dateAnswered,
+        progressPercent: calcPercentage(
+          progress[lastQuestion as SubCategories].answered,
+          progress[lastQuestion as SubCategories].total
+        ),
+      });
+    }
+  };
+
+  useEffect(() => {
+    fetchDetails();
+  }, []);
+
+  const handleRecentQuestions = () => {
+    router.push("/test");
+  };
 
   return (
-    
-      <ThemedView style={tw`w-full px-5 pt-3 justify-center`}>
-        <ScrollView showsVerticalScrollIndicator={false}>
+    <ThemedView style={tw`w-full px-5 pt-3 justify-center`}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <SafeAreaView style={tw`h-full flex-1`}>
           <View style={tw`gap-5 flex-1`}>
             <ThemedText style={tw`text-4xl font-light w-70`}>
@@ -71,18 +102,17 @@ export default function HomeScreen() {
                 <ImageBackground
                   source={images.background}
                   style={tw`flex-1 w-full h-full justify-center`}
-                  resizeMode="stretch"
-                >
+                  resizeMode="stretch">
                   <View style={tw`flex-row px-5 items-center justify-between`}>
                     <Image
                       source={images.brain}
                       style={tw`w-[134px] h-[133px]`}
                       resizeMode="contain"
                     />
-                    
-                    <CircularProgress 
-                    percentage ={50}
-                    text="Progress"
+
+                    <CircularProgress
+                      percentage={latestSubDetails?.progressPercent ?? 0}
+                      text="Progress"
                     />
                   </View>
                 </ImageBackground>
@@ -92,13 +122,21 @@ export default function HomeScreen() {
                 style={[
                   tw`bg-gray-DEFAULT flex-row items-center py-2 px-4 justify-between`,
                   { borderBottomLeftRadius: 12, borderBottomRightRadius: 12 },
-                ]}
-              >
+                ]}>
                 <View style={tw`flex-col gap-3`}>
-                  <Text style={tw`font-medium`}>IQ Test</Text>
-                  <Text>Tried on 15/06/2023</Text>
+                  <Text style={tw`font-medium`}>
+                    {latestSubDetails?.latestTest ?? "No Questions Answered"}
+                  </Text>
+                  {latestSubDetails && (
+                    <Text>Tried on {latestSubDetails.dateAnswered}</Text>
+                  )}
                 </View>
-                <CustomGradientButton title="Start" paddingStyle="px-7" textStyle="text-primary"/>
+                <CustomGradientButton
+                  title="Start"
+                  paddingStyle="px-7"
+                  textStyle="text-primary"
+                  handlePress={handleRecentQuestions}
+                />
               </View>
             </View>
             <CustomCard
@@ -107,7 +145,7 @@ export default function HomeScreen() {
               titleStyle="text-[15px] capitalize"
               otherStyles="bg-gray-DEFAULT"
               textoricon="Go Pro"
-              handleClick={()=>router.push("/(cat)/subscription")}
+              handleClick={() => router.push("/(cat)/subscription")}
               textStyle="bg-[#F4FBC9] text-[#76A400] p-1"
             />
 
@@ -119,11 +157,13 @@ export default function HomeScreen() {
                     <Pressable
                       key={interaction.id}
                       style={({ pressed }) => [
-                        tw`p-3 bg-gray-DEFAULT rounded-xl`, pressed && tw`opacity-30`,
+                        tw`p-3 bg-gray-DEFAULT rounded-xl`,
+                        pressed && tw`opacity-30`,
                         { width: itemWidth },
                       ]}
-                      onPress={() => router.push(interaction.interactionpage as any)}
-                    >
+                      onPress={() =>
+                        router.push(interaction.interactionpage as any)
+                      }>
                       <View style={tw`mb-10`}>
                         {interaction.interactionicon}
                       </View>
@@ -139,9 +179,7 @@ export default function HomeScreen() {
             </View>
           </View>
         </SafeAreaView>
-        </ScrollView>
-      </ThemedView>
- 
+      </ScrollView>
+    </ThemedView>
   );
 }
-

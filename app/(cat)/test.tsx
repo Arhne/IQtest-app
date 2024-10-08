@@ -1,151 +1,142 @@
-import {
-  Image,
-  Dimensions,
-  Text,
-  ScrollView,
-  View,
-  ImageBackground,
-  Pressable,
-} from "react-native";
-import React from "react";
+import { useState, useMemo, useEffect } from "react";
+import { Text, ScrollView, View, Pressable } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
 import tw from "@/twrnc-config";
-import { router } from "expo-router";
-import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
-import CustomCard from "@/components/CustomCard";
-import { icons, images } from "@/constants";
+import { router, useLocalSearchParams } from "expo-router";
+import { CustomButton } from "@/components/CustomButton";
 import { LinearGradient } from "expo-linear-gradient";
-import { useState } from "react";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import CustomWarning from "@/components/CustomWarning";
+import { SubCategories } from "@/data/enum";
+import { Assessment } from "@/data/categories";
+import { loadProgress } from "@/utils/helper-functions";
+import { SubCategoryConfig } from "@/data/data-config";
 
-type ISubCategory = {
-  id: string;
-  interactionicon: any;
-  heading: string;
-  subtitle: string;
-  progress: string;
-  categoryId: number;
-};
-const subcategories = [
-  {
-    id: "generalIQ",
-    interactionicon: icons.Alzheimer,
-    heading: "General IQ",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 2,
-  },
-  {
-    id: "emotionalIQ",
-    interactionicon: icons.Emotions,
-    heading: "Emotional IQ",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 2,
-  },
-  {
-    id: "logicalIQ",
-    interactionicon: icons.Logical,
-    heading: "Logical IQ",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 2,
-  },
-  {
-    id: "memoryIQ",
-    interactionicon: icons.Alzheimer,
-    heading: "Memory IQ",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 2,
-  },
-];
-
+// Example code
 const TestInstructions = () => {
-  const [selectedCategory, setSelectedCategory] = useState<ISubCategory>(
-    subcategories[3]
-  );
-  const [selectedOption, setSelectedOption] = useState(false);
-
-  const handleCategorySelect = (category: ISubCategory) => {
-    setSelectedCategory(category);
+  const [progressData, setProgressData] =
+    useState<Record<SubCategories, SubCategoryProgress>>();
+  const [recentData, setRecentData] =
+    useState<Record<SubCategories, AnsweredDetails>>();
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Track current question index
+  const [answer, setAnswer] = useState("")
+  const fetchData = async () => {
+    const { progress, recent } = await loadProgress();
+    if (progress && recent) {
+      setProgressData(progress);
+      setRecentData(recent);
+    }
   };
+
+  const params = useLocalSearchParams();
+  const subCategory = params.subCategory as SubCategories;
+
+  const questionsData = useMemo(() => {
+    const attemptedQuestions =
+      recentData?.[subCategory]?.questionsAnswered.map(
+        (ques) => ques.questionNo
+      ) ?? [];
+
+    return Assessment.reduce((acc, item) => {
+      if (
+        item.subcategoryId === subCategory &&
+        !attemptedQuestions.includes(item.questionNo)
+      ) {
+        acc.push(item);
+      }
+      return acc;
+    }, [] as typeof Assessment);
+  }, [subCategory, recentData, Assessment]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const handleNextQuestion = () => {
+    if (currentQuestionIndex < questionsData.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1); // Move to the next question
+    } else {
+      // Optionally, navigate to a results or summary page when all questions are done
+      // router.push("/(cat)/results");
+    }
+  };
+
+  const Icon = SubCategoryConfig[subCategory as SubCategories].interactionicon!;
+
+  // Render the current question
+  const currentQuestion = questionsData[currentQuestionIndex];
 
   return (
     <ThemedView style={tw`flex-1 w-full h-full`}>
-      <SafeAreaView style={tw`flex-1`}>
+      <SafeAreaView style={tw`flex-1 `}>
         <LinearGradient style={tw`h-full px-3`} colors={["#8D0CCA", "#D568EF"]}>
           <View style={tw``}>
             <Pressable
               onPress={() => router.back()}
-              style={tw`justify-start flex-col p-2`}
-            >
+              style={tw`justify-start flex-col p-2`}>
               <MaterialIcons name="arrow-back-ios" size={24} color="#fff" />
             </Pressable>
 
-            <View
-              style={tw`bg-primary w-full h-[86%] p-5 gap-6 top-28 rounded-xl relative`}
-            >
-              {selectedCategory.categoryId === 3 ? (
-                <View style={tw`absolute flex-1 left-[25%] top-[-38]`}>
-                  <selectedCategory.interactionicon width={220} height={210} />
-                </View>
-              ) : (
-                ""
-              )}
-
+            <ScrollView
+              style={tw`bg-primary w-full h-[100%] overflow-scroll p-5 gap-6 top-28 rounded-xl relative`}>
               <View style={tw`mt-10 flex-col h-full flex-1 justify-between`}>
                 <Text style={tw`text-2xl text-center`}>Progress Bar Line</Text>
                 <Text style={tw`font-semibold text-2xl text-center`}>
                   General IQ
                 </Text>
                 <View style={tw`gap-4`}>
-                  <Text style={tw`text-base text-center`}>Question 1</Text>
+                  {/* Display current question */}
                   <Text style={tw`text-base text-center`}>
-                    Which number is the odd one out?
+                    Question {currentQuestionIndex + 1}
+                  </Text>
+                  <Text style={tw`text-base text-center`}>
+                    {currentQuestion?.question}
                   </Text>
                   <View style={tw`bg-[#FEF5CB80] rounded-xl p-10`}>
                     <Text style={tw`text-2xl font-semibold text-center`}>
-                      263 56 43 786 245 222 98
+                      {/* {currentQuestion?.options.join(" ")} Show options */}
+                    {currentQuestion?.question}
+
                     </Text>
                   </View>
 
                   <ScrollView>
                     <View>
-                      {[331, 263, 56, 786, 245].map((item, index) => (
-                        <View
-                          key={index}
-                          style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]`}
+                      {currentQuestion?.options.map((option, index) => (
+                        <Pressable
+                        key={index}
+                        onPress={() => setAnswer(option.option)}
                         >
+
+                        <View                        
                           
-                            <Text>{item}</Text>
-                            <MaterialIcons
-                              name={
-                                selectedOption
-                                  ? "radio-button-checked"
-                                  : "radio-button-unchecked"
-                              }
-                              size={24}
-                              color={selectedOption ? "#8D0CCA" : "#E3E1E9"}
-                            />
-                          
+                          style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]`}>
+                          <Text>{option.option}</Text>
+                          <MaterialIcons
+                            name="radio-button-unchecked"
+                            size={24}
+                            color={answer === option.option ? "red" :"#E3E1E9"}
+                          />
                         </View>
+                        </Pressable>
+
                       ))}
                     </View>
                   </ScrollView>
                 </View>
+                {/* Show "Next" button */}
                 <CustomButton
                   title="Next"
                   containerStyles="bg-secondary-DEFAULT w-full mt-1"
                   textStyles="text-primary"
-                  handlePress={() => router.push("/(cat)/test")}
+                  handlePress={handleNextQuestion}
+                  // disabled={currentQuestionIndex >= questionsData.length - 1} // Disable on the last question
                 />
               </View>
-
-            </View>
-            <Text style={tw`text-secondary-DEFAULT`}>1 of 30</Text>
+            </ScrollView>
+            <Text style={tw`text-secondary-DEFAULT`}>
+              {currentQuestionIndex + 1} of {questionsData.length}
+            </Text>
           </View>
         </LinearGradient>
       </SafeAreaView>

@@ -14,53 +14,78 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { icons, images } from "@/constants";
 import CustomWarning from "@/components/CustomWarning";
 import { router } from "expo-router";
+import { SubCategories } from "@/data/enum";
+import {
+  calcPercentage,
+  getTotalQuestionsForSubCategory,
+  loadProgress,
+} from "@/utils/helper-functions";
+import { useState, useMemo, useEffect } from "react";
+import { SubCategoryConfig } from "@/data/data-config";
 // import  { BackIcon }  from '@/constants';
 
-const interactions = [
-  {
-    id: "test",
-    interactionicon: <icons.TestIcon />,
-    heading: "start test",
-    subtitle: "Take a test",
-    progress: "50%",
-  },
-  {
-    id: "result",
-    interactionicon: <icons.ResultIcon />,
-    heading: "Result",
-    subtitle: "Go into details",
-    progress: "50%",
-  },
-  {
-    id: "knowledge",
-    interactionicon: <icons.KnowledgeIcon />,
-    heading: "Knowledge hub",
-    subtitle: "Generator",
-    progress: "50%",
-  },
-  {
-    id: "apps",
-    interactionicon: <icons.AppIcon />,
-    heading: "more apps",
-    subtitle: "Other test apps",
-    progress: "50%",
-  },
-];
 export default function ProgressScreen() {
   const col = 2;
   const screenPadding = 20;
   const gap = 12;
   const screenWidth = Dimensions.get("screen").width - screenPadding * 2;
   const itemWidth = (screenWidth - (col - 1) * gap) / col;
+  const [progressData, setProgressData] =
+    useState<Record<SubCategories, SubCategoryProgress>>();
+  const [recentData, setRecentData] =
+    useState<Record<SubCategories, AnsweredDetails>>();
   console.log(itemWidth);
+
+  const fetchData = async () => {
+    const { progress, recent } = await loadProgress();
+    if (progress && recent) {
+      setRecentData(recent);
+      setProgressData(progress);
+    }
+  };
+
+  const recents = useMemo(() => {
+    if (!recentData) return [];
+    return Object.keys(recentData) as SubCategories[];
+  }, [recentData]);
+
+  const generateProgressData = (item: SubCategories) => {
+    if (progressData) {
+      return calcPercentage(
+        progressData[item].answered,
+        progressData[item].total
+      );
+    } else {
+      return calcPercentage(0, getTotalQuestionsForSubCategory(item));
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const handleSubClick = (item: SubCategories) => {
+    const hasProgress = progressData && progressData[item]?.answered > 0;
+    const hasCompleted =
+      progressData &&
+      progressData[item]?.answered === progressData[item]?.total;
+    const pathname = hasProgress
+      ? "/(cat)/test"
+      : hasCompleted
+      ? "/(cat)/result"
+      : "/(cat)/testInstructions";
+    const params = { subCategory: item };
+
+    router.push({ pathname, params });
+  };
+
   return (
     <ThemedView style={tw`flex-1 px-5`}>
       <SafeAreaView style={tw`w-full gap-5 flex-1`}>
         <View style={tw`flex-row items-center mb-5`}>
           <Pressable
             onPress={() => router.back()}
-            style={tw`justify-start mr-30`}
-          >
+            style={tw`justify-start mr-30`}>
             <MaterialIcons name="arrow-back-ios" size={24} color="black" />
           </Pressable>
 
@@ -79,38 +104,46 @@ export default function ProgressScreen() {
             </ThemedText>
             <ScrollView showsHorizontalScrollIndicator={false}>
               <View style={tw`gap-3 flex-row flex-wrap`}>
-                {interactions.map((interaction) => {
-                  return (
-                    <View
-                      key={interaction.id}
-                      style={[
-                        tw`p-3 bg-gray-DEFAULT rounded-xl`,
-                        { width: itemWidth },
-                      ]}
-                    >
-                      <View style={tw`max-w-[93px] w-full h-[88px]`}>
-                        {interaction.interactionicon}
-                      </View>
-
-                      <Text style={tw`mb-2 text-base capitalize font-semibold`}>
-                        {interaction.heading}
-                      </Text>
+                {recents.length === 0 ? (
+                  <View style={tw`flex-1 items-center justify-center`}>
+                    <Text style={tw`text-lg text-gray-600`}>
+                      No recent items found
+                    </Text>
+                  </View>
+                ) : (
+                  recents.map((item) => {
+                    const Icon = SubCategoryConfig[item].interactionicon!;
+                    return (
                       <View
-                        style={tw`flex-row items-center justify-between mt-3`}
-                      >
-                        <Text style={tw`text-[#727272]`}>Completed</Text>
+                        key={item}
+                        style={[
+                          tw`p-3 bg-gray-DEFAULT rounded-xl`,
+                          { width: itemWidth },
+                        ]}>
+                        <View style={tw`max-w-[93px] w-full h-[88px]`}>
+                          <Icon />
+                        </View>
+
                         <Text
-                          style={tw`leading-[16.94px] text-secondary-DEFAULT`}
-                        >
-                          {interaction.subtitle} progress goes here
+                          style={tw`mb-2 text-base capitalize font-semibold`}>
+                          {SubCategoryConfig[item].title}
                         </Text>
+                        <View
+                          style={tw`flex-row items-center justify-between mt-3`}>
+                          <Text style={tw`text-[#727272]`}>Completed</Text>
+                          <Text
+                            style={tw`leading-[16.94px] text-secondary-DEFAULT`}>
+                            {`${generateProgressData(item)}%`} progress goes
+                            here
+                          </Text>
+                        </View>
+                        <View style={tw`mt-3`}>
+                          <Text>progress line</Text>
+                        </View>
                       </View>
-                      <View style={tw`mt-3`}>
-                        <Text>progress line</Text>
-                      </View>
-                    </View>
-                  );
-                })}
+                    );
+                  })
+                )}
               </View>
             </ScrollView>
           </View>

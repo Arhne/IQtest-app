@@ -21,6 +21,6 @@ export enum SubCategories  {
 
 export enum Categories {
     IQ_TEST = "IQ Test",
-    PERSONALITY = "Self Assessment",
+    PERSONALITY = "Personality Test",
     MENTAL_TEST = "Mental Health"
 }

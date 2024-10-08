@@ -15,193 +15,91 @@ import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
 import CustomCard from "@/components/CustomCard";
 import { icons, images } from "@/constants";
 import { Assessment, categoryList } from "@/data/categories";
-import { useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { router } from "expo-router";
+import {
+  calcPercentage,
+  getTotalQuestionsForSubCategory,
+  loadProgress,
+  sortDataByCategory,
+} from "@/utils/helper-functions";
+import CircularProgress from "@/components/CircularProgress";
+import { Categories, SubCategories } from "@/data/enum";
+import { SubCategoryConfig } from "@/data/data-config";
 
-interface Category{
+interface Category {
   id: number;
-  title: string; 
+  title: string;
+  category?: Categories;
 }
 
-const recents = [
-  {
-    id: "general IQ",
-    interactionicon: <icons.TestIcon />,
-    heading: "start test",
-    subtitle: "25",
-    progress: "50%",
-  },
-  {
-    id: "result",
-    interactionicon: <icons.ResultIcon />,
-    heading: "Result",
-    subtitle: "25",
-    progress: "50%",
-  },
-  {
-    id: "knowledge",
-    interactionicon: <icons.KnowledgeIcon />,
-    heading: "Knowledge hub",
-    subtitle: "25",
-    progress: "50%",
-  },
-]
-const subcategories = [
-  {
-    id: "generalIQ",
-    interactionicon: <icons.Alzheimer />,
-    heading: "General IQ",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 2
-  },
-  {
-    id: "emotionalIQ",
-    interactionicon: <icons.Emotions />,
-    heading: "Emotional IQ",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 2
-  },
-  {
-    id: "logicalIQ",
-    interactionicon: <icons.Logical />,
-    heading: "Logical IQ",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 2
-  },
-  {
-    id: "memoryIQ",
-    interactionicon: <icons.Alzheimer />,
-    heading: "Memory IQ",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 2,
-  },
-  {
-    id: "quantitativeIQ",
-    interactionicon: <icons.Quantitative />,
-    heading: "Quantitative IQ",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 2,
-  },
-  {
-    id: "depression",
-    interactionicon: <icons.Depression />,
-    heading: "Depression",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 4,
-  },
-  {
-    id: "bipolar disorder",
-    interactionicon: <icons.Bipolar />,
-    heading: "Bipolar Disorder",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 4,
-  },
-  {
-    id: "adhd",
-    interactionicon: <icons.ADHD />,
-    heading: "ADHD Test",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 4,
-  },
-  {
-    id: "schizophrenia",
-    interactionicon: <icons.Shizophrenia />,
-    heading: "Schizophrenia",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 4,
-  },
-  {
-    id: "anxiety",
-    interactionicon: <icons.Anxiety />,
-    heading: "Anxiety Test",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 4,
-  },
-  {
-    id: "ptsd",
-    interactionicon: <icons.Ptsd />,
-    heading: "PTSD Test",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 4,
-  },
-  {
-    id: "internet disorder",
-    interactionicon: <icons.Internet />,
-    heading: "Internal Disorder Test",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 4,
-  },
-  {
-    id: "enneagram",
-    interactionicon: <icons.Enneagram />,
-    heading: "Enneagram",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 3,
-  },
-  {
-    id: "16personalities",
-    interactionicon: <icons.Personality />,
-    heading: "16 Personalities",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 3,
-  },
-  {
-    id: "introvert and extrovert",
-    interactionicon: <icons.Introvert />,
-    heading: "Introvert and Extrovert",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 3,
-  },
-  {
-    id: "persona bubble",
-    interactionicon: <icons.Persona />,
-    heading: "Persona Bubble",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 3,
-  },
-  {
-    id: "emotions vs logic",
-    interactionicon: <icons.Emotions />,
-    heading: "Emotions vs Logic",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 3,
-  },
-  {
-    id: "eq",
-    interactionicon: <icons.Emotions />,
-    heading: "EQ Test",
-    subtitle: "25",
-    progress: "50%",
-    categoryId: 3,
-  },
-];
 export default function AllTest() {
+  const [selectedCategory, setSelectedCategory] = useState<
+    Categories | undefined
+  >();
 
-  const [selectedCategory, setSelectedCategory] = useState("1");
+  const [progressData, setProgressData] =
+    useState<Record<SubCategories, SubCategoryProgress>>();
+
+  const [recentData, setRecentData] =
+    useState<Record<SubCategories, AnsweredDetails>>();
+
+  const fetchData = async () => {
+    const { progress, recent } = await loadProgress();
+    if (progress && recent) {
+      setProgressData(progress);
+      setRecentData(recent);
+    }
+  };
+
+  const subCategories = useMemo(() => {
+    const data = sortDataByCategory(Assessment, selectedCategory as Categories);
+
+    return data;
+  }, [selectedCategory, Assessment]);
+
+  const getProgressStatus = useCallback(
+    (item: SubCategories) => {
+      return progressData && progressData[item]
+        ? `${progressData[item].answered}/${progressData[item].total}`
+        : `0/${getTotalQuestionsForSubCategory(item)}`;
+    },
+    [progressData, getTotalQuestionsForSubCategory]
+  );
+
+  const recents = useMemo(() => {
+    if (!recentData) return [];
+    return Object.keys(recentData).slice(0, 6) as SubCategories[];
+  }, [recentData]);
+
+  const generateProgressData = (item: SubCategories) => {
+    if (progressData) {
+      return calcPercentage(
+        progressData[item].answered,
+        progressData[item].total
+      );
+    } else {
+      return calcPercentage(0, getTotalQuestionsForSubCategory(item));
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const handleSubClick = (item: SubCategories) => {
+    const hasProgress = progressData && progressData[item]?.answered > 0;
+    const hasCompleted = progressData && progressData[item]?.answered === progressData[item]?.total;
+    const pathname = hasProgress ? "/(cat)/test" : hasCompleted ? "/(cat)/result" : "/(cat)/testInstructions";
+    const params = { subCategory: item };
+
+    router.push({ pathname , params });
+  };
+
   return (
-    
-      
-        <ThemedView style={tw`w-full px-5 pt-3 justify-center`}>
-          <ScrollView showsVerticalScrollIndicator={false}>
+    <ThemedView style={tw`w-full px-5 pt-3 justify-center`}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <SafeAreaView style={tw`h-full flex-1`}>
-        
           <View style={tw`gap-5 flex-1`}>
             <ThemedText style={tw`text-4xl font-medium w-70`}>
               All test categories
@@ -210,91 +108,111 @@ export default function AllTest() {
             <View style={tw`gap-5`}>
               <ThemedText>Recents</ThemedText>
 
-              <FlatList
-                data={recents}
-                keyExtractor={(item) => item.id}
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}
-                renderItem={({ item }) => (
-                  <View
-                    style={[tw`mr-5 bg-gray-DEFAULT rounded-xl flex-1`, {                     
-                      padding: 12,
-                      width: 164,
-                      // alignItems: "center",
-                      // justifyContent: "center",
-                    }]}
-                  >
-                    <View  style={tw`max-w-[93px] w-full h-[88px]`}>
-                     
-                      {item.interactionicon}
-                    </View>
-                    <View style={tw``}>
-                      <Text
-                        style={tw`text-[16px]/[19.36px] font-semibold capitalize`}
-                      >
-                        {item.heading}
-                      </Text>
-                      <View  style={tw`flex-row items-center justify-between mt-3`}>
-                        <Text style={tw`leading-[16.94px] text-[#727272]`}>
-                          completed
-                        </Text>
+              {recents.length === 0 ? (
+                <View style={tw`flex-1 items-center justify-center`}>
+                  <Text style={tw`text-lg text-gray-600`}>
+                    No recent items found
+                  </Text>
+                </View>
+              ) : (
+                <FlatList
+                  data={recents}
+                  keyExtractor={(item) => item}
+                  horizontal={true}
+                  showsHorizontalScrollIndicator={false}
+                  renderItem={({ item }) => {
+                    const Icon = SubCategoryConfig[item].interactionicon ?? (() => <View />);
+
+                    return (
+                    <View
+                      style={[
+                        tw`mr-5 bg-gray-DEFAULT rounded-xl flex-1`,
+                        {
+                          padding: 12,
+                          width: 164,
+                        },
+                      ]}>
+                      <View style={tw`max-w-[93px] w-full h-[88px]`}>
+                        <Icon />
+                      </View>
+                      <View style={tw``}>
                         <Text
-                          style={tw`leading-[16.94px] text-secondary-DEFAULT`}
-                        >
-                          {item.progress}
+                          style={tw`text-[16px]/[19.36px] font-semibold capitalize`}>
+                          {SubCategoryConfig[item].title}
                         </Text>
+                        <View
+                          style={tw`flex-row items-center justify-between mt-3`}>
+                          <Text style={tw`leading-[16.94px] text-[#727272]`}>
+                            completed
+                          </Text>
+                          <Text
+                            style={tw`leading-[16.94px] text-secondary-DEFAULT`}>
+                            {`${generateProgressData(item)}%`}
+                          </Text>
+                        </View>
+                        <View style={tw`mt-3`}>
+                          <Text>progress line</Text>
+                        </View>
                       </View>
-                      <View style={tw`mt-3`}>
-                        <Text>progress line</Text>
-                      </View>
-                    </View>
-                  </View>
-                )}
-              />
+                    </View> )
+                  }}
+                />
+              )}
+
               <FlatList
                 data={categoryList}
                 keyExtractor={(item) => item.id.toString()}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
-                renderItem={({ item }: {item: Category}) => (
+                renderItem={({ item }: { item: Category }) => (
                   <View style={tw`mr-6`}>
-                  <CustomGradientButton
-                    title={item.title}
-                    handlePress={()=>setSelectedCategory(item.id.toString())}
-                    paddingStyle="px-3 border border-solid border-[#E3E1E9]"
-                    color={selectedCategory === item.id.toString() ? ["#8D0CCA", "#D568EF"] : ["transparent", "transparent"]}
-                    textStyle={selectedCategory === item.id.toString() ? "text-primary" : "text-gray-400"}
-                  />
+                    <CustomGradientButton
+                      title={item.title}
+                      handlePress={() => setSelectedCategory(item.category)}
+                      paddingStyle="px-3 border border-solid border-[#E3E1E9]"
+                      color={
+                        selectedCategory === item.category
+                          ? ["#8D0CCA", "#D568EF"]
+                          : ["transparent", "transparent"]
+                      }
+                      textStyle={
+                        selectedCategory === item.category
+                          ? "text-primary"
+                          : "text-gray-400"
+                      }
+                    />
                   </View>
                 )}
               />
               <View style={tw`gap-5`}>
                 <ThemedText>Subcategories</ThemedText>
                 <FlatList
-                  data={subcategories}
-                  keyExtractor={(item) => item.id}
+                  data={subCategories}
+                  keyExtractor={(item) => item.subCategory}
                   scrollEnabled={false}
-                  renderItem={({ item }) => (
-                    <View style={tw`mb-5`}>
-                    <CustomCard
-                      icon={item.interactionicon}
-                      title={item.heading}
-                      otherStyles="bg-gray-DEFAULT"
-                      handleClick={()=>router.push("/(cat)/testInstructions")}
-                      pricedesc={`${item.subtitle}/50 completed`}
-                      textoricon={item.interactionicon}
-                    />
-                    </View>
-                  )}
+                  renderItem={({ item }) => {
+
+              return (
+                <View style={tw`mb-5`}>
+                <CustomCard
+                  icon={<item.icon />}
+                  title={item.title}
+                  otherStyles="bg-gray-DEFAULT"
+                  handleClick={() => handleSubClick(item.subCategory)}
+                  pricedesc={getProgressStatus(item.subCategory)}
+                  textoricon={
+                    <CircularProgress percentage={0} text="Progress" />
+                  }
+                />
+              </View>
+              )
+                  }}
                 />
               </View>
             </View>
           </View>
-          
-          </SafeAreaView>
-          </ScrollView>
-        </ThemedView>
-      
-   
+        </SafeAreaView>
+      </ScrollView>
+    </ThemedView>
   );
 }

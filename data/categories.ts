@@ -7,18 +7,22 @@ export const categoryList  = [
     {
         id: 1,
         title: "All Test",
+        category: undefined,
     },
     {
         id: 2,
         title: "IQ Test",
+        category: Categories.IQ_TEST
     },
     {
         id: 3,
         title: "Personality Test",
+        category: Categories.PERSONALITY
     },
     {
         id: 4,
         title: "Mental Health",
+        category: Categories.MENTAL_TEST
     },
 ]
 
