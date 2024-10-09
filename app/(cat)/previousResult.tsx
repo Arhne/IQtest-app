@@ -14,6 +14,7 @@ import { useState } from "react";
 import { icons, images } from "@/constants";
 import CustomWarning from "@/components/CustomWarning";
 import { router } from "expo-router";
+import LinearProgressBar from "@/components/LinearProgress";
 
 
 const previousresult = [
@@ -62,7 +63,7 @@ export default function PreviousResult() {
         <View style={tw`flex-row items-center mb-5`}>
           <Pressable
             onPress={() => router.back()}
-            style={tw`justify-start mr-30`}
+            style={tw`justify-start mr-26`}
           >
             <MaterialIcons name="arrow-back-ios" size={24} color="black" />
           </Pressable>
@@ -104,11 +105,11 @@ export default function PreviousResult() {
                       <Text
                           style={tw`leading-[16.94px] text-secondary-DEFAULT`}
                         >
-                          {interaction.subtitle} progress goes here
+                          progress percentage comes here
                         </Text>
                       </View>
                       <View style={tw`mt-3`}>
-                        <Text>progress line</Text>
+                      <LinearProgressBar progress={40}/>
                       </View>
                     </Pressable>
                   );

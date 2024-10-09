@@ -11,6 +11,7 @@ import { SubCategories } from "@/data/enum";
 import { Assessment } from "@/data/categories";
 import { loadProgress } from "@/utils/helper-functions";
 import { SubCategoryConfig } from "@/data/data-config";
+import LinearProgressBar from "@/components/LinearProgress";
 
 // Example code
 const TestInstructions = () => {
@@ -97,9 +98,7 @@ const TestInstructions = () => {
                 showsVerticalScrollIndicator={false}
               >
                 <View style={tw`mt-10`}>
-                  <Text style={tw`text-2xl text-center`}>
-                    Progress Bar Line
-                  </Text>
+                  <LinearProgressBar progress={40}/>
 
                   {/* Header image */}
                   {!isIqTest && (

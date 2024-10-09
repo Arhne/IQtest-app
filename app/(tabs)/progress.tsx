@@ -22,6 +22,7 @@ import {
 } from "@/utils/helper-functions";
 import { useState, useMemo, useEffect } from "react";
 import { SubCategoryConfig } from "@/data/data-config";
+import LinearProgressBar from "@/components/LinearProgress";
 // import  { BackIcon }  from '@/constants';
 
 export default function ProgressScreen() {
@@ -133,12 +134,11 @@ export default function ProgressScreen() {
                           <Text style={tw`text-[#727272]`}>Completed</Text>
                           <Text
                             style={tw`leading-[16.94px] text-secondary-DEFAULT`}>
-                            {`${generateProgressData(item)}%`} progress goes
-                            here
+                            {`${generateProgressData(item)}%`} 
                           </Text>
                         </View>
                         <View style={tw`mt-3`}>
-                          <Text>progress line</Text>
+                        <LinearProgressBar progress={40}/>
                         </View>
                       </View>
                     );
