@@ -29,13 +29,13 @@ const CustomCard = ({
   return (
     <Pressable
       style={({ pressed }) => [
-        tw` rounded-xl p-7 flex-row w-full items-center justify-between ${otherStyles}`,
+        tw` rounded-xl p-5 flex-row w-full items-center justify-between ${otherStyles}`,
         pressed && tw`opacity-30 ${opacityStyle}`,
       ]}
       onPress={handleClick}>
       <View style={tw`flex-row items-center gap-5`}>
         <View>{icon}</View>
-        <View style={tw`flex flex-col gap-3`}>
+        <View style={tw`flex flex-col gap-2`}>
           <Text style={tw`leading-[21.78px] font-intbold ${titleStyle}`}>
             {title}
           </Text>

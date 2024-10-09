@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
-import { Text, ScrollView, View, Pressable } from "react-native";
+import { Text, ScrollView, View, Pressable, FlatList } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
 import tw from "@/twrnc-config";
@@ -14,12 +14,14 @@ import { SubCategoryConfig } from "@/data/data-config";
 
 // Example code
 const TestInstructions = () => {
+  const [isIqTest, setIsIqTest] = useState(false);
+
   const [progressData, setProgressData] =
     useState<Record<SubCategories, SubCategoryProgress>>();
   const [recentData, setRecentData] =
     useState<Record<SubCategories, AnsweredDetails>>();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Track current question index
-  const [answer, setAnswer] = useState("")
+  const [answer, setAnswer] = useState("");
   const fetchData = async () => {
     const { progress, recent } = await loadProgress();
     if (progress && recent) {
@@ -54,9 +56,10 @@ const TestInstructions = () => {
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questionsData.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1); // Move to the next question
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setAnswer(""); // Reset the selected answer
     } else {
-      // Optionally, navigate to a results or summary page when all questions are done
+      // Optionally, navigate to results or summary
       // router.push("/(cat)/results");
     }
   };
@@ -68,75 +71,119 @@ const TestInstructions = () => {
 
   return (
     <ThemedView style={tw`flex-1 w-full h-full`}>
-      <SafeAreaView style={tw`flex-1 `}>
-        <LinearGradient style={tw`h-full px-3`} colors={["#8D0CCA", "#D568EF"]}>
-          <View style={tw``}>
+      <SafeAreaView style={tw`flex-1`}>
+        <LinearGradient style={tw`flex-1 px-3`} colors={["#8D0CCA", "#D568EF"]}>
+          <View style={tw`flex-1`}>
             <Pressable
               onPress={() => router.back()}
-              style={tw`justify-start flex-col p-2`}>
+              style={tw`justify-start flex-col p-2`}
+            >
               <MaterialIcons name="arrow-back-ios" size={24} color="#fff" />
             </Pressable>
 
-            <ScrollView
-              style={tw`bg-primary w-full h-[100%] overflow-scroll p-5 gap-6 top-28 rounded-xl relative`}>
-              <View style={tw`mt-10 flex-col h-full flex-1 justify-between`}>
-                <Text style={tw`text-2xl text-center`}>Progress Bar Line</Text>
-                <Text style={tw`font-semibold text-2xl text-center`}>
-                  General IQ
-                </Text>
-                <View style={tw`gap-4`}>
-                  {/* Display current question */}
-                  <Text style={tw`text-base text-center`}>
-                    Question {currentQuestionIndex + 1}
-                  </Text>
-                  <Text style={tw`text-base text-center`}>
-                    {currentQuestion?.question}
-                  </Text>
-                  <View style={tw`bg-[#FEF5CB80] rounded-xl p-10`}>
-                    <Text style={tw`text-2xl font-semibold text-center`}>
-                      {/* {currentQuestion?.options.join(" ")} Show options */}
-                    {currentQuestion?.question}
-
-                    </Text>
-                  </View>
-
-                  <ScrollView>
-                    <View>
-                      {currentQuestion?.options.map((option, index) => (
-                        <Pressable
-                        key={index}
-                        onPress={() => setAnswer(option.option)}
-                        >
-
-                        <View                        
-                          
-                          style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]`}>
-                          <Text>{option.option}</Text>
-                          <MaterialIcons
-                            name="radio-button-unchecked"
-                            size={24}
-                            color={answer === option.option ? "red" :"#E3E1E9"}
-                          />
-                        </View>
-                        </Pressable>
-
-                      ))}
-                    </View>
-                  </ScrollView>
+            {/* Main Content */}
+            <View style={tw`flex-1 bg-primary rounded-xl p-5 top-24 mb-8`}>
+              {/* Top Positioned Icon */}
+              {isIqTest && (
+                <View style={tw`absolute left-[25%] top-[-38] z-10`}>
+                  <Icon width={220} height={210} />
                 </View>
-                {/* Show "Next" button */}
-                <CustomButton
-                  title="Next"
-                  containerStyles="bg-secondary-DEFAULT w-full mt-1"
-                  textStyles="text-primary"
-                  handlePress={handleNextQuestion}
-                  // disabled={currentQuestionIndex >= questionsData.length - 1} // Disable on the last question
-                />
-              </View>
-            </ScrollView>
-            <Text style={tw`text-secondary-DEFAULT`}>
-              {currentQuestionIndex + 1} of {questionsData.length}
-            </Text>
+              )}
+
+              {/* Scrollable content */}
+              <ScrollView
+                contentContainerStyle={tw`mt-3 gap-6 pb-28 mb-5`}
+                style={tw`flex-1`}
+                showsVerticalScrollIndicator={false}
+              >
+                <View style={tw`mt-10`}>
+                  <Text style={tw`text-2xl text-center`}>
+                    Progress Bar Line
+                  </Text>
+
+                  {/* Header image */}
+                  {!isIqTest && (
+                    <View style={tw`mx-auto`}>
+                      <MaterialIcons
+                        name="pie-chart"
+                        size={80}
+                        color="#6C63FF"
+                      />
+                    </View>
+                  )}
+
+                  <Text style={tw`font-semibold text-2xl text-center`}>
+                    General IQ
+                  </Text>
+                  <View style={tw`gap-4`}>
+                    <Text style={tw`text-base text-center`}>
+                      Question {currentQuestionIndex + 1}
+                    </Text>
+
+                    {isIqTest ? (
+                      <View style={tw`bg-[#FEF5CB80] rounded-xl p-10`}>
+                        <Text style={tw`text-2xl font-semibold text-center`}>
+                          {currentQuestion?.question}
+                        </Text>
+                      </View>
+                    ) : (
+                      <Text style={tw`text-base text-center`}>
+                        {currentQuestion?.question}
+                      </Text>
+                    )}
+
+                    {/* Options section */}
+                    <FlatList
+                      data={currentQuestion?.options}
+                      keyExtractor={(item, index) => index.toString()}
+                      renderItem={({ item }) => (
+                        <Pressable onPress={() => setAnswer(item.option)}>
+                          <View
+                            style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]
+                              ${
+                                answer === item.option
+                                  ? "bg-purple-200 border-purple-500"
+                                  : "border-gray-300"
+                              }`}
+                          >
+                            <Text>
+                              {item.optionlabel}. {item.option}
+                            </Text>
+                            <MaterialIcons
+                              name={
+                                answer === item.option
+                                  ? "check-circle"
+                                  : "radio-button-unchecked"
+                              }
+                              size={24}
+                              color={
+                                answer === item.option ? "purple" : "#E3E1E9"
+                              }
+                            />
+                          </View>
+                        </Pressable>
+                      )}
+                      ListEmptyComponent={<Text>No options available</Text>}
+                      scrollEnabled={false}
+                    />
+                  </View>
+                  <CustomButton
+                    title="Next"
+                    containerStyles="bg-secondary-DEFAULT w-full mt-1"
+                    textStyles="text-primary"
+                    handlePress={handleNextQuestion}
+                    disabled={!answer}
+                  />
+                </View>
+              </ScrollView>
+            </View>
+
+            {/* Footer text positioned at the bottom */}
+            <View style={tw`p-4`}>
+              <Text style={tw`text-secondary-DEFAULT text-right`}>
+                {currentQuestionIndex + 1} of {questionsData.length}
+              </Text>
+            </View>
           </View>
         </LinearGradient>
       </SafeAreaView>

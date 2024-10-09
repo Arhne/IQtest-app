@@ -33,20 +33,24 @@ export const Assessment : IQuestions[] = [
         answer: "No correct answer",
         subcategoryId: SubCategories.DEPRESSION,
         options: [
-            {
+            {   
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -63,18 +67,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -91,18 +99,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -119,18 +131,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -147,18 +163,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -175,18 +195,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -200,21 +224,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you had trouble concentrating on things, such as reading the newspaper or watching television?",
         answer: "No correct answer",
         subcategoryId: SubCategories.DEPRESSION,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -228,21 +256,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you been moving or speaking so slowly that other people could have noticed? Or the opposite—being so fidgety or restless that you have been moving around a lot more than usual?",
         answer: "No correct answer",
         subcategoryId: SubCategories.DEPRESSION,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -256,21 +288,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you thought that you would be better off dead or hurting yourself in some way?",
         answer: "No correct answer",
         subcategoryId: SubCategories.DEPRESSION,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -284,21 +320,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you felt disconnected or withdrawn from others?",
         answer: "No correct answer",
         subcategoryId: SubCategories.DEPRESSION,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -312,21 +352,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you experienced feelings of worthlessness or excessive guilt?",
         answer: "No correct answer",
         subcategoryId: SubCategories.DEPRESSION,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -340,21 +384,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you found it hard to get out of bed in the morning?",
         answer: "No correct answer",
         subcategoryId: SubCategories.DEPRESSION,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -368,21 +416,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you lost interest in your usual activities and hobbies? ",
         answer: "No correct answer",
         subcategoryId: SubCategories.DEPRESSION,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -396,21 +448,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you had thoughts of self-harm or suicide?",
         answer: "No correct answer",
         subcategoryId: SubCategories.DEPRESSION,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -424,21 +480,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you experienced significant changes in weight without trying?",
         answer: "No correct answer",
         subcategoryId: SubCategories.DEPRESSION,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -452,21 +512,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you felt that life is not worth living?",
         answer: "No correct answer",
         subcategoryId: SubCategories.DEPRESSION,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -483,18 +547,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -511,18 +579,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -536,21 +608,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you felt emotionally numb or detached from your feelings?",
         answer: "No correct answer",
         subcategoryId: SubCategories.DEPRESSION,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -564,21 +640,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you had feelings of hopelessness about the future?",
         answer: "No correct answer",
         subcategoryId: SubCategories.DEPRESSION,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -593,21 +673,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you experienced periods of feeling unusually euphoric or very irritable?",
         answer: "No correct answer",
         subcategoryId: SubCategories.BIPOLAR,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -621,21 +705,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you had periods where you felt unusually energetic or hyperactive?",
         answer: "No correct answer",
         subcategoryId: SubCategories.BIPOLAR,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -649,21 +737,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you experienced decreased need for sleep without feeling tired the next day?",
         answer: "No correct answer",
         subcategoryId: SubCategories.BIPOLAR,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -677,21 +769,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you had racing thoughts or been unable to slow down your mind?",
         answer: "No correct answer",
         subcategoryId: SubCategories.BIPOLAR,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -706,21 +802,25 @@ export const Assessment : IQuestions[] = [
         choices: ["Not at all", "Several days", "More than half the days", "Nearly every day"],
         answer: "No correct answer",
         subcategoryId: SubCategories.BIPOLAR,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -734,21 +834,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you engaged in risky behaviors or activities without considering the consequences?",
         answer: "No correct answer",
         subcategoryId: SubCategories.BIPOLAR,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -762,21 +866,25 @@ export const Assessment : IQuestions[] = [
         question: "How often have you felt unusually talkative or pressured to keep talking?",
         answer: "No correct answer",
         subcategoryId: SubCategories.BIPOLAR,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -793,18 +901,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -821,18 +933,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -849,18 +965,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -877,18 +997,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -905,18 +1029,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -933,18 +1061,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -961,18 +1093,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -989,18 +1125,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -1017,18 +1157,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -1045,18 +1189,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -1073,18 +1221,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -1101,18 +1253,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -1129,18 +1285,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -1157,22 +1317,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1189,22 +1354,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1221,22 +1391,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1253,22 +1428,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1285,22 +1465,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1317,22 +1502,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1349,22 +1539,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1381,22 +1576,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1413,22 +1613,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1445,22 +1650,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1477,22 +1687,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1509,22 +1724,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1541,22 +1761,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1573,22 +1798,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1605,22 +1835,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1637,22 +1872,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1669,22 +1909,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1701,22 +1946,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1733,22 +1983,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1765,22 +2020,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1798,22 +2058,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1830,22 +2095,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1862,22 +2132,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1894,22 +2169,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1926,22 +2206,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1958,22 +2243,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -1990,22 +2280,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2022,22 +2317,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2054,22 +2354,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2086,22 +2391,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2118,22 +2428,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2150,22 +2465,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2182,22 +2502,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2214,22 +2539,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2246,22 +2576,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2278,22 +2613,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2310,22 +2650,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2342,22 +2687,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2374,22 +2724,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2406,22 +2761,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -2438,18 +2798,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -2467,19 +2831,23 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "More than half the days",
-                points: "3",
+                optionlabel: "C",
+                points: "0",
             },
             {
                 option: "Nearly every day",
-                points: "0",
+                optionlabel: "D",
+                points: "3",
             },
         ],
 
@@ -2496,22 +2864,25 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "3",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "0",
             },
         ],
-
         categoryId: Categories.MENTAL_TEST,
         image: icons.Anxiety,
         categoryTitle: "Mental Health",
@@ -2522,25 +2893,28 @@ export const Assessment : IQuestions[] = [
         question: "How often do you have difficulty concentrating on tasks due to worry?",
         answer: "Nearly every day",
         subcategoryId: SubCategories.ANXIETY,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
-                points: "0",
+                optionlabel: "B",
+                points: "3",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
-                points: "3",
+                optionlabel: "D",
+                points: "0",
             },
         ],
-
         categoryId: Categories.MENTAL_TEST,
         image: icons.Anxiety,
         categoryTitle: "Mental Health",
@@ -2551,25 +2925,28 @@ export const Assessment : IQuestions[] = [
         question: "How often do you feel afraid as if something terrible might happen?",
         answer: "Nearly every day",
         subcategoryId: SubCategories.ANXIETY,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
-                points: "0",
+                optionlabel: "B",
+                points: "3",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
-                points: "3",
+                optionlabel: "D",
+                points: "0",
             },
         ],
-
         categoryId: Categories.MENTAL_TEST,
         image: icons.Anxiety,
         categoryTitle: "Mental Health",
@@ -2583,22 +2960,25 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "3",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "0",
             },
         ],
-
         categoryId: Categories.MENTAL_TEST,
         image: icons.Anxiety,
         categoryTitle: "Mental Health",
@@ -2612,19 +2992,23 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "More than half the days",
-                points: "3",
+                optionlabel: "C",
+                points: "0",
             },
             {
                 option: "Nearly every day",
-                points: "0",
+                optionlabel: "D",
+                points: "3",
             },
         ],
 
@@ -2641,18 +3025,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
-                points: "3",
-            },
-            {
-                option: "Several days",
+                optionlabel: "A",
                 points: "0",
             },
             {
+                option: "Several days",
+                optionlabel: "B",
+                points: "3",
+            },
+            {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -2667,22 +3055,26 @@ export const Assessment : IQuestions[] = [
         question: "How often do you avoid situations or activities because they make you anxious?",
         answer: "Nearly every day",
         subcategoryId: SubCategories.ANXIETY,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
-                points: "0",
+                optionlabel: "B",
+                points: "3",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
-                points: "3",
+                optionlabel: "D",
+                points: "0",
             },
         ],
 
@@ -2699,19 +3091,23 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "More than half the days",
-                points: "3",
+                optionlabel: "C",
+                points: "0",
             },
             {
                 option: "Nearly every day",
-                points: "0",
+                optionlabel: "D",
+                points: "3",
             },
         ],
 
@@ -2725,22 +3121,26 @@ export const Assessment : IQuestions[] = [
         question: "How often do you worry excessively about different things in your life?",
         answer: "Nearly every day",
         subcategoryId: SubCategories.ANXIETY,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
-                points: "0",
+                optionlabel: "B",
+                points: "3",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
-                points: "3",
+                optionlabel: "D",
+                points: "0",
             },
         ],
 
@@ -2757,18 +3157,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "3",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -2783,22 +3187,26 @@ export const Assessment : IQuestions[] = [
         question: "How often do you find it hard to control worrying thoughts?",
         answer: "Nearly every day",
         subcategoryId: SubCategories.ANXIETY,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
-                points: "0",
+                optionlabel: "B",
+                points: "3",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
-                points: "3",
+                optionlabel: "D",
+                points: "0",
             },
         ],
 
@@ -2815,19 +3223,23 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "More than half the days",
-                points: "3",
+                optionlabel: "C",
+                points: "0",
             },
             {
                 option: "Nearly every day",
-                points: "0",
+                optionlabel: "D",
+                points: "3",
             },
         ],
 
@@ -2841,22 +3253,26 @@ export const Assessment : IQuestions[] = [
         question: "How often do you feel that anxiety interferes with your daily life or activities?",
         answer: "Nearly every day",
         subcategoryId: SubCategories.ANXIETY,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
-                points: "0",
+                optionlabel: "B",
+                points: "3",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
-                points: "3",
+                optionlabel: "D",
+                points: "0",
             },
         ],
 
@@ -2873,19 +3289,23 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "More than half the days",
-                points: "3",
+                optionlabel: "C",
+                points: "0",
             },
             {
                 option: "Nearly every day",
-                points: "0",
+                optionlabel: "D",
+                points: "3",
             },
         ],
 
@@ -2902,22 +3322,25 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
-                points: "3",
-            },
-            {
-                option: "Several days",
+                optionlabel: "A",
                 points: "0",
             },
             {
+                option: "Several days",
+                optionlabel: "B",
+                points: "3",
+            },
+            {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "0",
             },
         ],
-
         categoryId: Categories.MENTAL_TEST,
         image: icons.Anxiety,
         categoryTitle: "Mental Health",
@@ -2931,18 +3354,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "3",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -2960,19 +3387,23 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "More than half the days",
-                points: "3",
+                optionlabel: "C",
+                points: "0",
             },
             {
                 option: "Nearly every day",
-                points: "0",
+                optionlabel: "D",
+                points: "3",
             },
         ],
 
@@ -2986,22 +3417,26 @@ export const Assessment : IQuestions[] = [
         question: "How often do you feel exhausted or fatigued because of your anxiety?",
         answer: "Nearly every day",
         subcategoryId: SubCategories.ANXIETY,
-        options: [
+         options: [
             {
                 option: "Not at all",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Several days",
-                points: "0",
+                optionlabel: "B",
+                points: "3",
             },
             {
                 option: "More than half the days",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Nearly every day",
-                points: "3",
+                optionlabel: "D",
+                points: "0",
             },
         ],
 
@@ -3018,10 +3453,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3038,10 +3475,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3055,13 +3494,15 @@ export const Assessment : IQuestions[] = [
         question: "Have you experienced recurrent nightmares related to the traumatic event?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3075,13 +3516,15 @@ export const Assessment : IQuestions[] = [
         question: "Do you frequently experience flashbacks, feeling as though the traumatic event is happening again?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3095,13 +3538,15 @@ export const Assessment : IQuestions[] = [
         question: "Do you avoid reminders or triggers of the traumatic event, such as places, people, or activities?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3115,13 +3560,15 @@ export const Assessment : IQuestions[] = [
         question: "Do you often feel emotionally numb or detached from others since the traumatic event?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3135,13 +3582,15 @@ export const Assessment : IQuestions[] = [
         question: "Have you noticed changes in your mood, such as increased irritability, anger, or guilt?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3155,13 +3604,15 @@ export const Assessment : IQuestions[] = [
         question: "Do you frequently experience hypervigilance, feeling constantly on edge or alert for potential danger?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3175,13 +3626,15 @@ export const Assessment : IQuestions[] = [
         question: "Have you had difficulty concentrating or experiencing memory problems since the traumatic event?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3195,13 +3648,15 @@ export const Assessment : IQuestions[] = [
         question: "Do you often experience sleep disturbances, such as difficulty falling asleep or staying asleep?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3215,13 +3670,15 @@ export const Assessment : IQuestions[] = [
         question: "Have you noticed a decrease in interest or participation in activities you used to enjoy since the traumatic event?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3235,13 +3692,15 @@ export const Assessment : IQuestions[] = [
         question: "Do you frequently experience physical symptoms, such as headaches or stomachaches, without a clear medical cause?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3255,13 +3714,15 @@ export const Assessment : IQuestions[] = [
         question: "Have you felt a sense of guilt or self-blame regarding the traumatic event?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3275,13 +3736,15 @@ export const Assessment : IQuestions[] = [
         question: "Do you often feel emotionally overwhelmed or easily startled since the traumatic event? ",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3295,13 +3758,15 @@ export const Assessment : IQuestions[] = [
         question: "Have you noticed changes in your appetite, such as eating significantly more or less than usual, since the traumatic event?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3315,13 +3780,15 @@ export const Assessment : IQuestions[] = [
         question: "Do you frequently experience feelings of hopelessness or despair since the traumatic event?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3335,13 +3802,15 @@ export const Assessment : IQuestions[] = [
         question: "Have you noticed changes in your relationships with others, such as increased conflict or withdrawal, since the traumatic event?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3355,13 +3824,15 @@ export const Assessment : IQuestions[] = [
         question: "Do you often have difficulty experiencing positive emotions or feeling pleasure since the traumatic event?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3375,13 +3846,15 @@ export const Assessment : IQuestions[] = [
         question: "Have you had thoughts of suicide or self-harm since the traumatic event? ",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3395,13 +3868,15 @@ export const Assessment : IQuestions[] = [
         question: "Do you feel that your symptoms related to the traumatic event interfere with your daily life or functioning?",
         answer: "Yes",
         subcategoryId: SubCategories.PTSD,
-        options: [
+       options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -3418,18 +3893,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3443,21 +3922,25 @@ export const Assessment : IQuestions[] = [
         question: "Do you often neglect responsibilities or obligations in favor of spending time online?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+       options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3474,18 +3957,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "No, Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Yes, occasionally",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Yes, frequently",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Yes, constantly",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3499,21 +3986,25 @@ export const Assessment : IQuestions[] = [
         question: "Do you find it difficult to cut back on your internet use even when you try?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+         options: [
             {
                 option: "No, Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Yes, occasionally",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Yes, frequently",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Yes, constantly",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3527,21 +4018,25 @@ export const Assessment : IQuestions[] = [
         question: "Do you often feel preoccupied with thoughts of the internet when you are offline?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+       options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3555,21 +4050,25 @@ export const Assessment : IQuestions[] = [
         question: "Do you experience irritability or moodiness when you are unable to access the internet?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+       options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3583,21 +4082,25 @@ export const Assessment : IQuestions[] = [
         question: "Have you unsuccessfully attempted to control or reduce your internet use in the past?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+         options: [
             {
                 option: "No, Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Yes, occasionally",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Yes, frequently",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Yes, constantly",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3611,21 +4114,25 @@ export const Assessment : IQuestions[] = [
         question: "Do you often use the internet as a way to escape from problems or negative emotions?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+       options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3639,21 +4146,25 @@ export const Assessment : IQuestions[] = [
         question: "Have you experienced conflicts or arguments with others about your internet use?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+         options: [
             {
                 option: "No, Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Yes, occasionally",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Yes, frequently",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Yes, constantly",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3667,21 +4178,25 @@ export const Assessment : IQuestions[] = [
         question: "Do you find yourself needing to spend increasing amounts of time online to achieve the same level of satisfaction?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+         options: [
             {
                 option: "No, Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Yes, occasionally",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Yes, frequently",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Yes, constantly",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3695,21 +4210,25 @@ export const Assessment : IQuestions[] = [
         question: "Do you neglect self-care activities, such as eating or sleeping, because of excessive internet use?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+       options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3723,21 +4242,25 @@ export const Assessment : IQuestions[] = [
         question: "Have you experienced physical health problems, such as eye strain or headaches, due to excessive screen time?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+         options: [
             {
                 option: "No, Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Yes, occasionally",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Yes, frequently",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Yes, constantly",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3751,21 +4274,25 @@ export const Assessment : IQuestions[] = [
         question: "Do you often lose track of time while using the internet?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+       options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3779,21 +4306,25 @@ export const Assessment : IQuestions[] = [
         question: "Have you noticed a decline in your productivity or performance at work or school due to excessive internet use?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+         options: [
             {
                 option: "No, Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Yes, occasionally",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Yes, frequently",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Yes, constantly",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3807,21 +4338,25 @@ export const Assessment : IQuestions[] = [
         question: "Do you experience feelings of guilt or shame about your internet use?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+       options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3835,21 +4370,25 @@ export const Assessment : IQuestions[] = [
         question: "Do you find yourself using the internet as a way to cope with stress or difficult emotions?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+       options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3863,21 +4402,25 @@ export const Assessment : IQuestions[] = [
         question: "Have you experienced financial difficulties or consequences due to excessive online shopping or gaming?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+         options: [
             {
                 option: "No, Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Yes, occasionally",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Yes, frequently",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Yes, constantly",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3891,21 +4434,25 @@ export const Assessment : IQuestions[] = [
         question: "Do you often feel restless or anxious when you are unable to access the internet?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+       options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3919,21 +4466,25 @@ export const Assessment : IQuestions[] = [
         question: "Do you prioritize spending time online over face-to-face interactions with friends or family?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+       options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3947,21 +4498,25 @@ export const Assessment : IQuestions[] = [
         question: "Have you noticed changes in your mental or emotional well-being since increasing your internet use?",
         answer: "No correct answer",
         subcategoryId: SubCategories.INTERDISORDER,
-        options: [
+         options: [
             {
                 option: "No, Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Yes, occasionally",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Yes, frequently",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Yes, constantly",
+                optionlabel: "D",
                 points: "3",
             },
         ],
@@ -3979,22 +4534,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4011,22 +4571,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4043,22 +4608,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4075,22 +4645,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4107,22 +4682,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4139,22 +4719,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4171,22 +4756,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4203,22 +4793,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4235,22 +4830,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4267,22 +4867,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4299,22 +4904,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4331,22 +4941,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4363,22 +4978,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4395,22 +5015,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4427,22 +5052,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4459,22 +5089,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4491,22 +5126,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4523,22 +5163,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4555,22 +5200,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4587,22 +5237,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4619,22 +5274,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4651,22 +5311,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4683,22 +5348,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4715,22 +5385,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4747,22 +5422,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4779,22 +5459,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4811,22 +5496,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4843,22 +5533,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4875,22 +5570,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4907,22 +5607,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4939,22 +5644,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -4971,22 +5681,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5003,22 +5718,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5035,22 +5755,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5067,22 +5792,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5099,22 +5829,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5131,22 +5866,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5163,22 +5903,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5195,22 +5940,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5227,22 +5977,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5259,22 +6014,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5291,22 +6051,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5323,22 +6088,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5355,22 +6125,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5387,22 +6162,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5419,22 +6199,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5451,22 +6236,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5483,22 +6273,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5515,22 +6310,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5547,22 +6347,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5579,22 +6384,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5611,22 +6421,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5643,22 +6458,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5675,22 +6495,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5707,22 +6532,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5739,22 +6569,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5771,22 +6606,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5803,22 +6643,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5835,22 +6680,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5867,22 +6717,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5899,22 +6754,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5931,22 +6791,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5963,22 +6828,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -5995,22 +6865,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6027,22 +6902,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6059,22 +6939,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6091,22 +6976,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6123,22 +7013,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6155,22 +7050,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6187,22 +7087,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6219,22 +7124,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6251,22 +7161,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6283,22 +7198,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6315,22 +7235,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6347,22 +7272,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6379,22 +7309,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6411,22 +7346,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6443,22 +7383,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6475,22 +7420,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6507,22 +7457,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6539,22 +7494,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6571,22 +7531,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6603,22 +7568,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6635,22 +7605,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6667,22 +7642,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6699,22 +7679,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6731,22 +7716,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6763,22 +7753,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6795,22 +7790,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6827,22 +7827,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6859,22 +7864,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6891,22 +7901,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6923,22 +7938,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6955,22 +7975,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -6987,22 +8012,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7019,22 +8049,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7051,22 +8086,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7083,22 +8123,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7115,22 +8160,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7147,22 +8197,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7179,22 +8234,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7211,22 +8271,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7243,22 +8308,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7275,22 +8345,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7307,22 +8382,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7339,22 +8419,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7371,22 +8456,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7403,22 +8493,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7435,22 +8530,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7467,22 +8567,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7499,22 +8604,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7531,22 +8641,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7563,22 +8678,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7595,22 +8715,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7627,22 +8752,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7659,22 +8789,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7691,22 +8826,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7723,22 +8863,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7755,22 +8900,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7787,22 +8937,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7819,22 +8974,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7851,22 +9011,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7883,22 +9048,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7915,22 +9085,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7947,22 +9122,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -7979,22 +9159,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8011,22 +9196,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8043,22 +9233,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8075,22 +9270,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8107,22 +9307,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8139,22 +9344,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8171,22 +9381,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8203,22 +9418,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8235,22 +9455,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8267,22 +9492,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8299,22 +9529,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8331,22 +9566,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8363,22 +9603,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8395,22 +9640,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8427,22 +9677,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8459,22 +9714,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8491,22 +9751,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8523,22 +9788,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8555,22 +9825,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8587,22 +9862,27 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Never",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Rarely",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "2",
             },
             {
                 option: "Often",
+                optionlabel: "D",
                 points: "3",
             },
             {
                 option: "Very often",
+                optionlabel: "E",
                 points: "4",
             },
         ],
@@ -8619,10 +9899,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "a strong impact on the way I behave.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "little or no impact on the way I behave.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -8639,10 +9921,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "my goals and values.",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "others goals and values.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -8659,10 +9943,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "changed behaviours from normal.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "behaviours that remain unchanged.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -8679,10 +9965,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "by actively doing activities.",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: " from reflecting on past experiences.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -8699,10 +9987,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "have a good sense of humour about myself.",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "take myself seriously.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -8719,10 +10009,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "with self-assurance and having /presence/.",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "with some confidence and cautiousness.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -8739,10 +10031,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "decisive and make sound decisions.",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "cautious about making the right decision.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -8759,10 +10053,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "are unpopular and go out on a limb for what is right.",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "most others agree with and support.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -8779,10 +10075,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "take on new challenges.",
+                optionlabel: "A",
                 points: "1",
             },
             {
-                option: " maintain the status quo.",
+                option: "maintain the status quo.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -8799,10 +10097,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "inspire confidence in others.",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "rely on others confidence.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -8819,10 +10119,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "allow my emotions and moods to impact on my behaviours.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "keep my disruptive emotions and impulses under control.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -8839,10 +10141,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "I get easily distracted in other things.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "I think clearly and stay focused",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -8859,10 +10163,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "do as I say I will do.",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "do only what I have to do.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -8879,10 +10185,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "is automatically given to me.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "is built through reliability and authenticity.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -8899,10 +10207,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "flexible in how I see events.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "able to see events for what they are.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -8919,10 +10229,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "work hard to try and keep up with the demands.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "smoothly handle multiple demands and shifting priorities.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -8939,10 +10251,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "set myself challenging goals.",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "complete the goals that are set for me.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -8959,10 +10273,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "readjust the goals and/or expectations.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "persist in seeking the goals despite what has happened.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -8979,10 +10295,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "pursue goals beyond what is required or expected of me.",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "pursue goals only as far as is required of me.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -8999,10 +10317,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "uncertain about whether to pursue the opportunity.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "proactive in pursuing the opportunity.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9019,10 +10339,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "causing difficulties and unrest.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "understood and valued.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9039,10 +10361,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "challenge the initiating people.",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "turn a blind eye and ignore it.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -9059,10 +10383,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "the tasks others need help with.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "understanding others needs and feelings.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9079,10 +10405,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "listen to the important words being said.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "listen well and am attentive to emotional cues.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9099,10 +10427,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "understood and sensitivity shown.",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "clouding the issues and getting us off track.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -9119,10 +10449,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "get in the way of delivering performance.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "help create better decision networks.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9139,10 +10471,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "informal key power relationships to get what I need.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: " formal decision networks to get what I need.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9159,10 +10493,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "give customers what they ask for.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "understand customers needs and match products/services.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9179,10 +10515,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "act as a trusted advisor to the customer. ",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "tell the customer what they want to hear.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -9199,10 +10537,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "is always part of the way I work ",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "is not important in achieving the sale.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -9219,10 +10559,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: " given to staff so they know where we are going.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "used to inspire groups and individuals.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9239,10 +10581,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "let people know of the behaviours expected. ",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "model the behaviour expected of others.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -9259,10 +10603,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "can get the job done and do it well.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "will grow and develop as a result of the challenge.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9279,10 +10625,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "that I find difficult to do.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "I am very good at.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9299,10 +10647,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "that everyone understands what I am saying.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "that seeks mutual understanding and full information sharing.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9319,10 +10669,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "go along with the changes being driven by others.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "recognize the need for changes and remove barriers.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9339,10 +10691,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "in a straightforward and direct manner.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "with diplomacy and tact.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9359,10 +10713,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "are mutually beneficial.",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "will help me achieve my end goal.",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -9379,10 +10735,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "stronger focus on tasks rather than relationships",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: " balanced focus on tasks and relationships.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9399,10 +10757,12 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: " make it clear what I expect members to do.",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "draw all members into enthusiastic participation.",
+                optionlabel: "B",
                 points: "1",
             },
         ],
@@ -9419,18 +10779,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Invalid question",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9447,18 +10811,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Invalid question",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9475,18 +10843,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Yes",
+               optionlabel: "A",
                 points: "0",
             },
             {
                 option: "No",
+               optionlabel: "B",
                 points: "0",
             },
             {
                 option: "Sometimes",
+               optionlabel: "C",
                 points: "1",
             },
             {
                 option: "Invalid question",
+               optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9503,18 +10875,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "4",
+               optionlabel: "A",
                 points: "0",
             },
             {
                 option: "8",
+               optionlabel: "B",
                 points: "1",
             },
             {
                 option: "6",
+               optionlabel: "C",
                 points: "0",
             },
             {
                 option: "12",
+               optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9531,18 +10907,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Yes",
+               optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+               optionlabel: "B",
                 points: "0",
             },
             {
                 option: "Sometimes",
+               optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Invalid question",
+               optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9559,18 +10939,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Yes",
+               optionlabel: "A",
                 points: "0",
             },
             {
                 option: "No",
+               optionlabel: "B",
                 points: "1",
             },
             {
                 option: "Sometimes",
+               optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Invalid question",
+               optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9587,18 +10971,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Cousin",
+               optionlabel: "A",
                 points: "0",
             },
             {
                 option: "Cousin's first child",
+               optionlabel: "B",
                 points: "1",
             },
             {
                 option: "No affiliation",
+               optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Invalid logic",
+               optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9615,18 +11003,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "Maybe",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Invalid logic",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9643,18 +11035,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Even",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "Odd",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "Invalid question",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "None of the above",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9671,18 +11067,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "No",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "Maybe",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "Invalid logic",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9699,18 +11099,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "2, 4",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "2, 7",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "4, 2",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "1, 4",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9727,18 +11131,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "2, 6, B",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "2, 8, A",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "1, 8, A",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "2, 9, A",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9755,18 +11163,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "6, C, 4, B",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "6, B, 4, 1",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "6, B, 4, A",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "6, B, 4, C",
+                optionlabel: "D",
                 points: "1",
             },
         ],
@@ -9783,18 +11195,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "Yes",
+                optionlabel: "A",
                 points: "A, 8, C, 9, X, D",
             },
             {
                 option: "A, 7, C, 9, X, D",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "A, 7, C, 9, X, 3",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "A, 5, X, D, 3, R",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9811,18 +11227,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "1, 5, 4, C, R, A",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "1, 3, 4, C, R, B",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "1, 3, 4, C, R, A",
+                optionlabel: "C",
                 points: "1",
             },
             {
                 option: "1, 4, R, T, Y, 2",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9839,18 +11259,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "7, B, M, T, 5, 3, W, 1",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "7, B, M, 3, Q, 2, 3, D",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "7, B, M, T, 5, 3, W, 2",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "2, R, M, 3, B, 2, A, 4",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9867,18 +11291,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "9, W, A, C, 3, A, 4, 5, A, 6",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "9, W, A, C, 3, 6, 6, 7, 9, B",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "8, W, A, 4, B, 5, 3, 4, A, T",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "9, W, A, C, 3, 6, 6, 7, 8, B",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -9895,18 +11323,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "6, R, T, Y, 5, 4, 7, Y, W, R, 4, 5",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "6, R, T, Y, 5, 6, 7, X, 4, T, 4, 5",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "6, R, T, Y, 5, 7 6, W, Y, R, 4, 5",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "6, R, T, Y, 5, 6, 7, Y, W, R, 4, 5",
+                optionlabel: "D",
                 points: "1",
             },
         ],
@@ -9923,18 +11355,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "8, Y, 7, 5, R, E, 5, 4, 7, F, 5, 3, E, 3, T",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "8, Y, 7, 5, R, E, 4, 8, 7, F, 5, 3, E, 3, T",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "8, Y, 7, 5, R, E, 4, 8, 5, A, 5, 3, E, 3, T",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "8, Y, 7, 5, R, E, 4, 5, 6, F, 5, 3, E, 3, T",
+                optionlabel: "D",
                 points: "1",
             },
         ],
@@ -9951,18 +11387,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "A, 5, 6, V, G, H, 5, 6, H, 7, 8, A, W, 4",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "A, 5, 6, V, G, H, 5, 6, W, 7, 8, A, W, 4",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "A, 5, 6, V, G, H, 5, 6, R, 7, 8, A, W, 4",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "A, 5, 6, V, G, H, 5, 6, G, 7, 8, A, W, 4",
+                optionlabel: "D",
                 points: "1",
             },
         ],
@@ -9979,18 +11419,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "64",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "49",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "46",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "50",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10007,18 +11451,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "25",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "28",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "35",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "40",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10035,18 +11483,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "30",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "35",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "46",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "34",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10063,18 +11515,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "67",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "37",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "43",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "81",
+                optionlabel: "D",
                 points: "1",
             },
         ],
@@ -10091,18 +11547,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "21",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "31",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "25",
+                optionlabel: "c",
                 points: "0",
             },
             {
                 option: "30",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10119,18 +11579,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "4",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "9",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "7",
+                optionlabel: "C",
                 points: "1",
             },
             {
                 option: "10",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10147,18 +11611,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "20",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "96",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "100",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "35",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10175,18 +11643,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "1",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "0",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "4",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "-1",
+                optionlabel: "B",
                 points: "0",
             },
         ],
@@ -10203,18 +11675,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "6",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "7",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "4",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "3",
+                optionlabel: "D",
                 points: "1",
             },
         ],
@@ -10231,18 +11707,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "11100",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "121",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "12100",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "1100",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10259,18 +11739,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/1/answers/c1.png",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/1/answers/iqtest_05_02.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/1/answers/iqtest_05_04.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/1/answers/iqtest_05_05.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10287,18 +11771,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/2/answers/iqtest_09_05.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/2/answers/iqtest_09_03.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/2/answers/c2.png",
+                optionlabel: "C",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/2/answers/iqtest_09_06.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10315,18 +11803,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/3/answers/c3.png",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/3/answers/iqtest_10_02.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/3/answers/iqtest_10_05.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/3/answers/iqtest_10_06.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10343,18 +11835,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/4/answers/iqtest_04_06.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/4/answers/iqtest_04_01.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/4/answers/iqtest_04_04.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/4/answers/c4.png",
+                optionlabel: "D",
                 points: "1",
             },
         ],
@@ -10371,18 +11867,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/5/answers/iqtest_02_03.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/5/answers/c5.png",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/5/answers/iqtest_02_04.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/5/answers/iqtest_02_06.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10399,18 +11899,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/6/answers/c6.png",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/6/answers/iqtest_15_01.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/6/answers/iqtest_15_03.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/6/answers/iqtest_15_05.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10427,18 +11931,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/7/answers/c7.png",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/7/answers/iqtest_17_04.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/7/answers/iqtest_17_05.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/7/answers/iqtest_17_06.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10455,18 +11963,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/8/answers/c8.png",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/8/answers/iqtest_20_03.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/8/answers/iqtest_20_04.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/8/answers/iqtest_20_05.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10483,18 +11995,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/9/answers/iqtest_18_06.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/9/answers/iqtest_12_04.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/9/answers/iqtest_12_05.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/9/answers/c9.png",
+                optionlabel: "D",
                 points: "1",
             },
         ],
@@ -10511,18 +12027,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/10/answers/iqtest_18_06.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/10/answers/iqtest_18_03.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/10/answers/iqtest_18_05.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/10/answers/c10.png",
+                optionlabel: "D",
                 points: "1",
             },
         ],
@@ -10539,18 +12059,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/11/answers/iqtest_23_05.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/11/answers/iqtest_23_04.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/11/answers/c11.png",
+                optionlabel: "C",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/11/answers/iqtest_23_06.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10567,18 +12091,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/12/answers/iqtest_27_02.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/12/answers/iqtest_27_01.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/12/answers/c12.png",
+                optionlabel: "C",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/12/answers/iqtest_27_03.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10595,18 +12123,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/13/answers/c13.png",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/13/answers/iqtest_22_03.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/13/answers/iqtest_22_05.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/13/answers/iqtest_22_06.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10623,18 +12155,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/14/answers/iqtest_28_01.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/14/answers/c14.png",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/14/answers/iqtest_28_05.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/14/answers/iqtest_28_06.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10651,18 +12187,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/15/answers/c15.png",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/15/answers/iqtest_26_02.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/15/answers/iqtest_26_05.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/15/answers/iqtest_26_06.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10679,18 +12219,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/16/answers/iqtest_31_02.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/16/answers/iqtest_31_01.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/16/answers/c16.png",
+                optionlabel: "C",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/16/answers/iqtest_31_06.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10707,18 +12251,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/17/answers/iqtest_32_03.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/17/answers/iqtest_32_01.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/17/answers/iqtest_32_02.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/17/answers/c17.png",
+                optionlabel: "D",
                 points: "1",
             },
         ],
@@ -10735,18 +12283,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/18/answers/c18.png",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/18/answers/iqtest_35_01.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/18/answers/iqtest_35_02.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/18/answers/iqtest_35_03.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10763,18 +12315,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/19/answers/iqtest_36_01.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/19/answers/c19.png",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/19/answers/iqtest_36_02.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/19/answers/iqtest_36_03.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10791,18 +12347,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/20/answers/iqtest_39_04.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/20/answers/iqtest_39_01.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/20/answers/c20.png",
+                optionlabel: "C",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/20/answers/iqtest_39_05.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10819,18 +12379,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/21/answers/c21.png",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/21/answers/iqtest_40_01.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/21/answers/iqtest_40_03.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/21/answers/iqtest_40_07.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10847,18 +12411,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/22/answers/iqtest_42_01.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/22/answers/c22.png",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/22/answers/iqtest_42_02.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/22/answers/iqtest_42_03.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10875,18 +12443,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/23/answers/iqtest_45_02.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/23/answers/iqtest_45_01.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/23/answers/c23.png",
+                optionlabel: "C",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/23/answers/iqtest_45_03.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10903,18 +12475,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/24/answers/iqtest_43_03.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/24/answers/iqtest_43_01.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/24/answers/iqtest_43_02.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/24/answers/c24.png",
+                optionlabel: "D",
                 points: "1",
             },
         ],
@@ -10931,18 +12507,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/25/answers/c25.png",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/25/answers/iqtest_49_02.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/25/answers/iqtest_49_03.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/25/answers/iqtest_49_04.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10959,18 +12539,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/26/answers/c26.png",
+                optionlabel: "A",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/26/answers/iqtest_50_02.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/26/answers/iqtest_50_05.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/26/answers/iqtest_50_06.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -10987,18 +12571,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/27/answers/iqtest_51_01.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/27/answers/c27.png",
+                optionlabel: "B",
                 points: "1",
             },
             {
                 option: "/assests/images/generalIQ/27/answers/iqtest_51_02.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/27/answers/iqtest_51_03.png",
+                optionlabel: "D",
                 points: "0",
             },
         ],
@@ -11015,18 +12603,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/28/answers/iqtest_52_04.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/28/answers/iqtest_52_01.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/28/answers/iqtest_52_02.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/28/answers/c28.png",
+                optionlabel: "D",
                 points: "1",
             },
         ],
@@ -11043,18 +12635,23 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/29/answers/iqtest_56_06.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/29/answers/iqtest_56_02.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/29/answers/iqtest_56_05.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/29/answers/c29.png",
+                optionlabel: "D",
+                
                 points: "1",
             },
         ],
@@ -11071,18 +12668,22 @@ export const Assessment : IQuestions[] = [
         options: [
             {
                 option: "/assests/images/generalIQ/30/answers/iqtest_57_05.png",
+                optionlabel: "A",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/30/answers/iqtest_57_01.png",
+                optionlabel: "B",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/30/answers/iqtest_57_04.png",
+                optionlabel: "C",
                 points: "0",
             },
             {
                 option: "/assests/images/generalIQ/30/answers/c30.png",
+                optionlabel: "D",
                 points: "1",
             },
         ],

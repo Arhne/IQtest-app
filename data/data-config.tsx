@@ -16,7 +16,7 @@ export const SubCategoryConfig: Record<
     title: "Bipolar Disorder Test",
     interactionicon: icons.Bipolar ,
     objective:
-      "Spatial reasoning tests is used to assess your capacity to manipulate 2D and 3D objects, spot patterns between shapes, and to visualise movements and change in those shapes. This could include identifying which answer option is a rotation of a given 2D imagesssss.",
+     "" 
   },
   [SubCategories.DEPRESSION]: {
     title: "Depression Test",
@@ -25,6 +25,8 @@ export const SubCategoryConfig: Record<
   [SubCategories.ENNEGRAM]: {
     title: "Enneagram Test",
     interactionicon: icons.Enneagram ,
+    objective:
+    "The Enneagram of Personality, or simply the Enneagram is a model of the human psyche which is principally understood and taught as a typology of nine interconnected personality types. As a typology the Enneagram defines nine personality types (sometimes called \"enneatypes\"), which are represented by the points of a geometric figure called an enneagram, which indicate connections between the types."
   },
   [SubCategories.ADHD]: {
     title: "ADHD Test",
@@ -37,10 +39,14 @@ export const SubCategoryConfig: Record<
   [SubCategories.SIXTEENPER]: {
     title: "16 Personalities Test",
     interactionicon: icons.Personality ,
+    objective:
+    "The Myers–Briggs Type Indicator (MBTI) is an introspective self-report questionnaire indicating differing psychological preferences in how people perceive the world and make decisions. The test attempts to assign four categories: introversion or extraversion, sensing or intuition, thinking or feeling, judging or perceiving. One letter from each category is taken to produce a four-letter test result, like \"ISTJ\" or \"ENFP\"."
   },
   [SubCategories.EMOLOGIC]: {
     title: "Emotions vs Logic Test",
     interactionicon: icons.Emotions ,
+    objective: 
+    "This test is meant to assess your behavior in certain situations and as a result give an illustration regarding your emotional vs logical levels. Emotions are defined to be manifestations of your current mindset into human feeling. Logic is defined as the comprehension of current reality under a given set of assumptions following an ordered pattern."
   },
   [SubCategories.INTERDISORDER]: {
     title: "Internal Disorder Test",
@@ -61,10 +67,14 @@ export const SubCategoryConfig: Record<
   [SubCategories.INTROVERT]: {
     title: "Introvert and Extrovert Test",
     interactionicon: icons.Introvert ,
+    objective:
+    "The traits of extraversion (or extroversion) and introversion are a central dimension in some human personality theories. The terms introversion and extraversion were popularized by Carl Jung, although both the popular understanding and psychological usage differ from his original intent. Extraversion tends to be manifested in outgoing, talkative, energetic behavior, whereas introversion is manifested in more reserved and solitary behavior. Rather than focusing on interpersonal behavior, however, Jung defined introversion as an \"attitude-type characterised by orientation in life through subjective psychic contents\", and extraversion as \"an attitude-type characterised by concentration of interest on the external object\"."
   },
   [SubCategories.PERSONA]: {
     title: "Persona Bubble Test",
     interactionicon: icons.Persona ,
+    objective:
+    "The persona bubble aims to find out if your personal bubble that you have built for yourself since you were a child big or small. In this test, you will be answering questions that will determine the guard you have been building since you were a baby towards the external world. This concept is different than the concept of ego. Ego is the mask you've been using for protection while the persona bubble is the space you create to be comfortable."
   },
   [SubCategories.EMOTIONALIQ]: {
     title: "Emotional IQ Test",
@@ -73,6 +83,8 @@ export const SubCategoryConfig: Record<
   [SubCategories.EQ]: {
     title: "Emotional Intelligence (EQ) Test",
     interactionicon: icons.Emotions ,
+    objective: 
+    "Emotional intelligence (EI), emotional leadership (EL), emotional quotient (EQ) and emotional intelligence quotient (EIQ), is the capability of individuals to recognize their own emotions and those of others, discern between different feelings and label them appropriately, use emotional information to guide thinking and behavior, and manage and/or adjust emotions to adapt to environments or achieve one's goals."
   },
   [SubCategories.QUANTITATIVE]: {
     title: "Quantitative IQ Test",

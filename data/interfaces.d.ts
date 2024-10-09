@@ -5,6 +5,7 @@ interface IQuestions {
   subcategoryId: SubCategories;
   options: {
     option: string;
+    optionlabel: string;
     points: string;
   }[];
   categoryId: Categories;

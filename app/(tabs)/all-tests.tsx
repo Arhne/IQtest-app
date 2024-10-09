@@ -23,7 +23,7 @@ import {
   loadProgress,
   sortDataByCategory,
 } from "@/utils/helper-functions";
-import CircularProgress from "@/components/CircularProgress";
+import {CircularProgress} from "@/components/CircularProgress";
 import { Categories, SubCategories } from "@/data/enum";
 import { SubCategoryConfig } from "@/data/data-config";
 
@@ -197,11 +197,12 @@ export default function AllTest() {
                 <CustomCard
                   icon={<item.icon />}
                   title={item.title}
+                  titleStyle="w-[180px]"
                   otherStyles="bg-gray-DEFAULT"
                   handleClick={() => handleSubClick(item.subCategory)}
                   pricedesc={getProgressStatus(item.subCategory)}
                   textoricon={
-                    <CircularProgress percentage={0} text="Progress" />
+                    <CircularProgress percentage={0} radius={30}/>
                   }
                 />
               </View>

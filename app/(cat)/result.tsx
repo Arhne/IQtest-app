@@ -13,6 +13,8 @@ import CustomWarning, {
 } from "@/components/CustomWarning";
 import { router } from "expo-router";
 import { useState } from "react";
+import { MultipleChart, PieChart } from "@/components/CircularProgress";
+
 
 const responses = [
   {
@@ -99,16 +101,16 @@ export default function SingleResult() {
 
             {isPaid ? (
               <View style={tw`gap-5`}>
-                <View style={tw`flex-row mt-3`}>
+                <View style={tw`flex-row mt-3 gap-4`}>
                   <icons.StackIcon />
                   <Text style={tw`font-semibold`}>Detailed Result</Text>
                 </View>
                 <View
-                  style={tw`bg-gray-DEFAULT justify-between rounded-xl flex-row px-6 py-4`}
+                  style={tw`bg-gray-DEFAULT justify-between rounded-xl flex-row px-3 py-4`}
                 >
                   <View style={tw`gap-3 min-w-[150px]`}>
                     <Text style={tw`font-semibold mb-3`}>Your responses</Text>
-                    <Text>Circle Progress Bar</Text>
+                    <MultipleChart/>
                     {responses.map((response) => (
                       <View
                         key={response.id}
@@ -126,7 +128,7 @@ export default function SingleResult() {
                   </View>
                   <View style={tw`gap-3 min-w-[150px]`}>
                     <Text style={tw`font-semibold mb-3`}>Answers</Text>
-                    <Text>Circle Progress Bar</Text>
+                    <PieChart/>
                     {responses
                       .filter((item, index) => index > 3)
                       .map((response) => (

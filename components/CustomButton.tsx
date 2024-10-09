@@ -10,6 +10,7 @@ interface ICustomButton {
   containerStyles?: string;
   textStyles?: string;
   isLoading?: boolean;
+  disabled?: boolean;
 }
 
 interface ICustomGradientButton {
@@ -19,6 +20,7 @@ interface ICustomGradientButton {
   handlePress?: () => void;
   color?: string[];
   textStyle?: string;
+  
 }
 export const CustomButton = ({
   title,
@@ -26,16 +28,17 @@ export const CustomButton = ({
   containerStyles = "",
   textStyles = "",
   isLoading,
+  disabled = false,
 }: ICustomButton) => {
   return (
     <Pressable
-      onPress={handlePress}
+      onPress={!disabled ? handlePress : undefined}
       style={({ pressed }) => [
         tw`rounded-xl min-h-[62px] justify-center items-center ${containerStyles} ${isLoading ? "opacity-50" : ""
-          }`,
+          } ${disabled ? 'opacity-50' : 'opacity-100'}`,
         pressed && tw`opacity-70`,
       ]}
-      disabled={isLoading}
+      disabled={disabled}
     >
       <Text style={tw`leading-[16px] font-medium text-base ${textStyles}`}>
         {title}

@@ -15,7 +15,7 @@ import { router } from "expo-router";
 import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
 import CustomCard from "@/components/CustomCard";
 import { icons, images } from "@/constants";
-import CircularProgress from "@/components/CircularProgress";
+import {CircularProgress} from "@/components/CircularProgress";
 import { useEffect, useState } from "react";
 import { calcPercentage, loadProgress } from "@/utils/helper-functions";
 import { SubCategories } from "@/data/enum";
@@ -125,7 +125,7 @@ export default function HomeScreen() {
                 ]}>
                 <View style={tw`flex-col gap-3`}>
                   <Text style={tw`font-medium`}>
-                    {latestSubDetails?.latestTest ?? "No Questions Answered"}
+                    {latestSubDetails?.latestTest ?? "You've no current session"}
                   </Text>
                   {latestSubDetails && (
                     <Text>Tried on {latestSubDetails.dateAnswered}</Text>
