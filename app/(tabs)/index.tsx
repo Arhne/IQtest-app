@@ -15,10 +15,13 @@ import { router } from "expo-router";
 import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
 import CustomCard from "@/components/CustomCard";
 import { icons, images } from "@/constants";
-import {CircularProgress} from "@/components/CircularProgress";
-import { useEffect, useState } from "react";
-import { calcPercentage, loadProgress } from "@/utils/helper-functions";
+import { CircularProgress } from "@/components/CircularProgress";
+import { useEffect, useMemo, useState } from "react";
+import { calcPercentage } from "@/utils/helper-functions";
 import { SubCategories } from "@/data/enum";
+import { useAppSelector } from "@/redux";
+import { formatDate } from "@/utils/format-date";
+import { SubCategoryConfig } from "@/data/data-config";
 
 const interactions = [
   {
@@ -63,28 +66,60 @@ export default function HomeScreen() {
   const screenWidth = Dimensions.get("screen").width - screenPadding * 2;
   const itemWidth = (screenWidth - (col - 1) * gap) / col;
   const [latestSubDetails, setLatestSubDetails] = useState<IDetails | null>();
+  const progressData = useAppSelector((state) => state.questions.progressData);
+  const recentData = useAppSelector((state) => state.questions.recentData);
+  const [hasRecentData, hasProgressData] = useMemo(() => {
+    return [
+      Object.keys(recentData).length > 0,
+      Object.keys(progressData).length > 0,
+    ];
+  }, [recentData, progressData]);
 
-  const fetchDetails = async () => {
-    const { progress, recent, lastQuestion } = await loadProgress();
-    if (progress && recent && lastQuestion) {
+  const recents = useMemo(() => {
+    if (!hasRecentData) return [];
+
+    return Object.keys(recentData)
+      .sort((a, b) => {
+        const dateA = new Date(
+          recentData[a as SubCategories].dateAnswered
+        ).getTime();
+        const dateB = new Date(
+          recentData[b as SubCategories].dateAnswered
+        ).getTime();
+        return dateB - dateA;
+      })
+      .slice(0, 1) as SubCategories[];
+  }, [recentData, hasRecentData]);
+
+  const setDetails = () => {
+    if (hasProgressData && hasRecentData) {
       setLatestSubDetails({
-        latestTest: lastQuestion,
-        dateAnswered: recent[lastQuestion as SubCategories].dateAnswered,
+        latestTest: recents[0],
+        dateAnswered: recentData[recents[0]].dateAnswered,
         progressPercent: calcPercentage(
-          progress[lastQuestion as SubCategories].answered,
-          progress[lastQuestion as SubCategories].total
+          progressData[recents[0]].answered,
+          progressData[recents[0]].total
         ),
       });
     }
   };
 
   useEffect(() => {
-    fetchDetails();
-  }, []);
+    setDetails();
+  }, [recents]);
 
   const handleRecentQuestions = () => {
-    router.push("/test");
+    router.push({
+      pathname: "/(cat)/test",
+      params: { subCategory: latestSubDetails?.latestTest },
+    });
   };
+
+  const lastTestTitle = SubCategoryConfig[
+    latestSubDetails?.latestTest as SubCategories
+  ]
+    ? SubCategoryConfig[latestSubDetails?.latestTest as SubCategories].title
+    : "You've no current session";
 
   return (
     <ThemedView style={tw`w-full px-5 pt-3 justify-center`}>
@@ -124,11 +159,11 @@ export default function HomeScreen() {
                   { borderBottomLeftRadius: 12, borderBottomRightRadius: 12 },
                 ]}>
                 <View style={tw`flex-col gap-3`}>
-                  <Text style={tw`font-medium`}>
-                    {latestSubDetails?.latestTest ?? "You've no current session"}
-                  </Text>
+                  <Text style={tw`font-medium`}>{lastTestTitle}</Text>
                   {latestSubDetails && (
-                    <Text>Tried on {latestSubDetails.dateAnswered}</Text>
+                    <Text>
+                      Tried on {formatDate(latestSubDetails.dateAnswered)}
+                    </Text>
                   )}
                 </View>
                 <CustomGradientButton

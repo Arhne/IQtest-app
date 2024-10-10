@@ -11,18 +11,17 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { ThemedText } from "@/components/ThemedText";
 import tw from "@/twrnc-config";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { icons, images } from "@/constants";
 import CustomWarning from "@/components/CustomWarning";
 import { router } from "expo-router";
 import { SubCategories } from "@/data/enum";
 import {
   calcPercentage,
   getTotalQuestionsForSubCategory,
-  loadProgress,
 } from "@/utils/helper-functions";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { SubCategoryConfig } from "@/data/data-config";
 import LinearProgressBar from "@/components/LinearProgress";
+import { useAppSelector } from "@/redux";
 // import  { BackIcon }  from '@/constants';
 
 export default function ProgressScreen() {
@@ -31,39 +30,44 @@ export default function ProgressScreen() {
   const gap = 12;
   const screenWidth = Dimensions.get("screen").width - screenPadding * 2;
   const itemWidth = (screenWidth - (col - 1) * gap) / col;
-  const [progressData, setProgressData] =
-    useState<Record<SubCategories, SubCategoryProgress>>();
-  const [recentData, setRecentData] =
-    useState<Record<SubCategories, AnsweredDetails>>();
-  console.log(itemWidth);
-
-  const fetchData = async () => {
-    const { progress, recent } = await loadProgress();
-    if (progress && recent) {
-      setRecentData(recent);
-      setProgressData(progress);
-    }
-  };
+  const progressData = useAppSelector((state) => state.questions.progressData);
+  const recentData = useAppSelector((state) => state.questions.recentData);
+  const [hasRecentData, hasProgressData] = useMemo(() => {
+    return [
+      Object.keys(recentData).length > 0,
+      Object.keys(progressData).length > 0,
+    ];
+  }, [recentData, progressData]);
 
   const recents = useMemo(() => {
-    if (!recentData) return [];
-    return Object.keys(recentData) as SubCategories[];
-  }, [recentData]);
+    if (!hasRecentData) return [];
+  
+    return Object.keys(recentData)
+      .sort((a, b) => {
+        const dateA = new Date(recentData[a as SubCategories].dateAnswered).getTime();
+        const dateB = new Date(recentData[b as SubCategories].dateAnswered).getTime();
+        return dateB - dateA; // Sort by latest date
+      }) as SubCategories[];
+  }, [recentData, hasRecentData]);
 
-  const generateProgressData = (item: SubCategories) => {
-    if (progressData) {
-      return calcPercentage(
-        progressData[item].answered,
-        progressData[item].total
-      );
-    } else {
-      return calcPercentage(0, getTotalQuestionsForSubCategory(item));
-    }
-  };
+  const generateProgressData = useCallback(
+    (item: SubCategories) => {
+      if (progressData[item] && hasProgressData) {
+        const answered =  progressData[item].answered
+            ? progressData[item].answered
+            : 0,
+          total = progressData[item].total
+            ? progressData[item].total
+            : getTotalQuestionsForSubCategory(item);
+        return calcPercentage(answered, total);
+      } else {
+        return calcPercentage(0, getTotalQuestionsForSubCategory(item));
+      }
+    },
+    [hasProgressData, progressData, getTotalQuestionsForSubCategory] // dependencies
+  );
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+
 
   const handleSubClick = (item: SubCategories) => {
     const hasProgress = progressData && progressData[item]?.answered > 0;

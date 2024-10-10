@@ -1,31 +1,22 @@
-import {
-  Image,
-  Dimensions,
-  FlatList,
-  Text,
-  ScrollView,
-  View,
-} from "react-native";
+import { FlatList, Text, ScrollView, View } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import tw from "@/twrnc-config";
 import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
 import CustomCard from "@/components/CustomCard";
-import { icons, images } from "@/constants";
 import { Assessment, categoryList } from "@/data/categories";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { router } from "expo-router";
 import {
   calcPercentage,
   getTotalQuestionsForSubCategory,
-  loadProgress,
   sortDataByCategory,
 } from "@/utils/helper-functions";
-import {CircularProgress} from "@/components/CircularProgress";
+import { CircularProgress } from "@/components/CircularProgress";
 import { Categories, SubCategories } from "@/data/enum";
 import { SubCategoryConfig } from "@/data/data-config";
+import { useAppSelector } from "@/redux";
 
 interface Category {
   id: number;
@@ -37,20 +28,14 @@ export default function AllTest() {
   const [selectedCategory, setSelectedCategory] = useState<
     Categories | undefined
   >();
-
-  const [progressData, setProgressData] =
-    useState<Record<SubCategories, SubCategoryProgress>>();
-
-  const [recentData, setRecentData] =
-    useState<Record<SubCategories, AnsweredDetails>>();
-
-  const fetchData = async () => {
-    const { progress, recent } = await loadProgress();
-    if (progress && recent) {
-      setProgressData(progress);
-      setRecentData(recent);
-    }
-  };
+  const progressData = useAppSelector((state) => state.questions.progressData);
+  const recentData = useAppSelector((state) => state.questions.recentData);
+  const [hasRecentData, hasProgressData] = useMemo(() => {
+    return [
+      Object.keys(recentData).length > 0,
+      Object.keys(progressData).length > 0,
+    ];
+  }, [recentData, progressData]);
 
   const subCategories = useMemo(() => {
     const data = sortDataByCategory(Assessment, selectedCategory as Categories);
@@ -60,40 +45,60 @@ export default function AllTest() {
 
   const getProgressStatus = useCallback(
     (item: SubCategories) => {
-      return progressData && progressData[item]
-        ? `${progressData[item].answered}/${progressData[item].total}`
+      return hasProgressData && progressData[item]
+        ? `${progressData[item].answered ?? 0}/${progressData[item].total}`
         : `0/${getTotalQuestionsForSubCategory(item)}`;
     },
     [progressData, getTotalQuestionsForSubCategory]
   );
 
   const recents = useMemo(() => {
-    if (!recentData) return [];
-    return Object.keys(recentData).slice(0, 6) as SubCategories[];
-  }, [recentData]);
+    if (!hasRecentData) return [];
 
-  const generateProgressData = (item: SubCategories) => {
-    if (progressData) {
-      return calcPercentage(
-        progressData[item].answered,
-        progressData[item].total
-      );
-    } else {
-      return calcPercentage(0, getTotalQuestionsForSubCategory(item));
-    }
-  };
+    return Object.keys(recentData)
+      .sort((a, b) => {
+        const dateA = new Date(
+          recentData[a as SubCategories].dateAnswered
+        ).getTime();
+        const dateB = new Date(
+          recentData[b as SubCategories].dateAnswered
+        ).getTime();
+        return dateB - dateA;
+      })
+      .slice(0, 3) as SubCategories[];
+  }, [recentData, hasRecentData]);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const generateProgressData = useCallback(
+    (item: SubCategories) => {
+      if (progressData[item] && hasProgressData) {
+        const answered = progressData[item].answered
+            ? progressData[item].answered
+            : 0,
+          total = progressData[item].total
+            ? progressData[item].total
+            : getTotalQuestionsForSubCategory(item);
+        return calcPercentage(answered, total);
+      } else {
+        return calcPercentage(0, getTotalQuestionsForSubCategory(item));
+      }
+    },
+    [hasProgressData, progressData, getTotalQuestionsForSubCategory] // dependencies
+  );
 
   const handleSubClick = (item: SubCategories) => {
-    const hasProgress = progressData && progressData[item]?.answered > 0;
-    const hasCompleted = progressData && progressData[item]?.answered === progressData[item]?.total;
-    const pathname = hasProgress ? "/(cat)/test" : hasCompleted ? "/(cat)/result" : "/(cat)/testInstructions";
+    const hasProgress =
+      hasProgressData && (progressData[item]?.answered ?? 0) > 0;
+    const hasCompleted =
+      hasProgressData &&
+      (progressData[item]?.answered ?? 0) === progressData[item]?.total;
+    const pathname = hasProgress
+      ? "/(cat)/test"
+      : hasCompleted
+      ? "/(cat)/result"
+      : "/(cat)/testInstructions";
     const params = { subCategory: item };
 
-    router.push({ pathname , params });
+    router.push({ pathname, params });
   };
 
   return (
@@ -121,40 +126,43 @@ export default function AllTest() {
                   horizontal={true}
                   showsHorizontalScrollIndicator={false}
                   renderItem={({ item }) => {
-                    const Icon = SubCategoryConfig[item].interactionicon ?? (() => <View />);
+                    const Icon =
+                      SubCategoryConfig[item].interactionicon ??
+                      (() => <View />);
 
                     return (
-                    <View
-                      style={[
-                        tw`mr-5 bg-gray-DEFAULT rounded-xl flex-1`,
-                        {
-                          padding: 12,
-                          width: 164,
-                        },
-                      ]}>
-                      <View style={tw`max-w-[93px] w-full h-[88px]`}>
-                        <Icon />
-                      </View>
-                      <View style={tw``}>
-                        <Text
-                          style={tw`text-[16px]/[19.36px] font-semibold capitalize`}>
-                          {SubCategoryConfig[item].title}
-                        </Text>
-                        <View
-                          style={tw`flex-row items-center justify-between mt-3`}>
-                          <Text style={tw`leading-[16.94px] text-[#727272]`}>
-                            completed
-                          </Text>
+                      <View
+                        style={[
+                          tw`mr-5 bg-gray-DEFAULT rounded-xl flex-1`,
+                          {
+                            padding: 12,
+                            width: 164,
+                          },
+                        ]}>
+                        <View style={tw`max-w-[93px] w-full h-[88px]`}>
+                          <Icon />
+                        </View>
+                        <View style={tw``}>
                           <Text
-                            style={tw`leading-[16.94px] text-secondary-DEFAULT`}>
-                            {`${generateProgressData(item)}%`}
+                            style={tw`text-[16px]/[19.36px] font-semibold capitalize`}>
+                            {SubCategoryConfig[item].title}
                           </Text>
-                        </View>
-                        <View style={tw`mt-3`}>
-                          <Text>progress line</Text>
+                          <View
+                            style={tw`flex-row items-center justify-between mt-3`}>
+                            <Text style={tw`leading-[16.94px] text-[#727272]`}>
+                              completed
+                            </Text>
+                            <Text
+                              style={tw`leading-[16.94px] text-secondary-DEFAULT`}>
+                              {`${generateProgressData(item)}%`}
+                            </Text>
+                          </View>
+                          <View style={tw`mt-3`}>
+                            <Text>progress line</Text>
+                          </View>
                         </View>
                       </View>
-                    </View> )
+                    );
                   }}
                 />
               )}
@@ -191,22 +199,26 @@ export default function AllTest() {
                   keyExtractor={(item) => item.subCategory}
                   scrollEnabled={false}
                   renderItem={({ item }) => {
-
-              return (
-                <View style={tw`mb-5`}>
-                <CustomCard
-                  icon={<item.icon />}
-                  title={item.title}
-                  titleStyle="w-[180px]"
-                  otherStyles="bg-gray-DEFAULT"
-                  handleClick={() => handleSubClick(item.subCategory)}
-                  pricedesc={getProgressStatus(item.subCategory)}
-                  textoricon={
-                    <CircularProgress percentage={0} radius={30}/>
-                  }
-                />
-              </View>
-              )
+                    return (
+                      <View style={tw`mb-5`}>
+                        <CustomCard
+                          icon={<item.icon />}
+                          title={item.title}
+                          titleStyle="w-[180px]"
+                          otherStyles="bg-gray-DEFAULT"
+                          handleClick={() => handleSubClick(item.subCategory)}
+                          pricedesc={getProgressStatus(item.subCategory)}
+                          textoricon={
+                            <CircularProgress
+                              percentage={generateProgressData(
+                                item.subCategory
+                              )}
+                              radius={30}
+                            />
+                          }
+                        />
+                      </View>
+                    );
                   }}
                 />
               </View>

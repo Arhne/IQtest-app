@@ -1,8 +1,9 @@
 import { Assessment } from "@/data/categories";
 import { SubCategoryConfig } from "@/data/data-config";
 import { Categories, SubCategories } from "@/data/enum";
+import { updateProgress, updateRecentData } from "@/redux/question-reducer";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { Dispatch, ReactNode, SetStateAction, useState } from "react";
+import { Dispatch } from "@reduxjs/toolkit";
 import { SvgProps } from "react-native-svg";
 
 
@@ -83,29 +84,26 @@ export const loadProgress = async () => {
   }
 };
 
-export const handleAnswerQuestion = (
+export const handleAnswerQuestion = async (
   questionNo: number,
   answer: string,
   points: number,
   subCategoryId: SubCategories,
   recentSubCategories: Record<SubCategories, AnsweredDetails>,
-  setRecentSubCategories: Dispatch<
-    SetStateAction<Record<SubCategories, AnsweredDetails>>
-  >,
   progressBySubCategory: Record<SubCategories, SubCategoryProgress>,
-  setProgressBySubCategory: Dispatch<
-    SetStateAction<Record<SubCategories, SubCategoryProgress>>
-  >
+  dispatch: Dispatch
 ) => {
   const answerDetails: QuestionDetails = {
     answer,
     points,
     questionNo,
   };
-  const currentProgress = progressBySubCategory[subCategoryId] || {
+
+  const currentProgress = progressBySubCategory[subCategoryId] ??  {
     answered: 0,
     total: 0,
   };
+
   const updatedProgress = {
     answered: currentProgress.answered + 1,
     total:
@@ -114,24 +112,28 @@ export const handleAnswerQuestion = (
         : getTotalQuestionsForSubCategory(subCategoryId),
   };
 
-  // Update the progress for this subcategory
-  setProgressBySubCategory({
-    ...progressBySubCategory,
-    [subCategoryId]: updatedProgress,
-  });
+  // Dispatch action to update the progress for this subcategory in the Redux store
+  dispatch(
+    updateProgress({
+      subCategoryId,
+      updatedProgress,
+    })
+  );
 
-  // Update recent subcategories, keyed by subcategoryId
-  setRecentSubCategories((prev) => ({
-    ...prev,
+  const updatedRecentSubCategories = {
+    ...recentSubCategories,
     [subCategoryId]: {
       questionsAnswered: [
         answerDetails,
-        ...(prev[subCategoryId]?.questionsAnswered || []),
+        ...(recentSubCategories[subCategoryId]?.questionsAnswered || []),
       ],
       dateAnswered: new Date().toISOString(),
     },
-  }));
+  };
+
+  // Dispatch action to update recent subcategories in the Redux store
+  dispatch(updateRecentData(updatedRecentSubCategories));
 
   // Save progress to storage
-  saveProgress(progressBySubCategory, recentSubCategories, subCategoryId);
+  await saveProgress(progressBySubCategory, updatedRecentSubCategories, subCategoryId);
 };

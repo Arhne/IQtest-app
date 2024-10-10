@@ -1,5 +1,12 @@
-import { useState, useMemo, useEffect } from "react";
-import { Text, ScrollView, View, Pressable, FlatList } from "react-native";
+import { useMemo, useEffect, useState } from "react";
+import {
+  Text,
+  ScrollView,
+  View,
+  Pressable,
+  FlatList,
+  Alert,
+} from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
 import tw from "@/twrnc-config";
@@ -9,31 +16,35 @@ import { LinearGradient } from "expo-linear-gradient";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { SubCategories } from "@/data/enum";
 import { Assessment } from "@/data/categories";
-import { loadProgress } from "@/utils/helper-functions";
+import {
+  calcPercentage,
+  getTotalQuestionsForSubCategory,
+  handleAnswerQuestion,
+} from "@/utils/helper-functions";
 import { SubCategoryConfig } from "@/data/data-config";
 import LinearProgressBar from "@/components/LinearProgress";
+import { setAnswer } from "@/redux/question-reducer";
+import { useAppDispatch, useAppSelector } from "@/redux";
 
-// Example code
 const TestInstructions = () => {
-  const [isIqTest, setIsIqTest] = useState(false);
-
-  const [progressData, setProgressData] =
-    useState<Record<SubCategories, SubCategoryProgress>>();
-  const [recentData, setRecentData] =
-    useState<Record<SubCategories, AnsweredDetails>>();
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Track current question index
-  const [answer, setAnswer] = useState("");
-  const fetchData = async () => {
-    const { progress, recent } = await loadProgress();
-    if (progress && recent) {
-      setProgressData(progress);
-      setRecentData(recent);
-    }
-  };
-
+  const [isIqTest, setIsIqTest] = useState("");
+  const dispatch = useAppDispatch();
   const params = useLocalSearchParams();
   const subCategory = params.subCategory as SubCategories;
 
+  // Selectors to get data from the Redux store
+  const progressData = useAppSelector((state) => state.questions.progressData);
+  const recentData = useAppSelector((state) => state.questions.recentData);
+  const answer = useAppSelector((state) => state.questions.answer);
+  const initialIndexValue =
+    progressData[subCategory] && progressData[subCategory].answered
+      ? progressData[subCategory].answered
+      : 1;
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(
+    initialIndexValue - 1
+  );
+
+  // Memoized questions for the current subcategory
   const questionsData = useMemo(() => {
     const attemptedQuestions =
       recentData?.[subCategory]?.questionsAnswered.map(
@@ -51,24 +62,45 @@ const TestInstructions = () => {
     }, [] as typeof Assessment);
   }, [subCategory, recentData, Assessment]);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questionsData.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setAnswer(""); // Reset the selected answer
+      dispatch(setAnswer(undefined)); // Reset the selected answer
     } else {
-      // Optionally, navigate to results or summary
-      // router.push("/(cat)/results");
+      router.push({ pathname: "/(cat)/result", params: { subCategory } });
     }
+  };
+
+  const handleNext = () => {
+    handleAnswerQuestion(
+      currentQuestion.questionNo,
+      answer?.answer ?? "",
+      answer?.points ?? 0,
+      subCategory,
+      recentData,
+      progressData,
+      dispatch
+    )
+      .then(() => {
+        handleNextQuestion();
+      })
+      .catch((err) => {
+        Alert.alert(err);
+      });
   };
 
   const Icon = SubCategoryConfig[subCategory as SubCategories].interactionicon!;
 
-  // Render the current question
+  // Get the current question from the questionsData array
   const currentQuestion = questionsData[currentQuestionIndex];
+
+  const progressPercent = useMemo(() => {
+    if (Object.keys(progressData).length === 0) return 0;
+    return calcPercentage(
+      progressData[subCategory]?.answered ?? 0,
+      progressData[subCategory]?.total ?? 0
+    );
+  }, [progressData]);
 
   return (
     <ThemedView style={tw`flex-1 w-full h-full`}>
@@ -76,31 +108,27 @@ const TestInstructions = () => {
         <LinearGradient style={tw`flex-1 px-3`} colors={["#8D0CCA", "#D568EF"]}>
           <View style={tw`flex-1`}>
             <Pressable
-              onPress={() => router.back()}
-              style={tw`justify-start flex-col p-2`}
-            >
+              onPress={() => {
+                router.back();
+              }}
+              style={tw`justify-start flex-col p-2`}>
               <MaterialIcons name="arrow-back-ios" size={24} color="#fff" />
             </Pressable>
 
-            {/* Main Content */}
             <View style={tw`flex-1 bg-primary rounded-xl p-5 top-24 mb-8`}>
-              {/* Top Positioned Icon */}
               {isIqTest && (
                 <View style={tw`absolute left-[25%] top-[-38] z-10`}>
                   <Icon width={220} height={210} />
                 </View>
               )}
 
-              {/* Scrollable content */}
               <ScrollView
                 contentContainerStyle={tw`mt-3 gap-6 pb-28 mb-5`}
                 style={tw`flex-1`}
-                showsVerticalScrollIndicator={false}
-              >
+                showsVerticalScrollIndicator={false}>
                 <View style={tw`mt-10`}>
-                  <LinearProgressBar progress={40}/>
+                  <LinearProgressBar progress={progressPercent} />
 
-                  {/* Header image */}
                   {!isIqTest && (
                     <View style={tw`mx-auto`}>
                       <MaterialIcons
@@ -112,8 +140,9 @@ const TestInstructions = () => {
                   )}
 
                   <Text style={tw`font-semibold text-2xl text-center`}>
-                    General IQ
+                    {SubCategoryConfig[subCategory].title}
                   </Text>
+
                   <View style={tw`gap-4`}>
                     <Text style={tw`text-base text-center`}>
                       Question {currentQuestionIndex + 1}
@@ -131,32 +160,41 @@ const TestInstructions = () => {
                       </Text>
                     )}
 
-                    {/* Options section */}
                     <FlatList
                       data={currentQuestion?.options}
                       keyExtractor={(item, index) => index.toString()}
                       renderItem={({ item }) => (
-                        <Pressable onPress={() => setAnswer(item.option)}>
+                        <Pressable
+                          onPress={() =>
+                            dispatch(
+                              setAnswer({
+                                questionNo: currentQuestion.questionNo,
+                                answer: item.option,
+                                points: +item.points,
+                              })
+                            )
+                          }>
                           <View
                             style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]
                               ${
-                                answer === item.option
+                                answer?.answer === item.option
                                   ? "bg-purple-200 border-purple-500"
                                   : "border-gray-300"
-                              }`}
-                          >
+                              }`}>
                             <Text>
                               {item.optionlabel}. {item.option}
                             </Text>
                             <MaterialIcons
                               name={
-                                answer === item.option
+                                answer?.answer === item.option
                                   ? "check-circle"
                                   : "radio-button-unchecked"
                               }
                               size={24}
                               color={
-                                answer === item.option ? "purple" : "#E3E1E9"
+                                answer?.answer === item.option
+                                  ? "purple"
+                                  : "#E3E1E9"
                               }
                             />
                           </View>
@@ -170,17 +208,17 @@ const TestInstructions = () => {
                     title="Next"
                     containerStyles="bg-secondary-DEFAULT w-full mt-1"
                     textStyles="text-primary"
-                    handlePress={handleNextQuestion}
+                    handlePress={handleNext}
                     disabled={!answer}
                   />
                 </View>
               </ScrollView>
             </View>
 
-            {/* Footer text positioned at the bottom */}
             <View style={tw`p-4`}>
               <Text style={tw`text-secondary-DEFAULT text-right`}>
-                {currentQuestionIndex + 1} of {questionsData.length}
+                {currentQuestionIndex + 1} of{" "}
+                {getTotalQuestionsForSubCategory(subCategory)}
               </Text>
             </View>
           </View>

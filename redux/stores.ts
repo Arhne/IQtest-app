@@ -1,13 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-// import { baseApi } from './baseApi';
 import { combineReducer } from './root-reducer';
 
 
 export const makeStore = () => {
   return configureStore({
     reducer: combineReducer,
-    // middleware: (getDefaultMiddleware) =>
-    //   getDefaultMiddleware().concat(baseApi.middleware),
     devTools: process.env.NODE_ENV !== 'production'
   })
 }

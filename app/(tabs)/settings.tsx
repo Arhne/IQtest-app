@@ -1,10 +1,8 @@
 import {
   Image,
-  Dimensions,
   Text,
   FlatList,
   Switch,
-  ScrollView,
   View,
   Pressable,
   Modal,
