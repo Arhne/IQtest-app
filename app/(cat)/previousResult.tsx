@@ -105,7 +105,7 @@ export default function PreviousResult() {
                       <Text
                           style={tw`leading-[16.94px] text-secondary-DEFAULT`}
                         >
-                          progress percentage comes here
+                          50%
                         </Text>
                       </View>
                       <View style={tw`mt-3`}>

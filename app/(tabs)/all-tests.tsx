@@ -17,6 +17,7 @@ import { CircularProgress } from "@/components/CircularProgress";
 import { Categories, SubCategories } from "@/data/enum";
 import { SubCategoryConfig } from "@/data/data-config";
 import { useAppSelector } from "@/redux";
+import LinearProgressBar from "@/components/LinearProgress";
 
 interface Category {
   id: number;
@@ -158,7 +159,7 @@ export default function AllTest() {
                             </Text>
                           </View>
                           <View style={tw`mt-3`}>
-                            <Text>progress line</Text>
+                          <LinearProgressBar progress={0}/>
                           </View>
                         </View>
                       </View>
