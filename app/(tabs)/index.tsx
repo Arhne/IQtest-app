@@ -97,7 +97,7 @@ export default function HomeScreen() {
         latestTest: recents[0],
         dateAnswered: recentData[recents[0]].dateAnswered,
         progressPercent: calcPercentage(
-          progressData[recents[0]].answered,
+          recentData[recents[0]].questionsAnswered.length,
           progressData[recents[0]].total
         ),
       });

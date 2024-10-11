@@ -41,20 +41,23 @@ export default function ProgressScreen() {
 
   const recents = useMemo(() => {
     if (!hasRecentData) return [];
-  
-    return Object.keys(recentData)
-      .sort((a, b) => {
-        const dateA = new Date(recentData[a as SubCategories].dateAnswered).getTime();
-        const dateB = new Date(recentData[b as SubCategories].dateAnswered).getTime();
-        return dateB - dateA; // Sort by latest date
-      }) as SubCategories[];
+
+    return Object.keys(recentData).sort((a, b) => {
+      const dateA = new Date(
+        recentData[a as SubCategories].dateAnswered
+      ).getTime();
+      const dateB = new Date(
+        recentData[b as SubCategories].dateAnswered
+      ).getTime();
+      return dateB - dateA; // Sort by latest date
+    }) as SubCategories[];
   }, [recentData, hasRecentData]);
 
-  const generateProgressData = useCallback(
+  const generateProgressPercent = useCallback(
     (item: SubCategories) => {
       if (progressData[item] && hasProgressData) {
-        const answered =  progressData[item].answered
-            ? progressData[item].answered
+        const answered = recentData[item].questionsAnswered
+            ? recentData[item].questionsAnswered.length
             : 0,
           total = progressData[item].total
             ? progressData[item].total
@@ -66,8 +69,6 @@ export default function ProgressScreen() {
     },
     [hasProgressData, progressData, getTotalQuestionsForSubCategory] // dependencies
   );
-
-
 
   const handleSubClick = (item: SubCategories) => {
     const hasProgress = progressData && progressData[item]?.answered > 0;
@@ -138,11 +139,13 @@ export default function ProgressScreen() {
                           <Text style={tw`text-[#727272]`}>Completed</Text>
                           <Text
                             style={tw`leading-[16.94px] text-secondary-DEFAULT`}>
-                            {`${generateProgressData(item)}%`} 
+                            {`${generateProgressPercent(item)}%`}
                           </Text>
                         </View>
                         <View style={tw`mt-3`}>
-                        <LinearProgressBar progress={40}/>
+                          <LinearProgressBar
+                            progress={generateProgressPercent(item)}
+                          />
                         </View>
                       </View>
                     );

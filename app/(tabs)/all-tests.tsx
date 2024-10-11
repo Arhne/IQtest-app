@@ -72,8 +72,8 @@ export default function AllTest() {
   const generateProgressData = useCallback(
     (item: SubCategories) => {
       if (progressData[item] && hasProgressData) {
-        const answered = progressData[item].answered
-            ? progressData[item].answered
+        const answered = recentData[item].questionsAnswered
+            ? recentData[item].questionsAnswered.length
             : 0,
           total = progressData[item].total
             ? progressData[item].total
@@ -88,10 +88,10 @@ export default function AllTest() {
 
   const handleSubClick = (item: SubCategories) => {
     const hasProgress =
-      hasProgressData && (progressData[item]?.answered ?? 0) > 0;
+      progressData[item]?.answered > 0 &&
+      recentData[item]?.questionsAnswered.length !== progressData[item]?.total;
     const hasCompleted =
-      hasProgressData &&
-      (progressData[item]?.answered ?? 0) === progressData[item]?.total;
+      recentData[item]?.questionsAnswered.length === progressData[item]?.total;
     const pathname = hasProgress
       ? "/(cat)/test"
       : hasCompleted
@@ -100,6 +100,7 @@ export default function AllTest() {
     const params = { subCategory: item };
 
     router.push({ pathname, params });
+
   };
 
   return (
@@ -159,7 +160,9 @@ export default function AllTest() {
                             </Text>
                           </View>
                           <View style={tw`mt-3`}>
-                          <LinearProgressBar progress={0}/>
+                            <LinearProgressBar
+                              progress={generateProgressData(item)}
+                            />
                           </View>
                         </View>
                       </View>

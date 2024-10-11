@@ -8,7 +8,7 @@ export const StackProvider = () => {
 
   useEffect(() => {
     dispatch(loadInitialProgress());
-  }, [dispatch]);
+  }, []);
 
   return (
     <Stack>

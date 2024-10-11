@@ -40,9 +40,8 @@ const TestInstructions = () => {
     progressData[subCategory] && progressData[subCategory].answered
       ? progressData[subCategory].answered
       : 1;
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(
-    initialIndexValue - 1
-  );
+   // Use the last answered question number as initial state
+   const [currentQuestionNo, setCurrentQuestionNo] = useState<number | null>(null);
 
   // Memoized questions for the current subcategory
   const questionsData = useMemo(() => {
@@ -63,17 +62,22 @@ const TestInstructions = () => {
   }, [subCategory, recentData, Assessment]);
 
   const handleNextQuestion = () => {
-    if (currentQuestionIndex < questionsData.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    const currentIndex = questionsData.findIndex(
+      (question) => question.questionNo === currentQuestionNo
+    );
+    if (currentIndex >= 0 && currentIndex < questionsData.length - 1) {
+      setCurrentQuestionNo(questionsData[currentIndex + 1].questionNo);
       dispatch(setAnswer(undefined)); // Reset the selected answer
     } else {
       router.push({ pathname: "/(cat)/result", params: { subCategory } });
     }
   };
 
+  
+
   const handleNext = () => {
     handleAnswerQuestion(
-      currentQuestion.questionNo,
+      currentQuestion!.questionNo,
       answer?.answer ?? "",
       answer?.points ?? 0,
       subCategory,
@@ -91,8 +95,11 @@ const TestInstructions = () => {
 
   const Icon = SubCategoryConfig[subCategory as SubCategories].interactionicon!;
 
-  // Get the current question from the questionsData array
-  const currentQuestion = questionsData[currentQuestionIndex];
+  const currentQuestion = useMemo(() => {
+    return questionsData.find(
+      (question) => question.questionNo === currentQuestionNo
+    );
+  }, [currentQuestionNo, questionsData]);
 
   const progressPercent = useMemo(() => {
     if (Object.keys(progressData).length === 0) return 0;
@@ -101,6 +108,14 @@ const TestInstructions = () => {
       progressData[subCategory]?.total ?? 0
     );
   }, [progressData]);
+
+  console.log("WENENENENEMIGHTY", currentQuestion)
+
+  useEffect(() => {
+    if (questionsData.length > 0) {
+      setCurrentQuestionNo(questionsData[0].questionNo);
+    }
+  }, [questionsData]);
 
   return (
     <ThemedView style={tw`flex-1 w-full h-full`}>
@@ -145,7 +160,7 @@ const TestInstructions = () => {
 
                   <View style={tw`gap-4`}>
                     <Text style={tw`text-base text-center`}>
-                      Question {currentQuestionIndex + 1}
+                    Question {currentQuestionNo}
                     </Text>
 
                     {isIqTest ? (
@@ -168,7 +183,7 @@ const TestInstructions = () => {
                           onPress={() =>
                             dispatch(
                               setAnswer({
-                                questionNo: currentQuestion.questionNo,
+                                questionNo: currentQuestion!.questionNo,
                                 answer: item.option,
                                 points: +item.points,
                               })
@@ -217,7 +232,7 @@ const TestInstructions = () => {
 
             <View style={tw`p-4`}>
               <Text style={tw`text-secondary-DEFAULT text-right`}>
-                {currentQuestionIndex + 1} of{" "}
+                {currentQuestionNo} of{" "}
                 {getTotalQuestionsForSubCategory(subCategory)}
               </Text>
             </View>
