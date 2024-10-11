@@ -47,7 +47,7 @@ export default function AllTest() {
   const getProgressStatus = useCallback(
     (item: SubCategories) => {
       return hasProgressData && progressData[item]
-        ? `${progressData[item].answered ?? 0}/${progressData[item].total}`
+        ? `${recentData[item].questionsAnswered.length ?? 0}/${progressData[item].total}`
         : `0/${getTotalQuestionsForSubCategory(item)}`;
     },
     [progressData, getTotalQuestionsForSubCategory]
@@ -91,7 +91,7 @@ export default function AllTest() {
       progressData[item]?.answered > 0 &&
       recentData[item]?.questionsAnswered.length !== progressData[item]?.total;
     const hasCompleted =
-      recentData[item]?.questionsAnswered.length === progressData[item]?.total;
+      recentData[item]?.questionsAnswered.length === getTotalQuestionsForSubCategory(item);
     const pathname = hasProgress
       ? "/(cat)/test"
       : hasCompleted

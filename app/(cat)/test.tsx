@@ -36,10 +36,7 @@ const TestInstructions = () => {
   const progressData = useAppSelector((state) => state.questions.progressData);
   const recentData = useAppSelector((state) => state.questions.recentData);
   const answer = useAppSelector((state) => state.questions.answer);
-  const initialIndexValue =
-    progressData[subCategory] && progressData[subCategory].answered
-      ? progressData[subCategory].answered
-      : 1;
+
    // Use the last answered question number as initial state
    const [currentQuestionNo, setCurrentQuestionNo] = useState<number | null>(null);
 
@@ -49,8 +46,8 @@ const TestInstructions = () => {
       recentData?.[subCategory]?.questionsAnswered.map(
         (ques) => ques.questionNo
       ) ?? [];
-
-    return Assessment.reduce((acc, item) => {
+  
+    const filteredQuestions = Assessment.reduce((acc, item) => {
       if (
         item.subcategoryId === subCategory &&
         !attemptedQuestions.includes(item.questionNo)
@@ -59,7 +56,11 @@ const TestInstructions = () => {
       }
       return acc;
     }, [] as typeof Assessment);
+  
+    // Sort the filtered questions by questionNo
+    return filteredQuestions.sort((a, b) => a.questionNo - b.questionNo);
   }, [subCategory, recentData, Assessment]);
+  
 
   const handleNextQuestion = () => {
     const currentIndex = questionsData.findIndex(
