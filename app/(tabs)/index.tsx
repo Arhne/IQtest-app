@@ -17,7 +17,10 @@ import CustomCard from "@/components/CustomCard";
 import { icons, images } from "@/constants";
 import { CircularProgress } from "@/components/CircularProgress";
 import { useEffect, useMemo, useState } from "react";
-import { calcPercentage } from "@/utils/helper-functions";
+import {
+  calcPercentage,
+  getTotalQuestionsForSubCategory,
+} from "@/utils/helper-functions";
 import { SubCategories } from "@/data/enum";
 import { useAppSelector } from "@/redux";
 import { formatDate } from "@/utils/format-date";
@@ -98,7 +101,7 @@ export default function HomeScreen() {
         dateAnswered: recentData[recents[0]].dateAnswered,
         progressPercent: calcPercentage(
           recentData[recents[0]].questionsAnswered.length,
-          progressData[recents[0]].total
+          getTotalQuestionsForSubCategory(recents[0])
         ),
       });
     }
