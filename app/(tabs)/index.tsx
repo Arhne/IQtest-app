@@ -109,10 +109,14 @@ export default function HomeScreen() {
   }, [recents]);
 
   const handleRecentQuestions = () => {
-    router.push({
-      pathname: "/(cat)/test",
-      params: { subCategory: latestSubDetails?.latestTest },
-    });
+    if (latestSubDetails) {
+      router.push({
+        pathname: "/(cat)/test",
+        params: { subCategory: latestSubDetails?.latestTest },
+      });
+    } else {
+      router.push("/all-tests");
+    }
   };
 
   const lastTestTitle = SubCategoryConfig[
