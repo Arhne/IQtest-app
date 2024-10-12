@@ -9,7 +9,7 @@ const Persona= (props: SvgProps) => (
     viewBox="0 0 50 51"
     {...props}
   >
-    <Rect width={50} height={50} y={0.199} fill="#F1F0F4" rx={25} />
+    {/* <Rect width={50} height={50} y={0.199} fill="#F1F0F4" rx={25} /> */}
     <Path
       fill="#E0E0E0"
       d="m37.169 17.619-.881 1.635.608.328.88-1.635-.608-.328Z"

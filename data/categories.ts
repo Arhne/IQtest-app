@@ -11817,7 +11817,7 @@ export const Assessment : IQuestions[] = [
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/3/answers/iqtest_10_06.png",
+                option: require("../assets/images/generalIQ/3/answers/iqtest_10_06.png"),
                 optionlabel: "D",
                 points: "0",
             },

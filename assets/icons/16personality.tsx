@@ -9,7 +9,7 @@ const Personality = (props: SvgProps) => (
     viewBox="0 0 50 51"
     {...props}
   >
-    <Rect width={50} height={50} y={0.033} fill="#F1F0F4" rx={25} />
+    {/* <Rect width={50} height={50} y={0.033} fill="#F1F0F4" rx={25} /> */}
     <Path
       fill="#F5F5F5"
       d="M25 46.216c11.598 0 21-.55 21-1.226 0-.677-9.402-1.226-21-1.226S4 44.313 4 44.99c0 .677 9.402 1.226 21 1.226Z"

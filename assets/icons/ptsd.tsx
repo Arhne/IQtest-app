@@ -9,7 +9,7 @@ const Ptsd
     viewBox="0 0 50 51"
     {...props}
   >
-    <Rect width={50} height={50} y={0.287} fill="#F1F0F4" rx={25} />
+    {/* <Rect width={50} height={50} y={0.287} fill="#F1F0F4" rx={25} /> */}
     <G clipPath="url(#a)">
       <Path
         fill="#263238"

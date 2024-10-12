@@ -120,7 +120,7 @@ const TestInstructions = () => {
   return (
     <ThemedView style={tw`flex-1 w-full h-full`}>
       <SafeAreaView style={tw`flex-1`}>
-        <LinearGradient style={tw`flex-1 px-3`} colors={["#8D0CCA", "#D568EF"]}>
+        <LinearGradient style={tw`flex-1 px-3 relative`} colors={["#8D0CCA", "#D568EF"]}>
           <View style={tw`flex-1`}>
             <Pressable
               onPress={() => {
@@ -131,101 +131,80 @@ const TestInstructions = () => {
               <MaterialIcons name="arrow-back-ios" size={24} color="#fff" />
             </Pressable>
 
-            <View style={tw`flex-1 bg-primary rounded-xl p-5 h-60 top-24 mb-8`}>
+            <View
+              style={tw`flex-1 w-full bg-primary rounded-xl p-5 mb-8 absolute ${isIqTest ? "top-28 h-[84%]" : "top-20 h-[88%]"}`}
+            >
               {isIqTest && (
-                <View style={tw`absolute left-[25%] top-[-33] z-10`}>
-                  <Icon width={220} height={175} />
+                <View style={tw`absolute left-[25%] top-[-30] z-10`}>
+                  <Icon width={220} height={160} />
                 </View>
               )}
 
-              <View>
-                <View style={tw`mt-6 gap-3`}>
-                  <LinearProgressBar progress={progressPercent} />
-
-                  {!isIqTest && (
+              <FlatList
+                data={currentQuestion?.options}
+                keyExtractor={(item, index) => index.toString()}
+                ListHeaderComponent={() => (
+                  <View style={tw`mt-6 gap-3`}>
+                    <LinearProgressBar progress={progressPercent} />
+                    {!isIqTest && (
                     <View style={tw`mx-auto`}>
-                      {/* <MaterialIcons
-                        name="pie-chart"
-                        size={80}
-                        color="#6C63FF"
-                      /> */}
-                      <Icon width={220} height={210} />
+                      <Icon width={220} height={160} />
                     </View>
                   )}
-
-                  <Text style={tw`font-semibold text-2xl text-center`}>
-                    {SubCategoryConfig[subCategory].title}
-                  </Text>
-
-                  <View style={tw`gap-4`}>
+                    <Text style={tw`font-semibold text-2xl text-center`}>
+                      {SubCategoryConfig[subCategory].title}
+                    </Text>
                     <Text style={tw`text-lg text-center`}>
                       Question {currentQuestionNo}
                     </Text>
-
-                    {isIqTest ? (
-                      <View style={tw`bg-[#FEF5CB80] rounded-xl p-10`}>
+                    
+                      <View style={tw`bg-[#FEF5CB80] rounded-xl p-10 mb-5`}>
                         <Text style={tw`text-2xl font-semibold text-center`}>
                           {currentQuestion?.question}
                         </Text>
                       </View>
-                    ) : (
-                      <Text style={tw`text-base text-center`}>
-                        {currentQuestion?.question}
-                      </Text>
-                    )}
-
-                    <ScrollView
-                      contentContainerStyle={tw`mt-3 pb-28 mb-5`}
-                      // style={tw`flex-1`}
-                      showsVerticalScrollIndicator={false}
-                    >
-                      <FlatList
-                        data={currentQuestion?.options}
-                        keyExtractor={(item, index) => index.toString()}
-                        renderItem={({ item }) => (
-                          <Pressable
-                            onPress={() =>
-                              dispatch(
-                                setAnswer({
-                                  questionNo: currentQuestion!.questionNo,
-                                  answer: item.option,
-                                  points: +item.points,
-                                })
-                              )
-                            }
-                          >
-                            <View
-                              style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]
+                    
+                  </View>
+                )}
+                renderItem={({ item }) => (
+                  <Pressable
+                    onPress={() =>
+                      dispatch(
+                        setAnswer({
+                          questionNo: currentQuestion!.questionNo,
+                          answer: item.option,
+                          points: +item.points,
+                        })
+                      )
+                    }
+                  >
+                    <View
+                      style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]
                               ${
                                 answer?.answer === item.option
                                   ? "bg-purple-200 border-purple-500"
                                   : "border-gray-300"
                               }`}
-                            >
-                              <Text>
-                                {item.optionlabel}. {item.option}
-                              </Text>
-                              <MaterialIcons
-                                name={
-                                  answer?.answer === item.option
-                                    ? "check-circle"
-                                    : "radio-button-unchecked"
-                                }
-                                size={24}
-                                color={
-                                  answer?.answer === item.option
-                                    ? "purple"
-                                    : "#E3E1E9"
-                                }
-                              />
-                            </View>
-                          </Pressable>
-                        )}
-                        ListEmptyComponent={<Text>No options available</Text>}
-                        scrollEnabled={false}
+                    >
+                      <Text>
+                        {item.optionlabel}.{"  "}{item.option}
+                      </Text>
+                      <MaterialIcons
+                        name={
+                          answer?.answer === item.option
+                            ? "check-circle"
+                            : "radio-button-unchecked"
+                        }
+                        size={24}
+                        color={
+                          answer?.answer === item.option ? "#8D0CCA" : "#E3E1E9"
+                        }
                       />
-                    </ScrollView>
-                  </View>
+                    </View>
+                  </Pressable>
+                )}
+               
+                ListFooterComponent={() => (
                   <CustomButton
                     title="Next"
                     containerStyles="bg-secondary-DEFAULT w-full mt-1"
@@ -233,12 +212,16 @@ const TestInstructions = () => {
                     handlePress={handleNext}
                     disabled={!answer}
                   />
-                </View>
-              </View>
+                )}
+                ListEmptyComponent={<Text>No options available</Text>}
+                showsVerticalScrollIndicator={false}
+               
+              /> 
+              
             </View>
 
             <View style={tw`p-4`}>
-              <Text style={tw`text-secondary-DEFAULT text-right`}>
+              <Text style={tw`text-secondary-DEFAULT top-[741px] text-right`}>
                 {currentQuestionNo} of{" "}
                 {getTotalQuestionsForSubCategory(subCategory)}
               </Text>

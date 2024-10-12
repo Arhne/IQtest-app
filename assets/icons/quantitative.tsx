@@ -9,7 +9,7 @@ const Quantitative = (props: SvgProps) => (
     viewBox="0 0 50 51"
     {...props}
   >
-    <Rect width={50} height={50} y={0.205} fill="#F1F0F4" rx={25} />
+    {/* <Rect width={50} height={50} y={0.205} fill="#F1F0F4" rx={25} /> */}
     <Path
       fill="#263238"
       d="M7.697 39.865S3.927 37.083 4 33.977L4 22.447l21.203-.713.216 8.422-17.722 9.709Z"
