@@ -11738,7 +11738,7 @@ export const Assessment : IQuestions[] = [
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/1/answers/c1.png",
+                option: require("../assets/images/generalIQ/1/answers/c1.png"),
                 optionlabel: "A",
                 points: "1",
             },
@@ -11797,7 +11797,7 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 3,
-        question: "/assests/images/generalIQ/3/q3.png",
+        question: require("../assets/images/generalIQ/3/q3.png"),
         answer: "/assests/images/generalIQ/3/answers/c3.png",
         subcategoryId: SubCategories.GENERAL,
         options: [

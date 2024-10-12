@@ -72,7 +72,7 @@ export default function SingleResult() {
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={tw`gap-5 flex-1`}>
             <Image
-              source={images.analytics}
+              source={images.done}
               style={tw`max-w-[323px] mx-auto w-full h-[313px]`}
               resizeMode="contain"
             />

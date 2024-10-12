@@ -91,11 +91,11 @@ export default function ProgressScreen() {
         <View style={tw`flex-row items-center mb-5`}>
           <Pressable
             onPress={() => router.back()}
-            style={tw`justify-start mr-30`}>
+            style={tw`justify-start mr-24`}>
             <MaterialIcons name="arrow-back-ios" size={24} color="black" />
           </Pressable>
 
-          <Text style={tw`text-xl font-semibold`}>Test Progress</Text>
+          <Text style={tw`text-xl font-semibold`}>Test  Progress</Text>
         </View>
 
         <View style={tw`gap-5 flex-1`}>
@@ -105,10 +105,13 @@ export default function ProgressScreen() {
           />
 
           <View>
-            <ThemedText style={tw`text-base font-semibold w-70`}>
+            <ThemedText style={tw`text-base font-semibold mb-2 w-70`}>
               Test Progress
             </ThemedText>
-            <ScrollView showsHorizontalScrollIndicator={false}>
+            <ScrollView showsVerticalScrollIndicator={false}
+            contentContainerStyle={tw`pb-38`}
+            // style={tw`flex-1`}
+            >
               <View style={tw`gap-3 flex-row flex-wrap`}>
                 {recents.length === 0 ? (
                   <View style={tw`flex-1 items-center justify-center`}>
@@ -131,7 +134,7 @@ export default function ProgressScreen() {
                         </View>
 
                         <Text
-                          style={tw`mb-2 text-base capitalize font-semibold`}>
+                          style={tw`mb-2 text-base font-semibold`}>
                           {SubCategoryConfig[item].title}
                         </Text>
                         <View

@@ -27,7 +27,7 @@ import { setAnswer } from "@/redux/question-reducer";
 import { useAppDispatch, useAppSelector } from "@/redux";
 
 const TestInstructions = () => {
-  const [isIqTest, setIsIqTest] = useState("");
+  const [isIqTest, setIsIqTest] = useState("true");
   const dispatch = useAppDispatch();
   const params = useLocalSearchParams();
   const subCategory = params.subCategory as SubCategories;
@@ -37,8 +37,10 @@ const TestInstructions = () => {
   const recentData = useAppSelector((state) => state.questions.recentData);
   const answer = useAppSelector((state) => state.questions.answer);
 
-   // Use the last answered question number as initial state
-   const [currentQuestionNo, setCurrentQuestionNo] = useState<number | null>(null);
+  // Use the last answered question number as initial state
+  const [currentQuestionNo, setCurrentQuestionNo] = useState<number | null>(
+    null
+  );
 
   // Memoized questions for the current subcategory
   const questionsData = useMemo(() => {
@@ -46,7 +48,7 @@ const TestInstructions = () => {
       recentData?.[subCategory]?.questionsAnswered.map(
         (ques) => ques.questionNo
       ) ?? [];
-  
+
     const filteredQuestions = Assessment.reduce((acc, item) => {
       if (
         item.subcategoryId === subCategory &&
@@ -56,11 +58,10 @@ const TestInstructions = () => {
       }
       return acc;
     }, [] as typeof Assessment);
-  
+
     // Sort the filtered questions by questionNo
     return filteredQuestions.sort((a, b) => a.questionNo - b.questionNo);
   }, [subCategory, recentData, Assessment]);
-  
 
   const handleNextQuestion = () => {
     const currentIndex = questionsData.findIndex(
@@ -73,8 +74,6 @@ const TestInstructions = () => {
       router.push({ pathname: "/(cat)/result", params: { subCategory } });
     }
   };
-
-  
 
   const handleNext = () => {
     handleAnswerQuestion(
@@ -110,7 +109,7 @@ const TestInstructions = () => {
     );
   }, [progressData]);
 
-  console.log("WENENENENEMIGHTY", currentQuestion)
+  console.log("WENENENENEMIGHTY", currentQuestion);
 
   useEffect(() => {
     if (questionsData.length > 0) {
@@ -127,31 +126,30 @@ const TestInstructions = () => {
               onPress={() => {
                 router.back();
               }}
-              style={tw`justify-start flex-col p-2`}>
+              style={tw`justify-start flex-col p-2`}
+            >
               <MaterialIcons name="arrow-back-ios" size={24} color="#fff" />
             </Pressable>
 
-            <View style={tw`flex-1 bg-primary rounded-xl p-5 top-24 mb-8`}>
+            <View style={tw`flex-1 bg-primary rounded-xl p-5 h-60 top-24 mb-8`}>
               {isIqTest && (
-                <View style={tw`absolute left-[25%] top-[-38] z-10`}>
-                  <Icon width={220} height={210} />
+                <View style={tw`absolute left-[25%] top-[-33] z-10`}>
+                  <Icon width={220} height={175} />
                 </View>
               )}
 
-              <ScrollView
-                contentContainerStyle={tw`mt-3 gap-6 pb-28 mb-5`}
-                style={tw`flex-1`}
-                showsVerticalScrollIndicator={false}>
-                <View style={tw`mt-10`}>
+              <View>
+                <View style={tw`mt-6 gap-3`}>
                   <LinearProgressBar progress={progressPercent} />
 
                   {!isIqTest && (
                     <View style={tw`mx-auto`}>
-                      <MaterialIcons
+                      {/* <MaterialIcons
                         name="pie-chart"
                         size={80}
                         color="#6C63FF"
-                      />
+                      /> */}
+                      <Icon width={220} height={210} />
                     </View>
                   )}
 
@@ -160,8 +158,8 @@ const TestInstructions = () => {
                   </Text>
 
                   <View style={tw`gap-4`}>
-                    <Text style={tw`text-base text-center`}>
-                    Question {currentQuestionNo}
+                    <Text style={tw`text-lg text-center`}>
+                      Question {currentQuestionNo}
                     </Text>
 
                     {isIqTest ? (
@@ -176,49 +174,57 @@ const TestInstructions = () => {
                       </Text>
                     )}
 
-                    <FlatList
-                      data={currentQuestion?.options}
-                      keyExtractor={(item, index) => index.toString()}
-                      renderItem={({ item }) => (
-                        <Pressable
-                          onPress={() =>
-                            dispatch(
-                              setAnswer({
-                                questionNo: currentQuestion!.questionNo,
-                                answer: item.option,
-                                points: +item.points,
-                              })
-                            )
-                          }>
-                          <View
-                            style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]
+                    <ScrollView
+                      contentContainerStyle={tw`mt-3 pb-28 mb-5`}
+                      // style={tw`flex-1`}
+                      showsVerticalScrollIndicator={false}
+                    >
+                      <FlatList
+                        data={currentQuestion?.options}
+                        keyExtractor={(item, index) => index.toString()}
+                        renderItem={({ item }) => (
+                          <Pressable
+                            onPress={() =>
+                              dispatch(
+                                setAnswer({
+                                  questionNo: currentQuestion!.questionNo,
+                                  answer: item.option,
+                                  points: +item.points,
+                                })
+                              )
+                            }
+                          >
+                            <View
+                              style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]
                               ${
                                 answer?.answer === item.option
                                   ? "bg-purple-200 border-purple-500"
                                   : "border-gray-300"
-                              }`}>
-                            <Text>
-                              {item.optionlabel}. {item.option}
-                            </Text>
-                            <MaterialIcons
-                              name={
-                                answer?.answer === item.option
-                                  ? "check-circle"
-                                  : "radio-button-unchecked"
-                              }
-                              size={24}
-                              color={
-                                answer?.answer === item.option
-                                  ? "purple"
-                                  : "#E3E1E9"
-                              }
-                            />
-                          </View>
-                        </Pressable>
-                      )}
-                      ListEmptyComponent={<Text>No options available</Text>}
-                      scrollEnabled={false}
-                    />
+                              }`}
+                            >
+                              <Text>
+                                {item.optionlabel}. {item.option}
+                              </Text>
+                              <MaterialIcons
+                                name={
+                                  answer?.answer === item.option
+                                    ? "check-circle"
+                                    : "radio-button-unchecked"
+                                }
+                                size={24}
+                                color={
+                                  answer?.answer === item.option
+                                    ? "purple"
+                                    : "#E3E1E9"
+                                }
+                              />
+                            </View>
+                          </Pressable>
+                        )}
+                        ListEmptyComponent={<Text>No options available</Text>}
+                        scrollEnabled={false}
+                      />
+                    </ScrollView>
                   </View>
                   <CustomButton
                     title="Next"
@@ -228,7 +234,7 @@ const TestInstructions = () => {
                     disabled={!answer}
                   />
                 </View>
-              </ScrollView>
+              </View>
             </View>
 
             <View style={tw`p-4`}>

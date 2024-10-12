@@ -146,8 +146,8 @@ export default function AllTest() {
                         </View>
                         <View style={tw``}>
                           <Text
-                            style={tw`text-[16px]/[19.36px] font-semibold capitalize`}>
-                            {SubCategoryConfig[item].title}
+                            style={tw`text-[16px]/[19.36px] font-semibold`}>
+                            {SubCategoryConfig[item].title.substring(0, 10) + "..."}
                           </Text>
                           <View
                             style={tw`flex-row items-center justify-between mt-3`}>

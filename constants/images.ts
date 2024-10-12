@@ -12,4 +12,5 @@ export default  {
   holon: require('../assets/images/holon.png'),
   pricingPlan: require('../assets/images/pricingPlan.png'),
   successfulPayment: require('../assets/images/successfulPayment.png'),
+  done: require('../assets/images/done.png'),
 };
