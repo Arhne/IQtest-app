@@ -1,11 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { SubCategories } from '@/data/enum';
 
-interface QuestionDetails {
-  questionNo: number;
-  answer: string;
-  points: number;
-}
 
 interface SubCategoryProgress {
   answered: number;

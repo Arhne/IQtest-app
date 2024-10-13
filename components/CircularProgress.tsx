@@ -1,34 +1,39 @@
-import React from "react";
+import React, { FC } from "react";
 import { Text, View, Dimensions } from "react-native";
 import { Circle, Svg, Defs, LinearGradient, Stop } from "react-native-svg";
 import { ProgressChart, PieChart as RNChart } from "react-native-chart-kit";
 import tw from "@/twrnc-config";
+import { ProgressChartData } from "react-native-chart-kit/dist/ProgressChart";
+import { labelColorMap } from "@/data/data-config";
 
 // const screenWidth = Dimensions.get('screen').width;
 const screenWidth = 158;
 
+interface IMultipleChart {
+  data : ProgressChartData
+}
 const data = [
   {
     name: "Correct Answer",
     population: 18,
-    color: "green",
+    color: "#8fbf00",
   },
   {
     name: "Wrong Answer",
     population: 6,
-    color: "aqua",
+    color: "#00bcbf",
   },
   {
     name: "Unanswered",
     population: 6,
-    color: "red",
+    color: "#dd2e2e",
   },
 ];
 
 const totalAnswers = data.reduce((acc, item) => acc + item.population, 0);
 const correctPercentage = ((data[0].population / totalAnswers) * 100) // Calculating percentage
 
-const progressdata = {
+const progressdata : ProgressChartData = {
   labels: ["Swim", "Bike", "Run", "Swim", "Bike"], // optional
   data: [0.4, 0.6, 0.8, 0.5, 0.8],
 };
@@ -127,10 +132,10 @@ export const PieChart = () => {
   );
 };
 
-export const MultipleChart = () => {
+export const MultipleChart : FC<IMultipleChart> = ({data}) => {
   return (
     <ProgressChart
-      data={progressdata}
+      data={data}
       width={screenWidth}
       height={220}
       strokeWidth={8} // Increase stroke width to make circles thicker
@@ -142,13 +147,7 @@ export const MultipleChart = () => {
         backgroundGradientToOpacity: 0,
         color: (opacity = 1, index) => {
           // Set the color for the filled part based on the data's index
-          const colors = [
-            `rgba(26, 255, 146, ${opacity})`, // Color for Swim
-            `rgba(255, 99, 132, ${opacity})`, // Color for Bike
-            `rgba(54, 162, 235, ${opacity})`, // Color for Run
-            `rgba(75, 192, 192, ${opacity})`, // Additional color for another segment
-            `rgba(153, 102, 255, ${opacity})`, // Another color for the 5th segment
-          ];
+          const colors = Object.values(labelColorMap).map((item) => item);
           return colors[index ?? 0] || `rgba(26, 255, 146, ${opacity})`; // Default color if no color is found
         },
         labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,

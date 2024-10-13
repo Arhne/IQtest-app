@@ -24,6 +24,7 @@ interface QuestionDetails {
   questionNo: number;
   answer: string;
   points: number;
+  questionLabel: string;
 }
 
 interface AnsweredDetails {

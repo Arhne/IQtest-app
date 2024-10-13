@@ -94,15 +94,20 @@ export default function HomeScreen() {
       .slice(0, 1) as SubCategories[];
   }, [recentData, hasRecentData]);
 
+  const percentProgress = useMemo(() => {
+    if (!recents[0]) return 0;
+    return calcPercentage(
+      recentData[recents[0]].questionsAnswered.length,
+      getTotalQuestionsForSubCategory(recents[0])
+    )
+  }, [recents])
+
   const setDetails = () => {
     if (hasProgressData && hasRecentData) {
       setLatestSubDetails({
         latestTest: recents[0],
         dateAnswered: recentData[recents[0]].dateAnswered,
-        progressPercent: calcPercentage(
-          recentData[recents[0]].questionsAnswered.length,
-          getTotalQuestionsForSubCategory(recents[0])
-        ),
+        progressPercent: percentProgress,
       });
     }
   };
@@ -113,14 +118,16 @@ export default function HomeScreen() {
 
   const handleRecentQuestions = () => {
     if (latestSubDetails) {
+      const route = percentProgress === 100 ? "/(cat)/result" : "/(cat)/test";
       router.push({
-        pathname: "/(cat)/test",
-        params: { subCategory: latestSubDetails?.latestTest },
+        pathname: route,
+        params: { subCategory: latestSubDetails.latestTest },
       });
     } else {
       router.push("/all-tests");
     }
   };
+  
 
   const lastTestTitle = SubCategoryConfig[
     latestSubDetails?.latestTest as SubCategories

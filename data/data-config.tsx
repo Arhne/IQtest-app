@@ -61,26 +61,22 @@ export const SubCategoryConfig: Record<
     title: "Internal Disorder Test",
     interactionicon: icons.Internet,
     categories: Categories.MENTAL_TEST,
-
   },
   [SubCategories.PTSD]: {
     title: "PTSD Test",
     interactionicon: icons.Ptsd,
     categories: Categories.MENTAL_TEST,
-
   },
   [SubCategories.ANXIETY]: {
     title: "Anxiety Test",
     interactionicon: icons.Anxiety,
     categories: Categories.MENTAL_TEST,
-
   },
   [SubCategories.LOGICAL]: {
     title: "Logical IQ Test",
     interactionicon: icons.Logical,
     categories: Categories.IQ_TEST,
-    resultData: logicalResultData
-
+    resultData: logicalResultData,
   },
   [SubCategories.INTROVERT]: {
     title: "Introvert and Extrovert Test",
@@ -101,8 +97,7 @@ export const SubCategoryConfig: Record<
     title: "Emotional IQ Test",
     interactionicon: icons.Emotions,
     categories: Categories.IQ_TEST,
-    resultData: emotionalIqResult
-
+    resultData: emotionalIqResult,
   },
   [SubCategories.EQ]: {
     title: "Emotional Intelligence (EQ) Test",
@@ -120,12 +115,19 @@ export const SubCategoryConfig: Record<
     title: "Memory IQ Test",
     interactionicon: icons.Alzheimer,
     categories: Categories.IQ_TEST,
-
   },
   [SubCategories.GENERAL]: {
     title: "General IQ Test",
     interactionicon: icons.Alzheimer,
     categories: Categories.IQ_TEST,
-
   },
+};
+
+export const labelColorMap: Record<number, string> = {
+  0: "#bf4be3",
+  1: "#f9ae00",
+  2: "#8fbf00",
+  3: "#00bcbf",
+  4: "#dd2e2e",
+  // Add more labels and colors as needed
 };

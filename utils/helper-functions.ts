@@ -1,5 +1,5 @@
 import { Assessment } from "@/data/categories";
-import { SubCategoryConfig } from "@/data/data-config";
+import { labelColorMap, SubCategoryConfig } from "@/data/data-config";
 import { Categories, SubCategories } from "@/data/enum";
 import { updateProgress, updateRecentData } from "@/redux/question-reducer";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -89,6 +89,7 @@ export const handleAnswerQuestion = async (
   questionNo: number,
   answer: string,
   points: number,
+  questionLabel: string,
   subCategoryId: SubCategories,
   recentSubCategories: Record<SubCategories, AnsweredDetails>,
   progressBySubCategory: Record<SubCategories, SubCategoryProgress>,
@@ -98,6 +99,7 @@ export const handleAnswerQuestion = async (
     answer,
     points,
     questionNo,
+    questionLabel,
   };
 
   const totalPoints: number = recentSubCategories[subCategoryId]
@@ -146,4 +148,20 @@ export const handleAnswerQuestion = async (
     updatedRecentSubCategories,
     subCategoryId
   );
+};
+
+export const getLogicalResultDetails = (
+  score: number,
+  resultData: ResultDetails[]
+): ResultDetails | undefined => {
+  return resultData.find((result) => {
+    if (typeof result.score === "number") {
+      return result.score === score;
+    }
+    return score >= result.score[0] && score <= result.score[1];
+  });
+};
+
+export const getColorForLabel = (label: string, index: number) => {
+  return labelColorMap[index] || `hsl(${(index * 137.5) % 360}, 70%, 50%)`;
 };

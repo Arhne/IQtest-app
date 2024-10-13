@@ -133,7 +133,12 @@ export default function PreviousResult() {
                             { width: itemWidth },
                             pressed && tw`opacity-70`,
                           ]}
-                          onPress={() => router.push("/result")}>
+                          onPress={() =>
+                            router.push({
+                              pathname: "/result",
+                              params: { subCategory: interaction },
+                            })
+                          }>
                           <View style={tw`max-w-[93px] w-full h-[88px]`}>
                             <Icon />
                           </View>
@@ -152,8 +157,8 @@ export default function PreviousResult() {
                           </View>
                           <View style={tw`mt-3`}>
                             <LinearProgressBar
-                              progress={generateProgressPercent(interaction)} 
-                             />
+                              progress={generateProgressPercent(interaction)}
+                            />
                           </View>
                         </Pressable>
                       );

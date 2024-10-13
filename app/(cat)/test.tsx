@@ -81,6 +81,7 @@ const TestInstructions = () => {
       currentQuestion!.questionNo,
       answer?.answer ?? "",
       answer?.points ?? 0,
+      answer?.questionLabel ?? "",
       subCategory,
       recentData,
       progressData,
@@ -175,6 +176,7 @@ const TestInstructions = () => {
                           questionNo: currentQuestion!.questionNo,
                           answer: item.option,
                           points: +item.points,
+                          questionLabel: item.optionlabel
                         })
                       )
                     }>

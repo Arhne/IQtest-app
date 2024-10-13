@@ -11,10 +11,18 @@ import CustomWarning, {
   CustomDetailResult,
   UnorderedList,
 } from "@/components/CustomWarning";
-import { router } from "expo-router";
-import { useState } from "react";
+import { router, useLocalSearchParams } from "expo-router";
+import { useMemo, useState } from "react";
 import { MultipleChart, PieChart } from "@/components/CircularProgress";
-
+import { Categories, SubCategories } from "@/data/enum";
+import { useAppSelector } from "@/redux";
+import {
+  getColorForLabel,
+  getLogicalResultDetails,
+} from "@/utils/helper-functions";
+import { labelColorMap, SubCategoryConfig } from "@/data/data-config";
+import { ProgressChartData } from "react-native-chart-kit/dist/ProgressChart";
+import { Assessment } from "@/data/categories";
 
 const responses = [
   {
@@ -50,7 +58,21 @@ const responses = [
 ];
 export default function SingleResult() {
   const [isPaid, setIsPaid] = useState(true);
-  const [notSelfAssesment, setNotSelfAssesment] = useState(true);
+  const params = useLocalSearchParams();
+  const subCategory = params.subCategory as SubCategories;
+  const progressData = useAppSelector((state) => state.questions.progressData);
+  const recentData = useAppSelector((state) => state.questions.recentData);
+  const score = recentData[subCategory].totalPoints;
+
+  const config = SubCategoryConfig[subCategory];
+  const notSelfAssesment = config.categories === Categories.IQ_TEST;
+
+  const dataResults = useMemo(() => {
+    if (config.resultData) {
+      const result = getLogicalResultDetails(score, config.resultData);
+      return result;
+    }
+  }, [subCategory, score, config]);
 
   const listItems = [
     "Correct answers",
@@ -59,6 +81,42 @@ export default function SingleResult() {
     "Mental weaknesses",
     "More",
   ];
+
+  const multiplePieData: ProgressChartData = useMemo(() => {
+    const subCategoryAssessment = Assessment.find(
+      (item) => item.subcategoryId === subCategory
+    );
+
+    // Function to determine labels based on category
+    const getLabels = () => {
+      return config.categories === Categories.IQ_TEST
+        ? subCategoryAssessment?.options?.map((option) => option.optionlabel) ??
+            []
+        : subCategoryAssessment?.options?.map((option) => option.option) ?? [];
+    };
+
+    // Function to count occurrences of each label
+    const countLabelOccurrences = (label: string) => {
+      const questions = recentData?.[subCategory]?.questionsAnswered || [];
+      return config.categories === Categories.IQ_TEST
+        ? questions.filter((question) => question.questionLabel === label)
+            .length
+        : questions.filter((question) => question.answer === label).length;
+    };
+
+    // Process data
+    const labels = getLabels();
+    const data = labels.map(countLabelOccurrences);
+    const colors = labels.map(getColorForLabel);
+
+    return {
+      labels,
+      data,
+      colors,
+    };
+  }, [recentData, config.categories, subCategory, Assessment]);
+
+  console.log("MULTIPLE DATA", multiplePieData);
 
   return (
     <ThemedView style={tw`flex-1 px-5`}>
@@ -82,7 +140,7 @@ export default function SingleResult() {
                 You have completed the test
               </ThemedText>
               <ThemedText style={tw`text-2xl font-semibold text-center mb-8`}>
-                Test Name
+                {config.title}
               </ThemedText>
 
               <ThemedText style={tw`text-sm font-normal text-center`}>
@@ -91,12 +149,12 @@ export default function SingleResult() {
             </View>
             <View style={tw`p-6 bg-[#C9FBEB80] gap-5 rounded-xl`}>
               <Text style={tw`text-center text-base`}>
-                Your personality type is
+                Your {config.title} type is
               </Text>
-              <Text style={tw`text-3xl text-center font-semibold`}>INTP</Text>
-              <Text style={tw`text-center text-base`}>
-                (Introverted, Intuitive, Thinking, Perceptual)
+              <Text style={tw`text-3xl text-center font-semibold`}>
+                {dataResults?.scoreDisplay}
               </Text>
+              <Text style={tw`text-center text-base`}></Text>
             </View>
 
             {isPaid ? (
@@ -106,40 +164,35 @@ export default function SingleResult() {
                   <Text style={tw`font-semibold`}>Detailed Result</Text>
                 </View>
                 <View
-                  style={tw`bg-gray-DEFAULT justify-between rounded-xl flex-row px-3 py-4`}
-                >
+                  style={tw`bg-gray-DEFAULT justify-between rounded-xl flex-row px-3 py-4`}>
                   <View style={tw`gap-3 min-w-[150px]`}>
                     <Text style={tw`font-semibold mb-3`}>Your responses</Text>
-                    <MultipleChart/>
-                    {responses.map((response) => (
+                    <MultipleChart data={multiplePieData} />
+                    {multiplePieData.labels?.map((response, index) => (
                       <View
-                        key={response.id}
-                        style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}
-                      >
+                        key={index}
+                        style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}>
                         <View style={tw`flex-row items-center`}>
                           <View
-                            style={tw`mr-3 h-2 w-5 rounded-sm bg-[${response.color}]`}
-                          ></View>
-                          <Text style={tw`capitalize`}>{response.heading}</Text>
+                            style={tw`mr-3 h-2 w-5 rounded-sm bg-[${labelColorMap[index]}]`}></View>
+                          <Text style={tw`capitalize`}>{response}</Text>
                         </View>
-                        <Text>{response.piont}</Text>
+                        <Text>{multiplePieData.data[index]}</Text>
                       </View>
                     ))}
                   </View>
                   <View style={tw`gap-3 min-w-[150px]`}>
                     <Text style={tw`font-semibold mb-3`}>Answers</Text>
-                    <PieChart/>
+                    <PieChart />
                     {responses
                       .filter((item, index) => index > 3)
                       .map((response) => (
                         <View
                           key={response.id}
-                          style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}
-                        >
+                          style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}>
                           <View style={tw`flex-row items-center`}>
                             <View
-                              style={tw`mr-3 h-2 w-5 rounded-sm bg-[${response.color}]`}
-                            ></View>
+                              style={tw`mr-3 h-2 w-5 rounded-sm bg-[${response.color}]`}></View>
                             <Text style={tw`capitalize`}>
                               {response.heading}
                             </Text>
@@ -160,20 +213,21 @@ export default function SingleResult() {
 
                 <CustomDetailResult
                   noteHeading="🧑‍🏫 Possible career track"
-                  noteDesc="Lorem ipsum dolor sit amet consectetur. Vel nunc elementum aliquet sagittis rhoncus. Sed dolor cras tincidunt ut mi vitae. A tristique blandit tellus rutrum dignissim. Nisl ullamcorper facilisis aliquet turpis ornare venenatis ullamcorper scelerisque amet.
-Commodo non semper vitae vitae eget commodo."
+                  noteDesc={
+                    Array.isArray(dataResults?.careerTracks)
+                      ? dataResults.careerTracks.join(",")
+                      : dataResults?.careerTracks ?? ""
+                  }
                   bgcolor="bg-[#FEF5CB]"
                 />
                 <CustomDetailResult
                   noteHeading="😃 Mental Strength"
-                  noteDesc="Lorem ipsum dolor sit amet consectetur. Vel nunc elementum aliquet sagittis rhoncus. Sed dolor cras tincidunt ut mi vitae. A tristique blandit tellus rutrum dignissim. Nisl ullamcorper facilisis aliquet turpis ornare venenatis ullamcorper scelerisque amet.
-Commodo non semper vitae vitae eget commodo."
+                  noteDesc={dataResults?.strengths ?? ""}
                   bgcolor="bg-[#F9CCFC80]"
                 />
                 <CustomDetailResult
                   noteHeading="😞 Mental Weakness"
-                  noteDesc="Lorem ipsum dolor sit amet consectetur. Vel nunc elementum aliquet sagittis rhoncus. Sed dolor cras tincidunt ut mi vitae. A tristique blandit tellus rutrum dignissim. Nisl ullamcorper facilisis aliquet turpis ornare venenatis ullamcorper scelerisque amet.
-Commodo non semper vitae vitae eget commodo."
+                  noteDesc={dataResults?.weaknesses ?? ""}
                   bgcolor="bg-[#FEF5CB]"
                 />
                 <CustomDetailResult
@@ -193,13 +247,11 @@ Commodo non semper vitae vitae eget commodo."
                   textStyle="bg-[#F4FBC9] text-[#76A400] p-1"
                 />
                 <View
-                  style={tw`bg-[#FEF5CB] w-full flex-row gap-3 rounded-xl p-5`}
-                >
+                  style={tw`bg-[#FEF5CB] w-full flex-row gap-3 rounded-xl p-5`}>
                   <icons.WarningIcon />
                   <View style={tw`flex-1 flex-col gap-2`}>
                     <Text
-                      style={tw`text-base font-semibold text-secondary-DEFAULT`}
-                    >
+                      style={tw`text-base font-semibold text-secondary-DEFAULT`}>
                       Detailed Result
                     </Text>
                     <Text style={tw`font-intmedium text-sm text-[#848288]`}>
