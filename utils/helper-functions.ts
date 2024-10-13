@@ -6,13 +6,13 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Dispatch } from "@reduxjs/toolkit";
 import { SvgProps } from "react-native-svg";
 
-
-
 export const calcPercentage = (answer: number, total: number) => {
   return Math.round((answer / total) * 100);
 };
 
-export const getTotalQuestionsForSubCategory = (subCategoryId: SubCategories) => {
+export const getTotalQuestionsForSubCategory = (
+  subCategoryId: SubCategories
+) => {
   return Assessment.filter((q) => q.subcategoryId === subCategoryId).length;
 };
 
@@ -31,14 +31,15 @@ export const sortDataByCategory = (
       uniqueSubCategories.add(subCat.subcategoryId); // Track seen subcategories
       acc.push({
         title: SubCategoryConfig[subCat.subcategoryId as SubCategories].title,
-        icon: SubCategoryConfig[subCat.subcategoryId as SubCategories].interactionicon!,
+        icon: SubCategoryConfig[subCat.subcategoryId as SubCategories]
+          .interactionicon!,
         subCategory: subCat.subcategoryId,
         objective:
           SubCategoryConfig[subCat.subcategoryId as SubCategories].objective,
       });
     }
     return acc;
-  }, [] as { title: string; objective?: string; subCategory: SubCategories; icon:  (props: SvgProps) => React.JSX.Element }[]);
+  }, [] as { title: string; objective?: string; subCategory: SubCategories; icon: (props: SvgProps) => React.JSX.Element }[]);
 };
 
 // Save answered questions and last subcategory, progress is keyed by SubCategories
@@ -99,7 +100,11 @@ export const handleAnswerQuestion = async (
     questionNo,
   };
 
-  const currentProgress = progressBySubCategory[subCategoryId] ??  {
+  const totalPoints: number = recentSubCategories[subCategoryId]
+    ? recentSubCategories[subCategoryId].totalPoints
+    : 0;
+
+  const currentProgress = progressBySubCategory[subCategoryId] ?? {
     answered: 0,
     total: 0,
   };
@@ -128,6 +133,7 @@ export const handleAnswerQuestion = async (
         ...(recentSubCategories[subCategoryId]?.questionsAnswered || []),
       ],
       dateAnswered: new Date().toISOString(),
+      totalPoints: totalPoints + answerDetails.points,
     },
   };
 
@@ -135,5 +141,9 @@ export const handleAnswerQuestion = async (
   dispatch(updateRecentData(updatedRecentSubCategories));
 
   // Save progress to storage
-  await saveProgress(progressBySubCategory, updatedRecentSubCategories, subCategoryId);
+  await saveProgress(
+    progressBySubCategory,
+    updatedRecentSubCategories,
+    subCategoryId
+  );
 };

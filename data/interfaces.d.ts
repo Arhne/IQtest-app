@@ -28,6 +28,7 @@ interface QuestionDetails {
 
 interface AnsweredDetails {
   dateAnswered: string;
+  totalPoints: number;
   questionsAnswered: QuestionDetails[];
 }
 
