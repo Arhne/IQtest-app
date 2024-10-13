@@ -8,8 +8,6 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { I18nextProvider } from "react-i18next";
-import i18n from "@/i18n/i18n";
 import { ReduxProvider } from "@/redux";
 import { StackProvider } from "./stacks";
 
@@ -37,12 +35,12 @@ export default function RootLayout() {
   }
 
   return (
-    // <I18nextProvider i18n={i18n}>
+   
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <ReduxProvider>
         <StackProvider />
       </ReduxProvider>
     </ThemeProvider>
-    // </I18nextProvider>
+   
   );
 }
