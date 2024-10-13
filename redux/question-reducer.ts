@@ -12,10 +12,6 @@ interface SubCategoryProgress {
   total: number;
 }
 
-interface AnsweredDetails {
-  questionsAnswered: QuestionDetails[];
-  dateAnswered: string;
-}
 
 interface InitialStateType {
   progressData: Record<SubCategories, SubCategoryProgress>;
