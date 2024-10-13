@@ -67,14 +67,16 @@ export default function ProgressScreen() {
         return calcPercentage(0, getTotalQuestionsForSubCategory(item));
       }
     },
-    [hasProgressData, progressData, getTotalQuestionsForSubCategory] // dependencies
+    [hasProgressData, recentData, progressData, getTotalQuestionsForSubCategory] // dependencies
   );
 
   const handleSubClick = (item: SubCategories) => {
-    const hasProgress = progressData && progressData[item]?.answered > 0;
+    const hasProgress =
+      progressData[item]?.answered > 0 &&
+      recentData[item]?.questionsAnswered.length !== progressData[item]?.total;
     const hasCompleted =
-      progressData &&
-      progressData[item]?.answered === progressData[item]?.total;
+      recentData[item]?.questionsAnswered.length ===
+      getTotalQuestionsForSubCategory(item);
     const pathname = hasProgress
       ? "/(cat)/test"
       : hasCompleted
@@ -95,7 +97,7 @@ export default function ProgressScreen() {
             <MaterialIcons name="arrow-back-ios" size={24} color="black" />
           </Pressable>
 
-          <Text style={tw`text-xl font-semibold`}>Test  Progress</Text>
+          <Text style={tw`text-xl font-semibold`}>Test Progress</Text>
         </View>
 
         <View style={tw`gap-5 flex-1`}>
@@ -108,9 +110,10 @@ export default function ProgressScreen() {
             <ThemedText style={tw`text-base font-semibold mb-2 w-70`}>
               Test Progress
             </ThemedText>
-            <ScrollView showsVerticalScrollIndicator={false}
-            contentContainerStyle={tw`pb-38`}
-            // style={tw`flex-1`}
+            <ScrollView
+              showsVerticalScrollIndicator={false}
+              contentContainerStyle={tw`pb-38`}
+              // style={tw`flex-1`}
             >
               <View style={tw`gap-3 flex-row flex-wrap`}>
                 {recents.length === 0 ? (
@@ -123,34 +126,36 @@ export default function ProgressScreen() {
                   recents.map((item) => {
                     const Icon = SubCategoryConfig[item].interactionicon!;
                     return (
-                      <View
+                      <Pressable
                         key={item}
-                        style={[
-                          tw`p-3 bg-gray-DEFAULT rounded-xl`,
-                          { width: itemWidth },
-                        ]}>
-                        <View style={tw`max-w-[93px] w-full h-[88px]`}>
-                          <Icon />
-                        </View>
-
-                        <Text
-                          style={tw`mb-2 text-base font-semibold`}>
-                          {SubCategoryConfig[item].title}
-                        </Text>
+                        onPress={() => handleSubClick(item)}>
                         <View
-                          style={tw`flex-row items-center justify-between mt-3`}>
-                          <Text style={tw`text-[#727272]`}>Completed</Text>
-                          <Text
-                            style={tw`leading-[16.94px] text-secondary-DEFAULT`}>
-                            {`${generateProgressPercent(item)}%`}
+                          style={[
+                            tw`p-3 bg-gray-DEFAULT rounded-xl`,
+                            { width: itemWidth },
+                          ]}>
+                          <View style={tw`max-w-[93px] w-full h-[88px]`}>
+                            <Icon />
+                          </View>
+
+                          <Text style={tw`mb-2 text-base font-semibold`}>
+                            {SubCategoryConfig[item].title}
                           </Text>
+                          <View
+                            style={tw`flex-row items-center justify-between mt-3`}>
+                            <Text style={tw`text-[#727272]`}>Completed</Text>
+                            <Text
+                              style={tw`leading-[16.94px] text-secondary-DEFAULT`}>
+                              {`${generateProgressPercent(item)}%`}
+                            </Text>
+                          </View>
+                          <View style={tw`mt-3`}>
+                            <LinearProgressBar
+                              progress={generateProgressPercent(item)}
+                            />
+                          </View>
                         </View>
-                        <View style={tw`mt-3`}>
-                          <LinearProgressBar
-                            progress={generateProgressPercent(item)}
-                          />
-                        </View>
-                      </View>
+                      </Pressable>
                     );
                   })
                 )}

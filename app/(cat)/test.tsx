@@ -14,7 +14,7 @@ import { router, useLocalSearchParams } from "expo-router";
 import { CustomButton } from "@/components/CustomButton";
 import { LinearGradient } from "expo-linear-gradient";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { SubCategories } from "@/data/enum";
+import { Categories, SubCategories } from "@/data/enum";
 import { Assessment } from "@/data/categories";
 import {
   calcPercentage,
@@ -27,10 +27,11 @@ import { setAnswer } from "@/redux/question-reducer";
 import { useAppDispatch, useAppSelector } from "@/redux";
 
 const TestInstructions = () => {
-  const [isIqTest, setIsIqTest] = useState("true");
   const dispatch = useAppDispatch();
   const params = useLocalSearchParams();
   const subCategory = params.subCategory as SubCategories;
+  const isIqTest =
+    SubCategoryConfig[subCategory].categories === Categories.IQ_TEST;
 
   // Selectors to get data from the Redux store
   const progressData = useAppSelector((state) => state.questions.progressData);
@@ -105,11 +106,9 @@ const TestInstructions = () => {
     if (Object.keys(progressData).length === 0) return 0;
     return calcPercentage(
       progressData[subCategory]?.answered ?? 0,
-      progressData[subCategory]?.total ?? 0
+      getTotalQuestionsForSubCategory(subCategory)
     );
   }, [progressData]);
-
-  console.log("WENENENENEMIGHTY", currentQuestion);
 
   useEffect(() => {
     if (questionsData.length > 0) {
@@ -120,20 +119,23 @@ const TestInstructions = () => {
   return (
     <ThemedView style={tw`flex-1 w-full h-full`}>
       <SafeAreaView style={tw`flex-1`}>
-        <LinearGradient style={tw`flex-1 px-3 relative`} colors={["#8D0CCA", "#D568EF"]}>
+        <LinearGradient
+          style={tw`flex-1 px-3 relative`}
+          colors={["#8D0CCA", "#D568EF"]}>
           <View style={tw`flex-1`}>
             <Pressable
               onPress={() => {
                 router.back();
+                dispatch(setAnswer(undefined));
               }}
-              style={tw`justify-start flex-col p-2`}
-            >
+              style={tw`justify-start flex-col p-2`}>
               <MaterialIcons name="arrow-back-ios" size={24} color="#fff" />
             </Pressable>
 
             <View
-              style={tw`flex-1 w-full bg-primary rounded-xl p-5 mb-8 absolute ${isIqTest ? "top-28 h-[84%]" : "top-20 h-[88%]"}`}
-            >
+              style={tw`flex-1 w-full bg-primary rounded-xl p-5 mb-8 absolute ${
+                isIqTest ? "top-28 h-[84%]" : "top-20 h-[88%]"
+              }`}>
               {isIqTest && (
                 <View style={tw`absolute left-[25%] top-[-30] z-10`}>
                   <Icon width={220} height={160} />
@@ -147,23 +149,22 @@ const TestInstructions = () => {
                   <View style={tw`mt-6 gap-3`}>
                     <LinearProgressBar progress={progressPercent} />
                     {!isIqTest && (
-                    <View style={tw`mx-auto`}>
-                      <Icon width={220} height={160} />
-                    </View>
-                  )}
+                      <View style={tw`mx-auto`}>
+                        <Icon width={220} height={160} />
+                      </View>
+                    )}
                     <Text style={tw`font-semibold text-2xl text-center`}>
                       {SubCategoryConfig[subCategory].title}
                     </Text>
                     <Text style={tw`text-lg text-center`}>
                       Question {currentQuestionNo}
                     </Text>
-                    
-                      <View style={tw`bg-[#FEF5CB80] rounded-xl p-10 mb-5`}>
-                        <Text style={tw`text-2xl font-semibold text-center`}>
-                          {currentQuestion?.question}
-                        </Text>
-                      </View>
-                    
+
+                    <View style={tw`bg-[#FEF5CB80] rounded-xl p-10 mb-5`}>
+                      <Text style={tw`text-2xl font-semibold text-center`}>
+                        {currentQuestion?.question}
+                      </Text>
+                    </View>
                   </View>
                 )}
                 renderItem={({ item }) => (
@@ -176,18 +177,17 @@ const TestInstructions = () => {
                           points: +item.points,
                         })
                       )
-                    }
-                  >
+                    }>
                     <View
                       style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]
                               ${
                                 answer?.answer === item.option
                                   ? "bg-purple-200 border-purple-500"
                                   : "border-gray-300"
-                              }`}
-                    >
+                              }`}>
                       <Text>
-                        {item.optionlabel}.{"  "}{item.option}
+                        {item.optionlabel}.{"  "}
+                        {item.option}
                       </Text>
                       <MaterialIcons
                         name={
@@ -203,7 +203,6 @@ const TestInstructions = () => {
                     </View>
                   </Pressable>
                 )}
-               
                 ListFooterComponent={() => (
                   <CustomButton
                     title="Next"
@@ -215,9 +214,7 @@ const TestInstructions = () => {
                 )}
                 ListEmptyComponent={<Text>No options available</Text>}
                 showsVerticalScrollIndicator={false}
-               
-              /> 
-              
+              />
             </View>
 
             <View style={tw`p-4`}>

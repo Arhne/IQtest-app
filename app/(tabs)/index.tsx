@@ -174,7 +174,7 @@ export default function HomeScreen() {
                   )}
                 </View>
                 <CustomGradientButton
-                  title="Start"
+                  title={latestSubDetails ? "Continue" : "Start"}
                   paddingStyle="px-7"
                   textStyle="text-primary"
                   handlePress={handleRecentQuestions}

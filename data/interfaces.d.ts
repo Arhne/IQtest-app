@@ -30,3 +30,13 @@ interface AnsweredDetails {
   dateAnswered: string;
   questionsAnswered: QuestionDetails[];
 }
+
+interface ResultDetails  {
+  score: number | [number, number];
+  scoreDisplay?: string;
+  careerTracks: string[];
+  strengths: string;
+  weaknesses: string;
+  romanticType: string;
+  celebrities: string[];
+};

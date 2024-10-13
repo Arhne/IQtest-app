@@ -103,6 +103,8 @@ export default function AllTest() {
 
   };
 
+  console.log("RECENT DATA:", recentData)
+
   return (
     <ThemedView style={tw`w-full px-5 pt-3 justify-center`}>
       <ScrollView showsVerticalScrollIndicator={false}>
