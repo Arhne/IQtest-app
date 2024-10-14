@@ -22,7 +22,7 @@ import { useState, useMemo, useEffect, useCallback } from "react";
 import { SubCategoryConfig } from "@/data/data-config";
 import LinearProgressBar from "@/components/LinearProgress";
 import { useAppSelector } from "@/redux";
-// import  { BackIcon }  from '@/constants';
+import { useColorScheme } from "@/hooks/useColorScheme";
 
 export default function ProgressScreen() {
   const col = 2;
@@ -38,6 +38,8 @@ export default function ProgressScreen() {
       Object.keys(progressData).length > 0,
     ];
   }, [recentData, progressData]);
+
+  const colorScheme = useColorScheme();
 
   const recents = useMemo(() => {
     if (!hasRecentData) return [];
@@ -94,7 +96,7 @@ export default function ProgressScreen() {
           <Pressable
             onPress={() => router.back()}
             style={tw`justify-start mr-24`}>
-            <MaterialIcons name="arrow-back-ios" size={24} color="black" />
+            <MaterialIcons name="arrow-back-ios" size={24} color={colorScheme === "dark" ? "white" : "black"} />
           </Pressable>
 
           <Text style={tw`text-xl font-semibold`}>Test Progress</Text>

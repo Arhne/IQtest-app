@@ -63,6 +63,7 @@ interface IDetails {
   progressPercent: number;
 }
 export default function HomeScreen() {
+
   const col = 2;
   const screenPadding = 20;
   const gap = 12;

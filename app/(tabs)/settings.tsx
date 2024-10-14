@@ -18,7 +18,7 @@ import { useCallback, useRef, useState } from "react";
 import SimpleLineIcons from "@expo/vector-icons/SimpleLineIcons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import CountryFlag from "react-native-country-flag";
-import { Asset } from "expo-asset";
+import { useColorScheme } from "@/hooks/useColorScheme";
 import { useEffect } from "react";
 
 interface Isettings {
@@ -61,6 +61,7 @@ const preloadFlagImages = () => {
 };
 
 export default function Settings() {
+
   const [soundSwitch, setSoundSwitch] = useState(false);
   const [notificationSwitch, setNotificationSwitch] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -73,6 +74,7 @@ export default function Settings() {
   });
   const [top, setTop] = useState(0);
  
+  const colorScheme = useColorScheme();
 
   const toggleSoundSwitch = () => {
     setSoundSwitch((prevState) => !prevState);
@@ -116,7 +118,7 @@ export default function Settings() {
           onPress={() => router.back()}
           style={tw`pt-5 flex-row justify-start`}
         >
-          <MaterialIcons name="arrow-back-ios" size={24} color="black" />
+          <MaterialIcons name="arrow-back-ios" size={24} color={colorScheme === "dark" ? "white" : "black"} />
         </Pressable>
         <View style={tw`flex-1`}>
           <ThemedText style={tw`mb-5 text-4xl font-medium w-70`}>

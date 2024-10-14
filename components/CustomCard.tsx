@@ -1,6 +1,6 @@
 import { View, Text, Pressable } from "react-native";
 import React from "react";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { useColorScheme } from "@/hooks/useColorScheme";
 import tw from "@/twrnc-config";
 
 interface ICardComponent {
@@ -26,6 +26,8 @@ const CustomCard = ({
   handleClick,
   opacityStyle = "opacity-30",
 }: ICardComponent) => {
+  const colorScheme = useColorScheme();
+
   return (
     <Pressable
       style={({ pressed }) => [
@@ -41,7 +43,7 @@ const CustomCard = ({
           </Text>
           {pricedesc && (
             <Text
-              style={tw`text-base leading-[16.94px] font-intregular text-[#727272]`}>
+              style={tw`text-base leading-[16.94px] font-intregular ${colorScheme === "dark" ? "" : "text-[#727272]"}`}>
               {pricedesc}
             </Text>
           )}

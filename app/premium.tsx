@@ -9,13 +9,14 @@ import CustomCard from "@/components/CustomCard";
 import CustomWarning from "@/components/CustomWarning";
 import { CustomButton } from "@/components/CustomButton";
 import { Link, router } from "expo-router";
-import Animated, { SlideInRight, SlideOutLeft } from "react-native-reanimated";
+import { useColorScheme } from "@/hooks/useColorScheme";
 import { icons } from "@/constants";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 export default function PremiumScreen() {
 
   const [selectedPlan, setSelectedPlan] = useState(false);
+  const colorScheme = useColorScheme();
 
   const handleStartTrialClick = () => {
     if (!selectedPlan) {
@@ -34,14 +35,14 @@ export default function PremiumScreen() {
 
   return (
     <SafeAreaView>
-      <ThemedView style={[tw`p-5 w-full h-full`]}>
+      <View style={[tw`p-5 w-full h-full`]}>
         <View style={tw`flex-1 justify-between gap-8`}>
           {/* <ScrollView showsVerticalScrollIndicator={false}> */}
           <Pressable style={tw`flex-row justify-end`} onPress={() => router.replace("/(tabs)/")}>
             <Ionicons
               name="close-outline"
               size={32}
-              color="black"
+              color={colorScheme === "dark" ? "white" : "black"}
             />
           </Pressable>
           <View style={tw`gap-4`}>
@@ -102,7 +103,7 @@ export default function PremiumScreen() {
           />
           {/* </ScrollView> */}
         </View>
-      </ThemedView>
+      </View>
     </SafeAreaView>
   );
 };

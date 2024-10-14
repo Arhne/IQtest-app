@@ -5,6 +5,7 @@ import { ProgressChart, PieChart as RNChart } from "react-native-chart-kit";
 import tw from "@/twrnc-config";
 import { ProgressChartData } from "react-native-chart-kit/dist/ProgressChart";
 import { labelColorMap } from "@/data/data-config";
+import { useColorScheme } from "@/hooks/useColorScheme";
 
 // const screenWidth = Dimensions.get('screen').width;
 const screenWidth = 158;
@@ -47,7 +48,8 @@ export const CircularProgress = ({
   text?: string;
   radius?: number;
 }) => {
-  // const radius = 35;
+  const colorScheme = useColorScheme();
+
   const strokeWidth = 5;
   const circumference = 2 * Math.PI * radius;
   const progress = circumference * (percentage / 100);
@@ -85,7 +87,7 @@ export const CircularProgress = ({
       </Svg>
 
       <View style={tw`absolute items-center justify-center`}>
-        <Text style={tw`text-base text-[#8D0CCA]`}>{percentage}%</Text>
+        <Text style={tw`text-base ${colorScheme === "dark" ? "" : "text-[#8D0CCA]"}`}>{percentage}%</Text>
         {text && <Text style={tw`text-xs text-white`}> {text} </Text>}
       </View>
     </View>
