@@ -46,7 +46,7 @@ export default function AllTest() {
 
   const getProgressStatus = useCallback(
     (item: SubCategories) => {
-      return hasProgressData && progressData[item]
+      return hasProgressData && recentData[item]
         ? `${recentData[item].questionsAnswered.length ?? 0}/${progressData[item].total}`
         : `0/${getTotalQuestionsForSubCategory(item)}`;
     },
