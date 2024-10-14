@@ -1,7 +1,8 @@
 import { SvgProps } from "react-native-svg";
 import { Categories, SubCategories } from "./enum";
 import { icons } from "@/constants";
-import { emotionalIqResult, logicalResultData } from "./results";
+import { emotionalIqResult, generalIqResult, logicalResultData, memoryResult, quantitativeResult } from "./results";
+import { adhdResult, anxietyResult, bipolarResult, depressionResult, internetResult, ptsdResult, schizophreniaResult } from "./results(1)";
 
 export const SubCategoryConfig: Record<
   SubCategories,
@@ -19,11 +20,13 @@ export const SubCategoryConfig: Record<
     interactionicon: icons.Bipolar,
     categories: Categories.MENTAL_TEST,
     objective: "",
+    resultData: bipolarResult,
   },
   [SubCategories.DEPRESSION]: {
     title: "Depression Test",
     interactionicon: icons.Depression,
     categories: Categories.MENTAL_TEST,
+    resultData: depressionResult,
   },
   [SubCategories.ENNEGRAM]: {
     title: "Enneagram Test",
@@ -36,11 +39,13 @@ export const SubCategoryConfig: Record<
     title: "ADHD Test",
     interactionicon: icons.ADHD,
     categories: Categories.MENTAL_TEST,
+    resultData: adhdResult,
   },
   [SubCategories.SCHIZ]: {
     title: "Schizophrenia Test",
     interactionicon: icons.Shizophrenia,
     categories: Categories.MENTAL_TEST,
+    resultData: schizophreniaResult,
   },
   [SubCategories.SIXTEENPER]: {
     title: "16 Personalities Test",
@@ -58,19 +63,24 @@ export const SubCategoryConfig: Record<
       "This test is meant to assess your behavior in certain situations and as a result give an illustration regarding your emotional vs logical levels. Emotions are defined to be manifestations of your current mindset into human feeling. Logic is defined as the comprehension of current reality under a given set of assumptions following an ordered pattern.",
   },
   [SubCategories.INTERDISORDER]: {
-    title: "Internal Disorder Test",
+    title: "Internet Disorder Test",
     interactionicon: icons.Internet,
     categories: Categories.MENTAL_TEST,
+    resultData: internetResult,
   },
   [SubCategories.PTSD]: {
     title: "PTSD Test",
     interactionicon: icons.Ptsd,
     categories: Categories.MENTAL_TEST,
+    resultData: ptsdResult,
+
   },
   [SubCategories.ANXIETY]: {
     title: "Anxiety Test",
     interactionicon: icons.Anxiety,
     categories: Categories.MENTAL_TEST,
+    resultData: anxietyResult,
+
   },
   [SubCategories.LOGICAL]: {
     title: "Logical IQ Test",
@@ -110,16 +120,21 @@ export const SubCategoryConfig: Record<
     title: "Quantitative IQ Test",
     interactionicon: icons.Quantitative,
     categories: Categories.IQ_TEST,
+    resultData: quantitativeResult,
   },
   [SubCategories.MEMORY]: {
     title: "Memory IQ Test",
     interactionicon: icons.Alzheimer,
     categories: Categories.IQ_TEST,
+    objective:
+    "This test will pop up items (a mixture of letters and numbers) for a few seconds and then ask the user to choose the correct option.",
+    resultData: memoryResult,
   },
   [SubCategories.GENERAL]: {
     title: "General IQ Test",
     interactionicon: icons.Alzheimer,
     categories: Categories.IQ_TEST,
+    resultData: generalIqResult,
   },
 };
 

@@ -36,9 +36,10 @@ interface AnsweredDetails {
 interface ResultDetails  {
   score: number | [number, number];
   scoreDisplay?: string;
+  label?: string;
   careerTracks: string[];
-  strengths: string;
-  weaknesses: string;
-  romanticType: string;
-  celebrities: string[];
+  strengths: string | string[];
+  weaknesses: string | string[];
+  romanticType?: string;
+  celebrities?: string[];
 };

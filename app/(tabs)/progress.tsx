@@ -138,7 +138,7 @@ export default function ProgressScreen() {
                             <Icon />
                           </View>
 
-                          <Text style={tw`mb-2 text-base font-semibold`}>
+                          <Text style={tw`mb-2 text-base font-semibold h-14`}>
                             {SubCategoryConfig[item].title}
                           </Text>
                           <View

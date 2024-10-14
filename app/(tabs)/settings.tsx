@@ -20,8 +20,6 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import CountryFlag from "react-native-country-flag";
 import { Asset } from "expo-asset";
 import { useEffect } from "react";
-import i18n from "@/i18n/i18n";
-import { useTranslation } from "react-i18next";
 
 interface Isettings {
   id: string;
@@ -30,16 +28,6 @@ interface Isettings {
 }
 
 const settings: Isettings[] = [
-  {
-    id: "sound",
-    settingicon: <icons.SpeakerHigh />,
-    setting: "Sound",
-  },
-  {
-    id: "notification",
-    settingicon: <icons.BellIcon />,
-    setting: "Push notification",
-  },
   {
     id: "suggestions",
     settingicon: <icons.Suggestion />,
@@ -60,23 +48,12 @@ const settings: Isettings[] = [
     settingicon: <icons.QuestionIcon />,
     setting: "Support",
   },
-  {
-    id: "About",
-    settingicon: <icons.InfoIcon />,
-    setting: "about",
-  },
 ];
 
 // Preload function
 const preloadFlagImages = () => {
   const flagUrls = [
-    "https://flagcdn.com/w320/fr.png",
-    "https://flagcdn.com/w320/es.png",
-    "https://flagcdn.com/w320/de.png",
     "https://flagcdn.com/w320/us.png",
-    "https://flagcdn.com/w320/cn.png",
-    "https://flagcdn.com/w320/ru.png",
-    "https://flagcdn.com/w320/gb.png",
   ];
   flagUrls.forEach((url) => {
     Image.prefetch(url);
@@ -90,10 +67,12 @@ export default function Settings() {
   const [selected, setSelected] = useState<{
     label: string;
     countryCode: string;
-  } | null>(null);
+  }>({
+    label: "English US",
+    countryCode: "US",
+  });
   const [top, setTop] = useState(0);
-  // const btnRef = useRef(null);
-  const { t } = useTranslation();
+ 
 
   const toggleSoundSwitch = () => {
     setSoundSwitch((prevState) => !prevState);
@@ -120,7 +99,6 @@ export default function Settings() {
   const onSelect = useCallback(
     (item: { label: string; value: string; countryCode: string }) => {
       setSelected({ label: item.label, countryCode: item.countryCode });
-      // i18n.changeLanguage(item.value);
       setIsExpanded(false);
     },
     []
@@ -162,18 +140,13 @@ export default function Settings() {
             }}
           >
             <View style={tw`flex-row items-center`}>
-              {selected ? (
-                <>
+              
                   <CountryFlag
                     isoCode={selected.countryCode}
                     size={20}
                     style={tw`mr-2`}
                   />
                   <Text>{selected.label}</Text>
-                </>
-              ) : (
-                <Text>Select Language</Text>
-              )}
             </View>
             <MaterialIcons
               name={isExpanded ? "keyboard-arrow-down" : "keyboard-arrow-right"}
@@ -210,39 +183,9 @@ export default function Settings() {
                   <FlatList
                     data={[
                       {
-                        label: "Francais",
-                        value: "fr",
-                        countryCode: "FR",
-                      },
-                      {
-                        label: "Espanyol",
-                        value: "es",
-                        countryCode: "ES",
-                      },
-                      {
-                        label: "German",
-                        value: "de",
-                        countryCode: "DE",
-                      },
-                      {
                         label: "English US",
                         value: "en",
                         countryCode: "US",
-                      },
-                      {
-                        label: "Chinese",
-                        value: "cn",
-                        countryCode: "CN",
-                      },
-                      {
-                        label: "Russian",
-                        value: "ru",
-                        countryCode: "RU",
-                      },
-                      {
-                        label: "English UK",
-                        value: "gb",
-                        countryCode: "GB",
                       },
                     ]}
                     keyExtractor={(item) => item.value}
