@@ -58,7 +58,6 @@ export const SubCategoryConfig: Record<
     title: "Emotions vs Logic Test",
     interactionicon: icons.Emotions,
     categories: Categories.PERSONALITY,
-
     objective:
       "This test is meant to assess your behavior in certain situations and as a result give an illustration regarding your emotional vs logical levels. Emotions are defined to be manifestations of your current mindset into human feeling. Logic is defined as the comprehension of current reality under a given set of assumptions following an ordered pattern.",
   },
