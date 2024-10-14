@@ -222,12 +222,20 @@ export default function SingleResult() {
                 />
                 <CustomDetailResult
                   noteHeading="😃 Mental Strength"
-                  noteDesc={dataResults?.strengths ?? ""}
+                  noteDesc={
+                    Array.isArray(dataResults?.strengths)
+                      ? dataResults.strengths.join(",")
+                      : dataResults?.strengths ?? ""
+                  }
                   bgcolor="bg-[#F9CCFC80]"
                 />
                 <CustomDetailResult
                   noteHeading="😞 Mental Weakness"
-                  noteDesc={dataResults?.weaknesses ?? ""}
+                  noteDesc={
+                    Array.isArray(dataResults?.weaknesses)
+                      ? dataResults.weaknesses.join(",")
+                      : dataResults?.weaknesses ?? ""
+                  }
                   bgcolor="bg-[#FEF5CB]"
                 />
                 <CustomDetailResult
