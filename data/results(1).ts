@@ -1,7 +1,7 @@
 export const depressionResult: ResultDetails[] = [
     {
         score: [0, 4],
-        label: "Minimal or No Depression",
+        scoreDisplay: "Minimal or No Depression",
         careerTracks: [
             "Motivational Speaker",
             "Wellness Coach",
@@ -23,7 +23,7 @@ export const depressionResult: ResultDetails[] = [
     },
     {
         score: [5, 9],
-        label: "Mild Depression",
+        scoreDisplay: "Mild Depression",
         careerTracks: [
             "Human Resources Specialist",
             "Nurse",
@@ -46,7 +46,7 @@ export const depressionResult: ResultDetails[] = [
     },
     {
         score: [10, 14],
-        label: "Moderate Depression",
+        scoreDisplay: "Moderate Depression",
         careerTracks: [
             "Counselor",
             "Mental Health Advocate",
@@ -69,7 +69,7 @@ export const depressionResult: ResultDetails[] = [
     },
     {
         score: [15, 19],
-        label: "Moderately Severe Depression",
+        scoreDisplay: "Moderately Severe Depression",
         careerTracks: [
             "Psychologist",
             "Psychiatrist",
@@ -92,7 +92,7 @@ export const depressionResult: ResultDetails[] = [
     },
     {
         score: [20, 60],
-        label: "Severe Depression",
+        scoreDisplay: "Severe Depression",
         careerTracks: [
             "Mental Health Advocate",
             "Counselor",
@@ -118,7 +118,7 @@ export const depressionResult: ResultDetails[] = [
 export const bipolarResult: ResultDetails[] = [
     {
         score: [0, 9],
-        label: "Minimal or No Bipolar Symptoms",
+        scoreDisplay: "Minimal or No Bipolar Symptoms",
         careerTracks: [
             "Motivational Speaker",
             "Wellness Coach",
@@ -140,7 +140,7 @@ export const bipolarResult: ResultDetails[] = [
     },
     {
         score: [10, 19],
-        label: "Mild Bipolar Symptoms",
+        scoreDisplay: "Mild Bipolar Symptoms",
         careerTracks: [
             "Human Resources Specialist",
             "Nurse",
@@ -163,7 +163,7 @@ export const bipolarResult: ResultDetails[] = [
     },
     {
         score: [20, 29],
-        label: "Moderate Bipolar Symptoms",
+        scoreDisplay: "Moderate Bipolar Symptoms",
         careerTracks: [
             "Counselor",
             "Mental Health Advocate",
@@ -186,7 +186,7 @@ export const bipolarResult: ResultDetails[] = [
     },
     {
         score: [30, 39],
-        label: "Moderately Severe Bipolar Symptoms",
+        scoreDisplay: "Moderately Severe Bipolar Symptoms",
         careerTracks: [
             "Psychologist",
             "Psychiatrist",
@@ -209,7 +209,7 @@ export const bipolarResult: ResultDetails[] = [
     },
     {
         score: [40, 60],
-        label: "Severe Bipolar Symptoms",
+        scoreDisplay: "Severe Bipolar Symptoms",
         careerTracks: [
             "Mental Health Advocate",
             "Counselor",
@@ -235,7 +235,7 @@ export const bipolarResult: ResultDetails[] = [
 export const adhdResult: ResultDetails[] = [
     {
         score: [0, 15],
-        label: "Minimal or No ADHD Symptoms",
+        scoreDisplay: "Minimal or No ADHD Symptoms",
         careerTracks: [
             "Project Manager",
             "Accountant",
@@ -257,7 +257,7 @@ export const adhdResult: ResultDetails[] = [
     },
     {
         score: [16, 30],
-        label: "Mild ADHD Symptoms",
+        scoreDisplay: "Mild ADHD Symptoms",
         careerTracks: [
             "Marketing Specialist",
             "Sales Representative",
@@ -279,7 +279,7 @@ export const adhdResult: ResultDetails[] = [
     },
     {
         score: [31, 45],
-        label: "Moderate ADHD Symptoms",
+        scoreDisplay: "Moderate ADHD Symptoms",
         careerTracks: [
             "Artist",
             "Writer",
@@ -303,7 +303,7 @@ export const adhdResult: ResultDetails[] = [
     },
     {
         score: [46, 60],
-        label: "Moderately Severe ADHD Symptoms",
+        scoreDisplay: "Moderately Severe ADHD Symptoms",
         careerTracks: [
             "Performer",
             "Entrepreneur",
@@ -327,7 +327,7 @@ export const adhdResult: ResultDetails[] = [
     },
     {
         score: [61, 80],
-        label: "Severe ADHD Symptoms",
+        scoreDisplay: "Severe ADHD Symptoms",
         careerTracks: [
             "Actor",
             "Inventor",
@@ -353,7 +353,7 @@ export const adhdResult: ResultDetails[] = [
 export const schizophreniaResult: ResultDetails[] = [
     {
         score: [0, 15],
-        label: "Minimal or No Schizophrenia Symptoms",
+        scoreDisplay: "Minimal or No Schizophrenia Symptoms",
         careerTracks: [
             "Project Manager",
             "Teacher",
@@ -376,7 +376,7 @@ export const schizophreniaResult: ResultDetails[] = [
     },
     {
         score: [16, 30],
-        label: "Mild Schizophrenia Symptoms",
+        scoreDisplay: "Mild Schizophrenia Symptoms",
         careerTracks: [
             "Social Worker",
             "Marketing Specialist",
@@ -399,7 +399,7 @@ export const schizophreniaResult: ResultDetails[] = [
     },
     {
         score: [31, 45],
-        label: "Moderate Schizophrenia Symptoms",
+        scoreDisplay: "Moderate Schizophrenia Symptoms",
         careerTracks: [
             "Counselor",
             "Research Assistant",
@@ -422,7 +422,7 @@ export const schizophreniaResult: ResultDetails[] = [
     },
     {
         score: [46, 60],
-        label: "Moderately Severe Schizophrenia Symptoms",
+        scoreDisplay: "Moderately Severe Schizophrenia Symptoms",
         careerTracks: [
             "Psychologist",
             "Psychiatrist",
@@ -445,7 +445,7 @@ export const schizophreniaResult: ResultDetails[] = [
     },
     {
         score: [61, 80],
-        label: "Severe Schizophrenia Symptoms",
+        scoreDisplay: "Severe Schizophrenia Symptoms",
         careerTracks: [
             "Mental Health Advocate",
             "Peer Support Specialist",
@@ -470,7 +470,7 @@ export const schizophreniaResult: ResultDetails[] = [
 export const anxietyResult: ResultDetails[] = [
     {
         score: [0, 9],
-        label: "Minimal or No Anxiety Symptoms",
+        scoreDisplay: "Minimal or No Anxiety Symptoms",
         careerTracks: [
             "Project Manager",
             "Accountant",
@@ -492,7 +492,7 @@ export const anxietyResult: ResultDetails[] = [
     },
     {
         score: [10, 19],
-        label: "Mild Anxiety Symptoms",
+        scoreDisplay: "Mild Anxiety Symptoms",
         careerTracks: [
             "Marketing Specialist",
             "Sales Representative",
@@ -515,7 +515,7 @@ export const anxietyResult: ResultDetails[] = [
     },
     {
         score: [20, 29],
-        label: "Moderate Anxiety Symptoms",
+        scoreDisplay: "Moderate Anxiety Symptoms",
         careerTracks: [
             "Counselor",
             "Research Assistant",
@@ -538,7 +538,7 @@ export const anxietyResult: ResultDetails[] = [
     },
     {
         score: [30, 39],
-        label: "Moderately Severe Anxiety Symptoms",
+        scoreDisplay: "Moderately Severe Anxiety Symptoms",
         careerTracks: [
             "Psychologist",
             "Psychiatrist",
@@ -561,7 +561,7 @@ export const anxietyResult: ResultDetails[] = [
     },
     {
         score: [40, 60],
-        label: "Severe Anxiety Symptoms",
+        scoreDisplay: "Severe Anxiety Symptoms",
         careerTracks: [
             "Mental Health Advocate",
             "Counselor",
@@ -587,7 +587,7 @@ export const anxietyResult: ResultDetails[] = [
 export const ptsdResult: ResultDetails[] = [
     {
         score: [0, 5],
-        label: "Minimal or No Concern for PTSD",
+        scoreDisplay: "Minimal or No Concern for PTSD",
         careerTracks: [
             "Project Manager",
             "Accountant",
@@ -609,7 +609,7 @@ export const ptsdResult: ResultDetails[] = [
     },
     {
         score: [6, 10],
-        label: "Mild Concern for PTSD",
+        scoreDisplay: "Mild Concern for PTSD",
         careerTracks: [
             "Marketing Specialist",
             "Sales Representative",
@@ -633,7 +633,7 @@ export const ptsdResult: ResultDetails[] = [
     },
     {
         score: [11, 15],
-        label: "Moderate Concern for PTSD",
+        scoreDisplay: "Moderate Concern for PTSD",
         careerTracks: [
             "Counselor",
             "Research Assistant",
@@ -656,7 +656,7 @@ export const ptsdResult: ResultDetails[] = [
     },
     {
         score: [16, 20],
-        label: "Severe Concern for PTSD",
+        scoreDisplay: "Severe Concern for PTSD",
         careerTracks: [
             "Psychologist",
             "Psychiatrist",
@@ -682,7 +682,7 @@ export const ptsdResult: ResultDetails[] = [
 export const internetResult: ResultDetails[] = [
     {
         score: [0, 15],
-        label: "Minimal or No Concern for Internet Disorder",
+        scoreDisplay: "Minimal or No Concern for Internet Disorder",
         careerTracks: [
             "Project Manager",
             "Accountant",
@@ -704,7 +704,7 @@ export const internetResult: ResultDetails[] = [
     },
     {
         score: [16, 30],
-        label: "Mild Concern for Internet Disorder",
+        scoreDisplay: "Mild Concern for Internet Disorder",
         careerTracks: [
             "Marketing Specialist",
             "Sales Representative",
@@ -727,7 +727,7 @@ export const internetResult: ResultDetails[] = [
     },
     {
         score: [31, 45],
-        label: "Moderate Concern for Internet Disorder",
+        scoreDisplay: "Moderate Concern for Internet Disorder",
         careerTracks: [
             "Counselor",
             "Research Assistant",
@@ -750,7 +750,7 @@ export const internetResult: ResultDetails[] = [
     },
     {
         score: [46, 60],
-        label: "Severe Concern for Internet Disorder",
+        scoreDisplay: "Severe Concern for Internet Disorder",
         careerTracks: [
            "Counselor",
             "Research Assistant",
