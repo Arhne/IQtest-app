@@ -46,7 +46,7 @@ export default function AllTest() {
 
   const getProgressStatus = useCallback(
     (item: SubCategories) => {
-      return hasProgressData && recentData[item]
+      return hasRecentData && recentData[item]
         ? `${recentData[item].questionsAnswered.length ?? 0}/${progressData[item].total}`
         : `0/${getTotalQuestionsForSubCategory(item)}`;
     },
@@ -71,7 +71,7 @@ export default function AllTest() {
 
   const generateProgressData = useCallback(
     (item: SubCategories) => {
-      if (progressData[item] && hasProgressData) {
+      if (recentData[item] && hasRecentData) {
         const answered = recentData[item].questionsAnswered
             ? recentData[item].questionsAnswered.length
             : 0,
@@ -83,7 +83,7 @@ export default function AllTest() {
         return calcPercentage(0, getTotalQuestionsForSubCategory(item));
       }
     },
-    [hasProgressData, progressData, getTotalQuestionsForSubCategory] // dependencies
+    [hasRecentData, progressData, getTotalQuestionsForSubCategory] // dependencies
   );
 
   const handleSubClick = (item: SubCategories) => {
@@ -104,7 +104,7 @@ export default function AllTest() {
   };
 
   console.log("RECENT DATA:", recentData)
-  console.log("RECENT DATA ANSWERES:", recentData.emotionalIQ.questionsAnswered)
+  // console.log("RECENT DATA ANSWERES:", recentData.emotionalIQ.questionsAnswered)
 
   return (
     <ThemedView style={tw`w-full px-5 pt-3 justify-center`}>

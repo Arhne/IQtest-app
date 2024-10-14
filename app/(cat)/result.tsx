@@ -152,7 +152,9 @@ export default function SingleResult() {
                 Your {config.title} type is
               </Text>
               <Text style={tw`text-3xl text-center font-semibold`}>
-                {dataResults?.scoreDisplay}
+                {dataResults?.scoreDisplay
+                  ? dataResults.scoreDisplay
+                  : dataResults?.label}
               </Text>
               <Text style={tw`text-center text-base`}></Text>
             </View>
@@ -165,9 +167,11 @@ export default function SingleResult() {
                 </View>
                 <View
                   style={tw`bg-gray-DEFAULT justify-between rounded-xl flex-row px-3 py-4`}>
-                  <View style={tw`gap-3 min-w-[150px]`}>
+                  <View style={tw`gap-3 flex-1`}>
                     <Text style={tw`font-semibold mb-3`}>Your responses</Text>
-                    <MultipleChart data={multiplePieData} />
+                    <View style={tw` flex-row align-center w-[100%] justify-center`}>
+                      <MultipleChart data={multiplePieData} />
+                    </View>
                     {multiplePieData.labels?.map((response, index) => (
                       <View
                         key={index}
@@ -181,26 +185,28 @@ export default function SingleResult() {
                       </View>
                     ))}
                   </View>
-                  <View style={tw`gap-3 min-w-[150px]`}>
-                    <Text style={tw`font-semibold mb-3`}>Answers</Text>
-                    <PieChart />
-                    {responses
-                      .filter((item, index) => index > 3)
-                      .map((response) => (
-                        <View
-                          key={response.id}
-                          style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}>
-                          <View style={tw`flex-row items-center`}>
-                            <View
-                              style={tw`mr-3 h-2 w-5 rounded-sm bg-[${response.color}]`}></View>
-                            <Text style={tw`capitalize`}>
-                              {response.heading}
-                            </Text>
+                  {config.categories === Categories.IQ_TEST && (
+                    <View style={tw`gap-3 flex-1`}>
+                      <Text style={tw`font-semibold mb-3`}>Answers</Text>
+                      <PieChart />
+                      {responses
+                        .filter((item, index) => index > 3)
+                        .map((response) => (
+                          <View
+                            key={response.id}
+                            style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}>
+                            <View style={tw`flex-row items-center`}>
+                              <View
+                                style={tw`mr-3 h-2 w-5 rounded-sm bg-[${response.color}]`}></View>
+                              <Text style={tw`capitalize`}>
+                                {response.heading}
+                              </Text>
+                            </View>
+                            <Text>{response.piont}</Text>
                           </View>
-                          <Text>{response.piont}</Text>
-                        </View>
-                      ))}
-                  </View>
+                        ))}
+                    </View>
+                  )}
                 </View>
 
                 {notSelfAssesment && (
