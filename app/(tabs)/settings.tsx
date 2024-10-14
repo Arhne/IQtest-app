@@ -118,7 +118,7 @@ export default function Settings() {
           onPress={() => router.back()}
           style={tw`pt-5 flex-row justify-start`}
         >
-          <MaterialIcons name="arrow-back-ios" size={24} color={colorScheme === "dark" ? "white" : "black"} />
+          <MaterialIcons name="arrow-back-ios" size={24} color={colorScheme === "dark" ? "white" : "black"}/>
         </Pressable>
         <View style={tw`flex-1`}>
           <ThemedText style={tw`mb-5 text-4xl font-medium w-70`}>

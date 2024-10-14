@@ -16,39 +16,12 @@ import {
   calcPercentage,
 } from "@/utils/helper-functions";
 import { SubCategoryConfig } from "@/data/data-config";
+import { useColorScheme } from "@/hooks/useColorScheme";
 
-const previousresult = [
-  {
-    id: "test",
-    interactionicon: <icons.TestIcon />,
-    heading: "start test",
-    subtitle: "Take a test",
-    progress: "50%",
-  },
-  {
-    id: "result",
-    interactionicon: <icons.ResultIcon />,
-    heading: "Result",
-    subtitle: "Go into details",
-    progress: "50%",
-  },
-  {
-    id: "knowledge",
-    interactionicon: <icons.KnowledgeIcon />,
-    heading: "Knowledge hub",
-    subtitle: "Generator",
-    progress: "50%",
-  },
-  {
-    id: "apps",
-    interactionicon: <icons.AppIcon />,
-    heading: "more apps",
-    subtitle: "Other test apps",
-    progress: "50%",
-  },
-];
 export default function PreviousResult() {
   const [isTestCompleted, SetIsTestCompleted] = useState(true);
+
+  const colorScheme = useColorScheme();
 
   const col = 2;
   const screenPadding = 20;
@@ -103,7 +76,7 @@ export default function PreviousResult() {
           <Pressable
             onPress={() => router.back()}
             style={tw`justify-start mr-26`}>
-            <MaterialIcons name="arrow-back-ios" size={24} color="black" />
+            <MaterialIcons name="arrow-back-ios" size={24} color={colorScheme === "dark" ? "white" : "black"} />
           </Pressable>
           <Text style={tw`text-xl font-semibold`}>Previous Result</Text>
         </View>

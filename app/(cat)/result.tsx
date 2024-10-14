@@ -20,42 +20,11 @@ import {
   getColorForLabel,
   getLogicalResultDetails,
 } from "@/utils/helper-functions";
+import { useColorScheme } from "@/hooks/useColorScheme";
 import { labelColorMap, SubCategoryConfig } from "@/data/data-config";
 import { ProgressChartData } from "react-native-chart-kit/dist/ProgressChart";
 import { Assessment } from "@/data/categories";
 
-const responses = [
-  {
-    id: "test",
-    heading: "very often",
-    piont: "4",
-    color: "red",
-  },
-  {
-    id: "result",
-    heading: "sometimes",
-    piont: "3",
-    color: "yellow",
-  },
-  {
-    id: "knowledge",
-    heading: "often",
-    piont: "4",
-    color: "black",
-  },
-  {
-    id: "apps",
-    heading: "rarely",
-    piont: "0",
-    color: "gray",
-  },
-  {
-    id: "never",
-    heading: "never",
-    piont: "1",
-    color: "red",
-  },
-];
 export default function SingleResult() {
   const [isPaid, setIsPaid] = useState(true);
   const params = useLocalSearchParams();
@@ -81,7 +50,7 @@ export default function SingleResult() {
     "Mental weaknesses",
     "More",
   ];
-
+  const colorScheme = useColorScheme();
   const multiplePieData: ProgressChartData = useMemo(() => {
     const subCategoryAssessment = Assessment.find(
       (item) => item.subcategoryId === subCategory
@@ -121,11 +90,11 @@ export default function SingleResult() {
   return (
     <ThemedView style={tw`flex-1 px-5`}>
       <SafeAreaView style={tw`w-full gap-5 flex-1`}>
-        <View style={tw`flex-row mb-5`}>
+        {/* <View style={tw`flex-row mb-5`}>
           <Pressable onPress={() => router.back()} style={tw`justify-start`}>
-            <MaterialIcons name="arrow-back-ios" size={24} color="black" />
+            <MaterialIcons name="arrow-back-ios" size={24} color={colorScheme === "dark" ? "white" : "black"} />
           </Pressable>
-        </View>
+        </View> */}
 
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={tw`gap-5 flex-1`}>
@@ -163,13 +132,13 @@ export default function SingleResult() {
               <View style={tw`gap-5`}>
                 <View style={tw`flex-row mt-3 gap-4`}>
                   <icons.StackIcon />
-                  <Text style={tw`font-semibold`}>Detailed Result</Text>
+                  <Text style={tw`font-semibold ${colorScheme === "dark" ? "text-[#fff]" : "text-[#000]"}`}>Detailed Result</Text>
                 </View>
                 <View
-                  style={tw`bg-gray-DEFAULT justify-between rounded-xl flex-row px-3 py-4`}>
+                  style={tw`bg-gray-DEFAULT justify-between rounded-xl flex-row gap-4 px-3 py-4`}>
                   <View style={tw`gap-3 flex-1`}>
                     <Text style={tw`font-semibold mb-3`}>Your responses</Text>
-                    <View style={tw` flex-row align-center w-[100%] justify-center`}>
+                    <View style={tw` flex-row w-[100%] justify-center`}>
                       <MultipleChart data={multiplePieData} />
                     </View>
                     {multiplePieData.labels?.map((response, index) => (
@@ -189,20 +158,19 @@ export default function SingleResult() {
                     <View style={tw`gap-3 flex-1`}>
                       <Text style={tw`font-semibold mb-3`}>Answers</Text>
                       <PieChart />
-                      {responses
-                        .filter((item, index) => index > 3)
-                        .map((response) => (
+                      {["correct answer", "wrong answer", "no"]
+                        .map((response, index) => (
                           <View
-                            key={response.id}
+                            key={index}
                             style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}>
                             <View style={tw`flex-row items-center`}>
                               <View
-                                style={tw`mr-3 h-2 w-5 rounded-sm bg-[${response.color}]`}></View>
+                                style={tw`mr-3 h-2 w-5 rounded-sm bg-[red]`}></View>
                               <Text style={tw`capitalize`}>
-                                {response.heading}
+                                {response}
                               </Text>
                             </View>
-                            <Text>{response.piont}</Text>
+                            <Text></Text>
                           </View>
                         ))}
                     </View>
@@ -214,6 +182,7 @@ export default function SingleResult() {
                     title="View correct answers"
                     containerStyles="border-2 border-solid w-full border-secondary-DEFAULT"
                     textStyles="text-secondary-DEFAULT"
+                    handlePress={()=> router.push("/(cat)/testSummary")}
                   />
                 )}
 
@@ -221,16 +190,16 @@ export default function SingleResult() {
                   noteHeading="🧑‍🏫 Possible career track"
                   noteDesc={
                     Array.isArray(dataResults?.careerTracks)
-                      ? dataResults.careerTracks.join(",")
+                      ? dataResults.careerTracks.join(", ")
                       : dataResults?.careerTracks ?? ""
                   }
                   bgcolor="bg-[#FEF5CB]"
                 />
                 <CustomDetailResult
-                  noteHeading="😃 Mental Strength"
+                  noteHeading="✍️ Mental Strength"
                   noteDesc={
                     Array.isArray(dataResults?.strengths)
-                      ? dataResults.strengths.join(",")
+                      ? dataResults.strengths.join(", ")
                       : dataResults?.strengths ?? ""
                   }
                   bgcolor="bg-[#F9CCFC80]"
@@ -239,14 +208,18 @@ export default function SingleResult() {
                   noteHeading="😞 Mental Weakness"
                   noteDesc={
                     Array.isArray(dataResults?.weaknesses)
-                      ? dataResults.weaknesses.join(",")
+                      ? dataResults.weaknesses.join(", ")
                       : dataResults?.weaknesses ?? ""
                   }
                   bgcolor="bg-[#FEF5CB]"
                 />
                 <CustomDetailResult
-                  noteHeading="✍️ Solution"
-                  noteDesc="hhh"
+                  noteHeading="😃 Celebrities"
+                  noteDesc={
+                    Array.isArray(dataResults?.celebrities)
+                      ? dataResults.celebrities.join(", ")
+                      : dataResults?.celebrities ?? ""
+                  }
                   bgcolor="bg-[#C9FBEB80]"
                 />
               </View>

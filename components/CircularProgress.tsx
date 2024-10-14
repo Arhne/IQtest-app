@@ -43,10 +43,12 @@ export const CircularProgress = ({
   percentage,
   text,
   radius = 35,
+  textColor = "text-[#000]",
 }: {
   percentage: number;
   text?: string;
   radius?: number;
+  textColor?: string;
 }) => {
   const colorScheme = useColorScheme();
 
@@ -87,7 +89,7 @@ export const CircularProgress = ({
       </Svg>
 
       <View style={tw`absolute items-center justify-center`}>
-        <Text style={tw`text-base ${colorScheme === "dark" ? "" : "text-[#8D0CCA]"}`}>{percentage}%</Text>
+        <Text style={tw`text-base ${colorScheme === "dark" ? `${textColor}` : "text-[#8D0CCA]"}`}>{percentage}%</Text>
         {text && <Text style={tw`text-xs text-white`}> {text} </Text>}
       </View>
     </View>
@@ -111,7 +113,7 @@ export const PieChart = () => {
         }}
         accessor="population"
         backgroundColor="transparent"
-        paddingLeft="39"
+        paddingLeft="40"
         absolute
         hasLegend={false}
       />

@@ -15,6 +15,7 @@ export default function PagesLayout() {
         <Stack.Screen name="previousResult" options={{ headerShown: false }} />
         <Stack.Screen name="subscription" options={{ headerShown: false }} />
         <Stack.Screen name="testInstructions" options={{ headerShown: false }} />
+        <Stack.Screen name="testSummary" options={{ headerShown: false }} />
       </Stack>
 
   );

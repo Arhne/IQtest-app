@@ -163,6 +163,7 @@ export default function HomeScreen() {
                     <CircularProgress
                       percentage={latestSubDetails?.progressPercent ?? 0}
                       text="Progress"
+                      textColor="text-[#fff]"
                     />
                   </View>
                 </ImageBackground>
