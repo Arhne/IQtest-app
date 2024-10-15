@@ -236,7 +236,7 @@ export default function SingleResult() {
                     <View style={tw`gap-3 flex-1`}>
                       <Text style={tw`font-semibold mb-3`}>Answers</Text>
                       <PieChart />
-                      {["correct answer", "wrong answer", "no"].map(
+                      {["correct answer", "wrong answer", "unanswered"].map(
                         (response, index) => (
                           <View
                             key={index}

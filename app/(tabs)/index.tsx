@@ -25,7 +25,7 @@ import { SubCategories } from "@/data/enum";
 import { useAppSelector } from "@/redux";
 import { formatDate } from "@/utils/format-date";
 import { SubCategoryConfig } from "@/data/data-config";
-import IconComponent from "./icon-component";
+import IconComponent from "@/components/icon-component";
 
 const interactions = [
   {
