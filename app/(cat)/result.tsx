@@ -261,7 +261,7 @@ export default function SingleResult() {
                     title="View correct answers"
                     containerStyles="border-2 border-solid w-full border-secondary-DEFAULT"
                     textStyles="text-secondary-DEFAULT"
-                    // handlePress={() => router.push("/(cat)/testSummary")}
+                    handlePress={() => router.push("/(cat)/testSummary")}
                   />
                 )}
 

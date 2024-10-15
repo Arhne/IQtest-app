@@ -25,6 +25,7 @@ import { SubCategories } from "@/data/enum";
 import { useAppSelector } from "@/redux";
 import { formatDate } from "@/utils/format-date";
 import { SubCategoryConfig } from "@/data/data-config";
+import IconComponent from "./icon-component";
 
 const interactions = [
   {
@@ -57,13 +58,8 @@ const interactions = [
   },
 ];
 
-interface IDetails {
-  latestTest: string;
-  dateAnswered: string;
-  progressPercent: number;
-}
-export default function HomeScreen() {
 
+export default function HomeScreen() {
   const col = 2;
   const screenPadding = 20;
   const gap = 12;
@@ -100,8 +96,8 @@ export default function HomeScreen() {
     return calcPercentage(
       recentData[recents[0]].questionsAnswered.length,
       getTotalQuestionsForSubCategory(recents[0])
-    )
-  }, [recents])
+    );
+  }, [recents]);
 
   const setDetails = () => {
     if (hasProgressData && hasRecentData) {
@@ -128,7 +124,6 @@ export default function HomeScreen() {
       router.push("/all-tests");
     }
   };
-  
 
   const lastTestTitle = SubCategoryConfig[
     latestSubDetails?.latestTest as SubCategories
@@ -154,11 +149,7 @@ export default function HomeScreen() {
                   style={tw`flex-1 w-full h-full justify-center`}
                   resizeMode="stretch">
                   <View style={tw`flex-row px-5 items-center justify-between`}>
-                    <Image
-                      source={images.brain}
-                      style={tw`w-[134px] h-[133px]`}
-                      resizeMode="contain"
-                    />
+                    <IconComponent latestSubDetails={latestSubDetails} />
 
                     <CircularProgress
                       percentage={latestSubDetails?.progressPercent ?? 0}

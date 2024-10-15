@@ -2,12 +2,14 @@ import { Stack } from "expo-router";
 import { loadInitialProgress } from "@/redux/load-progress-thunk";
 import { useAppDispatch } from "@/redux";
 import { useEffect } from "react";
+import { getAsyncStorageSize } from "@/utils/helper-functions";
 
 export const StackProvider = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(loadInitialProgress());
+    getAsyncStorageSize()
   }, []);
 
   return (

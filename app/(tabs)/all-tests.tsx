@@ -46,9 +46,10 @@ export default function AllTest() {
 
   const getProgressStatus = useCallback(
     (item: SubCategories) => {
+      const total = getTotalQuestionsForSubCategory(item)
       return hasRecentData && recentData[item]
-        ? `${recentData[item].questionsAnswered.length ?? 0}/${progressData[item].total}`
-        : `0/${getTotalQuestionsForSubCategory(item)}`;
+        ? `${recentData[item].questionsAnswered.length ?? 0}/${total}`
+        : `0/${total}`;
     },
     [progressData, getTotalQuestionsForSubCategory]
   );
@@ -75,20 +76,18 @@ export default function AllTest() {
         const answered = recentData[item].questionsAnswered
             ? recentData[item].questionsAnswered.length
             : 0,
-          total = progressData[item].total
-            ? progressData[item].total
-            : getTotalQuestionsForSubCategory(item);
+          total =  getTotalQuestionsForSubCategory(item);
         return calcPercentage(answered, total);
       } else {
         return calcPercentage(0, getTotalQuestionsForSubCategory(item));
       }
     },
-    [hasRecentData, progressData, getTotalQuestionsForSubCategory] // dependencies
+    [hasRecentData, recentData, getTotalQuestionsForSubCategory] // dependencies
   );
 
   const handleSubClick = (item: SubCategories) => {
     const hasProgress =
-      progressData[item]?.answered > 0 &&
+      recentData[item]?.questionsAnswered  &&
       recentData[item]?.questionsAnswered.length !== progressData[item]?.total;
     const hasCompleted =
       recentData[item]?.questionsAnswered.length === getTotalQuestionsForSubCategory(item);

@@ -1,4 +1,4 @@
-import { useMemo, useEffect, useState } from "react";
+import { useMemo, useEffect, useState, useCallback } from "react";
 import {
   Text,
   ScrollView,
@@ -38,6 +38,12 @@ const TestInstructions = () => {
   const recentData = useAppSelector((state) => state.questions.recentData);
   const answer = useAppSelector((state) => state.questions.answer);
 
+  const [hasRecentData, hasProgressData] = useMemo(() => {
+    return [
+      Object.keys(recentData).length > 0,
+      Object.keys(progressData).length > 0,
+    ];
+  }, [recentData, progressData]);
   // Use the last answered question number as initial state
   const [currentQuestionNo, setCurrentQuestionNo] = useState<number | null>(
     null
@@ -103,13 +109,20 @@ const TestInstructions = () => {
     );
   }, [currentQuestionNo, questionsData]);
 
-  const progressPercent = useMemo(() => {
-    if (Object.keys(progressData).length === 0) return 0;
-    return calcPercentage(
-      progressData[subCategory]?.answered ?? 0,
-      getTotalQuestionsForSubCategory(subCategory)
-    );
-  }, [progressData]);
+  const generateProgressPercent = useCallback(
+    (item: SubCategories) => {
+      if (recentData[item] && hasRecentData) {
+        const answered = recentData[item].questionsAnswered
+            ? recentData[item].questionsAnswered.length
+            : 0,
+          total =  getTotalQuestionsForSubCategory(item);
+        return calcPercentage(answered, total);
+      } else {
+        return calcPercentage(0, getTotalQuestionsForSubCategory(item));
+      }
+    },
+    [hasRecentData, recentData, getTotalQuestionsForSubCategory,subCategory] // dependencies
+  );
 
   useEffect(() => {
     if (questionsData.length > 0) {
@@ -148,7 +161,7 @@ const TestInstructions = () => {
                 keyExtractor={(item, index) => index.toString()}
                 ListHeaderComponent={() => (
                   <View style={tw`mt-6 gap-3`}>
-                    <LinearProgressBar progress={progressPercent} />
+                    <LinearProgressBar progress={generateProgressPercent(subCategory)} />
                     {!isIqTest && (
                       <View style={tw`mx-auto`}>
                         <Icon width={220} height={160} />

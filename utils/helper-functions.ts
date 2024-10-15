@@ -165,3 +165,29 @@ export const getLogicalResultDetails = (
 export const getColorForLabel = (label: string, index: number) => {
   return labelColorMap[index] || `hsl(${(index * 137.5) % 360}, 70%, 50%)`;
 };
+
+
+export const getAsyncStorageSize = async () => {
+  try {
+    // Step 1: Get all keys from AsyncStorage
+    const keys = await AsyncStorage.getAllKeys();
+    
+    // Step 2: Get all values for the keys
+    const result = await AsyncStorage.multiGet(keys);
+
+    // Step 3: Calculate the total size of keys and values
+    let totalSize = 0;
+    
+    result.forEach(([key, value]) => {
+      // Calculate the size of each key and value as a string
+      totalSize += key.length + (value?.length || 0);
+    });
+
+    // Convert size to kilobytes
+    const totalSizeInKB = totalSize / 1024;
+
+    console.log(`Total size of AsyncStorage: ${totalSizeInKB.toFixed(2)} KB`);
+  } catch (error) {
+    console.error("Error calculating AsyncStorage size:", error);
+  }
+};

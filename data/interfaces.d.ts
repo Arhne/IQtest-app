@@ -43,3 +43,9 @@ interface ResultDetails  {
   romanticType?: string;
   celebrities?: string[];
 };
+
+interface IDetails {
+  latestTest: string;
+  dateAnswered: string;
+  progressPercent: number;
+}
