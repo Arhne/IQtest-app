@@ -139,7 +139,7 @@ export const logicalResultData: ResultDetails[] = [
       weaknesses:
         "Your strengths of course comes with a price! The intuitive mind you have at times block your emotional intelligence and cause detachment. The detachment you might be going through at times makes you want to isolate yourself from the society. This makes you feel lonely. But at the end of the day your strengths overcome your weaknesses and you move forward!",
       romanticType:
-        ": Your ideal type posesses a strong emotional intelligence and life. People who are emotional, feeling, perceptive, and sensual are your ideal characters to date!",
+        "Your ideal type posesses a strong emotional intelligence and life. People who are emotional, feeling, perceptive, and sensual are your ideal characters to date!",
       celebrities: [
         "Barrack Obama",
         "Tayyip Erdogan",
