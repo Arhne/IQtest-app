@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import { Text, View, Dimensions } from "react-native";
 import { Circle, Svg, Defs, LinearGradient, Stop } from "react-native-svg";
 import { ProgressChart, PieChart as RNChart } from "react-native-chart-kit";
@@ -6,38 +6,24 @@ import tw from "@/twrnc-config";
 import { ProgressChartData } from "react-native-chart-kit/dist/ProgressChart";
 import { labelColorMap } from "@/data/data-config";
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { hexToRgba } from "@/utils/helper-functions";
 
 // const screenWidth = Dimensions.get('screen').width;
 const screenWidth = 158;
 
 interface IMultipleChart {
   data : ProgressChartData
+  total: number
 }
-const data = [
-  {
-    name: "Correct Answer",
-    population: 18,
-    color: "#8fbf00",
-  },
-  {
-    name: "Wrong Answer",
-    population: 6,
-    color: "#00bcbf",
-  },
-  {
-    name: "Unanswered",
-    population: 6,
-    color: "#dd2e2e",
-  },
-];
 
-const totalAnswers = data.reduce((acc, item) => acc + item.population, 0);
-const correctPercentage = ((data[0].population / totalAnswers) * 100) // Calculating percentage
-
-const progressdata : ProgressChartData = {
-  labels: ["Swim", "Bike", "Run", "Swim", "Bike"], // optional
-  data: [0.4, 0.6, 0.8, 0.5, 0.8],
-};
+interface PieChartData {
+  data: {
+    name: string;
+    population: number;
+    color: string;
+}[];
+percentage: number;
+}
 
 export const CircularProgress = ({
   percentage,
@@ -96,7 +82,7 @@ export const CircularProgress = ({
   );
 };
 
-export const PieChart = () => {
+export const PieChart: FC<PieChartData> = ({data, percentage}) => {
   return (
     <View style={tw`flex justify-center items-center mb-5`}>
       <RNChart
@@ -129,17 +115,26 @@ export const PieChart = () => {
       {/* Overlayed Percentage Text */}
       <View style={tw`absolute flex justify-center items-center`}>
         <Text style={tw`text-xl font-bold text-black`}>
-          {correctPercentage}%
+          {percentage}%
         </Text>
       </View>
     </View>
   );
 };
 
-export const MultipleChart : FC<IMultipleChart> = ({data}) => {
+export const MultipleChart : FC<IMultipleChart> = ({data, total}) => {
+  const neededData : ProgressChartData = useMemo(() => {
+    if (Array.isArray(data)) return {} as ProgressChartData;
+    return {
+      labels: data.labels,
+      colors: data.colors,
+      data: data.data.map((item) => item/total)
+    }
+  }, [total])
+
   return (
     <ProgressChart
-      data={data}
+      data={neededData}
       width={screenWidth}
       height={220}
       strokeWidth={8} // Increase stroke width to make circles thicker
@@ -150,10 +145,12 @@ export const MultipleChart : FC<IMultipleChart> = ({data}) => {
         backgroundGradientTo: "transparent",
         backgroundGradientToOpacity: 0,
         color: (opacity = 1, index) => {
-          // Set the color for the filled part based on the data's index
-          const colors = Object.values(labelColorMap).map((item) => item);
-          return colors[index ?? 0] || `rgba(26, 255, 146, ${opacity})`; // Default color if no color is found
+          const colors = Object.values(labelColorMap).map((colorHex) =>
+            hexToRgba(colorHex, opacity)
+          );
+          return colors[index ?? 0] || `rgba(26, 255, 146, ${opacity})`; // Default color if index is out of bounds
         },
+
         labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
         fillShadowGradient: "transparent", // Ensure the filled gradient is transparent
         fillShadowGradientOpacity: 0, // No shadow for unfilled portions

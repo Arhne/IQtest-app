@@ -13,7 +13,7 @@ import {
   getTotalQuestionsForSubCategory,
   sortDataByCategory,
 } from "@/utils/helper-functions";
-import { CircularProgress } from "@/components/CircularProgress";
+import { CircularProgress  } from "@/components/CircularProgress";
 import { Categories, SubCategories } from "@/data/enum";
 import { SubCategoryConfig } from "@/data/data-config";
 import { useAppSelector } from "@/redux";

@@ -19,17 +19,16 @@ import { useAppSelector } from "@/redux";
 import {
   getColorForLabel,
   getLogicalResultDetails,
+  getTotalQuestionsForSubCategory,
 } from "@/utils/helper-functions";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { labelColorMap, SubCategoryConfig } from "@/data/data-config";
-import { ProgressChartData } from "react-native-chart-kit/dist/ProgressChart";
 import { Assessment } from "@/data/categories";
 
 export default function SingleResult() {
   const [isPaid, setIsPaid] = useState(true);
   const params = useLocalSearchParams();
   const subCategory = params.subCategory as SubCategories;
-  const progressData = useAppSelector((state) => state.questions.progressData);
   const recentData = useAppSelector((state) => state.questions.recentData);
   const score = recentData[subCategory].totalPoints;
 
@@ -86,6 +85,34 @@ export default function SingleResult() {
   }, [recentData, config.categories, subCategory, Assessment]);
 
   console.log("MULTIPLE DATA", multiplePieData);
+
+  const pieData = useMemo(() => {
+    const total = getTotalQuestionsForSubCategory(subCategory);
+    const correctAnswers = recentData[subCategory].questionsAnswered.filter(
+      (item) => item.points > 0
+    ).length;
+    const incorrectAnswers = recentData[subCategory].questionsAnswered.filter(
+      (item) => item.points === 0
+    ).length;
+
+    const dataArray = [
+      {
+        name: "Correct answers",
+        population: correctAnswers,
+        color: "#8fbf00",
+      },
+      {
+        name: "Wrong Answer",
+        population: incorrectAnswers,
+        color: "#dd2e2e",
+      },
+    ];
+    const percentage = (correctAnswers / total) * 100;
+    return {
+      data: dataArray,
+      percentage,
+    };
+  }, [subCategory]);
 
   return (
     <ThemedView style={tw`flex-1 px-5`}>
@@ -208,28 +235,27 @@ export default function SingleResult() {
                   <Text
                     style={tw`font-semibold ${
                       colorScheme === "dark" ? "text-[#fff]" : "text-[#000]"
-                    }`}
-                  >
+                    }`}>
                     Detailed Result
                   </Text>
                 </View>
                 <View
-                  style={tw`bg-gray-DEFAULT justify-between rounded-xl flex-row gap-4 px-3 py-4`}
-                >
+                  style={tw`bg-gray-DEFAULT justify-between rounded-xl flex-row gap-4 px-3 py-4`}>
                   <View style={tw`gap-3 flex-1`}>
                     <Text style={tw`font-semibold mb-3`}>Your responses</Text>
                     <View style={tw` flex-row w-[100%] justify-center`}>
-                      <MultipleChart data={multiplePieData} />
+                      <MultipleChart
+                        data={multiplePieData}
+                        total={getTotalQuestionsForSubCategory(subCategory)}
+                      />
                     </View>
                     {multiplePieData.labels?.map((response, index) => (
                       <View
                         key={index}
-                        style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}
-                      >
+                        style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}>
                         <View style={tw`flex-row items-center`}>
                           <View
-                            style={tw`mr-3 h-2 w-5 rounded-sm bg-[${labelColorMap[index]}]`}
-                          ></View>
+                            style={tw`mr-3 h-2 w-5 rounded-sm bg-[${labelColorMap[index]}]`}></View>
                           <Text style={tw`capitalize`}>{response}</Text>
                         </View>
                         <Text>{multiplePieData.data[index]}</Text>
@@ -239,18 +265,19 @@ export default function SingleResult() {
                   {config.categories === Categories.IQ_TEST && (
                     <View style={tw`gap-3 flex-1`}>
                       <Text style={tw`font-semibold mb-3`}>Answers</Text>
-                      <PieChart />
-                      {["correct answer", "wrong answer", "unanswered"].map(
+                      <PieChart
+                        data={pieData.data}
+                        percentage={pieData.percentage}
+                      />
+                      {pieData.data.map(
                         (response, index) => (
                           <View
                             key={index}
-                            style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}
-                          >
+                            style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}>
                             <View style={tw`flex-row items-center`}>
                               <View
-                                style={tw`mr-3 h-2 w-5 rounded-sm bg-[red]`}
-                              ></View>
-                              <Text style={tw`capitalize`}>{response}</Text>
+                                style={tw`mr-3 h-2 w-5 rounded-sm bg-[${response.color}]`}></View>
+                              <Text style={tw`capitalize`}>{response.name}</Text>
                             </View>
                             <Text></Text>
                           </View>
@@ -265,7 +292,12 @@ export default function SingleResult() {
                     title="View correct answers"
                     containerStyles="border-2 border-solid w-full border-secondary-DEFAULT"
                     textStyles="text-secondary-DEFAULT"
-                    handlePress={() => router.push("/(cat)/testSummary")}
+                    handlePress={() =>
+                      router.push({
+                        pathname: "/(cat)/testSummary",
+                        params: { subCategory },
+                      })
+                    }
                   />
                 )}
 
@@ -317,13 +349,11 @@ export default function SingleResult() {
                   textStyle="bg-[#F4FBC9] text-[#76A400] p-1"
                 />
                 <View
-                  style={tw`bg-[#FEF5CB] w-full flex-row gap-3 rounded-xl p-5`}
-                >
+                  style={tw`bg-[#FEF5CB] w-full flex-row gap-3 rounded-xl p-5`}>
                   <icons.WarningIcon />
                   <View style={tw`flex-1 flex-col gap-2`}>
                     <Text
-                      style={tw`text-base font-semibold text-secondary-DEFAULT`}
-                    >
+                      style={tw`text-base font-semibold text-secondary-DEFAULT`}>
                       Detailed Result
                     </Text>
                     <Text style={tw`font-intmedium text-sm text-[#848288]`}>

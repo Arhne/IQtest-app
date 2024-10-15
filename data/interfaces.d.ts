@@ -49,3 +49,9 @@ interface IDetails {
   dateAnswered: string;
   progressPercent: number;
 }
+
+type ProgressChartData =  {
+  labels: Array<string>;
+  colors: Array<string>;
+  data: Array<number>;
+};
