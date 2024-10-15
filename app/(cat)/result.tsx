@@ -123,7 +123,7 @@ export default function SingleResult() {
                     Your {config.title.substring(0, config.title.length - 5)} is
                   </Text>
 
-                  <Text style={tw`text-3xl text-center font-semibold`}>
+                  <Text style={tw`text-3xl text-center p-4 font-semibold`}>
                     {dataResults?.scoreDisplay}
                   </Text>
 
@@ -133,7 +133,7 @@ export default function SingleResult() {
                 </View>
               ) : config.categories === Categories.MENTAL_TEST ? (
                 <View>
-                  <Text style={tw`text-3xl text-center font-semibold`}>
+                  <Text style={tw`text-3xl text-center p-4 font-semibold`}>
                     {dataResults?.scoreDisplay}
                   </Text>
                 </View>
@@ -144,35 +144,42 @@ export default function SingleResult() {
                     type is:
                   </Text>
                   {config.title === "16 Personalities Test" ? (
-                    <Text style={tw`text-center text-base`}>
-                      Your are an{" "}
-                      <Text style={tw`text-3xl text-center font-semibold`}>
+                    <View>
+                      <Text style={tw`text-center text-base`}>
+                        Your are an{" "}
+                      </Text>
+                      <Text style={tw`text-3xl text-center p-4 font-semibold`}>
                         {dataResults?.scoreDisplay}
                       </Text>
-                      {dataResults?.label}
-                    </Text>
+                      <Text style={tw`text-center text-base`}>{dataResults?.label}</Text>
+                    </View>
                   ) : config.title === "Enneagram Test" ? (
-                    <Text style={tw`text-center text-base`}>
-                      Your main type is{" "}
-                      <Text style={tw`text-3xl text-center font-semibold`}>
+                    <View>
+                      <Text style={tw`text-center text-base`}>
+                        Your main type is{" "}
+                      </Text>
+                      <Text style={tw`text-3xl text-center p-3 font-semibold`}>
                         {dataResults?.scoreDisplay}
                       </Text>
-                      and side type is{" "}
-                      <Text style={tw`text-3xl text-center font-semibold`}>
+                      <Text style={tw`text-center text-base`}>
+                        and side type is{" "}
+                      </Text>
+                      <Text style={tw`text-3xl text-center p-3 font-semibold`}>
                         {dataResults?.label}
                       </Text>
-                    </Text>
+                    </View>
                   ) : config.title === "Emotions vs Logic Test" ? (
+                    <View>
                     <Text style={tw`text-center text-base`}>
-                      Out of 100 people, you fall in the{" "}
-                      <Text style={tw`text-3xl text-center font-semibold`}>
+                      Out of 100 people, you fall in the</Text>
+                      <Text style={tw`text-3xl text-center p-3 font-semibold`}>
                         {dataResults?.scoreDisplay}
                       </Text>
-                    </Text>
+                    </View>
                   ) : config.title === "Persona Bubble Test" ? (
                     <Text style={tw`text-center text-base`}>
                       From 1 - 10, your personal bubble strength is around{" "}
-                      <Text style={tw`text-3xl text-center font-semibold`}>
+                      <Text style={tw`text-3xl font-semibold`}>
                         {dataResults?.scoreDisplay}
                       </Text>
                     </Text>
@@ -180,13 +187,10 @@ export default function SingleResult() {
                     <Text style={tw`text-center text-base`}>
                       Your <Text style={tw`text-xl font-semibold`}>EQ</Text>{" "}
                       score is between
-                      <Text style={tw`text-3xl text-center font-semibold`}>
-                        {dataResults?.scoreDisplay}
+                      <Text style={tw`text-3xl font-semibold`}>
+                        {dataResults?.scoreDisplay}.
                       </Text>
-                      and side type is{" "}
-                      <Text style={tw`text-3xl text-center font-semibold`}>
-                        {dataResults?.label}
-                      </Text>
+                      {dataResults?.label}
                     </Text>
                   ) : (
                     <Text style={tw`text-3xl text-center font-semibold`}>
