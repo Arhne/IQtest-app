@@ -110,7 +110,7 @@ export default function SingleResult() {
     const percentage = (correctAnswers / total) * 100;
     return {
       data: dataArray,
-      percentage,
+      percentage: Math.round(percentage),
     };
   }, [subCategory]);
 
