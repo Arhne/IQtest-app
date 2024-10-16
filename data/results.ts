@@ -302,14 +302,7 @@ export const logicalResultData: ResultDetails[] = [
       scoreDisplay: "100 - 110",
       label: "This score is close to average. You can always improve your score with our Brain Teaser section!",
       careerTracks: [
-        
-      ],
-      strengths: "You are a resilient person when it comes to difficulties. Your relationships are very well organized and filled with positive intensity. When it comes to handling people, you are quite good at it. You can ease your way out of difficult situations and make many people around you very happy!",
-      weaknesses:
-        "Sometimes you trust yourself too much and get into slightly risky events. These events cause you to ignore the bigger picture and focus on the wrong side of the equation. As a result, you might at times find yourself in trouble and wonder why things happen the way they do. But as always, your determination and motivation helps you climb the ladder successfully!",
-      romanticType:
-        "People who are balanced, not too social and not too self oriented. In general, people are who are intuitive, mainly introverted, emotional, and perceptual.",
-      celebrities: ["Mathematics Professor",
+        "Mathematics Professor",
         "Pilot",
         "Teacher",
         "Digital Marketer",
@@ -319,6 +312,13 @@ export const logicalResultData: ResultDetails[] = [
         "Manager",
         "Accountant",
         "Financial Analyst",
+      ],
+      strengths: "You are a resilient person when it comes to difficulties. Your relationships are very well organized and filled with positive intensity. When it comes to handling people, you are quite good at it. You can ease your way out of difficult situations and make many people around you very happy!",
+      weaknesses:
+        "Sometimes you trust yourself too much and get into slightly risky events. These events cause you to ignore the bigger picture and focus on the wrong side of the equation. As a result, you might at times find yourself in trouble and wonder why things happen the way they do. But as always, your determination and motivation helps you climb the ladder successfully!",
+      romanticType:
+        "People who are balanced, not too social and not too self oriented. In general, people are who are intuitive, mainly introverted, emotional, and perceptual.",
+      celebrities: [
         "Nikola Tesla",
         "Marilu Henner",
         "Kim Peek",

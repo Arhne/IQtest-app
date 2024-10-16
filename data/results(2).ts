@@ -30,7 +30,6 @@ export const sixtPersonalityResult: ResultDetails[] = [
     },
     {
         score: [16, 30],
-
         scoreDisplay: "ESFJ",
         label: "(Extroverted, Sensual, Feeler, Judging)",
         careerTracks: [
@@ -134,8 +133,6 @@ export const sixtPersonalityResult: ResultDetails[] = [
             "Visionary",
             "Activist",
         ],
-
-
         strengths:
             "Highly analytical, you focus on details and are quick to draw conclusions. You excel at recognizing patterns.",
         weaknesses:
@@ -207,8 +204,6 @@ export const enneagramResult: ResultDetails[] = [
 
         scoreDisplay: "Type 2 (helper)",
         label: "Type 3 (achiever)",
-
-
         careerTracks: [
             "Health and Safety Specialist",
             "Language Teacher",
@@ -234,10 +229,8 @@ export const enneagramResult: ResultDetails[] = [
         ],
     },
 
-
     {
-        score: [19, 38],
-
+        score: [20, 37],
         scoreDisplay: "Type 2 (helper)",
         label: "Type 4 (romantic)",
         careerTracks: [
@@ -296,7 +289,7 @@ export const enneagramResult: ResultDetails[] = [
         ],
     },
     {
-        score: [57, 76],
+        score: [58, 76],
         scoreDisplay: "Type 3 (achiever)",
         label: "Type 1 (reformer)",
         careerTracks: [
@@ -326,7 +319,7 @@ export const enneagramResult: ResultDetails[] = [
         ],
     },
     {
-        score: [76, 95],
+        score: [77, 94],
         scoreDisplay: "Type 4 (romantic)",
         label: "Type 8 (challenger)",
         careerTracks: [
@@ -358,28 +351,32 @@ export const enneagramResult: ResultDetails[] = [
         scoreDisplay: "Type 1 (reformer)",
         label: "Type 2 (helper)",
         careerTracks: [
-            "Analyst",
-            "Philosopher",
-            "Research Scientist",
+            "Diplomat",
+            "Politician",
+            "Scientist",
             "Logician",
-            "Activist",
+            "Professor",
+            "Analyst",
+            "Data Scientist",
             "Visionary",
-        ],
-        strengths:
-            "You multitask efficiently and daydream about complex details, which helps you stay ahead of your peers.",
-        weaknesses:
-            "You may struggle with emotions and become detached, but meditation and introspection help you regain control.",
-        romanticType:
-            "Emotionally rich individuals, balanced between introversion and extroversion.",
-        celebrities: [
-            "Euler",
-            "Vladimir Putin",
-            "Alan Turing",
-            "Cem Yilmaz",
-        ],
+            "Activist",
+          ],
+          strengths:
+            "You are highly analytical and logical. You focus on the details of everything you see. This makes you very fast and adaptable to certain environment where speed is needed. You are fast at making conclusions from events that seem disjoint. Moreover, you are good at seeing patterns between events and you usually hack seemingly complicated patterns.",
+          weaknesses:
+            "Your high attention to detail sometimes causes you to lose touch with reality and you miss the bigger picture. Not seeing the bigger picture causes you to at times miscalculate the future and your projections happens to be skewed. This might lead to self-esteem issues since you think very highly of yourself. But at the end of the day, you rationalize what you are feeling and get over it very smoothly!",
+          romanticType:
+            "You are ideally attracted to introverted, feeling, emotional, rich inner-world, and quite people.",
+          celebrities: [
+            "Albert Einstein",
+            "Tom Cruise",
+            "Richard Nixon",
+            "Donald Trump",
+            "Isaac Newton",
+          ],
     },
     {
-        score: [114, 133],
+        score: [115, 133],
         scoreDisplay: "Type 7 (enthusiast)",
         label: "Type 1 (reformer)",
         careerTracks: [
@@ -391,12 +388,12 @@ export const enneagramResult: ResultDetails[] = [
             "Visionary",
         ],
         strengths:
-            "You multitask efficiently and daydream about complex details, which helps you stay ahead of your peers.",
+          "Every information you absorb gets in your mind with all its details. You are able to multitask very efficiently for long periods of times. Details comprise your mind and you day dream a lot about these details causing you to always be couple steps ahead when compared to your peers. You being ahead makes you enjoy competition, which gives you advantage when it comes to living in the society!",
         weaknesses:
-            "You may struggle with emotions and become detached, but meditation and introspection help you regain control.",
+          "The amount of analytical thinking you spend time investing in, your emotional world cannot keep up. Most of the time, you find yourself battling between complex emotions and you keep diving in them without really wanting to. Not being able to understand your emotions as well causes you internal pain and boredom. But after enough meditation and soul searching, you find your way through!",
         romanticType:
-            "Emotionally rich individuals, balanced between introversion and extroversion.",
-        celebrities: [
+          "People with rich and high emotional worlds. Both extroverted and introverted in a balanced way. Your ideal type are people who are mainly normal when it comes to logic and analytical reasoning.",
+         celebrities: [
             "Euler",
             "Vladimir Putin",
             "Alan Turing",
@@ -404,7 +401,7 @@ export const enneagramResult: ResultDetails[] = [
         ],
     },
     {
-        score: [133, 152],
+        score: [132, 152],
         scoreDisplay: "Type 8 (challenger)",
         label: "Type 5 (observer)",
         careerTracks: [
@@ -416,11 +413,11 @@ export const enneagramResult: ResultDetails[] = [
             "Visionary",
         ],
         strengths:
-            "You multitask efficiently and daydream about complex details, which helps you stay ahead of your peers.",
+          "Every information you absorb gets in your mind with all its details. You are able to multitask very efficiently for long periods of times. Details comprise your mind and you day dream a lot about these details causing you to always be couple steps ahead when compared to your peers. You being ahead makes you enjoy competition, which gives you advantage when it comes to living in the society!",
         weaknesses:
-            "You may struggle with emotions and become detached, but meditation and introspection help you regain control.",
+          "The amount of analytical thinking you spend time investing in, your emotional world cannot keep up. Most of the time, you find yourself battling between complex emotions and you keep diving in them without really wanting to. Not being able to understand your emotions as well causes you internal pain and boredom. But after enough meditation and soul searching, you find your way through!",
         romanticType:
-            "Emotionally rich individuals, balanced between introversion and extroversion.",
+          "People with rich and high emotional worlds. Both extroverted and introverted in a balanced way. Your ideal type are people who are mainly normal when it comes to logic and analytical reasoning.",
         celebrities: [
             "Euler",
             "Vladimir Putin",
@@ -433,235 +430,226 @@ export const enneagramResult: ResultDetails[] = [
 export const emotionsResult: ResultDetails[] = [
     {
         score: [0, 26],
-
         scoreDisplay: "top 10 logical people",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
-        ],
-        strengths:
-            "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
-        weaknesses:
-            "You may forget details and struggle with detailed academic subjects, but your resilience helps you succeed.",
-        romanticType:
-            "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
-        celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
-        ],
+            "Analyst",
+            "Philosopher",
+            "Research Scientist",
+            "Logician",
+            "Activist",
+            "Visionary",
+          ],
+          strengths:
+            "Every information you absorb gets in your mind with all its details. You are able to multitask very efficiently for long periods of times. Details comprise your mind and you day dream a lot about these details causing you to always be couple steps ahead when compared to your peers. You being ahead makes you enjoy competition, which gives you advantage when it comes to living in the society!",
+          weaknesses:
+            "The amount of analytical thinking you spend time investing in, your emotional world cannot keep up. Most of the time, you find yourself battling between complex emotions and you keep diving in them without really wanting to. Not being able to understand your emotions as well causes you internal pain and boredom. But after enough meditation and soul searching, you find your way through!",
+          romanticType:
+            "People with rich and high emotional worlds. Both extroverted and introverted in a balanced way. Your ideal type are people who are mainly normal when it comes to logic and analytical reasoning.",
+          celebrities: [
+            "Euler",
+            "Newton",
+            "Richard Nixon",
+            "Vladimir Putin",
+            "Alan Turing",
+            "Cem Yilmaz",
+          ],
     },
     {
-        score: [26, 52],
-
+        score: [27, 52],
         scoreDisplay: "top 10 emotional people",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
-        ],
-        strengths:
-            "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
-        weaknesses:
-            "You may forget details and struggle with detailed academic subjects, but your resilience helps you succeed.",
-        romanticType:
-            "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
-        celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
-        ],
+            "Analyst",
+            "Philosopher",
+            "Research Scientist",
+            "Researcher",
+            "Logician",
+            "Activist",
+            "Visionary",
+          ],
+          strengths:
+            "Every information you absorb gets in your mind with all its details. You are able to multitask very efficiently for long periods of times. Details comprise your mind and you day dream a lot about these details causing you to always be couple steps ahead when compared to your peers. You being ahead makes you enjoy competition, which gives you advantage when it comes to living in the society!",
+          weaknesses:
+            "The amount of analytical thinking you spend time investing in, your emotional world cannot keep up. Most of the time, you find yourself battling between complex emotions and you keep diving in them without really wanting to. Not being able to understand your emotions as well causes you internal pain and boredom. But after enough meditation and soul searching, you find your way through!",
+          romanticType:
+            "People with rich and high emotional worlds. Both extroverted and introverted in a balanced way. Your ideal type are people who are mainly normal when it comes to logic and analytical reasoning.",
+          celebrities: [
+            "Euler",
+            "Newton",
+            "Richard Nixon",
+            "Vladimir Putin",
+            "Alan Turing",
+            "Cem Yilmaz",
+          ],
     },
     {
-        score: [52, 78],
-
+        score: [53, 78],
         scoreDisplay: "top 25 logical people",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
-        ],
-        strengths:
-            "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
-        weaknesses:
-            "You may forget details and struggle with detailed academic subjects, but your resilience helps you succeed.",
-        romanticType:
-            "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
-        celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
-        ],
+            "Diplomat",
+            "Politician",
+            "Scientist",
+            "Logician",
+            "Professor",
+            "Analyst",
+            "Data Scientist",
+            "Visionary",
+            "Activist",
+          ],
+          strengths:
+            "You are highly analytical and logical. You focus on the details of everything you see. This makes you very fast and adaptable to certain environment where speed is needed. You are fast at making conclusions from events that seem disjoint. Moreover, you are good at seeing patterns between events and you usually hack seemingly complicated patterns.",
+          weaknesses:
+            "Your high attention to detail sometimes causes you to lose touch with reality and you miss the bigger picture. Not seeing the bigger picture causes you to at times miscalculate the future and your projections happens to be skewed. This might lead to self-esteem issues since you think very highly of yourself. But at the end of the day, you rationalize what you are feeling and get over it very smoothly!",
+          romanticType:
+            "You are ideally attracted to introverted, feeling, emotional, rich inner-world, and quite people.",
+          celebrities: [
+            "Albert Einstein",
+            "Tom Cruise",
+            "Richard Nixon",
+            "Donald Trump",
+            "Isaac Newton",
+          ],
     },
     {
-        score: [78, 104],
-
+        score: [79, 104],
         scoreDisplay: "top 25 emotional people",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
-        ],
-        strengths:
-            "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
-        weaknesses:
-            "You may forget details and struggle with detailed academic subjects, but your resilience helps you succeed.",
-        romanticType:
-            "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
-        celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
-        ],
-
+            "Diplomat",
+            "Politician",
+            "Scientist",
+            "Logician",
+            "Professor",
+            "Analyst",
+            "Data Scientist",
+            "Visionary",
+            "Activist",
+          ],
+          strengths:
+            "You are highly emotional. You focus on the details of everything you see. This makes you very fast and adaptable to certain environment where speed is needed. You are fast at making conclusions from events that seem disjoint. Moreover, you are good at seeing patterns between events and you usually hack seemingly complicated patterns.",
+          weaknesses:
+            "Your high attention to detail sometimes causes you to lose touch with reality and you miss the bigger picture. Not seeing the bigger picture causes you to at times miscalculate the future and your projections happens to be skewed. This might lead to self-esteem issues since you think very highly of yourself. But at the end of the day, you rationalize what you are feeling and get over it very smoothly!",
+          romanticType:
+            "You are ideally attracted to introverted, feeling, emotional, rich inner-world, and quite people.",
+          celebrities: [
+            "Albert Einstein",
+            "Tom Cruise",
+            "Richard Nixon",
+            "Donald Trump",
+            "Isaac Newton",
+          ],
     },
 ]
 
 export const personaResult: ResultDetails[] = [
     {
         score: [0, 20],
-
         scoreDisplay: "4",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
-        ],
-        strengths:
-            "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
-        weaknesses:
-            "You may forget details and struggle with detailed academic subjects, but your resilience helps you succeed.",
-        romanticType:
-            "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
-        celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
-        ],
+            "Mathematics Professor",
+            "Pilot",
+            "Teacher",
+            "Digital Marketer",
+            "Visionary",
+            "Dentist",
+            "Dental Assistant",
+            "Manager",
+            "Accountant",
+            "Financial Analyst",
+          ],
+          strengths:
+            "You are a resilient person when it comes to difficulties. Your relationships are very well organized and filled with positive intensity. When it comes to handling people, you are quite good at it. You can ease your way out of difficult situations and make many people around you very happy!",
+          weaknesses:
+            "Sometimes you trust yourself too much and get into slightly risky events. These events cause you to ignore the bigger picture and focus on the wrong side of the equation. As a result, you might at times find yourself in trouble and wonder why things happen the way they do. But as always, your determination and motivation helps you climb the ladder successfully!",
+          romanticType:
+            "People who are balanced, not too social and not too self oriented. In general, people are who are intuitive, mainly introverted, emotional, and perceptual.",
+          celebrities: [
+            "Nikola Tesla",
+            "Marilu Henner",
+            "Kim Peek",
+            "Bill Gates",
+            "Steve Jobs",
+            "Jerry Lucas",
+            "Elon Musk",
+          ],
     },
     {
-
-
-        score: [20, 40],
-
+        score: [21, 40],
         scoreDisplay: "6",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
-        ],
-        strengths:
-            "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
-        weaknesses:
-            "You may forget details and struggle with detailed academic subjects, but your resilience helps you succeed.",
-        romanticType:
-            "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
-        celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
-        ],
+            "Diplomat",
+            "Politician",
+            "Scientist",
+            "Logician",
+            "Professor",
+            "Analyst",
+            "Data Scientist",
+            "Visionary",
+            "Activist",
+          ],
+          strengths:
+            "You are highly analytical and logical. You focus on the details of everything you see. This makes you very fast and adaptable to certain environment where speed is needed. You are fast at making conclusions from events that seem disjoint. Moreover, you are good at seeing patterns between events and you usually hack seemingly complicated patterns.",
+          weaknesses:
+            "Your high attention to detail sometimes causes you to lose touch with reality and you miss the bigger picture. Not seeing the bigger picture causes you to at times miscalculate the future and your projections happens to be skewed. This might lead to self-esteem issues since you think very highly of yourself. But at the end of the day, you rationalize what you are feeling and get over it very smoothly!",
+          romanticType:
+            "You are ideally attracted to introverted, feeling, emotional, rich inner-world, and quite people.",
+          celebrities: [
+            "Albert Einstein",
+            "Tom Cruise",
+            "Richard Nixon",
+            "Donald Trump",
+            "Isaac Newton",
+          ],
     },
     {
-        score: [40, 60],
-
+        score: [41, 60],
         scoreDisplay: "7",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
-        ],
-        strengths:
-            "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
-        weaknesses:
-            "You may forget details and struggle with detailed academic subjects, but your resilience helps you succeed.",
-        romanticType:
-            "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
-        celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
-        ],
+            "Analyst",
+            "Philosopher",
+            "Research Scientist",
+            "Logician",
+            "Activist",
+            "Visionary",
+          ],
+          strengths:
+            "Every information you absorb gets in your mind with all its details. You are able to multitask very efficiently for long periods of times. Details comprise your mind and you day dream a lot about these details causing you to always be couple steps ahead when compared to your peers. You being ahead makes you enjoy competition, which gives you advantage when it comes to living in the society!",
+          weaknesses:
+            "The amount of analytical thinking you spend time investing in, your emotional world cannot keep up. Most of the time, you find yourself battling between complex emotions and you keep diving in them without really wanting to. Not being able to understand your emotions as well causes you internal pain and boredom. But after enough meditation and soul searching, you find your way through!",
+          romanticType:
+            "People with rich and high emotional worlds. Both extroverted and introverted in a balanced way. Your ideal type are people who are mainly normal when it comes to logic and analytical reasoning.",
+          celebrities: [
+            "Euler",
+            "Newton",
+            "Richard Nixon",
+            "Vladimir Putin",
+            "Alan Turing",
+            "Cem Yilmaz",
+          ],
     },
     {
-
-        score: [60, 80],
-
+        score: [61, 80],
         scoreDisplay: "9",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
-        ],
-        strengths:
-            "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
-        weaknesses:
-            "You may forget details and struggle with detailed academic subjects, but your resilience helps you succeed.",
-        romanticType:
-            "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
-        celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
-        ],
-
+            "Analyst",
+            "Philosopher",
+            "Research Scientist",
+            "Logician",
+            "Activist",
+            "Visionary",
+          ],
+          strengths:
+            "Every information you absorb gets in your mind with all its details. You are able to multitask very efficiently for long periods of times. Details comprise your mind and you day dream a lot about these details causing you to always be couple steps ahead when compared to your peers. You being ahead makes you enjoy competition, which gives you advantage when it comes to living in the society!",
+          weaknesses:
+            "The amount of analytical thinking you spend time investing in, your emotional world cannot keep up. Most of the time, you find yourself battling between complex emotions and you keep diving in them without really wanting to. Not being able to understand your emotions as well causes you internal pain and boredom. But after enough meditation and soul searching, you find your way through!",
+          romanticType:
+            "People with rich and high emotional worlds. Both extroverted and introverted in a balanced way. Your ideal type are people who are mainly normal when it comes to logic and analytical reasoning.",
+          celebrities: [
+            "Euler",
+            "Newton",
+            "Richard Nixon",
+            "Vladimir Putin",
+            "Alan Turing",
+            "Cem Yilmaz",
+          ],
     },
 ]
 
@@ -672,112 +660,118 @@ export const eqResult: ResultDetails[] = [
         scoreDisplay: "100-110",
         label: "average",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
-        ],
-        strengths:
-            "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
-        weaknesses:
-            "You may forget details and struggle with detailed academic subjects, but your resilience helps you succeed.",
-        romanticType:
-            "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
-        celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
-        ],
+            "Mathematics Professor",
+            "Pilot",
+            "Teacher",
+            "Digital Marketer",
+            "Visionary",
+            "Dentist",
+            "Dental Assistant",
+            "Manager",
+            "Accountant",
+            "Financial Analyst",
+          ],
+          strengths: "You are a resilient person when it comes to difficulties. Your relationships are very well organized and filled with positive intensity. When it comes to handling people, you are quite good at it. You can ease your way out of difficult situations and make many people around you very happy!",
+          weaknesses:
+            "Sometimes you trust yourself too much and get into slightly risky events. These events cause you to ignore the bigger picture and focus on the wrong side of the equation. As a result, you might at times find yourself in trouble and wonder why things happen the way they do. But as always, your determination and motivation helps you climb the ladder successfully!",
+          romanticType:
+            "People who are balanced, not too social and not too self oriented. In general, people are who are intuitive, mainly introverted, emotional, and perceptual.",
+          celebrities: [
+            "Nikola Tesla",
+            "Marilu Henner",
+            "Kim Peek",
+            "Bill Gates",
+            "Steve Jobs",
+            "Jerry Lucas",
+            "Elon Musk",
+          ],
     },
     {
-        score: [21, 42],
+        score: [22, 42],
         scoreDisplay: "120-130",
         label: "above average",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
-        ],
-        strengths:
-            "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
-        weaknesses:
-            "You may forget details and struggle with detailed academic subjects, but your resilience helps you succeed.",
-        romanticType:
-            "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
-        celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
-        ],
+            "Financial Analyst",
+            "Academician",
+            "Researcher",
+            "General Executive",
+            "Data Operator",
+            "High School Principal",
+            "Office Assistant",
+            "Pilot",
+          ],
+          strengths:
+            "You are very motivated when it comes to doing what you love and care about! Your determination and consistency moves you forward in life and carries you to a successful future. The people around you trust your intellect and think that you are possessed with a strong character. Your influence on people and your environment makes you a great leader as well!",
+          weaknesses:
+            "Your strengths of course comes with a price! The intuitive mind you have at times block your emotional intelligence and cause detachment. The detachment you might be going through at times makes you want to isolate yourself from the society. This makes you feel lonely. But at the end of the day your strengths overcome your weaknesses and you move forward!",
+          romanticType:
+            "Your ideal type posesses a strong emotional intelligence and life. People who are emotional, feeling, perceptive, and sensual are your ideal characters to date!",
+          celebrities: [
+            "Barrack Obama",
+            "Tayyip Erdogan",
+            "Tom Cruise",
+            "Leonardo DiCaprio",
+            "Will Smith",
+            "Mike Tyson",
+            "Donald Trump",
+          ],
     },
     {
-        score: [42, 63],
+        score: [43, 63],
         scoreDisplay: "130-140",
         label: "very good",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
-        ],
-        strengths:
-            "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
-        weaknesses:
-            "You may forget details and struggle with detailed academic subjects, but your resilience helps you succeed.",
-        romanticType:
-            "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
-        celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
-        ],
+            "Diplomat",
+            "Politician",
+            "Scientist",
+            "Logician",
+            "Professor",
+            "Analyst",
+            "Data Scientist",
+            "Visionary",
+            "Activist",
+          ],
+          strengths:
+            "You are highly analytical and logical. You focus on the details of everything you see. This makes you very fast and adaptable to certain environment where speed is needed. You are fast at making conclusions from events that seem disjoint. Moreover, you are good at seeing patterns between events and you usually hack seemingly complicated patterns.",
+          weaknesses:
+            "Your high attention to detail sometimes causes you to lose touch with reality and you miss the bigger picture. Not seeing the bigger picture causes you to at times miscalculate the future and your projections happens to be skewed. This might lead to self-esteem issues since you think very highly of yourself. But at the end of the day, you rationalize what you are feeling and get over it very smoothly!",
+          romanticType:
+            "You are ideally attracted to introverted, feeling, emotional, rich inner-world, and quite people.",
+          celebrities: [
+            "Albert Einstein",
+            "Tom Cruise",
+            "Richard Nixon",
+            "Donald Trump",
+            "Isaac Newton",
+          ],
     },
     {
-        score: [63, 84],
+        score: [64, 84],
         scoreDisplay: "140-150",
         label: "amazing",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
-        ],
-        strengths:
-            "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
-        weaknesses:
-            "You may forget details and struggle with detailed academic subjects, but your resilience helps you succeed.",
-        romanticType:
-            "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
-        celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
-        ],
+            "Analyst",
+            "Philosopher",
+            "Research Scientist",
+            "Researcher",
+            "Logician",
+            "Activist",
+            "Visionary",
+          ],
+          strengths:
+            "Every information you absorb gets in your mind with all its details. You are able to multitask very efficiently for long periods of times. Details comprise your mind and you day dream a lot about these details causing you to always be couple steps ahead when compared to your peers. You being ahead makes you enjoy competition, which gives you advantage when it comes to living in the society!",
+          weaknesses:
+            "The amount of analytical thinking you spend time investing in, your emotional world cannot keep up. Most of the time, you find yourself battling between complex emotions and you keep diving in them without really wanting to. Not being able to understand your emotions as well causes you internal pain and boredom. But after enough meditation and soul searching, you find your way through!",
+          romanticType:
+            "People with rich and high emotional worlds. Both extroverted and introverted in a balanced way. Your ideal type are people who are mainly normal when it comes to logic and analytical reasoning.",
+          celebrities: [
+            "Euler",
+            "Newton",
+            "Richard Nixon",
+            "Vladimir Putin",
+            "Alan Turing",
+            "Cem Yilmaz",
+          ],
 
     },
 ]
@@ -804,52 +798,55 @@ export const introvertResult: ResultDetails[] = [
         romanticType:
             "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
         celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
+            "Nikola Tesla",
+          "Marilu Henner",
+          "Kim Peek",
+          "Bill Gates",
+          "Steve Jobs",
+          "Jerry Lucas",
         ],
     },
     {
-        score: [10, 20],
+        score: [11, 20],
         scoreDisplay: "You are both an introvert and extrovert",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
+            "Mathematics Professor",
+        "Pilot",
+        "Teacher",
+        "Digital Marketer",
+        "Visionary",
+        "Dentist",
+        "Dental Assistant",
+        "Manager",
+        "Accountant",
+        "Financial Analyst",
         ],
         strengths:
             "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
         weaknesses:
             "You may forget details and struggle with detailed academic subjects, but your resilience helps you succeed.",
         romanticType:
-            "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
+            "People who are balanced, not too social and not too self oriented. In general, people are who are intuitive, mainly introverted, emotional, and perceptual.",
         celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
+           "Nikola Tesla",
+          "Marilu Henner",
+          "Kim Peek",
+          "Bill Gates",
+          "Steve Jobs",
+          "Jerry Lucas",
+          "Elon Musk",
         ],
     },
     {
-        score: [20, 30],
+        score: [21, 30],
         scoreDisplay: "You are more of an extrovert",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
+            "Analyst",
+            "Philosopher",
+            "Research Scientist",
+            "Logician",
+            "Activist",
+            "Visionary",
         ],
         strengths:
             "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
@@ -858,25 +855,25 @@ export const introvertResult: ResultDetails[] = [
         romanticType:
             "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
         celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
+            "Barrack Obama",
+        "Tayyip Erdogan",
+        "Tom Cruise",
+        "Leonardo DiCaprio",
+        "Will Smith",
+        "Mike Tyson",
+        "Donald Trump",
         ],
     },
     {
-        score: [30, 40],
+        score: [31, 40],
         scoreDisplay: "You are very extroverted",
         careerTracks: [
-            "Health and Safety Specialist",
-            "Language Teacher",
-            "Office Clerk",
-            "Data Entry Clerk",
-            "Operator Assistant",
-            "Cashier",
-            "Special Driver",
-            "Cab Driver",
+            "Analyst",
+            "Philosopher",
+            "Research Scientist",
+            "Logician",
+            "Activist",
+            "Visionary",
         ],
         strengths:
             "You analyze events quickly and can absorb information in the short term. You are good at seeing the bigger picture.",
@@ -885,11 +882,13 @@ export const introvertResult: ResultDetails[] = [
         romanticType:
             "Extroverted, social, intuitive rather than perceptual, and analytical individuals.",
         celebrities: [
-            "Brad Pitt",
-            "Ronald Reagan",
-            "Agatha Christie",
-            "Owen Wilson",
-            "Lionel Messi",
+            "Barrack Obama",
+            "Tayyip Erdogan",
+            "Tom Cruise",
+            "Leonardo DiCaprio",
+            "Will Smith",
+            "Mike Tyson",
+            "Donald Trump",
         ],
 
     },
