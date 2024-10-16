@@ -115,14 +115,42 @@ const TestInstructions = () => {
         const answered = recentData[item].questionsAnswered
             ? recentData[item].questionsAnswered.length
             : 0,
-          total =  getTotalQuestionsForSubCategory(item);
+          total = getTotalQuestionsForSubCategory(item);
         return calcPercentage(answered, total);
       } else {
         return calcPercentage(0, getTotalQuestionsForSubCategory(item));
       }
     },
-    [hasRecentData, recentData, getTotalQuestionsForSubCategory,subCategory] // dependencies
+    [hasRecentData, recentData, getTotalQuestionsForSubCategory, subCategory] // dependencies
   );
+
+  const [displayText, setDisplayText] = useState(currentQuestion?.question);
+
+  const isMemorable = useMemo(() => {
+    return (
+      subCategory === SubCategories.MEMORY &&
+      displayText === currentQuestion?.question
+    );
+  }, [subCategory, displayText, currentQuestion?.question]);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+
+    // Check if the subcategory is "MEMORIES"
+    if (subCategory === SubCategories.MEMORY) {
+      // Show the question for 3 seconds
+      setDisplayText(currentQuestion?.question);
+      timer = setTimeout(() => {
+        setDisplayText("Select the Correct Option");
+      }, 4000);
+    } else {
+      // Otherwise, always show the question
+      setDisplayText(currentQuestion?.question);
+    }
+
+    // Clean up the timer if the component unmounts or subCategory changes
+    return () => clearTimeout(timer);
+  }, [currentQuestion?.question, subCategory]);
 
   useEffect(() => {
     if (questionsData.length > 0) {
@@ -161,7 +189,9 @@ const TestInstructions = () => {
                 keyExtractor={(item, index) => index.toString()}
                 ListHeaderComponent={() => (
                   <View style={tw`mt-6 gap-3`}>
-                    <LinearProgressBar progress={generateProgressPercent(subCategory)} />
+                    <LinearProgressBar
+                      progress={generateProgressPercent(subCategory)}
+                    />
                     {!isIqTest && (
                       <View style={tw`mx-auto`}>
                         <Icon width={220} height={160} />
@@ -176,48 +206,55 @@ const TestInstructions = () => {
 
                     <View style={tw`bg-[#FEF5CB80] rounded-xl p-10 mb-5`}>
                       <Text style={tw`text-2xl font-semibold text-center`}>
-                        {currentQuestion?.question}
+                        {displayText}
                       </Text>
                     </View>
                   </View>
                 )}
-                renderItem={({ item }) => (
-                  <Pressable
-                    onPress={() =>
-                      dispatch(
-                        setAnswer({
-                          questionNo: currentQuestion!.questionNo,
-                          answer: item.option,
-                          points: +item.points,
-                          questionLabel: item.optionlabel
-                        })
-                      )
-                    }>
-                    <View
-                      style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]
-                              ${
-                                answer?.answer === item.option
-                                  ? "bg-purple-200 border-purple-500"
-                                  : "border-gray-300"
-                              }`}>
-                      <Text>
-                        {item.optionlabel}.{"  "}
-                        {item.option}
-                      </Text>
-                      <MaterialIcons
-                        name={
-                          answer?.answer === item.option
-                            ? "check-circle"
-                            : "radio-button-unchecked"
-                        }
-                        size={24}
-                        color={
-                          answer?.answer === item.option ? "#8D0CCA" : "#E3E1E9"
-                        }
-                      />
+                renderItem={({ item }) =>
+                  !isMemorable ? (
+                    <Pressable
+                      onPress={() =>
+                        dispatch(
+                          setAnswer({
+                            questionNo: currentQuestion!.questionNo,
+                            answer: item.option,
+                            points: +item.points,
+                            questionLabel: item.optionlabel,
+                          })
+                        )
+                      }>
+                      <View
+                        style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]
+                             ${
+                               answer?.answer === item.option
+                                 ? "bg-purple-200 border-purple-500"
+                                 : "border-gray-300"
+                             }`}>
+                        <Text>
+                          {item.optionlabel}.{"  "}
+                          {item.option}
+                        </Text>
+                        <MaterialIcons
+                          name={
+                            answer?.answer === item.option
+                              ? "check-circle"
+                              : "radio-button-unchecked"
+                          }
+                          size={24}
+                          color={
+                            answer?.answer === item.option
+                              ? "#8D0CCA"
+                              : "#E3E1E9"
+                          }
+                        />
+                      </View>
+                    </Pressable>
+                  ) : (
+                    <View  style={tw`justify-center align-center`}>
                     </View>
-                  </Pressable>
-                )}
+                  )
+                }
                 ListFooterComponent={() => (
                   <CustomButton
                     title="Next"

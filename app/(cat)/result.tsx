@@ -279,7 +279,7 @@ export default function SingleResult() {
                                 style={tw`mr-3 h-2 w-5 rounded-sm bg-[${response.color}]`}></View>
                               <Text style={tw`capitalize`}>{response.name}</Text>
                             </View>
-                            <Text></Text>
+                            <Text>{response.population}</Text>
                           </View>
                         )
                       )}

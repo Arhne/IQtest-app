@@ -11194,9 +11194,9 @@ export const Assessment : IQuestions[] = [
         subcategoryId: SubCategories.MEMORY,
         options: [
             {
-                option: "Yes",
+                option: "A, 8, C, 9, X, D",
                 optionlabel: "A",
-                points: "A, 8, C, 9, X, D",
+                points: "0",
             },
             {
                 option: "A, 7, C, 9, X, D",
@@ -11260,7 +11260,7 @@ export const Assessment : IQuestions[] = [
             {
                 option: "7, B, M, T, 5, 3, W, 1",
                 optionlabel: "A",
-                points: "1",
+                points: "0",
             },
             {
                 option: "7, B, M, 3, Q, 2, 3, D",
@@ -11270,7 +11270,7 @@ export const Assessment : IQuestions[] = [
             {
                 option: "7, B, M, T, 5, 3, W, 2",
                 optionlabel: "C",
-                points: "0",
+                points: "1",
             },
             {
                 option: "2, R, M, 3, B, 2, A, 4",
