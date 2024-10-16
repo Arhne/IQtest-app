@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "IQTest",
-    "slug": "IQTest",
-    "version": "1.0.0",
+    "name": "IQ, Mental, Personality Tests",
+    "slug": "iq-mental-personality-tests",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/brain.png",
-    "scheme": "myapp",
+    "scheme": "IQ, Mental, Personality Tests",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -16,6 +16,8 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.alperen.cat",
+      "version": "2",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/educating.png",
         "backgroundColor": "#ffffff"
