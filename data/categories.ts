@@ -11765,27 +11765,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 2,
-        question: "/assests/images/generalIQ/2/q2.png",
-        answer: "/assests/images/generalIQ/2/answers/c2.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161042/q2_kygo6k.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161041/c2_d08yue.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/2/answers/iqtest_09_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161042/iqtest_09_05_ueimu5.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/2/answers/iqtest_09_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161041/iqtest_09_03_jyakcf.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/2/answers/c2.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161041/c2_d08yue.png",
                 optionlabel: "C",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/2/answers/iqtest_09_06.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161042/iqtest_09_06_lott9o.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -11797,27 +11797,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 3,
-        question: require("../assets/images/generalIQ/3/q3.png"),
-        answer: "/assests/images/generalIQ/3/answers/c3.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161056/q3_qg2nmb.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161055/c3_unirgo.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/3/answers/c3.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161055/c3_unirgo.png",
                 optionlabel: "A",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/3/answers/iqtest_10_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161056/iqtest_10_02_kogkne.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/3/answers/iqtest_10_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161056/iqtest_10_05_ed6bzh.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: require("../assets/images/generalIQ/3/answers/iqtest_10_06.png"),
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161056/iqtest_10_06_c4qazb.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -11829,27 +11829,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 4,
-        question: "/assests/images/generalIQ/4/q4.png",
-        answer: "/assests/images/generalIQ/4/answers/c4.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161059/q4_sklw85.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161058/c4_xx1xmd.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/4/answers/iqtest_04_06.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161059/iqtest_04_06_qg0ytj.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/4/answers/iqtest_04_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161058/iqtest_04_01_pkupp7.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/4/answers/iqtest_04_04.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161058/iqtest_04_04_nna578.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/4/answers/c4.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161058/c4_xx1xmd.png",
                 optionlabel: "D",
                 points: "1",
             },
@@ -11861,27 +11861,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 5,
-        question: "/assests/images/generalIQ/5/q5.png",
-        answer: "/assests/images/generalIQ/5/answers/c5.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161060/q5_pdllhd.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161059/c5_zo8ppj.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/5/answers/iqtest_02_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161059/iqtest_02_03_xtdysg.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/5/answers/c5.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161059/c5_zo8ppj.png",
                 optionlabel: "B",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/5/answers/iqtest_02_04.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161060/iqtest_02_04_kmvwyf.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/5/answers/iqtest_02_06.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161060/iqtest_02_06_arwkai.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -11893,27 +11893,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 6,
-        question: "/assests/images/generalIQ/6/q6.png",
-        answer: "/assests/images/generalIQ/6/answers/c6.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161061/q6_xa8ywe.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161060/c6_hwe9jw.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/6/answers/c6.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161060/c6_hwe9jw.png",
                 optionlabel: "A",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/6/answers/iqtest_15_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161060/iqtest_15_01_jympnp.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/6/answers/iqtest_15_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161061/iqtest_15_03_xwajja.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/6/answers/iqtest_15_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161061/iqtest_15_05_cr0jxo.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -11925,27 +11925,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 7,
-        question: "/assests/images/generalIQ/7/q7.png",
-        answer: "/assests/images/generalIQ/7/answers/c7.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161063/q7_hhmsbc.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161062/c7_tg65zv.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/7/answers/c7.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161062/c7_tg65zv.png",
                 optionlabel: "A",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/7/answers/iqtest_17_04.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161062/iqtest_17_04_ev8uxw.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/7/answers/iqtest_17_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161062/iqtest_17_05_jcglgc.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/7/answers/iqtest_17_06.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161063/iqtest_17_06_eqbriy.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -11957,27 +11957,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 8,
-        question: "/assests/images/generalIQ/8/q8.png",
-        answer: "/assests/images/generalIQ/8/answers/c8.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161064/q8_qpkgxb.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161063/c8_opqayn.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/8/answers/c8.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161063/c8_opqayn.png",
                 optionlabel: "A",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/8/answers/iqtest_20_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161063/iqtest_20_03_fnatpj.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/8/answers/iqtest_20_04.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161063/iqtest_20_04_o2hf4m.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/8/answers/iqtest_20_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161064/iqtest_20_05_fxvfwf.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -11989,27 +11989,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 9,
-        question: "/assests/images/generalIQ/9/q9.png",
-        answer: "/assests/images/generalIQ/9/answers/c9.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161065/q9_rhcs7a.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161064/c9_lqxjhd.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/9/answers/iqtest_18_06.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161065/iqtest_12_06_fjum2j.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/9/answers/iqtest_12_04.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161064/iqtest_12_04_qtfxop.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/9/answers/iqtest_12_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161065/iqtest_12_05_ln3thd.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/9/answers/c9.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161064/c9_lqxjhd.png",
                 optionlabel: "D",
                 points: "1",
             },
@@ -12021,27 +12021,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 10,
-        question: "/assests/images/generalIQ/10/q10.png",
-        answer: "/assests/images/generalIQ/10/answers/c10.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161029/q11_qxjmwr.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161027/c11_kad1cw.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/10/answers/iqtest_18_06.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161029/iqtest_23_06_ngxdml.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/10/answers/iqtest_18_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161027/iqtest_23_04_uzqkgi.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/10/answers/iqtest_18_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161028/iqtest_23_05_x2yfcz.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/10/answers/c10.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161027/c11_kad1cw.png",
                 optionlabel: "D",
                 points: "1",
             },
@@ -12053,27 +12053,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 11,
-        question: "/assests/images/generalIQ/11/q11.png",
-        answer: "/assests/images/generalIQ/11/answers/c11.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161031/q12_xz9kyz.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161030/c12_ypdxeg.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/11/answers/iqtest_23_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161030/iqtest_27_01_apcudn.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/11/answers/iqtest_23_04.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161030/iqtest_27_02_hn2ujm.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/11/answers/c11.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161030/c12_ypdxeg.png",
                 optionlabel: "C",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/11/answers/iqtest_23_06.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161030/iqtest_27_03_gvwqub.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12085,27 +12085,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 12,
-        question: "/assests/images/generalIQ/12/q12.png",
-        answer: "/assests/images/generalIQ/12/answers/c12.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161033/q13_nw5qxq.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161031/c13_gaar6k.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/12/answers/iqtest_27_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161032/iqtest_22_05_gtound.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/12/answers/iqtest_27_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161033/iqtest_22_06_l90ouc.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/12/answers/c12.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161031/c13_gaar6k.png",
                 optionlabel: "C",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/12/answers/iqtest_27_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161032/iqtest_22_03_cum8vk.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12117,27 +12117,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 13,
-        question: "/assests/images/generalIQ/13/q13.png",
-        answer: "/assests/images/generalIQ/13/answers/c13.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161034/q14_z3efpx.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161033/c14_qnvtyr.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/13/answers/c13.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161033/c14_qnvtyr.png",
                 optionlabel: "A",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/13/answers/iqtest_22_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161033/iqtest_28_05_crzlfa.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/13/answers/iqtest_22_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161033/iqtest_28_01_bmewj8.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/13/answers/iqtest_22_06.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161034/iqtest_28_06_cny1t6.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12149,27 +12149,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 14,
-        question: "/assests/images/generalIQ/14/q14.png",
-        answer: "/assests/images/generalIQ/14/answers/c14.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161035/q15_pgojnn.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161034/c15_tfbzob.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/14/answers/iqtest_28_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161035/iqtest_26_06_duu9ec.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/14/answers/c14.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161034/c15_tfbzob.png",
                 optionlabel: "B",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/14/answers/iqtest_28_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161034/iqtest_26_02_jzgffu.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/14/answers/iqtest_28_06.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161035/iqtest_26_05_mgttu1.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12181,27 +12181,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 15,
-        question: "/assests/images/generalIQ/15/q15.png",
-        answer: "/assests/images/generalIQ/15/answers/c15.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161037/q16_fxnqtt.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161035/c16_b5lrkt.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/15/answers/c15.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161035/c16_b5lrkt.png",
                 optionlabel: "A",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/15/answers/iqtest_26_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161036/iqtest_31_06_irqgbb.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/15/answers/iqtest_26_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161036/iqtest_31_02_y9owu7.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/15/answers/iqtest_26_06.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161036/iqtest_31_01_rpeonj.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12213,27 +12213,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 16,
-        question: "/assests/images/generalIQ/16/q16.png",
-        answer: "/assests/images/generalIQ/16/answers/c16.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161038/q17_s3ghpz.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161037/c17_le8xne.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/16/answers/iqtest_31_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161038/iqtest_32_03_mkicoc.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/16/answers/iqtest_31_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161037/iqtest_32_01_hs557k.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/16/answers/c16.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161037/c17_le8xne.png",
                 optionlabel: "C",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/16/answers/iqtest_31_06.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161037/iqtest_32_02_lhb91i.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12245,27 +12245,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 17,
-        question: "/assests/images/generalIQ/17/q17.png",
-        answer: "/assests/images/generalIQ/17/answers/c17.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161039/q18_w3nxfw.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161038/c18_gzovsa.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/17/answers/iqtest_32_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161039/iqtest_35_03_j6tcmr.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/17/answers/iqtest_32_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161038/iqtest_35_01_yzwwno.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/17/answers/iqtest_32_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161039/iqtest_35_02_esqnfb.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/17/answers/c17.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161038/c18_gzovsa.png",
                 optionlabel: "D",
                 points: "1",
             },
@@ -12277,27 +12277,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 18,
-        question: "/assests/images/generalIQ/18/q18.png",
-        answer: "/assests/images/generalIQ/18/answers/c18.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161041/q19_o7rmcd.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161040/c19_htnv0y.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/18/answers/c18.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161040/c19_htnv0y.png",
                 optionlabel: "A",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/18/answers/iqtest_35_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161040/iqtest_36_03_edhkpi.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/18/answers/iqtest_35_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161040/iqtest_36_02_dav8aa.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/18/answers/iqtest_35_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161040/iqtest_36_01_enzhdl.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12309,27 +12309,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 19,
-        question: "/assests/images/generalIQ/19/q19.png",
-        answer: "/assests/images/generalIQ/19/answers/c19.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161043/q20_ajlflj.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161042/c20_uemehz.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/19/answers/iqtest_36_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161042/iqtest_39_01_o0qrag.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/19/answers/c19.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161042/c20_uemehz.png",
                 optionlabel: "B",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/19/answers/iqtest_36_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161043/iqtest_39_04_oflupf.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/19/answers/iqtest_36_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161043/iqtest_39_05_rhzjvp.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12341,27 +12341,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 20,
-        question: "/assests/images/generalIQ/20/q20.png",
-        answer: "/assests/images/generalIQ/20/answers/c20.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161045/q21_fh2yfy.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161043/c21_mzvr98.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/20/answers/iqtest_39_04.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161044/iqtest_40_07_zvajoh.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/20/answers/iqtest_39_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161044/iqtest_40_03_rnrleu.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/20/answers/c20.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161043/c21_mzvr98.png",
                 optionlabel: "C",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/20/answers/iqtest_39_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161044/iqtest_40_01_s0apnk.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12373,27 +12373,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 21,
-        question: "/assests/images/generalIQ/21/q21.png",
-        answer: "/assests/images/generalIQ/21/answers/c21.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161046/q22_iy7uzm.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161045/c22_va9vpc.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/21/answers/c21.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161045/c22_va9vpc.png",
                 optionlabel: "A",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/21/answers/iqtest_40_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161045/iqtest_42_01_huswsr.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/21/answers/iqtest_40_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161046/iqtest_42_03_bdg9nz.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/21/answers/iqtest_40_07.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161045/iqtest_42_02_zktbtx.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12405,27 +12405,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 22,
-        question: "/assests/images/generalIQ/22/q22.png",
-        answer: "/assests/images/generalIQ/22/answers/c22.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161047/q23_aqtjpa.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161046/c23_bbdtux.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/22/answers/iqtest_42_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161046/iqtest_45_01_wbrwuo.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/22/answers/c22.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161046/c23_bbdtux.png",
                 optionlabel: "B",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/22/answers/iqtest_42_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161047/iqtest_45_03_ooon39.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/22/answers/iqtest_42_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161047/iqtest_45_02_wiinv1.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12437,27 +12437,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 23,
-        question: "/assests/images/generalIQ/23/q23.png",
-        answer: "/assests/images/generalIQ/23/answers/c23.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161048/q24_gtdvts.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161047/c24_eycc4w.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/23/answers/iqtest_45_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161048/iqtest_43_03_d4lp0z.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/23/answers/iqtest_45_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161048/iqtest_43_02_mxrunl.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/23/answers/c23.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161047/c24_eycc4w.png",
                 optionlabel: "C",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/23/answers/iqtest_45_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161048/iqtest_43_01_kxo7pb.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12469,27 +12469,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 24,
-        question: "/assests/images/generalIQ/24/q24.png",
-        answer: "/assests/images/generalIQ/24/answers/c24.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161050/q25_dy4hv1.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161049/c25_e3an5m.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/24/answers/iqtest_43_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161050/iqtest_49_04_a1nlqd.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/24/answers/iqtest_43_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161049/iqtest_49_03_imqyfe.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/24/answers/iqtest_43_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161049/iqtest_49_02_oaebss.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/24/answers/c24.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161049/c25_e3an5m.png",
                 optionlabel: "D",
                 points: "1",
             },
@@ -12501,27 +12501,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 25,
-        question: "/assests/images/generalIQ/25/q25.png",
-        answer: "/assests/images/generalIQ/25/answers/c25.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161051/q26_dktga5.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161050/c26_wg2q84.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/25/answers/c25.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161050/c26_wg2q84.png",
                 optionlabel: "A",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/25/answers/iqtest_49_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161051/iqtest_50_06_mue2fy.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/25/answers/iqtest_49_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161051/iqtest_50_05_sx82vj.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/25/answers/iqtest_49_04.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161050/iqtest_50_02_ijtppw.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12533,27 +12533,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 26,
-        question: "/assests/images/generalIQ/26/q26.png",
-        answer: "/assests/images/generalIQ/26/answers/c26.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161052/q27_xupy5r.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161051/c27_ecjuvc.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/26/answers/c26.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161051/c27_ecjuvc.png",
                 optionlabel: "A",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/26/answers/iqtest_50_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161052/iqtest_51_03_lqgwrv.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/26/answers/iqtest_50_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161052/iqtest_51_02_pryplb.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/26/answers/iqtest_50_06.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161052/iqtest_51_01_krcwh9.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12565,27 +12565,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 27,
-        question: "/assests/images/generalIQ/27/q27.png",
-        answer: "/assests/images/generalIQ/27/answers/c27.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161054/q28_ox7l72.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161053/c28_xsyhpp.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/27/answers/iqtest_51_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161054/iqtest_52_04_akn5up.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/27/answers/c27.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161053/c28_xsyhpp.png",
                 optionlabel: "B",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/27/answers/iqtest_51_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161054/iqtest_52_02_dkemjh.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/27/answers/iqtest_51_03.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161053/iqtest_52_01_frllbl.png",
                 optionlabel: "D",
                 points: "0",
             },
@@ -12597,27 +12597,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 28,
-        question: "/assests/images/generalIQ/28/q28.png",
-        answer: "/assests/images/generalIQ/28/answers/c28.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161055/q29_xodijk.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161054/c29_xyotip.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/28/answers/iqtest_52_04.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161055/iqtest_56_06_jnuhop.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/28/answers/iqtest_52_01.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161054/iqtest_56_05_axaazy.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/28/answers/iqtest_52_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161054/iqtest_56_02_fsmp88.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/28/answers/c28.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161054/c29_xyotip.png",
                 optionlabel: "D",
                 points: "1",
             },
@@ -12629,60 +12629,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 29,
-        question: "/assests/images/generalIQ/29/q29.png",
-        answer: "/assests/images/generalIQ/29/answers/c29.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161057/q30_mit3uh.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161056/c30_tusggn.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: "/assests/images/generalIQ/29/answers/iqtest_56_06.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161057/iqtest_57_05_elkbiq.png",
                 optionlabel: "A",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/29/answers/iqtest_56_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161057/iqtest_57_04_ojhgwd.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/29/answers/iqtest_56_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161057/iqtest_57_01_wywiaz.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/29/answers/c29.png",
-                optionlabel: "D",
-                
-                points: "1",
-            },
-        ],
-        categoryId: Categories.IQ_TEST,
-        image: icons.Alzheimer,
-        categoryTitle: "IQ Test",
-        type: "self assessment",
-    },
-    {
-        questionNo: 30,
-        question: "/assests/images/generalIQ/30/q30.png",
-        answer: "/assests/images/generalIQ/30/answers/c30.png",
-        subcategoryId: SubCategories.GENERAL,
-        options: [
-            {
-                option: "/assests/images/generalIQ/30/answers/iqtest_57_05.png",
-                optionlabel: "A",
-                points: "0",
-            },
-            {
-                option: "/assests/images/generalIQ/30/answers/iqtest_57_01.png",
-                optionlabel: "B",
-                points: "0",
-            },
-            {
-                option: "/assests/images/generalIQ/30/answers/iqtest_57_04.png",
-                optionlabel: "C",
-                points: "0",
-            },
-            {
-                option: "/assests/images/generalIQ/30/answers/c30.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161056/c30_tusggn.png",
                 optionlabel: "D",
                 points: "1",
             },

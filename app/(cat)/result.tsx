@@ -1,7 +1,7 @@
 import { Pressable, Image, Text, ScrollView, View } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { ThemedText } from "@/components/ThemedText";
 import tw from "@/twrnc-config";
 import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
@@ -372,11 +372,14 @@ export default function SingleResult() {
             </View>
           </View>
         </ScrollView>
-        <View style={tw`flex-row gap-2`}>
+        <View style={tw`flex-row gap-2 items-center justify-center`}>
+          <View style={tw`bg-gray-400 px-6 py-[19.3px] w-[21%] rounded-xl`}>
+            <Ionicons name="share-social" size={24} color="black" />
+            </View>
           <CustomButton
             title="Proceed to next test"
             handlePress={() => router.push("/(tabs)/all-tests")}
-            containerStyles="bg-secondary-DEFAULT w-full mt-1"
+            containerStyles="bg-secondary-DEFAULT w-[79%] mt-1"
             textStyles="text-primary"
           />
         </View>
