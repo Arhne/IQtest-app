@@ -11733,27 +11733,27 @@ export const Assessment : IQuestions[] = [
     },
     {
         questionNo: 1,
-        question: "/assests/images/generalIQ/1/q1.png",
-        answer: "/assests/images/generalIQ/1/answers/c1.png",
+        question: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161027/q1_go1r8o.png",
+        answer: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161027/c1_ucbztw.png",
         subcategoryId: SubCategories.GENERAL,
         options: [
             {
-                option: require("../assets/images/generalIQ/1/answers/c1.png"),
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161027/c1_ucbztw.png",
                 optionlabel: "A",
                 points: "1",
             },
             {
-                option: "/assests/images/generalIQ/1/answers/iqtest_05_02.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161026/iqtest_05_02_drjzqt.png",
                 optionlabel: "B",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/1/answers/iqtest_05_04.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161027/iqtest_05_04_jld8m7.png",
                 optionlabel: "C",
                 points: "0",
             },
             {
-                option: "/assests/images/generalIQ/1/answers/iqtest_05_05.png",
+                option: "https://res.cloudinary.com/donrn3pjt/image/upload/v1729161027/iqtest_05_05_vssqnb.png",
                 optionlabel: "D",
                 points: "0",
             },
