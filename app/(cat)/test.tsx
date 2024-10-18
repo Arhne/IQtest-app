@@ -6,6 +6,7 @@ import {
   Pressable,
   FlatList,
   Alert,
+  Image,
 } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -25,6 +26,7 @@ import { SubCategoryConfig } from "@/data/data-config";
 import LinearProgressBar from "@/components/LinearProgress";
 import { setAnswer } from "@/redux/question-reducer";
 import { useAppDispatch, useAppSelector } from "@/redux";
+import CustomLoader from "@/components/CustomLoader";
 
 const TestInstructions = () => {
   const dispatch = useAppDispatch();
@@ -37,6 +39,7 @@ const TestInstructions = () => {
   const progressData = useAppSelector((state) => state.questions.progressData);
   const recentData = useAppSelector((state) => state.questions.recentData);
   const answer = useAppSelector((state) => state.questions.answer);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [hasRecentData, hasProgressData] = useMemo(() => {
     return [
@@ -158,6 +161,9 @@ const TestInstructions = () => {
     }
   }, [questionsData]);
 
+  const isGeneral = subCategory === SubCategories.GENERAL;
+
+
   return (
     <ThemedView style={tw`flex-1 w-full h-full`}>
       <SafeAreaView style={tw`flex-1`}>
@@ -186,9 +192,9 @@ const TestInstructions = () => {
 
               <FlatList
                 data={currentQuestion?.options}
-                keyExtractor={(item, index) => index.toString()}
+                keyExtractor={(item, index) => item.option}
                 ListHeaderComponent={() => (
-                  <View style={tw`mt-6 gap-3`}>
+                  <View style={tw`my-6 gap-3 `}>
                     <LinearProgressBar
                       progress={generateProgressPercent(subCategory)}
                     />
@@ -203,12 +209,19 @@ const TestInstructions = () => {
                     <Text style={tw`text-lg text-center`}>
                       Question {currentQuestionNo}
                     </Text>
-
-                    <View style={tw`bg-[#FEF5CB80] rounded-xl p-10 mb-5`}>
-                      <Text style={tw`text-2xl font-semibold text-center`}>
-                        {displayText}
-                      </Text>
-                    </View>
+                    {isGeneral ? (
+                      <Image
+                        source={{ uri: displayText }} // Your Cloudinary image URL
+                        style={tw`w-full h-48 `} // Make sure to provide a height and width
+                        resizeMode="contain" // Optional: to scale the image
+                      />
+                    ) : (
+                      <View style={tw`bg-[#FEF5CB80] rounded-xl p-10 mb-5`}>
+                        <Text style={tw`text-2xl font-semibold text-center`}>
+                          {displayText}
+                        </Text>
+                      </View>
+                    )}
                   </View>
                 )}
                 renderItem={({ item }) =>
@@ -226,15 +239,27 @@ const TestInstructions = () => {
                       }>
                       <View
                         style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]
-                             ${
-                               answer?.answer === item.option
-                                 ? "bg-purple-200 border-purple-500"
-                                 : "border-gray-300"
-                             }`}>
-                        <Text>
-                          {item.optionlabel}.{"  "}
-                          {item.option}
-                        </Text>
+                               ${
+                                 answer?.answer === item.option
+                                   ? "bg-purple-200 border-purple-500"
+                                   : "border-gray-300"
+                               }`}>
+                        {isGeneral ? (
+                          <View style={tw`flex-row gap-[10px]`}>
+                            <Text>{item.optionlabel}</Text>
+                            <Image
+                              source={{ uri: item.option }}
+                              style={tw`w-full h-28`} // Make sure to provide a height and width
+                              resizeMode="contain" // Optional: to scale the image
+                            />
+                          </View>
+                        ) : (
+                          <Text>
+                            {item.optionlabel}.{"  "}
+                            {item.option}
+                          </Text>
+                        )}
+
                         <MaterialIcons
                           name={
                             answer?.answer === item.option
@@ -251,8 +276,7 @@ const TestInstructions = () => {
                       </View>
                     </Pressable>
                   ) : (
-                    <View  style={tw`justify-center align-center`}>
-                    </View>
+                    <View style={tw`justify-center align-center`}></View>
                   )
                 }
                 ListFooterComponent={() => (

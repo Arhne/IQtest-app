@@ -6,6 +6,7 @@ import {
   Pressable,
   FlatList,
   Alert,
+  Image,
 } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -23,7 +24,7 @@ import {
 } from "@/utils/helper-functions";
 import { SubCategoryConfig } from "@/data/data-config";
 import LinearProgressBar from "@/components/LinearProgress";
-import {  useAppSelector } from "@/redux";
+import { useAppSelector } from "@/redux";
 
 const TestSummary = () => {
   const params = useLocalSearchParams();
@@ -81,6 +82,7 @@ const TestSummary = () => {
   };
 
   const Icon = SubCategoryConfig[subCategory as SubCategories].interactionicon!;
+  const isGeneral = subCategory === SubCategories.GENERAL;
 
   useEffect(() => {
     if (questionsData.length > 0) {
@@ -96,7 +98,9 @@ const TestSummary = () => {
           colors={["#8D0CCA", "#D568EF"]}>
           <View style={tw`flex-1`}>
             <Pressable
-              onPress={() => {router.back()}}
+              onPress={() => {
+                router.back();
+              }}
               style={tw`justify-start flex-col p-2`}>
               <MaterialIcons name="arrow-back-ios" size={24} color="#fff" />
             </Pressable>
@@ -113,9 +117,8 @@ const TestSummary = () => {
                 data={currentQuestion?.options}
                 keyExtractor={(item, index) => index.toString()}
                 ListHeaderComponent={() => (
-                  <View style={tw`mt-6 gap-3`}>
+                  <View style={tw`my-6 gap-3`}>
                     {/* <LinearProgressBar progress={50} /> */}
-
 
                     {/* <View style={tw`mx-auto`}>
                       <Icon width={220} height={160} />
@@ -124,13 +127,22 @@ const TestSummary = () => {
                     <Text style={tw`font-semibold text-2xl text-center`}>
                       {config.title}
                     </Text>
-                    <Text style={tw`text-lg text-center`}>Question {currentQuestionNo}</Text>
-
-                    <View style={tw`bg-[#FEF5CB80] rounded-xl p-10 mb-5`}>
-                      <Text style={tw`text-2xl font-semibold text-center`}>
-                        {currentQuestion?.question}
-                      </Text>
-                    </View>
+                    <Text style={tw`text-lg text-center`}>
+                      Question {currentQuestionNo}
+                    </Text>
+                    {isGeneral ? (
+                      <Image
+                        source={{ uri: currentQuestion?.question }}
+                        style={tw`w-full h-48 `} // Make sure to provide a height and width
+                        resizeMode="contain" // Optional: to scale the image
+                      />
+                    ) : (
+                      <View style={tw`bg-[#FEF5CB80] rounded-xl p-10 mb-5`}>
+                        <Text style={tw`text-2xl font-semibold text-center`}>
+                          {currentQuestion?.question}
+                        </Text>
+                      </View>
+                    )}
                   </View>
                 )}
                 renderItem={({ item }) => {
@@ -150,10 +162,22 @@ const TestSummary = () => {
                                   ? "bg-[#F4FBC9] border-[#8FBF00]"
                                   : "border-gray-300"
                               }`}>
-                        <Text>
-                          {item.optionlabel}.{"  "}
-                          {item.option}
-                        </Text>
+                        {isGeneral ? (
+                          <View style={tw`flex-row gap-[10px]`}>
+                            <Text>{item.optionlabel}</Text>
+                            <Image
+                              source={{ uri: item.option }}
+                              style={tw`w-full h-28`} // Make sure to provide a height and width
+                              resizeMode="contain" // Optional: to scale the image
+                            />
+                          </View>
+                        ) : (
+                          <Text>
+                            {item.optionlabel}.{"  "}
+                            {item.option}
+                          </Text>
+                        )}
+
                         <MaterialIcons
                           name={
                             currentAnswer.answer === item.option &&
