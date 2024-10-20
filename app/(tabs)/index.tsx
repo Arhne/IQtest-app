@@ -58,7 +58,6 @@ const interactions = [
   },
 ];
 
-
 export default function HomeScreen() {
   const col = 2;
   const screenPadding = 20;
@@ -132,22 +131,25 @@ export default function HomeScreen() {
     : "You've no current session";
 
   return (
-    <ThemedView style={tw`w-full px-5 pt-3 justify-center`}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <SafeAreaView style={tw`h-full flex-1`}>
-          <View style={tw`gap-5 flex-1`}>
+    <ThemedView style={tw`w-full px-5 pt-3 flex-1`}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={tw`flex-grow justify-center`}
+      >
+        <SafeAreaView style={tw`flex-1`}>
+          <View style={tw`gap-5 flex-1 justify-center`}>
             <ThemedText style={tw`text-4xl font-light w-70`}>
               What are you hoping to{" "}
               <Text style={tw`font-semibold`}>learn today?</Text> 📚
             </ThemedText>
-
             <View>
               <ThemedText>Continue last session</ThemedText>
               <View style={tw`w-full mt-2 h-[180px]`}>
                 <ImageBackground
                   source={images.background}
                   style={tw`flex-1 w-full h-full justify-center`}
-                  resizeMode="stretch">
+                  resizeMode="stretch"
+                >
                   <View style={tw`flex-row px-5 items-center justify-between`}>
                     <IconComponent latestSubDetails={latestSubDetails} />
 
@@ -164,7 +166,8 @@ export default function HomeScreen() {
                 style={[
                   tw`bg-gray-DEFAULT flex-row items-center py-2 px-4 justify-between`,
                   { borderBottomLeftRadius: 12, borderBottomRightRadius: 12 },
-                ]}>
+                ]}
+              >
                 <View style={tw`flex-col gap-3`}>
                   <Text style={tw`font-medium`}>{lastTestTitle}</Text>
                   {latestSubDetails && (
@@ -205,7 +208,8 @@ export default function HomeScreen() {
                       ]}
                       onPress={() =>
                         router.push(interaction.interactionpage as any)
-                      }>
+                      }
+                    >
                       <View style={tw`mb-10`}>
                         {interaction.interactionicon}
                       </View>

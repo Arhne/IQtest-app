@@ -24,7 +24,7 @@ export default CustomWarning;
 export const CustomDetailResult = ({icon, noteHeading, noteDesc, bgcolor, textColor='' }: {icon?: React.ReactNode, noteHeading: string, noteDesc: string, bgcolor: string; textColor?: string }) => {
   const colorScheme = useColorScheme();
   return (
-    <View style={tw`${bgcolor} w-full flex-row gap-3 rounded-xl p-5`}>
+    <View style={tw`${bgcolor} w-full flex-row gap-3 rounded-xl p-6`}>
        <View>{icon}</View>
       <View style={tw`flex-1 flex-col gap-2`}>
         <Text style={tw`text-base font-semibold ${textColor}`}>{noteHeading}</Text>

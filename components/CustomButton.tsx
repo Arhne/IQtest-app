@@ -3,7 +3,7 @@ import { Link } from "expo-router";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import tw from "@/twrnc-config";
-
+import Ionicons from "@expo/vector-icons/Ionicons";
 interface ICustomButton {
   title: string;
   handlePress?: () => void;
@@ -22,6 +22,8 @@ interface ICustomGradientButton {
   textStyle?: string;
   
 }
+
+type IoniconName = keyof typeof Ionicons.glyphMap
 export const CustomButton = ({
   title,
   handlePress,
@@ -73,6 +75,18 @@ export const CustomGradientButton = ({
           {title}
         </Text>
       </LinearGradient>
+    </Pressable>
+  );
+};
+
+export const CustomIconButton = ({ onPress, iconName, iconSize = 24, iconColor = 'black' }: {onPress: ()=> void, 
+  iconName: IoniconName, iconSize?: number, iconColor?: string,
+}) => {
+  return (
+    <Pressable style={tw`bg-gray-400 px-6 py-[19.3px] rounded-xl`} onPress={onPress}>
+      <View style={tw``}>
+       <Ionicons name={iconName} size={iconSize} color={iconColor} />
+      </View>
     </Pressable>
   );
 };

@@ -1,10 +1,9 @@
-import { Pressable, Image, Text, ScrollView, View } from "react-native";
+import { Pressable, Image, Text, ScrollView, View, Button } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Ionicons from '@expo/vector-icons/Ionicons';
 import { ThemedText } from "@/components/ThemedText";
 import tw from "@/twrnc-config";
-import { CustomButton, CustomGradientButton } from "@/components/CustomButton";
+import { CustomButton, CustomGradientButton, CustomIconButton } from "@/components/CustomButton";
 import CustomCard from "@/components/CustomCard";
 import { icons, images } from "@/constants";
 import CustomWarning, {
@@ -24,6 +23,10 @@ import {
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { labelColorMap, SubCategoryConfig } from "@/data/data-config";
 import { Assessment } from "@/data/categories";
+import { Share } from 'react-native';
+import { captureRef } from 'react-native-view-shot';
+import * as Sharing from 'expo-sharing';
+import { useRef } from 'react';
 
 export default function SingleResult() {
   const [isPaid, setIsPaid] = useState(true);
@@ -114,6 +117,27 @@ export default function SingleResult() {
     };
   }, [subCategory]);
 
+
+  const viewRef = useRef<View>(null);
+
+
+  const handleShare = async () => {
+    try {
+      // Capture the view
+      const uri = await captureRef(viewRef, {
+        format: 'png',
+        quality: 0.8,
+      });
+  
+      // Share the captured screenshot
+      if (uri) {
+        await Sharing.shareAsync(uri);
+      }
+    } catch (error) {
+      console.error('Error sharing the screenshot:', error);
+    }
+  };
+  
   return (
     <ThemedView style={tw`flex-1 px-5`}>
       <SafeAreaView style={tw`w-full gap-5 flex-1`}>
@@ -124,7 +148,7 @@ export default function SingleResult() {
         </View> */}
 
         <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={tw`gap-5 flex-1`}>
+          <View style={[tw`gap-5 flex-1`, { width: '100%', height: '100%' }]}>
             <Image
               source={images.done}
               style={tw`max-w-[323px] mx-auto w-full h-[313px]`}
@@ -143,7 +167,7 @@ export default function SingleResult() {
                 Here are your results:
               </ThemedText>
             </View>
-            <View style={tw`p-6 bg-[#C9FBEB80] gap-5 rounded-xl`}>
+            <View style={tw`p-6 bg-[#C9FBEB80] gap-5 rounded-xl`} ref={viewRef}>
               {config.categories === Categories.IQ_TEST ? (
                 <View>
                   <Text style={tw`text-center text-base`}>
@@ -178,7 +202,9 @@ export default function SingleResult() {
                       <Text style={tw`text-3xl text-center p-4 font-semibold`}>
                         {dataResults?.scoreDisplay}
                       </Text>
-                      <Text style={tw`text-center text-base`}>{dataResults?.label}</Text>
+                      <Text style={tw`text-center text-base`}>
+                        {dataResults?.label}
+                      </Text>
                     </View>
                   ) : config.title === "Enneagram Test" ? (
                     <View>
@@ -197,8 +223,9 @@ export default function SingleResult() {
                     </View>
                   ) : config.title === "Emotions vs Logic Test" ? (
                     <View>
-                    <Text style={tw`text-center text-base`}>
-                      Out of 100 people, you fall in the</Text>
+                      <Text style={tw`text-center text-base`}>
+                        Out of 100 people, you fall in the
+                      </Text>
                       <Text style={tw`text-3xl text-center p-3 font-semibold`}>
                         {dataResults?.scoreDisplay}
                       </Text>
@@ -235,12 +262,14 @@ export default function SingleResult() {
                   <Text
                     style={tw`font-semibold ${
                       colorScheme === "dark" ? "text-[#fff]" : "text-[#000]"
-                    }`}>
+                    }`}
+                  >
                     Detailed Result
                   </Text>
                 </View>
                 <View
-                  style={tw`bg-gray-DEFAULT justify-between rounded-xl flex-row gap-4 px-3 py-4`}>
+                  style={tw`bg-gray-DEFAULT justify-between rounded-xl flex-row gap-4 px-3 py-4`}
+                >
                   <View style={tw`gap-3 flex-1`}>
                     <Text style={tw`font-semibold mb-3`}>Your responses</Text>
                     <View style={tw` flex-row w-[100%] justify-center`}>
@@ -252,10 +281,12 @@ export default function SingleResult() {
                     {multiplePieData.labels?.map((response, index) => (
                       <View
                         key={index}
-                        style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}>
+                        style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}
+                      >
                         <View style={tw`flex-row items-center`}>
                           <View
-                            style={tw`mr-3 h-2 w-5 rounded-sm bg-[${labelColorMap[index]}]`}></View>
+                            style={tw`mr-3 h-2 w-5 rounded-sm bg-[${labelColorMap[index]}]`}
+                          ></View>
                           <Text style={tw`capitalize`}>{response}</Text>
                         </View>
                         <Text>{multiplePieData.data[index]}</Text>
@@ -269,20 +300,20 @@ export default function SingleResult() {
                         data={pieData.data}
                         percentage={pieData.percentage}
                       />
-                      {pieData.data.map(
-                        (response, index) => (
-                          <View
-                            key={index}
-                            style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}>
-                            <View style={tw`flex-row items-center`}>
-                              <View
-                                style={tw`mr-3 h-2 w-5 rounded-sm bg-[${response.color}]`}></View>
-                              <Text style={tw`capitalize`}>{response.name}</Text>
-                            </View>
-                            <Text>{response.population}</Text>
+                      {pieData.data.map((response, index) => (
+                        <View
+                          key={index}
+                          style={tw`flex-row border border-[#E3E1E9] p-2 rounded-lg items-center justify-between`}
+                        >
+                          <View style={tw`flex-row items-center`}>
+                            <View
+                              style={tw`mr-3 h-2 w-5 rounded-sm bg-[${response.color}]`}
+                            ></View>
+                            <Text style={tw`capitalize`}>{response.name}</Text>
                           </View>
-                        )
-                      )}
+                          <Text>{response.population}</Text>
+                        </View>
+                      ))}
                     </View>
                   )}
                 </View>
@@ -328,15 +359,17 @@ export default function SingleResult() {
                   }
                   bgcolor="bg-[#FEF5CB]"
                 />
-                <CustomDetailResult
-                  noteHeading="😃 Celebrities"
-                  noteDesc={
-                    Array.isArray(dataResults?.celebrities)
-                      ? dataResults.celebrities.join(", ")
-                      : dataResults?.celebrities ?? ""
-                  }
-                  bgcolor="bg-[#C9FBEB80]"
-                />
+                {dataResults?.celebrities && (
+                  <CustomDetailResult
+                    noteHeading="😃 Celebrities"
+                    noteDesc={
+                      Array.isArray(dataResults?.celebrities)
+                        ? dataResults.celebrities.join(", ")
+                        : dataResults?.celebrities ?? ""
+                    }
+                    bgcolor="bg-[#C9FBEB80]"
+                  />
+                )}
               </View>
             ) : (
               <View style={tw`gap-5`}>
@@ -349,11 +382,13 @@ export default function SingleResult() {
                   textStyle="bg-[#F4FBC9] text-[#76A400] p-1"
                 />
                 <View
-                  style={tw`bg-[#FEF5CB] w-full flex-row gap-3 rounded-xl p-5`}>
+                  style={tw`bg-[#FEF5CB] w-full flex-row gap-3 rounded-xl p-5`}
+                >
                   <icons.WarningIcon />
                   <View style={tw`flex-1 flex-col gap-2`}>
                     <Text
-                      style={tw`text-base font-semibold text-secondary-DEFAULT`}>
+                      style={tw`text-base font-semibold text-secondary-DEFAULT`}
+                    >
                       Detailed Result
                     </Text>
                     <Text style={tw`font-intmedium text-sm text-[#848288]`}>
@@ -373,9 +408,13 @@ export default function SingleResult() {
           </View>
         </ScrollView>
         <View style={tw`flex-row gap-2 items-center justify-center`}>
-          <View style={tw`bg-gray-400 px-6 py-[19.3px] w-[21%] rounded-xl`}>
-            <Ionicons name="share-social" size={24} color="black" />
-            </View>
+          <View style={tw` w-[21%]`}>
+          <CustomIconButton
+          onPress={handleShare}
+          iconName="share-social"
+          />
+          </View>
+
           <CustomButton
             title="Proceed to next test"
             handlePress={() => router.push("/(tabs)/all-tests")}

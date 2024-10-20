@@ -68,8 +68,8 @@ console.log(Data);
           </Pressable>
           </View>
 
-          <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={tw`gap-5 flex-1`}>
+          {/* <ScrollView showsVerticalScrollIndicator={false}> */}
+            <View style={tw`gap-5 flex-1 justify-center`}>
               <Image
                 source={images.pricingPlan}
                 style={tw`max-w-[323px] mx-auto w-full h-[313px]`}
@@ -105,7 +105,7 @@ console.log(Data);
                 />
               </View>
             </View>
-          </ScrollView>
+          {/* </ScrollView> */}
         </View>
         {showSubscriptionBills && (
           <View

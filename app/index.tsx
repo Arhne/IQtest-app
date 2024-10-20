@@ -64,6 +64,7 @@ const OnboardingPage = () => {
           keyExtractor={(item) => item.id}
           horizontal={true}
           scrollEnabled={false}
+          showsHorizontalScrollIndicator={false}
           pagingEnabled
           ref={(ref) => {
             pageref = ref;

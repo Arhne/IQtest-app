@@ -31,7 +31,7 @@ const CustomCard = ({
   return (
     <Pressable
       style={({ pressed }) => [
-        tw` rounded-xl p-5 flex-row w-full items-center justify-between ${otherStyles}`,
+        tw` rounded-xl p-6 flex-row w-full items-center justify-between ${otherStyles}`,
         pressed && tw`opacity-30 ${opacityStyle}`,
       ]}
       onPress={handleClick}>

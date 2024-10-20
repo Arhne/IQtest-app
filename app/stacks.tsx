@@ -13,13 +13,13 @@ export const StackProvider = () => {
   }, []);
 
   return (
-    <Stack>
+    <Stack initialRouteName="index">
       <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="+not-found" />
       <Stack.Screen name="premium" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="(pages)" options={{ headerShown: false }} />
       <Stack.Screen name="(cat)" options={{ headerShown: false }} />
+      <Stack.Screen name="+not-found" />
     </Stack>
   );
 };

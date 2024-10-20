@@ -6,6 +6,8 @@ import {
   View,
   Pressable,
   Modal,
+  Dimensions,
+  Platform,
 } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -110,7 +112,7 @@ export default function Settings() {
     // Preload flags when the component mounts
     preloadFlagImages();
   }, []);
-
+  
   return (
     <ThemedView style={tw`w-full flex-1 px-5`}>
       <SafeAreaView style={tw`w-full gap-5 flex-1`}>
@@ -129,7 +131,7 @@ export default function Settings() {
 
           <Pressable
             style={({ pressed }) => [
-              tw`w-full justify-between bg-primary border border-[#EAE8EE] mb-5 relative rounded-xl flex-row p-4`,
+              tw`w-full justify-between bg-primary border border-[#EAE8EE] mb-5 relative rounded-xl flex-row p-6`,
               pressed && tw`opacity-70`,
             ]}
             onPress={toggleExpanded}
@@ -137,7 +139,7 @@ export default function Settings() {
               const layout = event.nativeEvent.layout;
               const topOffset = layout.y;
               const heightOfComponent = layout.height;
-              const extraPadding = 110;
+              const extraPadding = Platform.OS === 'ios' ? 110 : 70;
               setTop(topOffset + heightOfComponent + extraPadding);
             }}
           >
@@ -172,7 +174,7 @@ export default function Settings() {
                     tw`absolute bg-primary rounded-[8px] w-[200px] p-5`,
                     {
                       top: top,
-                      right: 30,
+                      right: Platform.OS === 'ios' ? 30 : 25,
                       zIndex: 1000,
                       shadowColor: "#000",
                       shadowOffset: { width: 4, height: 4 },

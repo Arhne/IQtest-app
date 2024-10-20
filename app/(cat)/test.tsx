@@ -163,27 +163,35 @@ const TestInstructions = () => {
 
   const isGeneral = subCategory === SubCategories.GENERAL;
 
-
+  const [viewHeight, setViewHeight] = useState(0);
   return (
     <ThemedView style={tw`flex-1 w-full h-full`}>
       <SafeAreaView style={tw`flex-1`}>
         <LinearGradient
           style={tw`flex-1 px-3 relative`}
-          colors={["#8D0CCA", "#D568EF"]}>
+          colors={["#8D0CCA", "#D568EF"]}
+        >
           <View style={tw`flex-1`}>
             <Pressable
               onPress={() => {
                 router.back();
                 dispatch(setAnswer(undefined));
               }}
-              style={tw`justify-start flex-col p-2`}>
+              style={tw`justify-start flex-col p-2`}
+            >
               <MaterialIcons name="arrow-back-ios" size={24} color="#fff" />
             </Pressable>
 
             <View
               style={tw`flex-1 w-full bg-primary rounded-xl p-5 mb-8 absolute ${
                 isIqTest ? "top-28 h-[84%]" : "top-20 h-[88%]"
-              }`}>
+              }`}
+              onLayout={(event) => {
+                const { height } = event.nativeEvent.layout;
+                setViewHeight(height); // Capture the height
+                console.log("View height:", height);
+              }}
+            >
               {isIqTest && (
                 <View style={tw`absolute left-[25%] top-[-30] z-10`}>
                   <Icon width={220} height={160} />
@@ -236,14 +244,16 @@ const TestInstructions = () => {
                             questionLabel: item.optionlabel,
                           })
                         )
-                      }>
+                      }
+                    >
                       <View
                         style={tw`mb-3 flex-row justify-between items-center p-5 rounded-xl border-2 border-[#D0D5DD]
                                ${
                                  answer?.answer === item.option
                                    ? "bg-purple-200 border-purple-500"
                                    : "border-gray-300"
-                               }`}>
+                               }`}
+                      >
                         {isGeneral ? (
                           <View style={tw`flex-row gap-[10px]`}>
                             <Text>{item.optionlabel}</Text>
@@ -293,8 +303,13 @@ const TestInstructions = () => {
               />
             </View>
 
-            <View style={tw`p-4`}>
-              <Text style={tw`text-secondary-DEFAULT top-[741px] text-right`}>
+            <View
+              style={[
+                tw`absolute right-4 pt-1`,
+                { top: isIqTest ? viewHeight + 109 : viewHeight + 76 },
+              ]}
+            >
+              <Text style={tw`text-secondary-DEFAULT`}>
                 {currentQuestionNo} of{" "}
                 {getTotalQuestionsForSubCategory(subCategory)}
               </Text>

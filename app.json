@@ -19,7 +19,7 @@
       "package": "com.alperen.cat",
       "version": "2",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/educating.png",
+        "foregroundImage": "./assets/images/brain.png",
         "backgroundColor": "#ffffff"
       }
     },
