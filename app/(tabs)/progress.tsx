@@ -23,6 +23,7 @@ import { SubCategoryConfig } from "@/data/data-config";
 import LinearProgressBar from "@/components/LinearProgress";
 import { useAppSelector } from "@/redux";
 import { useColorScheme } from "@/hooks/useColorScheme";
+import EmptyCard from "@/components/EmptyCard";
 
 export default function ProgressScreen() {
   const col = 2;
@@ -61,7 +62,7 @@ export default function ProgressScreen() {
         const answered = recentData[item].questionsAnswered
             ? recentData[item].questionsAnswered.length
             : 0,
-          total =  getTotalQuestionsForSubCategory(item);
+          total = getTotalQuestionsForSubCategory(item);
         return calcPercentage(answered, total);
       } else {
         return calcPercentage(0, getTotalQuestionsForSubCategory(item));
@@ -72,10 +73,11 @@ export default function ProgressScreen() {
 
   const handleSubClick = (item: SubCategories) => {
     const hasProgress =
-      recentData[item]?.questionsAnswered  &&
+      recentData[item]?.questionsAnswered &&
       recentData[item]?.questionsAnswered.length !== progressData[item]?.total;
     const hasCompleted =
-      recentData[item]?.questionsAnswered.length === getTotalQuestionsForSubCategory(item);
+      recentData[item]?.questionsAnswered.length ===
+      getTotalQuestionsForSubCategory(item);
     const pathname = hasProgress
       ? "/(cat)/test"
       : hasCompleted
@@ -84,7 +86,6 @@ export default function ProgressScreen() {
     const params = { subCategory: item };
 
     router.push({ pathname, params });
-
   };
 
   return (
@@ -93,8 +94,13 @@ export default function ProgressScreen() {
         <View style={tw`flex-row items-center mb-5`}>
           <Pressable
             onPress={() => router.back()}
-            style={tw`justify-start mr-24`}>
-            <MaterialIcons name="arrow-back-ios" size={24} color={colorScheme === "dark" ? "white" : "black"} />
+            style={tw`justify-start mr-24`}
+          >
+            <MaterialIcons
+              name="arrow-back-ios"
+              size={24}
+              color={colorScheme === "dark" ? "white" : "black"}
+            />
           </Pressable>
 
           <Text style={tw`text-xl font-semibold`}>Test Progress</Text>
@@ -117,10 +123,8 @@ export default function ProgressScreen() {
             >
               <View style={tw`gap-3 flex-row flex-wrap`}>
                 {recents.length === 0 ? (
-                  <View style={tw`flex-1 items-center justify-center`}>
-                    <Text style={tw`text-lg text-gray-600`}>
-                      No recent items found
-                    </Text>
+                  <View style={tw`flex-1 items-center justify-center mt-12`}>
+                    <EmptyCard title="Currently, you've no recent item." />
                   </View>
                 ) : (
                   recents.map((item) => {
@@ -128,12 +132,14 @@ export default function ProgressScreen() {
                     return (
                       <Pressable
                         key={item}
-                        onPress={() => handleSubClick(item)}>
+                        onPress={() => handleSubClick(item)}
+                      >
                         <View
                           style={[
                             tw`p-3 bg-gray-DEFAULT rounded-xl`,
                             { width: itemWidth },
-                          ]}>
+                          ]}
+                        >
                           <View style={tw`max-w-[93px] w-full h-[88px]`}>
                             <Icon />
                           </View>
@@ -142,10 +148,12 @@ export default function ProgressScreen() {
                             {SubCategoryConfig[item].title}
                           </Text>
                           <View
-                            style={tw`flex-row items-center justify-between mt-3`}>
+                            style={tw`flex-row items-center justify-between mt-3`}
+                          >
                             <Text style={tw`text-[#727272]`}>Completed</Text>
                             <Text
-                              style={tw`leading-[16.94px] text-secondary-DEFAULT`}>
+                              style={tw`leading-[16.94px] text-secondary-DEFAULT`}
+                            >
                               {`${generateProgressPercent(item)}%`}
                             </Text>
                           </View>

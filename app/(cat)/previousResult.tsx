@@ -17,6 +17,7 @@ import {
 } from "@/utils/helper-functions";
 import { SubCategoryConfig } from "@/data/data-config";
 import { useColorScheme } from "@/hooks/useColorScheme";
+import EmptyCard from "@/components/EmptyCard";
 
 export default function PreviousResult() {
   const [isTestCompleted, SetIsTestCompleted] = useState(true);
@@ -75,13 +76,17 @@ export default function PreviousResult() {
         <View style={tw`flex-row items-center mb-5`}>
           <Pressable
             onPress={() => router.back()}
-            style={tw`justify-start mr-26`}>
-            <MaterialIcons name="arrow-back-ios" size={24} color={colorScheme === "dark" ? "white" : "black"} />
+            style={tw`justify-start mr-26`}
+          >
+            <MaterialIcons
+              name="arrow-back-ios"
+              size={24}
+              color={colorScheme === "dark" ? "white" : "black"}
+            />
           </Pressable>
           <Text style={tw`text-xl font-semibold`}>Previous Result</Text>
         </View>
 
-        {isTestCompleted && (
           <View style={tw`gap-5 flex-1`}>
             <CustomWarning
               warning="Before you can access your comprehensive test result, please ensure that you have successfully completed a specific test."
@@ -94,54 +99,64 @@ export default function PreviousResult() {
               </ThemedText>
               <ScrollView showsHorizontalScrollIndicator={false}>
                 <View style={tw`gap-3 flex-row flex-wrap`}>
-                  {recents.map((interaction) => {
-                    const Icon =
-                      SubCategoryConfig[interaction].interactionicon!;
-                    if (generateProgressPercent(interaction) === 100) {
-                      return (
-                        <Pressable
-                          key={interaction}
-                          style={({ pressed }) => [
-                            tw`p-3 bg-gray-DEFAULT rounded-xl`,
-                            { width: itemWidth },
-                            pressed && tw`opacity-70`,
-                          ]}
-                          onPress={() =>
-                            router.push({
-                              pathname: "/result",
-                              params: { subCategory: interaction },
-                            })
-                          }>
-                          <View style={tw`max-w-[93px] w-full h-[88px]`}>
-                            <Icon />
-                          </View>
+                  {recents.length === 0 ? (
+                    <View style={tw`flex-1 items-center justify-center mt-12`}>
+                      <EmptyCard title="Currently, you've no recent item." />
+                    </View>
+                  ) : (
+                    recents.map((interaction) => {
+                      const Icon =
+                        SubCategoryConfig[interaction].interactionicon!;
+                      if (generateProgressPercent(interaction) === 100) {
+                        return (
+                          <Pressable
+                            key={interaction}
+                            style={({ pressed }) => [
+                              tw`p-3 bg-gray-DEFAULT rounded-xl`,
+                              { width: itemWidth },
+                              pressed && tw`opacity-70`,
+                            ]}
+                            onPress={() =>
+                              router.push({
+                                pathname: "/result",
+                                params: { subCategory: interaction },
+                              })
+                            }
+                          >
+                            <View style={tw`max-w-[93px] w-full h-[88px]`}>
+                              <Icon />
+                            </View>
 
-                          <Text
-                            style={tw`mb-2 text-base capitalize font-semibold`}>
-                            {SubCategoryConfig[interaction].title}
-                          </Text>
-                          <View
-                            style={tw`flex-row items-center justify-between mt-3`}>
-                            <Text style={tw`text-[#727272]`}>Completed</Text>
                             <Text
-                              style={tw`leading-[16.94px] text-secondary-DEFAULT`}>
-                              {`${generateProgressPercent(interaction)}%`}
+                              style={tw`mb-2 text-base capitalize font-semibold`}
+                            >
+                              {SubCategoryConfig[interaction].title}
                             </Text>
-                          </View>
-                          <View style={tw`mt-3`}>
-                            <LinearProgressBar
-                              progress={generateProgressPercent(interaction)}
-                            />
-                          </View>
-                        </Pressable>
-                      );
-                    }
-                  })}
+                            <View
+                              style={tw`flex-row items-center justify-between mt-3`}
+                            >
+                              <Text style={tw`text-[#727272]`}>Completed</Text>
+                              <Text
+                                style={tw`leading-[16.94px] text-secondary-DEFAULT`}
+                              >
+                                {`${generateProgressPercent(interaction)}%`}
+                              </Text>
+                            </View>
+                            <View style={tw`mt-3`}>
+                              <LinearProgressBar
+                                progress={generateProgressPercent(interaction)}
+                              />
+                            </View>
+                          </Pressable>
+                        );
+                      }
+                    })
+                  )}
                 </View>
               </ScrollView>
             </View>
           </View>
-        )}
+       
       </SafeAreaView>
     </ThemedView>
   );
