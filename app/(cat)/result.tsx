@@ -137,6 +137,8 @@ export default function SingleResult() {
       console.error('Error sharing the screenshot:', error);
     }
   };
+
+  const isIntrovertTest = subCategory === SubCategories.INTROVERT
   
   return (
     <ThemedView style={tw`flex-1 px-5`}>
@@ -171,7 +173,7 @@ export default function SingleResult() {
               {config.categories === Categories.IQ_TEST ? (
                 <View>
                   <Text style={tw`text-center text-base`}>
-                    Your {config.title.substring(0, config.title.length - 5)} is
+                    Your {config.title.substring(0, config.title.length - 5)}is
                   </Text>
 
                   <Text style={tw`text-3xl text-center p-4 font-semibold`}>
@@ -248,7 +250,7 @@ export default function SingleResult() {
                     </Text>
                   ) : (
                     <Text style={tw`text-3xl text-center font-semibold`}>
-                      {dataResults?.label}
+                      {dataResults?.label ?? dataResults?.scoreDisplay}
                     </Text>
                   )}
                 </View>

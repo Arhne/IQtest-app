@@ -70,6 +70,12 @@ export default function PreviousResult() {
     [hasProgressData, progressData, getTotalQuestionsForSubCategory] // dependencies
   );
 
+  const isEmpty = useMemo(() => {
+    return (
+      recents.filter((item) => generateProgressPercent(item) === 100).length === 0
+    )
+  }, [recents])
+
   return (
     <ThemedView style={tw`flex-1 px-5`}>
       <SafeAreaView style={tw`w-full gap-5 flex-1`}>
@@ -94,12 +100,12 @@ export default function PreviousResult() {
             />
 
             <View>
-              <ThemedText style={tw`text-base font-semibold w-70`}>
+              <ThemedText style={tw`text-base font-semibold w-70 pb-[10px]`}>
                 Latest Test Results
               </ThemedText>
               <ScrollView showsHorizontalScrollIndicator={false}>
                 <View style={tw`gap-3 flex-row flex-wrap`}>
-                  {recents.length === 0 ? (
+                  {isEmpty ? (
                     <View style={tw`flex-1 items-center justify-center mt-12`}>
                       <EmptyCard title="Currently, you've no recent item." />
                     </View>
